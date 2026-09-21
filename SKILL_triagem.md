@@ -20,6 +20,14 @@ tags: [licitacao, edital, triagem, pregao, lei-14133, servfaz, go-no-go, mao-de-
 > fundamento legal, acórdão ou jurisprudência. Se não souber indicar o fundamento com segurança,
 > **diga expressamente que o ponto exige validação jurídica humana**.
 
+> 📌 **Regra de rastreabilidade — vale para todas as etapas:** **sempre que possível**, acompanhe
+> cada achado, afirmação ou conclusão da **referência da fonte**, para permitir auditar e
+> reencontrar a resposta no documento. Use o padrão **`(Documento, item/cláusula, pág. X)`** —
+> ex.: `(Edital, item 6.8, pág. 9)`, `(TR, item 9.25, pág. 40)`, `(Minuta, cláusula 12.1, pág. 173)`.
+> Quando a origem não puder ser localizada com precisão, indique o documento/seção aproximada e
+> sinalize que a referência exata precisa de conferência — nunca apresente um dado sem qualquer
+> indicação de onde ele veio.
+
 ---
 
 ## 🎯 Objetivo

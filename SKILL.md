@@ -181,6 +181,9 @@ mesma análise — **não** são opções alternativas nem exigem escolha do usu
 
 **2. Requisitos de habilitação (checklist de riscos)**
 
+> 📌 Contemple de forma exaustiva e completa todos os aspectos dos **Requisitos de Habilitação
+> (Checklist de Riscos)** e estruture de forma clara, subdividindo em tópicos.
+
 > Desenvolva **obrigatoriamente** nos blocos A, B e C abaixo, cada exigência com a **referência
 > da fonte**. Os valores concretos (anos, % e nº de postos, valor de 10%, CBOs, escolaridade,
 > tempo de experiência) **variam por edital** — extraia-os do edital analisado; abaixo, a
@@ -230,6 +233,9 @@ mesma análise — **não** são opções alternativas nem exigem escolha do usu
 
 **3. Proposta de preços e planilha de custos**
 
+> 📌 Contemple de forma exaustiva e completa todos os aspectos da **Proposta de Preços e Planilha
+> de Custos** e estruture de forma clara, subdividindo em tópicos.
+
 > Desenvolva nos blocos A, B e C abaixo, cada dado com a **referência da fonte**. Pisos, CCTs e
 > benefícios **variam por edital** — extraia do edital/anexos e, para dados de CCT, **consulte a
 > ferramenta `Conhecimento Servfaz` quando disponível** (ver regra na Metodologia). Os valores
@@ -270,18 +276,30 @@ mesma análise — **não** são opções alternativas nem exigem escolha do usu
 
 **4. Benefícios e vantagens competitivas**
 
+> 📌 Contemple de forma exaustiva e completa todos os aspectos dos **Benefícios e Vantagens
+> Competitivas** e estruture de forma clara, subdividindo em tópicos.
+
 - Margens de preferência, tratamento favorecido ME/EPP (LC 123/2006), subcontratação que beneficie a estratégia
 
 **5. Análise de riscos contratuais e operacionais**
+
+> 📌 Contemple de forma exaustiva e completa todos os aspectos da **Análise de Riscos Contratuais
+> e Operacionais** e estruture de forma clara, subdividindo em tópicos.
 
 - Riscos evidentes ou ocultos no TR e na Minuta (matriz de riscos desequilibrada, multas desproporcionais, obrigações excessivas, reajuste e repactuação)
 
 **6. Pontos críticos para impugnação e esclarecimentos**
 
+> 📌 Contemple de forma exaustiva e completa todos os aspectos dos **Pontos Críticos para
+> Impugnação e Esclarecimentos** e estruture de forma clara, subdividindo em tópicos.
+
 - Cláusulas restritivas à competitividade, exigências ilegais, ambiguidades
 - Apontar o que deve ser **Pedido de Esclarecimento** e o que deve ser **Impugnação**
 
 **7. Principais obrigações da contratada**
+
+> 📌 Contemple de forma exaustiva e completa todos os aspectos das **Principais Obrigações da
+> Contratada** e estruture de forma clara, subdividindo em tópicos.
 
 - Responsabilidades mais onerosas, transição contratual, SLAs, relatórios e prepostos
 

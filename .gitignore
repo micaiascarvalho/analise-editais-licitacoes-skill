@@ -1,6 +1,8 @@
 # Editais reais (documentos de teste — não versionar)
 *.pdf
 EDITAL PE 90009 2026*
-
+*.sqlite3
+Outputs
+EDITAIS
 # macOS
 .DS_Store

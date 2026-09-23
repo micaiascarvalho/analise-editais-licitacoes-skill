@@ -2,9 +2,10 @@
 name: analise-editais-licitacoes
 description: >
   Use para analisar editais de licitação pública (Lei 14.133/2021 e Lei 13.303/2016),
-  especialmente serviços continuados com dedicação de mão de obra. Faz o levantamento
-  objetivo para composição de preços e/ou o parecer crítico estratégico (habilitação,
-  planilha de custos, riscos contratuais, pontos de impugnação). Ativa em "analisar edital",
+  especialmente serviços continuados com dedicação de mão de obra. Executa um fluxo único:
+  o levantamento objetivo para composição de preços seguido do parecer crítico estratégico
+  (habilitação, planilha de custos, riscos contratuais, pontos de impugnação) e do parecer
+  final. Ativa em "analisar edital",
   "análise de edital", "vale a pena participar", "resumo do edital", "levantamento do edital",
   "composição de preços", "requisitos de habilitação", "parecer de edital", "riscos do edital",
   "pontos para impugnação", "termo de referência".
@@ -56,18 +57,21 @@ Planilhas) em uma análise estruturada que permita ao setor de processos:
 
 ---
 
-## 🧩 Os dois modos de análise
+## 🧩 Fluxo de análise (único)
 
-Esta skill opera em dois modos, herdados das ferramentas atuais do setor. Podem ser usados
-isolada ou conjuntamente.
+Esta skill executa **um único fluxo**, sempre na mesma ordem: primeiro o **MODO 1**, em seguida
+o **MODO 2** e, por fim, o **Parecer final**. Os dois modos são **etapas sequenciais** de uma
+mesma análise — **não** são opções alternativas nem exigem escolha do usuário.
 
-| Modo                                                | Base     | Quando usar                                                                          | Perfil                                                     |
-| --------------------------------------------------- | -------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------- |
-| **Modo 1 — Levantamento para Composição de Preços** | Prompt 1 | Triagem rápida e coleta de dados para precificar, sobretudo serviços com mão de obra | Analista de licitação sênior                               |
-| **Modo 2 — Parecer Estratégico Completo**           | Prompt 2 | Análise crítica jurídica e estratégica antes da decisão de participar/impugnar       | Especialista sênior (Lei 14.133/2021 + jurisprudência TCU) |
+| Ordem | Etapa                                               | Base     | Perfil                                                     |
+| ----- | --------------------------------------------------- | -------- | ---------------------------------------------------------- |
+| 1º    | **MODO 1 — Levantamento para Composição de Preços** | Prompt 1 | Analista de licitação sênior                               |
+| 2º    | **MODO 2 — Parecer Estratégico Completo**           | Prompt 2 | Especialista sênior (Lei 14.133/2021 + jurisprudência TCU) |
+| 3º    | **Parecer final**                                   | —        | Consolidação da decisão                                    |
 
-> **Padrão:** se o usuário não especificar o modo, pergunte qual deseja — ou, havendo tempo/insumos,
-> execute o **Modo 1 seguido do Modo 2** (levantamento → parecer), que é o fluxo completo.
+> **Sempre** execute as três etapas na ordem acima (MODO 1 → MODO 2 → Parecer final), ainda que
+> o usuário não peça explicitamente. Retorne primeiro o resultado completo do MODO 1 e só então
+> o MODO 2.
 
 ---
 
@@ -117,7 +121,42 @@ isolada ou conjuntamente.
 
 **Mão de obra e condições de trabalho** 7. Há previsão de **insalubridade ou periculosidade**? 8. Qual a **jornada de trabalho**? 9. Qual a **Convenção Coletiva (CCT)** aplicável? → consultar `Conhecimento Servfaz` quando disponível (ver regra acima) 10. Haverá **substituto** na cobertura de férias? 11. Há previsão de **uniformes**? Quais peças o compõem? 12. Há previsão de **materiais e equipamentos**? 13. Há previsão de **EPI**? 14. Há cláusula de **repactuação**?
 
-**Habilitação e garantias** 15. Quais **documentos de habilitação** devem ser apresentados? 16. A certidão de **PCD e jovem aprendiz** deve ser apresentada ou apenas marcada em campo próprio do sistema? 17. Deverá apresentar **garantia de proposta**? 18. Qual o **percentual de seguro garantia**? 19. Deverá ser cotado **encargos de conta vinculada**?
+**Habilitação e garantias**
+
+15. Quais **documentos de habilitação** devem ser apresentados? Responda **organizado nas
+    categorias abaixo**, confirmando cada exigência no edital/TR e citando a fonte. Os valores
+    concretos (anos de experiência, % e nº de postos, cargos e escolaridade) **variam por edital**
+    — extraia-os do edital analisado; abaixo está a estrutura e os parâmetros de referência:
+
+    - **Habilitação Jurídica:** documento de identidade (RG), registro na Junta Comercial,
+      Ato Constitutivo/Estatuto/Contrato Social ou CCMEI, conforme a natureza jurídica.
+    - **Habilitação Fiscal, Social e Trabalhista:** prova de CNPJ, Certidão Conjunta de Quitação
+      de Tributos Federais e Dívida Ativa da União (RFB/PGFN), CRF/FGTS, CNDT (Certidão Negativa
+      de Débitos Trabalhistas) e prova de inscrição e regularidade fiscal Municipal/Distrital.
+      _Podem ser substituídos pela consulta cadastral no SICAF._
+    - **Qualificação Econômico-Financeira:** certidão negativa de falência/insolvência civil;
+      Balanço Patrimonial e Demonstrações Contábeis comprovando índices de:
+      - Liquidez Geral (LG) > 1,0;
+      - Liquidez Corrente (LC) > 1,0;
+      - Solvência Geral (SG) > 1,0.
+
+      _Caso algum índice seja inferior a 1,0, exige-se capital mínimo de 10% do valor estimado
+      anual do contrato._ Também é exigida **Declaração de Compromissos Assumidos**, acompanhada
+      da **DRE** (Demonstração do Resultado do Exercício).
+    - **Qualificação Técnico-Operacional:** atestado(s) de capacidade técnica que comprove(m):
+      - experiência mínima (ex.: **2 anos** — conferir no edital); e
+      - prestação de serviços em quantidade equivalente a, no mínimo, **50% dos postos** a serem
+        contratados (ex.: mínimo de 31 postos — recalcular conforme o nº de postos do edital).
+    - **Qualificação Técnico-Profissional:** comprovação dos requisitos formais de instrução e
+      experiência profissional prévia dos cargos exigidos (ex.: Assistente — Ensino Médio;
+      Técnico — Ensino Médio; Técnico em Secretariado — registro profissional ativo em conselho;
+      Secretário Executivo — registro profissional ativo em conselho). Extrair os cargos e
+      requisitos do edital analisado.
+
+16. A certidão de **PCD e jovem aprendiz** deve ser apresentada ou apenas marcada em campo próprio do sistema?
+17. Deverá apresentar **garantia de proposta**?
+18. Qual o **percentual de seguro garantia**?
+19. Deverá ser cotado **encargos de conta vinculada**?
 
 ---
 
@@ -179,12 +218,14 @@ isolada ou conjuntamente.
 | Data/hora da sessão                 | _a extrair_ |                     |
 | Plataforma                          | _a extrair_ |                     |
 
-- **Modo 1** → responder os 19 itens na ordem, em tabela **Pergunta | Resposta | Fonte** (a
-  fonte é obrigatória em cada linha).
-- **Modo 2** → desenvolver os 7 tópicos, cada achado com **referência da fonte** + implicação estratégica.
-- **Fluxo completo** → Cabeçalho → Modo 1 → Modo 2 → **Parecer final**.
+A saída segue **sempre** a ordem única do fluxo: **Cabeçalho → MODO 1 → MODO 2 → Parecer final**.
 
-### Parecer final (quando solicitado)
+- **MODO 1** → responder os 19 itens na ordem, em tabela **Pergunta | Resposta | Fonte** (a
+  fonte é obrigatória em cada linha; o item 15 sai nas categorias de habilitação definidas acima).
+- **MODO 2** → desenvolver os 7 tópicos, cada achado com **referência da fonte** + implicação estratégica.
+- **Parecer final** → consolidação da decisão (ver abaixo).
+
+### Parecer final
 
 - ✅ Participar / ⚠️ Participar com ressalvas / ❌ Não participar — com justificativa objetiva,
   cada argumento remetendo à **fonte** que o sustenta

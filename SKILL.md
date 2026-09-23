@@ -293,8 +293,37 @@ mesma análise — **não** são opções alternativas nem exigem escolha do usu
 > 📌 Contemple de forma exaustiva e completa todos os aspectos dos **Pontos Críticos para
 > Impugnação e Esclarecimentos** e estruture de forma clara, subdividindo em tópicos.
 
-- Cláusulas restritivas à competitividade, exigências ilegais, ambiguidades
-- Apontar o que deve ser **Pedido de Esclarecimento** e o que deve ser **Impugnação**
+> Como especialista em licitações, identifique os dispositivos do edital passíveis de
+> questionamento formal, separados em **A) Impugnação** e **B) Pedido de Esclarecimento**. Cada
+> ponto com a **referência da fonte**. Itens, cláusulas, prazos e canais abaixo são
+> **exemplos/parâmetros de referência** — extraia os reais do edital analisado.
+> 🚫 **Não invente** fundamento legal, acórdão ou jurisprudência: cite o artigo apenas quando
+> tiver segurança e, se não tiver, sinalize que **exige validação jurídica humana**.
+
+**A. Pontos de Impugnação (cláusulas restritivas ou ilegais)**
+
+1. **Exigência de tempo mínimo de experiência da empresa em atestado técnico** (ex.: item 9.34.1.1 do TR):
+   - **Ocorrência:** exigência de comprovação de experiência mínima de 2 anos do fornecedor.
+   - **Fundamento jurídico:** o TCU tem jurisprudência no sentido de que exigir tempo mínimo de
+     existência/experiência prévia da empresa em atestados de capacidade técnico-operacional
+     afronta o art. 67 da Lei nº 14.133/2021 e limita a competitividade — o atestado deve
+     comprovar aptidão em quantitativo e complexidade similares, sem fixar tempo de mercado.
+2. **Exigência de apresentar o seguro-garantia antes da assinatura, sob pena de preclusão** (ex.: item 4.4 do TR):
+   - **Ocorrência:** determinação de que o seguro-garantia seja apresentado no máximo até a data
+     de assinatura do contrato, sob pena de perda do direito de opção.
+   - **Fundamento jurídico:** a Lei nº 14.133/2021 não condiciona a opção da modalidade de
+     garantia à entrega prévia do documento antes da assinatura, devendo ser facultado o prazo
+     regular de prestação após a formalização do ajuste.
+
+**B. Pontos para Pedido de Esclarecimento**
+
+1. **Atribuição financeira da solução tecnológica (aplicação web + app mobile)** (ex.: item 5.4.4 do TR):
+   - **Objeto de questionamento:** em qual rubrica da planilha (BDI ou Insumos) a Administração
+     orçou os custos de desenvolvimento e manutenção da solução tecnológica exigida — para
+     garantir que não haja omissão de valores orçados pelo órgão.
+2. **Prazo e canal para esclarecimentos e impugnações:**
+   - Confirmar que o pedido/impugnação deve ser protocolado **até 3 dias úteis antes** da abertura
+     do certame e por qual canal (ex.: e-mail `seprol@funai.gov.br` ou protocolo na sede do órgão).
 
 **7. Principais obrigações da contratada**
 

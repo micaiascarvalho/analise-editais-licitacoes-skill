@@ -86,6 +86,12 @@ mesma análise — **não** são opções alternativas nem exigem escolha do usu
 | Convenção Coletiva (CCT) aplicável                  | ⭕ recomendado | Essencial em serviços com mão de obra             |
 | Perfil da empresa (CNAE, porte, atestados, índices) | ⭕ recomendado | Necessário para o checklist de habilitação        |
 
+> 📎 **Observação sobre os anexos:** os documentos (Edital, Termo de Referência, Minuta de
+> Contrato, Planilhas, ETP etc.) podem vir **todos reunidos em um único anexo/arquivo** ou
+> **distribuídos em dois ou mais anexos/arquivos separados**. Verifique todos os arquivos
+> fornecidos antes de responder e, ao citar a fonte, identifique o documento correto mesmo
+> quando estiverem consolidados em um só PDF (ex.: `(TR dentro do Edital único, item 9.25, pág. 40)`).
+
 ---
 
 ## 🧭 Metodologia
@@ -175,14 +181,92 @@ mesma análise — **não** são opções alternativas nem exigem escolha do usu
 
 **2. Requisitos de habilitação (checklist de riscos)**
 
-- Regularidade jurídica, fiscal, social e trabalhista
-- Qualificação econômico-financeira (índices contábeis, capital social mínimo, patrimônio líquido)
-- Qualificação técnica (atestados exigidos, limitações de quantitativos, parcelas de maior relevância, vedações indevidas)
+> Desenvolva **obrigatoriamente** nos blocos A, B e C abaixo, cada exigência com a **referência
+> da fonte**. Os valores concretos (anos, % e nº de postos, valor de 10%, CBOs, escolaridade,
+> tempo de experiência) **variam por edital** — extraia-os do edital analisado; abaixo, a
+> estrutura e os parâmetros de referência.
+
+**A. Regularidade Jurídica, Fiscal, Social e Trabalhista**
+
+- **Apresentação:** habilitação jurídica regular (Contrato Social/Estatuto), prova de inscrição
+  no CNPJ, Certidão Conjunta Negativa de Tributos Federais e Dívida Ativa da União (RFB/PGFN),
+  Certidão de Regularidade do FGTS (CRF), Certidão Negativa de Débitos Trabalhistas (CNDT) e
+  prova de inscrição e regularidade fiscal Municipal/Distrital.
+- **Uso do SICAF:** a documentação cadastrada no SICAF substitui os comprovantes habituais,
+  cabendo ao pregoeiro a verificação direta no sistema.
+
+**B. Qualificação Econômico-Financeira**
+
+- **Certidões:** certidão negativa de falência ou recuperação judicial/insolvência civil emitida
+  pelo distribuidor da sede da empresa.
+- **Índices Contábeis:** comprovação dos índices de Liquidez Geral (LG), Liquidez Corrente (LC) e
+  Solvência Geral (SG) superiores a 1,0, extraídos do Balanço Patrimonial e DRE (conferir o nº de
+  exercícios exigido no edital, ex.: últimos 2 exercícios sociais).
+- **Capital Social ou Patrimônio Líquido Mínimo:** caso algum índice seja igual ou inferior a 1,0,
+  exige-se Capital Social Mínimo ou Patrimônio Líquido de 10% do valor estimado anual da
+  contratação (calcular o valor a partir do edital — ex.: R$ 771.713,72).
+- **Compromissos Assumidos:** Declaração de Compromissos Assumidos acompanhada da DRE do último
+  exercício, demonstrando que 1/12 do valor total dos contratos vigentes não excede o Patrimônio
+  Líquido do licitante.
+- **Capital Social por Empregado:** na assinatura do contrato, comprovação de Capital Social
+  integralizado compatível com o quantitativo de empregados (art. 4º-B da Lei nº 6.019/1974).
+
+**C. Qualificação Técnica (Operacional e Profissional)**
+
+- **Atestado Técnico-Operacional (quantitativo e tempo):** atestado de capacidade técnica
+  comprovando prestação de serviços similares por período mínimo (ex.: 2 anos) e abrangendo, no
+  mínimo, 50% do quantitativo de postos a contratar (ex.: mínimo de 31 postos — recalcular pelo
+  nº de postos do edital). Admite-se o somatório de atestados de períodos ou contratos
+  concomitantes.
+- **Requisitos Qualitativos do Pessoal (Técnico-Profissional):** extrair os cargos, CBOs,
+  escolaridade, registro profissional e experiência exigidos no edital. Exemplos de referência:
+  - Assistente Administrativo (CBO 4110-10): ensino médio completo e experiência mínima de 6 meses em rotinas de apoio administrativo.
+  - Técnico em Secretariado (CBO 3515-05): formação técnica em secretariado, registro profissional ativo no MTE/Conselho (Lei nº 7.377/1985) e experiência mínima de 6 meses.
+  - Secretário Executivo (CBO 2523-05): ensino superior em Secretariado Executivo, registro profissional ativo (Lei nº 7.377/1985) e experiência mínima de 6 meses.
+- **Vedações:** verificar proibições de participação — sociedades cooperativas (por haver dedicação
+  exclusiva de mão de obra), empresas em consórcio não autorizadas, empresas sancionadas com
+  impedimento/inidoneidade e pessoas jurídicas cujos sócios tenham vínculo de parentesco com
+  agentes públicos do órgão.
 
 **3. Proposta de preços e planilha de custos**
 
-- Adequação da planilha (salários, encargos sociais e trabalhistas, insumos, BDI, tributos)
-- Desequilíbrios, subestimação de custos ou exigências inexequíveis pelo órgão
+> Desenvolva nos blocos A, B e C abaixo, cada dado com a **referência da fonte**. Pisos, CCTs e
+> benefícios **variam por edital** — extraia do edital/anexos e, para dados de CCT, **consulte a
+> ferramenta `Conhecimento Servfaz` quando disponível** (ver regra na Metodologia). Os valores
+> abaixo são **parâmetros de referência/exemplo**.
+
+**A. Estrutura e Adequação da Planilha**
+
+- A composição dos custos segue o modelo oficial do Anexo VII-D da IN SEGES/MP nº 05/2017. As
+  propostas devem adotar compulsoriamente os custos unitários mínimos fixados pela Administração
+  (conferir o anexo de planilha do edital).
+
+**B. Convenções Coletivas Paradigma e Pisos Salariais** _(extrair do edital + validar em `Conhecimento Servfaz`)_
+
+- Identificar, por cargo: a **CCT/aditivos aplicáveis** (nº de registro MTE e sindicato), o
+  **piso salarial**, o **auxílio-alimentação** e o **auxílio-transporte**. Exemplos de referência:
+  - Assistente Administrativo: CCT MTE nº DF000042/2025 + Aditivos DF000199/2025 e DF000026/2026 (SINDISERVICOS/DF) — piso R$ 2.749,18; auxílio-alimentação R$ 1.020,36 (22 dias úteis); auxílio-transporte R$ 275,93.
+  - Técnico em Secretariado: CCT MTE nº DF000045/2025 + Aditivo DF000024/2026 (Sind. das Secretárias do DF) — piso R$ 3.280,70; auxílio-alimentação R$ 1.034,00; auxílio-transporte R$ 244,04.
+  - Secretário Executivo: CCT MTE nº DF000045/2025 + Aditivo DF000024/2026 (Sind. das Secretárias do DF) — piso R$ 6.256,66; auxílio-alimentação R$ 1.034,00; auxílio-transporte R$ 244,04.
+- **Benefícios sociais obrigatórios das CCTs:** verificar seguro de vida/funeral, auxílio
+  odontológico, plano ambulatorial e reembolso-creche (ex.: seguro R$ 3,78; odontológico
+  R$ 14,25–14,28; ambulatorial R$ 209,40–212,00; reembolso-creche R$ 105,33).
+
+**C. Riscos Financeiros e Tributários na Formação de Preços**
+
+- **Vedações Tributárias:** proibição do regime **Simples Nacional** para participantes — a
+  contratação configura cessão de mão de obra (art. 17, XII, da LC nº 123/2006), exigindo
+  comunicação formal de exclusão à Receita Federal.
+- **PIS/COFINS (regime não-cumulativo):** licitantes no Lucro Real/Não-Cumulativo devem cotar a
+  **média efetiva** dos recolhimentos dos últimos 12 meses, comprovada por EFD-Contribuições.
+- **Conta-Depósito Vinculada:** obrigatoriedade de retenção mensal e depósito em conta bloqueada
+  das provisões: 13º salário (8,33%), férias e 1/3 constitucional (11,11%), multa rescisória do
+  FGTS (4,00%) e encargos sociais sobre 13º e férias (7,18%) — conferir os percentuais no edital.
+- **Insumos e Solução Tecnológica:** a proposta deve absorver o custo de uniforme (kit anual
+  completo), relógio de ponto eletrônico, crachás e eventual **solução tecnológica** (aplicação
+  web + app mobile) para fiscalização operacional e trabalhista, quando exigida.
+- **Desequilíbrios/inexequibilidade:** apontar subestimação de custos ou exigências inexequíveis
+  pelo órgão.
 
 **4. Benefícios e vantagens competitivas**
 

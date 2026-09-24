@@ -39,6 +39,29 @@ tags:
 > Quando a informação não for localizada, registre **"Não localizado / verificar no edital"**
 > em vez de responder sem fonte. Nunca apresente um dado sem indicar de onde ele veio.
 
+> 🎯 **Regra "extrair, não descrever" (anti-generalização):** sempre extraia o **dado literal**
+> presente no edital/anexos — valor, data, e-mail, número de registro (CCT, processo, item),
+> percentual, quantidade, nome do cargo. É **proibido substituir um dado que consta no edital por
+> descrição genérica**, tais como "parametrizado no sistema", "pisos mínimos das categorias",
+> "canal institucional", "kit/conjunto completo", "documentos habituais". Se o dado realmente
+> **não existir** nos documentos, escreva **"Não localizado"** — nunca preencha com texto vago.
+> Prefira sempre o específico ao genérico (ex.: `R$ 1,00`, não "intervalo mínimo do sistema";
+> `seprol@funai.gov.br`, não "e-mail institucional"; `CCT MTE nº DF000042/2025`, não "CCT do DF").
+
+> 📋 **Regra de enumeração de listas (proibido resumir):** quando o edital traz uma **relação de
+> itens** — peças de uniforme, materiais/equipamentos, EPIs, postos de trabalho, benefícios da CCT,
+> obrigações — **liste item a item em tabela**, com **quantidade e periodicidade** quando o edital
+> as fornecer. É **vedado** condensar em expressões como "kit completo", "conjunto de uniformes",
+> "materiais de apoio", "benefícios das CCTs". Ex.: em vez de "uniforme completo", listar
+> `Camisa social manga longa — 2 un / 12 meses`, `Calça social — 2 un / 12 meses`, etc.
+
+> 🚫 **Trava anti-especulação:** responda **apenas** com o que consta no edital e anexos. **Não
+> acrescente** hipóteses, exigências, prazos ou fundamentos que o documento não traga (ex.: supor
+> "laudo LTCAT/PGR", "parentesco até terceiro grau", "prazo de mobilização de 15–30 dias" quando
+> o edital não os menciona). Se, para responder, for necessário **inferir** algo, marque
+> explicitamente como **[inferência]** e explique a base — nunca apresente inferência como se
+> fosse texto do edital. Na dúvida entre inferir e omitir, prefira **"Não localizado"**.
+
 ---
 
 ## 🎯 Objetivo
@@ -125,14 +148,25 @@ mesma análise — **não** são opções alternativas nem exigem escolha do usu
 5. Qual a **data limite** para impugnar/esclarecer?
 6. Qual o **e-mail** para impugnar/esclarecer?
 
-**Mão de obra e condições de trabalho** 7. Há previsão de **insalubridade ou periculosidade**? 8. Qual a **jornada de trabalho**? 9. Qual a **Convenção Coletiva (CCT)** aplicável? → consultar `Conhecimento Servfaz` quando disponível (ver regra acima) 10. Haverá **substituto** na cobertura de férias? 11. Há previsão de **uniformes**? Quais peças o compõem? 12. Há previsão de **materiais e equipamentos**? 13. Há previsão de **EPI**? 14. Há cláusula de **repactuação**?
+**Mão de obra e condições de trabalho**
+
+7. Há previsão de **insalubridade ou periculosidade**? (indicar o percentual e os cargos afetados)
+8. Qual a **jornada de trabalho**? (horas semanais/diárias e dias)
+9. Qual a **Convenção Coletiva (CCT)** aplicável? → consultar `Conhecimento Servfaz` quando disponível (ver regra acima). Informar **nº de registro MTE e sindicato, por cargo**.
+10. Haverá **substituto** na cobertura de férias? (indicar o mecanismo — planilha/IMR/glosa)
+11. Há previsão de **uniformes**? **Liste todas as peças em tabela** (peça · quantidade · periodicidade) — não resumir como "kit completo".
+12. Há previsão de **materiais e equipamentos**? **Enumere cada item** (item · quantidade · periodicidade), incluindo equipamentos e eventuais soluções tecnológicas.
+13. Há previsão de **EPI**? **Enumere cada EPI/EPC** exigido (item · quantidade · periodicidade, quando houver).
+14. Há cláusula de **repactuação**?
 
 **Habilitação e garantias**
 
 15. Quais **documentos de habilitação** devem ser apresentados? Responda **organizado nas
-    categorias abaixo**, confirmando cada exigência no edital/TR e citando a fonte. Os valores
-    concretos (anos de experiência, % e nº de postos, cargos e escolaridade) **variam por edital**
-    — extraia-os do edital analisado; abaixo está a estrutura e os parâmetros de referência:
+    categorias abaixo** (a estrutura), mas **extraia exaustivamente TODOS os documentos e
+    exigências** de cada categoria no edital/TR, citando a fonte — os itens listados são
+    **exemplos/parâmetros de referência**, não uma lista fechada. Os valores concretos (anos de
+    experiência, % e nº de postos, cargos e escolaridade) **variam por edital** — extraia-os do
+    edital analisado:
 
     - **Habilitação Jurídica:** documento de identidade (RG), registro na Junta Comercial,
       Ato Constitutivo/Estatuto/Contrato Social ou CCMEI, conforme a natureza jurídica.
@@ -176,8 +210,20 @@ mesma análise — **não** são opções alternativas nem exigem escolha do usu
 
 **1. Visão geral do objeto e regras do jogo**
 
-- Órgão licitante, modalidade, critério de julgamento (menor preço / maior desconto) e modo de disputa
-- Prazo de execução, prorrogações e valor estimado (se houver)
+> Responda **todos** os subcampos abaixo (cada um com fonte). Só "feche" o ponto quando todos
+> estiverem preenchidos ou marcados "Não localizado" — nenhum pode ser omitido.
+
+- **Órgão licitante:** nome, UASG e unidade responsável.
+- **Modalidade e legislação:** modalidade, nº do edital, nº do processo e lei regente.
+- **Objeto:** descrição + **regime** (dedicação exclusiva) + **composição de postos por cargo**
+  (quantidade de cada cargo e total de postos).
+- **Critério de julgamento e formato:** critério (menor preço / maior desconto) e se é por item
+  ou por grupo/lote.
+- **Modo de disputa (mecânica completa):** tipo (aberto / aberto e fechado) e a **dinâmica de
+  tempos** (duração da fase aberta, prorrogação, fase fechada) e o **intervalo mínimo de lances**.
+- **Prazo de execução e prorrogações:** **vigência inicial** (em meses) e **limite de prorrogação**
+  (ex.: até 10 anos), com a base legal. _(Campo crítico para precificação — nunca omitir.)_
+- **Valor estimado:** **valor global** e **valor mensal**, e se o orçamento é sigiloso ou não.
 
 **2. Requisitos de habilitação (checklist de riscos)**
 
@@ -185,9 +231,11 @@ mesma análise — **não** são opções alternativas nem exigem escolha do usu
 > (Checklist de Riscos)** e estruture de forma clara, subdividindo em tópicos.
 
 > Desenvolva **obrigatoriamente** nos blocos A, B e C abaixo, cada exigência com a **referência
-> da fonte**. Os valores concretos (anos, % e nº de postos, valor de 10%, CBOs, escolaridade,
-> tempo de experiência) **variam por edital** — extraia-os do edital analisado; abaixo, a
-> estrutura e os parâmetros de referência.
+> da fonte**. Os blocos A/B/C são a **estrutura** (categorias legais de habilitação); **dentro de
+> cada bloco, extraia exaustivamente TODAS as exigências** que o edital/TR trouxer — os itens
+> listados são **exemplos/parâmetros de referência**, não uma lista fechada. Os valores concretos
+> (anos, % e nº de postos, valor de 10%, CBOs, escolaridade, tempo de experiência) **variam por
+> edital** — extraia-os do edital analisado.
 
 **A. Regularidade Jurídica, Fiscal, Social e Trabalhista**
 
@@ -236,10 +284,11 @@ mesma análise — **não** são opções alternativas nem exigem escolha do usu
 > 📌 Contemple de forma exaustiva e completa todos os aspectos da **Proposta de Preços e Planilha
 > de Custos** e estruture de forma clara, subdividindo em tópicos.
 
-> Desenvolva nos blocos A, B e C abaixo, cada dado com a **referência da fonte**. Pisos, CCTs e
-> benefícios **variam por edital** — extraia do edital/anexos e, para dados de CCT, **consulte a
-> ferramenta `Conhecimento Servfaz` quando disponível** (ver regra na Metodologia). Os valores
-> abaixo são **parâmetros de referência/exemplo**.
+> Desenvolva nos blocos A, B e C abaixo, cada dado com a **referência da fonte**. Os blocos são a
+> **estrutura**; **dentro de cada um, extraia exaustivamente TODOS os custos, pisos, benefícios e
+> encargos** previstos — os itens listados são **exemplos/parâmetros de referência**, não lista
+> fechada. Pisos, CCTs e benefícios **variam por edital** — extraia do edital/anexos e, para dados
+> de CCT, **consulte a ferramenta `Conhecimento Servfaz` quando disponível** (ver regra na Metodologia).
 
 **A. Estrutura e Adequação da Planilha**
 
@@ -279,24 +328,45 @@ mesma análise — **não** são opções alternativas nem exigem escolha do usu
 > 📌 Contemple de forma exaustiva e completa todos os aspectos dos **Benefícios e Vantagens
 > Competitivas** e estruture de forma clara, subdividindo em tópicos.
 
-- Margens de preferência, tratamento favorecido ME/EPP (LC 123/2006), subcontratação que beneficie a estratégia
+> **Busca exaustiva (não use lista fechada):** identifique **TODOS** os benefícios e vantagens
+> competitivas previstos no edital e anexos, varrendo o documento inteiro — **não se limite** aos
+> exemplos abaixo. Os itens a seguir são **apenas exemplos do tipo** de cláusula que configura um
+> benefício/vantagem, para calibrar o que procurar; sempre que o edital trouxer outros, inclua-os.
+> Para cada vantagem encontrada, explique **por que** favorece a estratégia da empresa e cite a fonte.
+
+_Exemplos de benefícios/vantagens a procurar (rol ilustrativo, não exaustivo):_ tratamento
+favorecido/margem de preferência ME/EPP (LC 123/2006); regras de subcontratação (a vedação pode
+proteger empresas operacionais contra intermediadoras); cotas sociais (mulheres vítimas de
+violência doméstica, PCD, aprendizes); cláusula de transição/continuidade de pessoal (reduz custo
+de recrutamento da sucessora); condições que ampliem competitividade ou reduzam custo/risco.
 
 **5. Análise de riscos contratuais e operacionais**
 
 > 📌 Contemple de forma exaustiva e completa todos os aspectos da **Análise de Riscos Contratuais
 > e Operacionais** e estruture de forma clara, subdividindo em tópicos.
 
-- Riscos evidentes ou ocultos no TR e na Minuta (matriz de riscos desequilibrada, multas desproporcionais, obrigações excessivas, reajuste e repactuação)
+> **Busca exaustiva (não use lista fechada):** identifique **TODOS** os riscos contratuais e
+> operacionais do edital/TR/Minuta, varrendo o documento inteiro — **não se limite** aos exemplos
+> abaixo, que servem apenas para **calibrar o tipo** de risco a procurar. Sempre que houver risco
+> não listado, inclua-o. Para cada risco, **extraia os valores/prazos concretos** e cite a fonte.
+
+_Exemplos de riscos a procurar (rol ilustrativo, não exaustivo):_ garantia de execução (percentual,
+modalidades, prazo/momento e eventual preclusão); IMR/glosas (faixas de desconto sobre a fatura,
+gatilhos e reincidência); prazos de substituição de pessoal (reposição de ausente e substituição
+definitiva); repactuação/reajuste (interregno, marco inicial e índice, ex.: IPCA); multas e
+penalidades (faixas e gatilhos); matriz de riscos desequilibrada e obrigações excessivas; critério
+de inexequibilidade e diligências; e quaisquer outros riscos, evidentes ou ocultos.
 
 **6. Pontos críticos para impugnação e esclarecimentos**
 
 > 📌 Contemple de forma exaustiva e completa todos os aspectos dos **Pontos Críticos para
 > Impugnação e Esclarecimentos** e estruture de forma clara, subdividindo em tópicos.
 
-> Como especialista em licitações, identifique os dispositivos do edital passíveis de
-> questionamento formal, separados em **A) Impugnação** e **B) Pedido de Esclarecimento**. Cada
-> ponto com a **referência da fonte**. Itens, cláusulas, prazos e canais abaixo são
-> **exemplos/parâmetros de referência** — extraia os reais do edital analisado.
+> **Busca exaustiva (não use lista fechada):** como especialista, varra o edital inteiro e
+> identifique **TODOS** os dispositivos passíveis de questionamento formal, separados em
+> **A) Impugnação** e **B) Pedido de Esclarecimento**. Os exemplos abaixo servem apenas para
+> **calibrar o tipo** de cláusula problemática — **não se limite a eles**; inclua todo ponto
+> encontrado, cada um com a **referência da fonte**.
 > 🚫 **Não invente** fundamento legal, acórdão ou jurisprudência: cite o artigo apenas quando
 > tiver segurança e, se não tiver, sinalize que **exige validação jurídica humana**.
 
@@ -330,7 +400,17 @@ mesma análise — **não** são opções alternativas nem exigem escolha do usu
 > 📌 Contemple de forma exaustiva e completa todos os aspectos das **Principais Obrigações da
 > Contratada** e estruture de forma clara, subdividindo em tópicos.
 
-- Responsabilidades mais onerosas, transição contratual, SLAs, relatórios e prepostos
+> **Busca exaustiva (não use lista fechada):** varra o TR e a Minuta e liste **TODAS** as
+> obrigações relevantes/onerosas da contratada, com a **referência da fonte** e, quando houver,
+> os **parâmetros concretos** (prazos, quantidades, periodicidade). Os exemplos abaixo servem só
+> para **calibrar o tipo** de obrigação a procurar — **não se limite a eles**.
+
+_Exemplos de obrigações a procurar (rol ilustrativo, não exaustivo):_ preposto (dedicação,
+presença mínima, vedações de alocação); fornecimento e manutenção de uniformes, materiais,
+equipamentos e solução tecnológica; controle de frequência e comprovação de recolhimentos
+trabalhistas/previdenciários; termo de quitação anual trabalhista (art. 507-B da CLT); plano de
+programação de férias; transição contratual; SLAs, relatórios e reuniões; manutenção de
+regularidade e das condições de habilitação durante a vigência.
 
 ---
 

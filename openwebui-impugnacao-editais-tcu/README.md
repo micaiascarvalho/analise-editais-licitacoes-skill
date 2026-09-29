@@ -1,6 +1,6 @@
 # Impugnação de editais TCU no Open WebUI
 
-Pacote independente, criado a partir de `skills/impugnacao-editais-tcu`. A versão original permanece intacta. A skill orienta o raciocínio e as decisões; a Tool fornece extração, leitura e busca. Não inclui ferramenta para protocolar, gerar DOCX/PDF, pesquisar a web ou conferir automaticamente jurisprudência.
+Pacote independente, criado a partir de `skills/impugnacao-editais-tcu`. A versão original permanece intacta. A skill orienta o raciocínio e as decisões sobre dados já disponibilizados e indexados pelo ambiente. A Tool fornece recursos opcionais de extração, leitura e busca; as instruções operacionais abaixo servem para testar essa infraestrutura separadamente, não são etapas exigidas pela skill. Não inclui ferramenta para protocolar, gerar DOCX/PDF, pesquisar a web ou conferir automaticamente jurisprudência.
 
 ## Conteúdo
 

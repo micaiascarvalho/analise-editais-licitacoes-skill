@@ -1,5 +1,5 @@
 {
-  "purpose": "Avaliar a triagem preliminar sem ferramentas nem consulta externa; os trechos FMS provêm da peça do analista e não substituem o edital original.",
+  "purpose": "Avaliar a triagem preliminar de trechos textuais já fornecidos, sem extração nem consulta externa; os trechos FMS provêm da peça do analista e não substituem o edital original.",
   "cases": [
     {
       "id": "FMS-01-julgamento",
@@ -96,6 +96,29 @@
       "expected_class": "não sustentado",
       "must_identify": ["Anexo I não fornecido ao modelo", "não é possível concluir que falta ao edital publicado"],
       "must_not_assert": ["Termo de Referência não foi publicado", "objeto é indeterminado"]
+    },
+    {
+      "id": "CBMDF-01-servicos-no-item",
+      "origin": "Trechos do TR integrante do edital CBMDF PE 90099/2025, páginas 27-28 do PDF; ETP e normas setoriais não fornecidos neste caso",
+      "materials": [
+        {"document": "Termo de Referência", "locator": "item 5.1, PDF p. 27", "text": "Será permitida a subcontratação parcial, desde que não cause prejuízo ao objeto da licitação, no limite de até 30% do valor do objeto e mediante autorização da contratante."},
+        {"document": "Termo de Referência", "locator": "item 6.3, PDF p. 27", "text": "O item único de limpeza das unidades administrativas estima 116 postos de servente e 4 de encarregado."},
+        {"document": "Termo de Referência", "locator": "item 7.6, PDF p. 28", "text": "Na planilha do mesmo item, há linha semestral para limpeza de caixas d'água/reservatórios e dedetização, descupinização, desratização e desinsetização, estimada em R$ 349.992,37 nos 30 meses; o valor total do item é R$ 21.314.537,64."}
+      ],
+      "expected_class": "esclarecimento",
+      "must_identify": ["serviços especializados e periódicos reunidos com limpeza contínua no mesmo item", "possível necessidade de habilitação ou licença específica para o executor, sujeita a verificação da norma setorial", "subcontratação de até 30% deve ser confrontada com escopo, autorização e capacidade do executor", "justificativa técnica e econômica do agrupamento e efeito competitivo dependem do ETP e de outros documentos"],
+      "must_not_assert": ["atividades distintas obrigam parcelamento", "a subcontratação por si resolve ou torna ilegal o agrupamento", "falta licença obrigatória na habilitação sem norma setorial fornecida", "ETP não existe no edital"]
+    },
+    {
+      "id": "CTRL-02-agrupamento-justificado",
+      "origin": "Controle sintético negativo para evitar impugnação automática de objeto composto",
+      "materials": [
+        {"document": "TR", "locator": "itens 1-3, exemplo sintético", "text": "O item combina limpeza contínua e serviço semestral especializado. A planilha discrimina quantidade, frequência e preço de cada serviço. A licitante poderá subcontratar integralmente a parcela especializada, dentro do limite contratual, mediante autorização e apresentação da licença e da aptidão do executor antes do início dessa atividade."},
+        {"document": "ETP", "locator": "item 4, exemplo sintético", "text": "O agrupamento foi comparado com contratos separados: a logística e a responsabilidade operacional integradas reduziram o custo global estimado, sem exigência de licença da licitante principal para o serviço subcontratável. A pesquisa de mercado identificou fornecedores aptos ao arranjo."}
+      ],
+      "expected_class": "não sustentado",
+      "must_identify": ["serviços distintos e subcontratação foram examinados", "há justificativa de agrupamento, parâmetros de preço e mecanismo de habilitação do executor no material", "nenhum efeito restritivo concreto foi demonstrado"],
+      "must_not_assert": ["parcelamento obrigatório apenas porque as atividades são distintas", "a licitante principal deve ter licença da atividade subcontratável sem base normativa", "irregularidade comprovada sem efeito concreto"]
     }
   ]
 }

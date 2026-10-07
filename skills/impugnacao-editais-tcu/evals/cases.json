@@ -1,0 +1,101 @@
+{
+  "purpose": "Avaliar a triagem preliminar sem ferramentas nem consulta externa; os trechos FMS provêm da peça do analista e não substituem o edital original.",
+  "cases": [
+    {
+      "id": "FMS-01-julgamento",
+      "origin": "Transcrições da impugnação FMS, quesito 8",
+      "materials": [
+        {"document": "Edital", "locator": "Definições da Parte Específica", "text": "MENOR PREÇO MENSAL POR LOTE; apresentação da proposta POR LOTE ANUAL (lances se darão pelo valor total do lote)."},
+        {"document": "Anexo F", "locator": "item 3, Nota 1", "text": "O valor a ser cadastrado no sistema Compras.gov.br corresponderá ao valor global da contratação para o período inicial de 12 meses."}
+      ],
+      "expected_class": "esclarecimento",
+      "must_identify": ["contradição mensal versus anual", "efeito sobre lance e comparação das propostas", "correção ou esclarecimento uniforme"],
+      "must_not_assert": ["qual regra prevalece sem confirmação", "nulidade definitiva do edital"]
+    },
+    {
+      "id": "FMS-02-jornada",
+      "origin": "Transcrições da impugnação FMS, quesito 5",
+      "materials": [
+        {"document": "Edital", "locator": "itens 1.34 e 1.35", "text": "Telefonista 12x36h Diurno/Noturno."},
+        {"document": "Termo de Referência", "locator": "item 7.1", "text": "Telefonista 36h Diurno/Noturno."}
+      ],
+      "expected_class": "esclarecimento",
+      "must_identify": ["jornadas incompatíveis entre documentos", "efeito no dimensionamento ou na planilha", "norma trabalhista e CCT pendentes de conferência"],
+      "must_not_assert": ["toda escala 12x36 para telefonista é ilegal sem verificar norma aplicável"]
+    },
+    {
+      "id": "FMS-03-prepostos",
+      "origin": "Transcrição da impugnação FMS, tópico III.4",
+      "materials": [
+        {"document": "Termo de Referência", "locator": "item 13.6, a", "text": "A Contratada deverá designar formalmente 01 (um) preposto para cada Unidade Hospitalar abarcada no(s) contrato(s)."},
+        {"document": "Minuta", "locator": "cláusula 5.6, a", "text": "Repete a exigência de um preposto por Unidade Hospitalar."}
+      ],
+      "expected_class": "risco de precificação/execução",
+      "must_identify": ["necessidade de saber quantas unidades estão abrangidas", "possível custo de supervisão", "verificar se postos ou planilha já contemplam a obrigação"],
+      "must_not_assert": ["o edital não informa o número de unidades sem examinar os demais anexos", "um único preposto é legalmente obrigatório"]
+    },
+    {
+      "id": "FMS-04-materiais",
+      "origin": "Transcrição da impugnação FMS, tópico III.6",
+      "materials": [
+        {"document": "Termo de Referência", "locator": "itens 12.6.1 e 12.6.2", "text": "A Contratada fornecerá todos os equipamentos e materiais necessários. As relações dos Anexos C, D e E são exemplificativas e não exaustivas; cabe à Contratada disponibilizar tipo e quantitativo de material que melhor atenda à necessidade dos serviços."}
+      ],
+      "expected_class": "risco de precificação/execução",
+      "must_identify": ["possível indeterminação econômica", "parâmetros de consumo, escopo ou medição a conferir", "anexos C, D e E não fornecidos neste caso"],
+      "must_not_assert": ["os anexos não têm quantitativos", "toda lista exemplificativa é ilegal"]
+    },
+    {
+      "id": "FMS-05-insalubridade",
+      "origin": "Descrição da impugnação FMS, tópico III.2",
+      "materials": [
+        {"document": "Termo de Referência", "locator": "itens 7.1 e 8.4", "text": "A tabela prevê insalubridade apenas para auxiliar de cozinha, cozinheiro, maqueiro, auxiliar de lavanderia e coletor de resíduos. A definição remete a despacho técnico do NUSO-FMS, não incluído no material deste caso. Outras funções serão executadas em unidades de saúde."}
+      ],
+      "expected_class": "não sustentado",
+      "must_identify": ["necessidade de examinar despacho ou laudo e atividades por posto", "potencial efeito na planilha"],
+      "must_not_assert": ["todos os demais postos têm direito a insalubridade", "o despacho não foi publicado no certame"]
+    },
+    {
+      "id": "FMS-06-atestados-hospitalares",
+      "origin": "Transcrição e tese da impugnação FMS, tópico III.5",
+      "materials": [
+        {"document": "Edital", "locator": "item 8.5.1", "text": "Atestados de atividades similares ao objeto; experiência mínima de três anos e execução de pelo menos 50% dos postos."},
+        {"document": "Tese sugerida", "locator": "peça FMS", "text": "Exigir que os atestados sejam exclusivamente de serviços de apoio operacional em unidades hospitalares."}
+      ],
+      "expected_class": "não sustentado",
+      "must_identify": ["maior especificidade pode reduzir a competição", "exigir prova de necessidade técnica específica antes de restringir o ambiente do atestado"],
+      "must_not_assert": ["o ambiente hospitalar torna obrigatória experiência hospitalar idêntica"]
+    },
+    {
+      "id": "FMS-07-email",
+      "origin": "Saída anterior da skill para o FMS",
+      "materials": [
+        {"document": "Edital, conforme saída anterior", "locator": "seção XIX, item 19.3", "text": "Impugnações e esclarecimentos podem ser enviados a endereço de correio eletrônico terminado em gmail.com."}
+      ],
+      "expected_class": "não sustentado",
+      "must_identify": ["domínio do e-mail isoladamente não demonstra prejuízo ou ilegalidade", "seriam necessárias evidências de falha de recebimento, publicidade ou rastreabilidade"],
+      "must_not_assert": ["existe dever geral de usar domínio corporativo", "há precedente do TCU sem fonte fornecida"]
+    },
+    {
+      "id": "FMS-08-cota",
+      "origin": "Transcrições da impugnação FMS, tópico III.8",
+      "materials": [
+        {"document": "Edital", "locator": "item 16.8.1", "text": "Fica reservada cota de 25% do quantitativo estimado total do item para microempresas e empresas de pequeno porte."},
+        {"document": "Edital", "locator": "item 3.2.1", "text": "Cota Ampla Concorrência - Lote ÚNICO."},
+        {"document": "Termo de Referência", "locator": "item 1.9.4", "text": "O objeto é prestação de serviços, não aquisição de bens de natureza divisível; não se mostra juridicamente possível aplicar o tratamento diferenciado."}
+      ],
+      "expected_class": "impugnação preliminar",
+      "must_identify": ["contradição entre reserva de cota, lote único e justificativa do TR", "efeito sobre participação ou composição da proposta", "fundamento legal específico pendente de conferência"],
+      "must_not_assert": ["toda licitação por lote único impede benefício a ME/EPP"]
+    },
+    {
+      "id": "CTRL-01-anexo-ausente",
+      "origin": "Controle de cobertura documental",
+      "materials": [
+        {"document": "Edital parcial", "locator": "item 2.1", "text": "O detalhamento do objeto consta do Anexo I - Termo de Referência."}
+      ],
+      "expected_class": "não sustentado",
+      "must_identify": ["Anexo I não fornecido ao modelo", "não é possível concluir que falta ao edital publicado"],
+      "must_not_assert": ["Termo de Referência não foi publicado", "objeto é indeterminado"]
+    }
+  ]
+}

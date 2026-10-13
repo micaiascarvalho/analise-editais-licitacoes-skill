@@ -1,0 +1,120 @@
+Impugnar uma **Planilha de Custos** é uma das estratégias mais eficientes em licitações, porque **números são exatos**. Enquanto discussões sobre "restrição de mercado" no edital podem envolver interpretações subjetivas, uma alíquota de imposto errada, uma fórmula quebrada ou a omissão de um benefício da CCT configuram **ilegalidade matemática e jurídica irrefutável**.
+
+Abaixo estão os **6 maiores grupos de erros, fraudes e omissões** que costumam aparecer nas planilhas, como cruzá-los e como fundamentar a impugnação:
+
+---
+
+### 1. Vícios na Remuneração e Adicionais (Módulo 1)
+
+#### Onde o erro se esconde:
+
+- **Uso de CCT vencida ou categoria errada:** A Administração usa a CCT do ano anterior (cujo piso era R$ 1.500,00), ignorando que o sindicato já homologou nova CCT com piso de R$ 1.650,00.
+- **Omissão de Insalubridade ou Periculosidade devida:** O Termo de Referência exige que o profissional trabalhe limpando banheiros públicos de grande circulação ou faça ronda armada, mas o Módulo 1 da planilha está com o valor de insalubridade/periculosidade **zerado (R$ 0,00)**.
+- **Cálculo da hora noturna sem o redutor fictício:** O órgão calcula o adicional noturno dividindo o salário por 220 horas simples, esquecendo de aplicar o fator multiplicador de **1,1428** da hora noturna reduzida (52min30s) e o reflexo no DSR (Descanso Semanal Remunerado).
+
+#### Como cruzar e impugnar:
+
+- **Cruzamento:** Confronte a **Planilha vs. CCT da Categoria no Sistema MEDIADOR do MTE** e com a **Súmula nº 448 do TST** (insalubridade em banheiros públicos).
+- **Fundamento:** Violação ao art. 23 e art. 59, III da Lei 14.133/2021. Se a planilha adota piso salarial defasado, ela induz os licitantes a apresentarem propostas que violam normas trabalhistas cogentes.
+
+---
+
+### 2. Omissões e Distorções em Benefícios e Encargos (Módulo 2)
+
+#### Onde o erro se esconde:
+
+- **Omissão do desconto legal do Vale-Transporte (Superfaturamento artificial):** O órgão coloca na planilha o valor integral de duas passagens diárias por trabalhador, mas "esquece" de aplicar o desconto legal de até **6% do salário-base** previsto na Lei nº 7.418/85. Isso infla o valor estimado da licitação artificialmente.
+- **Omissão de Benefícios Obrigatórios da CCT (Subdimensionamento / Inexequibilidade):** A CCT obriga o pagamento de R$ 12,00/mês de Seguro de Vida e R$ 15,00/mês de Assistência Odontológica. A planilha do órgão omite essas linhas. O licitante que cotar esses benefícios terá seu preço mais alto do que quem omitir, gerando concorrência desleal.
+- **Alíquotas do Sistema "S" ou Salário-Educação incompatíveis com a atividade:** Aplicar alíquotas patronais de indústria (FPAS 507) para empresas puramente prestadoras de serviços de limpeza ou segurança (FPAS 515).
+
+#### Como cruzar e impugnar:
+
+- **Cruzamento:** Confronte **Planilha vs. Tabela FPAS da Receita Federal** e **Cláusulas Sociais da CCT vigente**.
+- **Fundamento:** Violação ao princípio do julgamento objetivo (art. 5º da Lei 14.133). A Administração deve parametrizar todos os custos legalmente obrigatórios para que as propostas sejam comparáveis.
+
+---
+
+### 3. Cobrança de Alíquotas Extintas e Erro na Rescisão (Módulo 3)
+
+#### Onde o erro se esconde:
+
+- **A cobrança ilegal dos "10% adicionais do FGTS":** Historicamente, a multa rescisória do FGTS era de 40% (para o trabalhador) + 10% de contribuição social (para o Governo), totalizando 50% (previsto na antiga LC 110/2001). A **Lei Federal nº 13.932/2019 extinguiu esses 10% a partir de 01/01/2020**. Muitos órgãos públicos ainda usam planilhas desatualizadas calculando a provisão com base em 50%.
+- **Ausência da proporcionalidade do Aviso Prévio:** Deixar de provisionar a fração referente à Lei nº 12.506/2011 (3 dias a mais por ano trabalhado), o que desequilibra o contrato em prorrogações sucessivas.
+
+#### Como cruzar e impugnar:
+
+- **Cruzamento:** Verifique a fórmula da célula da Multa do FGTS no arquivo Excel/PDF da planilha.
+- **Fundamento:** Art. 12 da Lei nº 13.932/2019 e Nota Técnica SEI nº 2.012/2020/ME. A manutenção da alíquota extinta gera **sobrepreço no orçamento de referência**.
+
+---
+
+### 4. Duplicidade de Custos ou "Bis in Idem" (Módulo 2 vs. Módulo 4)
+
+Este é um dos erros técnicos mais comuns em serviços com dedicação exclusiva de mão de obra.
+
+#### Onde o erro se esconde:
+
+- **Dupla cobrança da reposição de férias:** O órgão inclui a provisão de pagamento das férias do titular no Módulo 2 (1/12 avos do salário + terço constitucional) e, ao mesmo tempo, inclui no Módulo 4 o custo integral de um funcionário substituto de férias com novos encargos incidentes sobre a mesma base, duplicando o encargo social daquela rubrica.
+- **Falta de adaptação para a Escala 12x36:** Na escala 12x36, o trabalhador folga 36 horas seguidas. O cálculo de reposição por faltas ou ausências legais não pode seguir a mesma fórmula de quem trabalha de segunda a sexta (44 horas semanais), sob pena de superestimar a necessidade de funcionários substitutos.
+
+#### Como cruzar e impugnar:
+
+- **Cruzamento:** Confronte as fórmulas matemáticas dos **Submódulos 2.1 e 4.1**.
+- **Fundamento:** Princípio da Economicidade e Jurisprudência do TCU (Acórdão nº 1.182/2020-Plenário). Custos em duplicidade geram orçamento inflado indevidamente.
+
+---
+
+### 5. Omissão de Insumos e Equipamentos Exigidos no TR (Módulo 5)
+
+#### Onde o erro se esconde:
+
+- **"Exigência no TR, Custo Zero na Planilha":** O Termo de Referência exige que a empresa forneça 3 lavadoras de alta pressão industriais, 2 veículos utilitários para fiscalização e uniformes antichama com certificação especial. Você vai ao Módulo 5 da planilha e encontra apenas custos genéricos de "vassouras e panos", com **custo zero para os veículos e lavadoras**.
+- **O Perigo para o Licitante:** Se a empresa cotar os veículos, seu preço estoura o orçamento estimado do órgão. Se não cotar, não consegue executar o TR após assinar o contrato.
+
+#### Como cruzar e impugnar:
+
+- **Cruzamento:** Coloque lado a lado a **Lista de Equipamentos/Materiais do TR vs. Itens do Módulo 5 da Planilha**.
+- **Fundamento:** Violação do art. 6º, XXIII, "i" e art. 23 da Lei 14.133/2021. O orçamento estimado deve guardar estrita correlação e coerência com todas as obrigações impostas no TR.
+
+---
+
+### 6. Ilegalidades Tributárias e o "Gross-Up" (Módulo 6)
+
+#### Onde o erro se esconde:
+
+- **Inclusão Ilegal de IRPJ e CSLL (Erro Gravíssimo):** A planilha inclui linhas tributárias para o Imposto de Renda Pessoa Jurídica (IRPJ) e Contribuição Social sobre o Lucro Líquido (CSLL). O TCU já pacificou que esses tributos são de natureza personalíssima sobre o lucro líquido da empresa e **não podem ser repassados para a Administração Pública**.
+- **Alíquota de ISS fora do município de prestação:** A planilha adota a alíquota de ISS de 5%, mas o serviço é executado em um município cuja lei tributária fixa o ISS daquela atividade em 2% (violação da LC 116/2003). Isso distorce o preço máximo aceitável em 3%.
+- **Erro no cálculo matemático ("Cálculo por Fora" em vez de "Preço por Dentro"):** Como os tributos incidem sobre a própria receita bruta da Nota Fiscal, eles devem ser calculados dividindo o custo por $(1 - \text{Tributos})$. Se o órgão simplesmente somar a porcentagem sobre o custo, o valor final não cobre os impostos reais da nota fiscal na hora da emissão.
+
+#### Como cruzar e impugnar:
+
+- **Cruzamento:** Verifique a lista de impostos do Módulo 6 e a legislação tributária do Município onde o serviço será executado.
+- **Fundamento:** **Súmula nº 254 do TCU** (_"É vedada a inclusão, no orçamento de referência e nas propostas dos licitantes, de despesas a título de IRPJ e de CSLL"_); Lei Complementar nº 116/2003 (art. 3º).
+
+---
+
+### O Roteiro Prático para Escrever a Impugnação da Planilha
+
+Quando você identificar um desses erros na planilha, a petição de impugnação deve seguir este esqueleto lógico:
+
+```markdown
+1. DA CLÁUSULA OBJETO DA IMPUGNAÇÃO:
+   (Indique a célula/linha exata da planilha e o valor incorreto)
+   Exemplo: "Módulo 3, item 3.2 – Multa rescisória calculada à alíquota de 50%".
+
+2. DO CONFRONTO JURÍDICO E DOCUMENTAL:
+   (Apresente a norma violada)
+   Exemplo: "Ocorre que a Lei Federal nº 13.932/2019 revogou o adicional de 10%
+   da LC 110/2001, fixando a alíquota exclusivamente em 40%".
+
+3. DO EFEITO CONCRETO (O PREJUÍZO):
+   (Mostre o impacto financeiro no certame)
+   Exemplo: "Tal equívoco gera um sobrepreço estimado de R$ 45.000,00 no
+   orçamento global da licitação, distorcendo o valor máximo aceitável".
+
+4. DO PEDIDO:
+   (Peça a retificação da planilha e a reabertura obrigatória de prazos)
+   Exemplo: "Requer-se a retificação da referida célula orçamentária e a
+   reabertura do prazo de divulgação do edital, nos termos do art. 55, § 1º
+   da Lei nº 14.133/2021".
+```

@@ -15,12 +15,13 @@ Este é o erro mais perigoso para contratos com mais de 12 meses de duração.
 - **Omissão total de índice de reajuste:** A minuta simplesmente não prevê nenhuma cláusula de reajuste, deixando a empresa sem proteção contra a inflação.
 - **Índice genérico ou condicionado:** Frases como: _"O contrato poderá ser reajustado a critério exclusivo da Administração"_ ou _"desde que haja disponibilidade orçamentária"_. O reajuste **não é favor** do Estado; é garantia constitucional de manutenção do equilíbrio econômico-financeiro (art. 37, XXI da CF/88).
 - **Data-base errada (O "ano fiscal que nunca chega"):** A minuta estipula que a contagem de 12 meses para o primeiro reajuste começa a contar a partir da _assinatura do contrato_ ou da _emissão da primeira ordem de serviço_.
-  - _O erro legal:_ A Lei nº 14.133/2021 (art. 25, § 7º) é taxativa: o prazo de 1 ano conta a partir da **data do orçamento estimado** ou da **data da apresentação da proposta** (quando os preços foram calculados no mercado).
+  - _O erro legal:_ A Lei nº 14.133/2021 (art. 25, § 7º, e art. 92, § 3º) vincula a data-base do reajuste à **data do orçamento estimado**. Nos serviços com dedicação exclusiva de mão de obra, o mecanismo é a repactuação, com datas da proposta (custos de mercado) e da convenção coletiva (mão de obra) — art. 135.
 
 #### Como fundamentar a impugnação:
 
-- **Fundamento:** Art. 92, XI e art. 25, § 7º da Lei 14.133/2021; art. 37, XXI da Constituição Federal; **Súmula nº 451 do STF** e jurisprudência pacífica do TCU.
-- **O Pedido:** Exigir a inserção expressa de índice oficial (ex.: IPCA) e a fixação da data-base correta atrelada à data do orçamento estimado.
+- **Fundamento:** Art. 92, V e X, art. 25, §§ 7º e 8º, e art. 135 da Lei 14.133/2021; art. 37, XXI da Constituição Federal; e jurisprudência pacífica do TCU.
+- **O Pedido (a) — bens e serviços sem dedicação exclusiva de mão de obra:** Exigir a inserção expressa de índice de reajuste (pode ser específico ou setorial) e a fixação da data-base vinculada à data do orçamento estimado (art. 25, § 7º; art. 92, § 3º).
+- **O Pedido (b) — serviços com dedicação exclusiva de mão de obra (caso típico da Servfaz):** Exigir a inserção de cláusula de repactuação (art. 25, § 8º, II), mediante demonstração analítica da variação dos custos, com as datas-base do art. 135 (proposta, para custos de mercado; acordo, convenção ou dissídio coletivo, para custos de mão de obra) e prazo de resposta ao pedido (art. 92, X).
 
 ---
 
@@ -34,7 +35,7 @@ Este é o erro mais perigoso para contratos com mais de 12 meses de duração.
 
 #### Como fundamentar a impugnação:
 
-- **Fundamento:** Arts. 92, V; 141; e 143 da Lei 14.133/2021. A existência de dotação orçamentária é pré-requisito da licitação (art. 18, VIII); o órgão não pode subordinar o pagamento a eventos incertos de terceiros.
+- **Fundamento:** Arts. 92, V; 141; e 143 da Lei 14.133/2021. A existência de dotação orçamentária é pré-requisito da licitação (art. 150: nenhuma contratação sem a indicação dos créditos orçamentários, sob pena de nulidade); o órgão não pode subordinar o pagamento a eventos incertos de terceiros.
 - **O Pedido:** Estabelecer prazo improrrogável de pagamento (geralmente até 10 ou 30 dias úteis após o ateste) e prever obrigatoriamente a fórmula de juros moratórios e correção monetária em caso de mora do Estado.
 
 ---
@@ -48,8 +49,8 @@ Este é o erro mais perigoso para contratos com mais de 12 meses de duração.
 
 #### Como fundamentar a impugnação:
 
-- **Fundamento:** Art. 96, § 1º da Lei nº 14.133/2021. O texto da lei é expresso ao dizer que a escolha entre caução em dinheiro, seguro-garantia ou fiança bancária **cabe ao contratado**, sendo prerrogativa exclusiva da empresa.
-- **O Pedido:** Adequação imediata da cláusula para permitir expressamente que a licitante opte por qualquer uma das três modalidades legais.
+- **Fundamento:** Art. 96, § 1º da Lei nº 14.133/2021. O texto da lei é expresso ao dizer que a escolha entre caução em dinheiro ou títulos da dívida pública, seguro-garantia, fiança bancária ou título de capitalização custeado por pagamento único **cabe ao contratado**, sendo prerrogativa exclusiva da empresa.
+- **O Pedido:** Adequação imediata da cláusula para permitir expressamente que a licitante opte por qualquer uma das quatro modalidades legais.
 
 ---
 
@@ -57,13 +58,13 @@ Este é o erro mais perigoso para contratos com mais de 12 meses de duração.
 
 #### Onde a armadilha se esconde:
 
-- **Percentuais abusivos sobre o valor global do contrato:** A minuta prevê que um atraso de 2 dias na entrega de um lote de R$ 5.000 gera uma multa moratória de _"20% sobre o valor global do contrato"_ (que é de R$ 2.000.000). A multa moratória deve incidir sobre a **parcela inadimplida**, e não sobre o contrato inteiro.
+- **Percentuais abusivos sobre o valor global do contrato:** A minuta prevê que um atraso de 2 dias na entrega de um lote de R$ 5.000 gera uma multa moratória de _"20% sobre o valor global do contrato"_ (que é de R$ 2.000.000). A tese é que, por proporcionalidade, a multa moratória deve incidir sobre a **parcela inadimplida**, e não sobre o contrato inteiro (a lei remete a multa de mora ao edital ou contrato — art. 162).
 - **Multas compensatórias que ultrapassam o teto legal:** Prever multas superiores a 30% do valor do contrato para rescisão unilateral.
 
 #### Como fundamentar a impugnação:
 
-- **Fundamento:** Art. 156, § 3º da Lei 14.133/2021 (que limita expressamente as multas a um teto máximo de **30%**) e os **Princípios da Proporcionalidade e da Razoabilidade** (art. 5º).
-- **O Pedido:** Readequação da base de cálculo das multas moratórias para incidirem estritamente sobre o valor do produto/serviço em atraso e redução das penalidades aos limites razoáveis de mercado (geralmente 0,2% a 0,5% ao dia).
+- **Fundamento:** Art. 162 da Lei 14.133/2021 (multa de mora na forma do edital ou contrato) e art. 156, § 3º (multa sancionatória entre 0,5% e 30% do valor do contrato — teto objetivo de **30%**), somados aos **Princípios da Proporcionalidade e da Razoabilidade** (art. 5º).
+- **O Pedido:** Readequação da base de cálculo das multas moratórias para incidirem estritamente sobre o valor do produto/serviço em atraso e redução das penalidades a patamares proporcionais (como parâmetro prático, 0,2% a 0,5% ao dia — não é exigência legal), respeitado o teto de 30%.
 
 ---
 
@@ -76,7 +77,9 @@ Este é o erro mais perigoso para contratos com mais de 12 meses de duração.
 
 #### Como fundamentar a impugnação:
 
-- **Fundamento:** Princípio da Vedação ao Enriquecimento Sem Causa do Estado e Jurisprudência do Superior Tribunal de Justiça (**STJ - REsp 1.733.688/SC** e Acórdãos do TCU): a Administração só pode reter ou glosar a parcela estritamente correspondente ao serviço não executado ou à pendência comprovada. Reter a remuneração de serviços efetivamente prestados é confisco ilegal.
+- **Fundamento:** Art. 143 da Lei 14.133/2021: a parcela incontroversa deve ser liberada no prazo de pagamento; reter além da parcela controvertida viola esse dispositivo e o Princípio da Vedação ao Enriquecimento Sem Causa do Estado.
+- **Nuance:** A retenção vinculada a verbas trabalhistas do próprio contrato é lícita. Nos contratos com dedicação exclusiva de mão de obra, o art. 121, § 3º permite exigir garantia para verbas rescisórias, condicionar o pagamento à quitação das obrigações trabalhistas vencidas do contrato, usar conta vinculada e pagar diretamente verbas inadimplidas, deduzindo do pagamento. O argumento deve atacar a retenção desvinculada (ex.: 100% da fatura por certidão acessória ou falta pontual).
+- _(Precedente do STJ antes citado — REsp 1.733.688/SC — não localizado; buscar precedente verificado.)_
 
 ---
 
@@ -111,8 +114,8 @@ Este é o erro mais perigoso para contratos com mais de 12 meses de duração.
 Abra a Minuta do Contrato e passe este filtro rápido:
 
 ```
-[ ] 1. O Reajuste de Preços tem índice claro (IPCA/INPC) e data-base explícita?
-[ ] 2. A empresa tem a liberdade de escolher entre Seguro, Fiança ou Caução?
+[ ] 1. O contrato prevê reajuste (índice + data-base do orçamento) ou, se houver dedicação exclusiva de mão de obra, repactuação (art. 25 §8º II e art. 135)?
+[ ] 2. A empresa tem a liberdade de escolher entre Caução, Seguro, Fiança ou Título de Capitalização?
 [ ] 3. O pagamento depende de "liberação de verbas futuras" de terceiros?
 [ ] 4. O atraso do pagamento pelo órgão prevê juros de mora e correção monetária?
 [ ] 5. As multas incidem sobre a parcela em atraso ou sobre o contrato total?

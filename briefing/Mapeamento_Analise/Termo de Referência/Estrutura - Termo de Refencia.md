@@ -13,7 +13,7 @@ Pela **Lei nº 14.133/2021 (art. 6º, inciso XXIII)**, o Termo de Referência é
 
 ### 2. A Estrutura Típica de um TR e a Finalidade de Cada Seção
 
-A legislação (art. 6º, XXIII) e os modelos padronizados da Administração Pública (como os da Advocacia-Geral da União - AGU) dividem o TR nas seguintes seções obrigatórias:
+A legislação (art. 6º, XXIII, alíneas "a" a "j" (a conferir)) e os modelos padronizados da Administração Pública (como os da Advocacia-Geral da União - AGU) orientam a divisão do TR nas seções abaixo. A correspondência de cada seção com as alíneas do art. 6º, XXIII está indicada entre parênteses (a conferir); seções sem alínea vêm do modelo da AGU. Para compras, o art. 40, § 1º acrescenta a especificação do produto, o local de entrega e as regras de recebimento e a garantia.
 
 ---
 
@@ -79,13 +79,15 @@ A legislação (art. 6º, XXIII) e os modelos padronizados da Administração P�
   - **Instrumento de Medição de Resultado (IMR)** ou Acordo de Nível de Serviço (**SLA**);
   - Fórmulas de descontos/glosas na fatura se o serviço atrasar ou for mal executado;
   - Prazo que o fiscal tem para atestar a nota (recebimento provisório e definitivo);
-  - Prazo legal de pagamento (ex.: até 10 ou 30 dias úteis após o ateste).
+  - Prazo de pagamento definido no contrato (art. 92, V) e no regulamento do ente (na esfera federal, IN SEGES 77/2022 (a conferir)) — não é prazo fixado pela Lei 14.133.
 - **Exemplo Prático:**
   > Em um contrato de internet: _"A disponibilidade do link deve ser de 99,5% ao mês. Para cada hora de indisponibilidade não programada além do limite, haverá glosa (desconto) de 2% no valor da fatura mensal"_.
 
 ---
 
 #### Seção VII: Obrigações da Contratada e da Contratante
+
+> _Seção do modelo da AGU; não corresponde a uma alínea do art. 6º, XXIII (a conferir)._
 
 - **A Finalidade:** É a **balança de responsabilidades** das partes para que não haja dúvidas sobre quem paga o quê.
 - **O que você encontra aqui:**
@@ -100,6 +102,29 @@ A legislação (art. 6º, XXIII) e os modelos padronizados da Administração P�
 - **O que você encontra aqui:**
   - Definição precisa de quais **parcelas de maior relevância técnica** serão exigidas nos atestados de capacidade (ex.: _"para comprovar qualificação técnica, o atestado deve comprovar instalação de ar-condicionado central tipo VRF, que representa a parcela crítica do serviço"_);
   - Justificativa da necessidade de apresentação de amostras ou prova de conceito (se houver).
+
+---
+
+#### Seção IX: Estimativa do Valor da Contratação
+
+> _Corresponde à alínea "i" do art. 6º, XXIII (a conferir)._
+
+- **A Finalidade:** Apresentar o valor estimado da contratação com memória de cálculo e documentos de suporte (preços unitários referenciais).
+- **O que você encontra aqui:**
+  - Valor estimado da contratação;
+  - Memória de cálculo;
+  - Remissão à pesquisa de preços e/ou à planilha de custos.
+
+---
+
+#### Seção X: Adequação Orçamentária
+
+> _Corresponde à alínea "j" do art. 6º, XXIII (a conferir)._
+
+- **A Finalidade:** Demonstrar que há recurso para a despesa.
+- **O que você encontra aqui:**
+  - Indicação da dotação orçamentária e da fonte de recursos;
+  - Compatibilidade com as leis orçamentárias.
 
 ---
 
@@ -124,6 +149,10 @@ A legislação (art. 6º, XXIII) e os modelos padronizados da Administração P�
 │ 7. DE QUEM É A CULPA?    │ Obrigações das Partes       │
 ├──────────────────────────┼─────────────────────────────┤
 │ 8. QUEM ESTÁ QUALIFICADO?│ Seleção e Atestados Chave   │
+├──────────────────────────┼─────────────────────────────┤
+│ 9. QUANTO CUSTA?         │ Estimativa do Valor         │
+├──────────────────────────┼─────────────────────────────┤
+│ 10. TEM DINHEIRO?        │ Adequação Orçamentária      │
 └──────────────────────────┴─────────────────────────────┘
 ```
 

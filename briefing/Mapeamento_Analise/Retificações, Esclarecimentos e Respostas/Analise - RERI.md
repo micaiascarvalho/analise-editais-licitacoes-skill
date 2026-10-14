@@ -46,7 +46,7 @@ Para transformar essa dinâmica em uma rotina operacional infalível, estruturam
           ▼                                                   ▼
    [DEFEITO ENCONTRADO]                               [RESPOSTA VÁLIDA]
  IMPUGNAÇÃO IMEDIATA DO ATO                        Atualizar Custos Internos
- (Pedido de Suspensão Liminar)                     Aguardar Abertura da Sessão
+ (Pedido de Suspensão da Sessão)                   Aguardar Abertura da Sessão
 ```
 
 ---
@@ -59,9 +59,9 @@ Para transformar essa dinâmica em uma rotina operacional infalível, estruturam
 
 - **A Armadilha do Pregoeiro:**
   O pregoeiro altera substancialmente uma regra técnica no texto de uma simples resposta no chat (ex.: _"Em atenção à empresa X, informamos que a exigência da certificação ISO 9001 está dispensada"_), mas **não publica uma retificação formal no Diário Oficial nem no PNCP**.
-- **O Perigo:** Essa resposta não tem força de alteração de edital. Se você participar sem a ISO, o pregoeiro pode voltar atrás na sessão e inabilitar sua empresa com base no texto "original" que nunca foi formalmente revogado.
+- **O Perigo:** Essa resposta vincula a Administração apenas quanto à **interpretação** do edital; ela **não tem força para alterar regra**. Dispensar uma exigência é mudança de regra e só vale por retificação formal (art. 55, § 1º). Se você participar sem a ISO, o pregoeiro pode voltar atrás na sessão e inabilitar sua empresa com base no texto "original" que nunca foi formalmente alterado.
 - **A Ação no Loop (Como Impugnar):**
-  - _Tese:_ **Violação ao Princípio da Vinculação e da Publicidade Obrigatória (art. 54 e art. 55 da Lei 14.133/2021).** Resposta a esclarecimento não substitui aditamento formal de edital.
+  - _Tese:_ **Violação ao Princípio da Vinculação e da Publicidade Obrigatória (art. 54 e art. 55, § 1º da Lei 14.133/2021).** Resposta a esclarecimento interpreta o edital, mas não substitui retificação formal quando altera regra.
   - _Pedido:_ Intimação do pregoeiro para que formalize a alteração via **Aviso de Retificação Oficial** no PNCP e no Diário Oficial.
 
 ---
@@ -72,8 +72,8 @@ Para transformar essa dinâmica em uma rotina operacional infalível, estruturam
   O órgão acolhe uma impugnação e altera a especificação de um motor, muda o prazo de entrega de 30 para 15 dias ou insere uma nova certidão na habilitação. Contudo, ele publica: _"Fica alterado o item X. Mantém-se a data da sessão para depois de amanhã"_.
 - **O Perigo:** A alteração mexe no preço e na cotação com fábricas. Sem tempo hábil, quem forçou a alteração de bastidores ganha a licitação sozinho.
 - **A Ação no Loop (Como Impugnar):**
-  - _Tese:_ **Violação frontal ao art. 55, § 1º da Lei nº 14.133/2021 e Acórdãos 2.380/2013 e 1.445/2015 do TCU.** Toda alteração que interfere na formulação da proposta impõe a reabertura integral do prazo original de divulgação (ex.: 8 ou 10 dias úteis).
-  - _Pedido:_ **Suspensão imediata da sessão pública** e reabertura de todo o prazo inicial de divulgação a contar da data da retificação.
+  - _Tese:_ **Violação frontal ao art. 55, § 1º da Lei nº 14.133/2021** (ver também Acórdãos 2.032/2021-Plenário e 2.078/2014-Plenário do TCU, a conferir). Toda alteração que interfere na formulação da proposta exige nova divulgação na mesma forma da inicial e reabertura do prazo originalmente fixado (ex.: 8 ou 10 dias úteis); o TCU entende que se reabre o prazo do edital original (Acórdão 930/2008-Plenário, a conferir).
+  - _Pedido:_ **Pedido de suspensão da sessão pública**, dirigido ao agente de contratação/pregoeiro ou à autoridade competente, e reabertura do prazo inicial de divulgação a contar da republicação. Atenção: a impugnação não tem efeito suspensivo automático. Se o pedido for negado, as vias externas são a representação ao tribunal de contas (art. 170, § 4º) e o mandado de segurança.
 
 ---
 
@@ -106,11 +106,11 @@ Para transformar essa dinâmica em uma rotina operacional infalível, estruturam
 
 - **A Armadilha do Pregoeiro:**
   - _Cenário A (Evasiva):_ Diante de um cálculo matemático com erro comprovado na planilha, o pregoeiro responde com um chavão: _"A impugnação não procede. O edital é soberano e autoexplicativo"_.
-  - _Cenário B (Intempestividade):_ O pregoeiro senta em cima das impugnações e publica as respostas às **23h45 da noite anterior à sessão** (marcada para as 09h00 da manhã seguinte).
+  - _Cenário B (Resposta na véspera):_ O pregoeiro publica a resposta às impugnações às **23h45 do último dia útil anterior à sessão** (marcada para as 09h00 da manhã seguinte). Atenção: isso **cumpre** o prazo do art. 164, parágrafo único (até 3 dias úteis, limitado ao último dia útil anterior à abertura). O problema não é o horário, e sim o conteúdo: se a resposta **altera regra que afeta as propostas** sem retificação e sem reabertura de prazo, ou se vem **sem motivação**.
 - **O Perigo:** Impedir o exercício do contraditório e não deixar tempo hábil para os licitantes formularem suas propostas definitivas com base na decisão.
 - **A Ação no Loop (Como Impugnar):**
-  - _Tese:_ **Nulidade por Ausência de Motivação (art. 50 da Lei nº 9.784/1999 e art. 5º da Lei 14.133/2021)** e **Descumprimento do Prazo Legal de Resposta (art. 164, parágrafo único)**, que exige decisão motivada com prazo útil anterior à abertura.
-  - _Pedido:_ Adiamento cautelar da sessão de abertura por cerceamento do direito de formulação de propostas competitivas.
+  - _Tese:_ **Nulidade por Ausência de Motivação (art. 50 da Lei nº 9.784/1999 e art. 5º da Lei 14.133/2021)** e, se a resposta alterou regra que afeta a formulação das propostas, **violação ao art. 55, § 1º** (nova divulgação e reabertura dos prazos originais). _Nota: a Lei 9.784/1999 vale na esfera federal; estados e municípios têm lei própria de processo administrativo — citar a do ente do edital._
+  - _Pedido:_ Pedido de suspensão da sessão dirigido ao pregoeiro/autoridade competente, com decisão motivada sobre a impugnação e, se houve alteração de regra, retificação formal com reabertura do prazo original (art. 55, § 1º).
 
 ---
 
@@ -121,7 +121,7 @@ Para cada nova publicação que surgir no portal, anote em uma tabela de control
 | Data/Hora da Publicação | Tipo de Documento     | Resumo da Resposta/Alteração               |      Passou nos 5 Checkpoints?       | Providência Imediata                              |
 | :---------------------- | :-------------------- | :----------------------------------------- | :----------------------------------: | :------------------------------------------------ |
 | _14/10 às 10h_          | Esclarecimento 01     | Informou marca de referência               |     ✅ Sim (mero esclarecimento)     | Ajustar proposta interna                          |
-| _15/10 às 16h_          | Errata nº 01          | Aumentou garantia de 12 para 24 meses      | ❌ **NÃO (Sem reabertura de prazo)** | **Protocolar Impugnação Urgente (Art. 55, § 1º)** |
-| _16/10 às 18h_          | Resposta à Impugnação | "Mantenha-se o edital" (evasiva sobre CCT) |   ❌ **NÃO (Falta de motivação)**    | **Petição de Reiteração / Representação ao TCE**  |
+| _15/10 às 16h_          | Errata nº 01          | Aumentou garantia de 12 para 24 meses      | ❌ **NÃO (Sem reabertura de prazo)** | **Protocolar Impugnação Urgente (Art. 55, § 1º) + pedido de suspensão da sessão** |
+| _16/10 às 18h_          | Resposta à Impugnação | "Mantenha-se o edital" (evasiva sobre CCT) |   ❌ **NÃO (Falta de motivação)**    | **Petição de Reiteração / Representação ao tribunal de contas (art. 170, § 4º)**  |
 
 Esse registro garante que nenhuma armadilha de última hora passe despercebida e que sua empresa esteja sempre um passo à frente do pregoeiro e dos concorrentes.

@@ -18,6 +18,7 @@ Este é o vício clássico apontado em operações da Polícia Federal e auditor
 - **Cruzamento no Comprovante de CNPJ (RedeSim/Receita Federal):**
   - Pegue o CNPJ das 3 empresas que deram orçamento no mapa e consulte o **Quadro de Sócios e Administradores (QSA)** e o endereço cadastrado.
   - _O que procurar:_ Mesmos sócios, mesmo endereço físico, e-mails com o mesmo domínio ou números de telefone idênticos.
+  - _Como registrar o resultado:_ anote só o vínculo encontrado (sim/não e o tipo — sócio em comum, mesmo endereço, mesmo contador, parentesco), sem nomes nem CPF de sócios.
 - **Confronto com o CNAE:** Verifique se as empresas que enviaram os orçamentos possuem Classificação Nacional de Atividades Econômicas (CNAE) compatível com o objeto. Uma empresa de "comércio varejista de bebidas" não pode cotar "serviços de engenharia e climatização".
 - **Fundamento Jurídico:** Violação ao art. 11, III (combate a fraudes) e art. 23 da Lei 14.133/2021; Acórdãos recorrentes do TCU sobre **fraude na fase de pesquisa de preços por vínculos entre cotistas**.
 
@@ -34,7 +35,7 @@ Este é o vício clássico apontado em operações da Polícia Federal e auditor
 
 - **Cruzamento:** Confronte o **Volume Licitado no TR vs. Contratações Similares no Painel de Preços do Governo Federal (PNCP)**.
 - **A Prova:** Mostre que compras públicas do mesmo porte (dezenas de milhares de unidades) foram homologadas em outros órgãos com valor 30% a 50% menor por aplicarem a **economia de escala**.
-- **Fundamento Jurídico:** Art. 23, § 1º da Lei 14.133/2021 e jurisprudência do TCU (Súmula nº 177 e Acórdão nº 2.637/2015-Plenário: _a pesquisa de preços deve considerar a escala da contratação, sendo vedada a utilização de preços de balcão/varejo para compras de grande vulto_).
+- **Fundamento Jurídico:** Art. 23, caput, da Lei 14.133/2021, que manda observar "a potencial economia de escala" na estimativa do valor (fundamento principal), combinado com o § 1º. A Súmula nº 177 do TCU trata da definição do objeto, e o Acórdão nº 2.637/2015-Plenário, segundo fonte secundária, trata de pesquisa restrita a poucos fornecedores; use-os só como reforço, depois de conferidos (a conferir).
 
 ---
 
@@ -52,13 +53,13 @@ Este é o vício clássico apontado em operações da Polícia Federal e auditor
 
 - **Cruzamento:** Refaça a conta da planilha aplicando o **método da Mediana** ou o **desvio-padrão** para identificar valores discrepantes.
 - **A Prova:** Demonstre que a simples aplicação da Mediana (que seria R$ 110,00) ou o descarte do valor desarrazoado reduziria o orçamento para o patamar real do mercado.
-- **Fundamento Jurídico:** Art. 23 da Lei 14.133/2021 e **IN SEGES/ME nº 65/2021 (art. 6º, § 4º)**: _devem ser desconsiderados os valores inexequíveis, inconsistentes e os excessivamente elevados_.
+- **Fundamento Jurídico:** Art. 23 da Lei 14.133/2021 e **IN SEGES/ME nº 65/2021 (art. 6º, § 4º)** (norma federal; em estados e municípios, conferir o regulamento do ente): _devem ser desconsiderados os valores inexequíveis, inconsistentes e os excessivamente elevados_.
 
 ---
 
 ### 4. A Armadilha do Orçamento Defasado / Inexequível (Teto Irreal)
 
-Nem todo erro na pesquisa serve para superfaturar; muitas vezes o erro serve para **rebaixar o teto a ponto de inviabilizar a disputa**.
+Nem todo erro na pesquisa serve para gerar sobrepreço; muitas vezes o erro serve para **rebaixar o teto a ponto de inviabilizar a disputa**.
 
 #### Onde o erro se esconde:
 
@@ -73,17 +74,17 @@ Nem todo erro na pesquisa serve para superfaturar; muitas vezes o erro serve par
 
 ---
 
-### 5. Inobservância da Prioridade Legal de Fontes (Ignorar o Painel de Preços)
+### 5. Inobservância da Prioridade Regulamentar de Fontes (Ignorar o Painel de Preços)
 
 #### Onde o erro se esconde:
 
-- **"Fuga" dos bancos de dados públicos:** O art. 23, § 1º da Lei 14.133/2021 coloca os bancos de preços oficiais do governo (PNCP, Painel de Preços) como fontes prioritárias. Muitas vezes o servidor ignora essas bases e vai direto a 3 empresas locais amigas para colher orçamentos inflados, sem justificar por que não utilizou os bancos de dados públicos.
+- **"Fuga" dos bancos de dados públicos:** A Lei 14.133/2021 manda considerar os bancos de dados públicos (art. 23, caput), mas o § 1º permite adotar os parâmetros de forma combinada ou não, sem ordem obrigatória para bens e serviços. A prioridade ao Painel de Preços e às contratações similares (parâmetros I e II) vem, na esfera federal, da IN SEGES/ME 65/2021 (art. 5º, § 1º) (a conferir); em estados e municípios, verifique o regulamento do ente. Muitas vezes o servidor ignora essas bases e vai direto a 3 empresas locais amigas para colher orçamentos inflados, sem justificar por que não utilizou os bancos de dados públicos.
 
 #### Como cruzar e demonstrar na impugnação:
 
 - **Cruzamento:** Entre no **Painel de Preços do Governo Federal (paineldeprecos.planejamento.gov.br)** e pesquise o mesmo item (usando o código CATMAT/CATSER).
 - **A Prova:** Mostre que existem dezenas de contratações recentes de outros órgãos para o mesmo objeto registradas no sistema oficial por valores substancialmente menores, as quais foram arbitrariamente ignoradas pelo órgão promotor da licitação.
-- **Fundamento Jurídico:** Art. 23, § 1º, I e II da Lei 14.133/2021; Acórdão nº 1.445/2015-Plenário do TCU (_a utilização exclusiva de cotações com fornecedores sem justificativa para a não consulta aos bancos públicos é irregular_).
+- **Fundamento Jurídico:** Art. 23, caput e § 1º, I e II, da Lei 14.133/2021; IN SEGES/ME nº 65/2021, art. 5º, § 1º (esfera federal) (a conferir); Acórdão nº 1.445/2015-Plenário do TCU, que deu prioridade ao Comprasnet e às contratações similares, ainda sob a IN 5/2014 (a conferir).
 
 ---
 

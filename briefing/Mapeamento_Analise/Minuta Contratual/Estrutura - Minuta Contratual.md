@@ -48,10 +48,13 @@ Esta é a cláusula mais importante para a saúde financeira de longo prazo da e
   - _O que é:_ Reposição automática da perda do poder de compra da moeda pela inflação acumulada após 12 meses.
   - _Requisitos Obrigatórios:_ A minuta **deve** definir expressamente:
     1. O **índice econômico oficial** a ser aplicado (ex.: IPCA, INPC, IGP-M ou índices setoriais como SINAPI);
-    2. A **data-base (marco zero)** da contagem do prazo de 1 ano. Na Lei 14.133/2021 (art. 25, § 7º), o prazo conta a partir da **data do orçamento estimado** ou da **data da apresentação da proposta**.
+    2. A **data-base (marco zero)** da contagem do prazo de 1 ano. Na Lei 14.133/2021 (art. 25, § 7º, e art. 92, § 3º), a data-base é vinculada à **data do orçamento estimado**; pode haver mais de um índice, específico ou setorial. A data da apresentação da proposta não é data-base do reajuste: ela aparece na repactuação (art. 135, I), para os custos de mercado.
+  - _Quando se aplica:_ serviços contínuos **sem** dedicação exclusiva nem predominância de mão de obra (art. 25, § 8º, I), observado o interregno mínimo de 1 ano.
 - **3.2. Repactuação (Para Serviços com Dedicação Exclusiva de Mão de Obra):**
-  - _O que é:_ Negociação de preços decorrente da variação real dos custos da folha de pagamento provocada por novas Convenções Coletivas de Trabalho (CCTs).
-  - _Requisitos:_ Direito potestativo do contratado após 1 ano da data do acordo anterior. A minuta deve disciplinar o procedimento e os documentos necessários para a empresa solicitar a repactuação.
+  - _O que é:_ Recomposição do preço mediante **demonstração analítica da variação dos custos** do contrato (art. 25, § 8º, II).
+  - _Quando se aplica:_ É o critério **obrigatório** nos serviços contínuos com dedicação exclusiva ou predominância de mão de obra (caso típico da Servfaz), observado o interregno mínimo de 1 ano.
+  - _Datas-base (art. 135):_ I) data da apresentação da proposta, para custos de mercado; II) data do acordo, convenção ou dissídio coletivo, para custos de mão de obra.
+  - _Na minuta:_ Procedimento, documentos exigidos e prazo de resposta ao pedido de repactuação (art. 92, X).
 - **3.3. Revisão / Reequilíbrio Econômico-Financeiro (Realinhamento por Fato Imprevisível):**
   - _O que é:_ Ocorrência de eventos extraordinários, imprevisíveis ou de consequências incalculáveis que tornem a execução ruinosa (teoria da imprevisão, pandemia, desvalorização cambial abrupta, criação de novos tributos - _fato do príncipe_).
   - _Diferença:_ Pode ser requerido a **qualquer tempo**, não precisando esperar 12 meses.
@@ -66,7 +69,8 @@ Define a caução que a empresa deve depositar para garantir que cumprirá o con
   - A lei dá expressamente à **empresa contratada** o direito de escolher qual modalidade de garantia prestará entre:
     - **I - Caução em dinheiro** ou em títulos da dívida pública;
     - **II - Seguro-garantia** emitido por seguradora autorizada pela SUSEP;
-    - **III - Fiança bancária** emitida por instituição financeira.
+    - **III - Fiança bancária** emitida por instituição financeira;
+    - **IV - Título de capitalização** custeado por pagamento único.
   - _(A minuta **não pode** impor uma modalidade específica, sob pena de ilegalidade)._
 - **4.2. Limites Percentuais:**
   - Regra geral: até **5%** do valor inicial do contrato;
@@ -86,7 +90,7 @@ Uma das maiores inovações da Nova Lei de Licitações. É a "tabela de divisã
 - **5.2. Riscos da Administração Pública:**
   - Demora na emissão de licenças ambientais cuja responsabilidade seja do órgão, desapropriações de terrenos judiciais atrasadas, alterações de projetos arquitetônicos por determinação do Estado, ocorrência de eventos geológicos não detectados nas sondagens prévias.
 - **5.3. Efeito Jurídico:**
-  - Se um fato ocorrer e a matriz definir que o risco é da Administração, a empresa tem direito imediato a aditivo de prazo e de valor financeiro (reequilíbrio), sem discussões burocráticas.
+  - Cumpridas as condições do contrato e da matriz, considera-se mantido o equilíbrio econômico-financeiro, e as partes renunciam a pedidos de reequilíbrio relativos aos riscos assumidos, **exceto** nas alterações unilaterais (art. 124, I) e na variação de tributos por lei superveniente (art. 103, § 5º). Se o risco materializado foi alocado à Administração, a matriz é a base do pedido de aditivo de prazo e valor, que ainda depende de instrução e análise. A obrigatoriedade da matriz depende do porte e do regime da contratação (art. 22 — a conferir).
 
 ---
 
@@ -132,8 +136,8 @@ Lista as hipóteses de término antecipado do vínculo e protege a empresa contr
     - **Atraso de pagamento superior a 2 (dois) meses** (art. 137, § 2º, IV);
     - Suspensão da execução por ordem escrita do órgão por mais de 3 (três) meses;
     - Não liberação do local de trabalho, terreno ou ordem de serviço no prazo combinado.
-- **8.3. Indenização à Empresa em Rescisão sem Culpa:**
-  - Se o contrato for extinto por razões de interesse público (sem culpa da empresa), a minuta deve garantir à contratada o ressarcimento dos prejuízos comprovados, devolução da garantia e pagamento dos custos de desmobilização da equipe (art. 138, § 2º).
+- **8.3. Indenização à Empresa em Extinção por Culpa Exclusiva da Administração:**
+  - Quando a extinção decorrer de culpa exclusiva da Administração, a contratada tem direito ao ressarcimento dos prejuízos regularmente comprovados, à devolução da garantia, aos pagamentos devidos pela execução até a extinção e ao pagamento do custo da desmobilização (art. 138, § 2º). _O regime da extinção por razões de interesse público deve ser verificado à parte (a conferir)._
 
 ---
 

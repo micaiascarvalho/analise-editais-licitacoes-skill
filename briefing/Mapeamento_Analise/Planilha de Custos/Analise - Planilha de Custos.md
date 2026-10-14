@@ -15,7 +15,7 @@ Abaixo estão os **6 maiores grupos de erros, fraudes e omissões** que costumam
 #### Como cruzar e impugnar:
 
 - **Cruzamento:** Confronte a **Planilha vs. CCT da Categoria no Sistema MEDIADOR do MTE** e com a **Súmula nº 448 do TST** (insalubridade em banheiros públicos).
-- **Fundamento:** Violação ao art. 23 e art. 59, III da Lei 14.133/2021. Se a planilha adota piso salarial defasado, ela induz os licitantes a apresentarem propostas que violam normas trabalhistas cogentes.
+- **Fundamento:** Violação ao art. 23 e art. 59, III da Lei 14.133/2021. Se a planilha adota piso salarial defasado, ela induz os licitantes a apresentarem propostas que violam normas trabalhistas cogentes. Reforço: o art. 63, §1º exige que o licitante declare que sua proposta cobre todos os custos trabalhistas, incluindo os da CCT, o que fica inviável com piso defasado. Se a nova CCT for homologada depois da data do orçamento, o reequilíbrio no contrato se dá por repactuação (art. 25, §8º, II e art. 135).
 
 ---
 
@@ -23,7 +23,7 @@ Abaixo estão os **6 maiores grupos de erros, fraudes e omissões** que costumam
 
 #### Onde o erro se esconde:
 
-- **Omissão do desconto legal do Vale-Transporte (Superfaturamento artificial):** O órgão coloca na planilha o valor integral de duas passagens diárias por trabalhador, mas "esquece" de aplicar o desconto legal de até **6% do salário-base** previsto na Lei nº 7.418/85. Isso infla o valor estimado da licitação artificialmente.
+- **Omissão do desconto legal do Vale-Transporte (Sobrepreço):** O órgão coloca na planilha o valor integral de duas passagens diárias por trabalhador, mas "esquece" de aplicar o desconto legal de até **6% do salário-base** previsto na Lei nº 7.418/85. Isso infla o valor estimado da licitação artificialmente. (Sobrepreço é o vício do orçamento; superfaturamento ocorre na execução do contrato — distinção do art. 11, III.)
 - **Omissão de Benefícios Obrigatórios da CCT (Subdimensionamento / Inexequibilidade):** A CCT obriga o pagamento de R$ 12,00/mês de Seguro de Vida e R$ 15,00/mês de Assistência Odontológica. A planilha do órgão omite essas linhas. O licitante que cotar esses benefícios terá seu preço mais alto do que quem omitir, gerando concorrência desleal.
 - **Alíquotas do Sistema "S" ou Salário-Educação incompatíveis com a atividade:** Aplicar alíquotas patronais de indústria (FPAS 507) para empresas puramente prestadoras de serviços de limpeza ou segurança (FPAS 515).
 
@@ -44,7 +44,7 @@ Abaixo estão os **6 maiores grupos de erros, fraudes e omissões** que costumam
 #### Como cruzar e impugnar:
 
 - **Cruzamento:** Verifique a fórmula da célula da Multa do FGTS no arquivo Excel/PDF da planilha.
-- **Fundamento:** Art. 12 da Lei nº 13.932/2019 e Nota Técnica SEI nº 2.012/2020/ME. A manutenção da alíquota extinta gera **sobrepreço no orçamento de referência**.
+- **Fundamento:** Art. 12 da Lei nº 13.932/2019, que extinguiu os 10% adicionais. O STF (Tema 846) declarou a contribuição constitucional no período anterior à extinção (fonte secundária). A manutenção da alíquota extinta gera **sobrepreço no orçamento de referência**.
 
 ---
 
@@ -54,13 +54,13 @@ Este é um dos erros técnicos mais comuns em serviços com dedicação exclusiv
 
 #### Onde o erro se esconde:
 
-- **Dupla cobrança da reposição de férias:** O órgão inclui a provisão de pagamento das férias do titular no Módulo 2 (1/12 avos do salário + terço constitucional) e, ao mesmo tempo, inclui no Módulo 4 o custo integral de um funcionário substituto de férias com novos encargos incidentes sobre a mesma base, duplicando o encargo social daquela rubrica.
+- **Dupla cobrança da reposição de férias:** O órgão inclui a provisão de pagamento das férias do titular no Submódulo 2.1 (1/12 avos do salário + terço constitucional) e, ao mesmo tempo, inclui no Submódulo 4.1-A o custo integral de um funcionário substituto de férias com novos encargos incidentes sobre a mesma base, duplicando o encargo social daquela rubrica. O modelo traz as duas rubricas, mas elas **não devem ser somadas quando cobrem o mesmo custo**.
 - **Falta de adaptação para a Escala 12x36:** Na escala 12x36, o trabalhador folga 36 horas seguidas. O cálculo de reposição por faltas ou ausências legais não pode seguir a mesma fórmula de quem trabalha de segunda a sexta (44 horas semanais), sob pena de superestimar a necessidade de funcionários substitutos.
 
 #### Como cruzar e impugnar:
 
-- **Cruzamento:** Confronte as fórmulas matemáticas dos **Submódulos 2.1 e 4.1**.
-- **Fundamento:** Princípio da Economicidade e Jurisprudência do TCU (Acórdão nº 1.182/2020-Plenário). Custos em duplicidade geram orçamento inflado indevidamente.
+- **Cruzamento:** Confronte as fórmulas matemáticas dos **Submódulos 2.1 (provisão de férias) e 4.1-A (substituto nas férias)**.
+- **Fundamento:** Princípio da Economicidade. Apoio: esclarecimento do MEC, pregão 2024 (fonte secundária), que trata as duas provisões como alternativas. Acórdão nº 1.182/2020-Plenário (não localizado — a conferir). Custos em duplicidade geram orçamento inflado indevidamente.
 
 ---
 
@@ -83,13 +83,13 @@ Este é um dos erros técnicos mais comuns em serviços com dedicação exclusiv
 #### Onde o erro se esconde:
 
 - **Inclusão Ilegal de IRPJ e CSLL (Erro Gravíssimo):** A planilha inclui linhas tributárias para o Imposto de Renda Pessoa Jurídica (IRPJ) e Contribuição Social sobre o Lucro Líquido (CSLL). O TCU já pacificou que esses tributos são de natureza personalíssima sobre o lucro líquido da empresa e **não podem ser repassados para a Administração Pública**.
-- **Alíquota de ISS fora do município de prestação:** A planilha adota a alíquota de ISS de 5%, mas o serviço é executado em um município cuja lei tributária fixa o ISS daquela atividade em 2% (violação da LC 116/2003). Isso distorce o preço máximo aceitável em 3%.
+- **Alíquota de ISS de município errado:** A planilha adota a alíquota de ISS de 5%, mas o município competente fixa o ISS daquela atividade em 2%. Isso distorce o preço máximo aceitável em 3%. _Cuidado:_ pela LC 116/2003 (art. 3º), a regra é o ISS do local do **estabelecimento prestador**, com exceções por item da lista de serviços, em que vale o local da prestação (limpeza e vigilância estão entre as exceções — a conferir). Antes de impugnar, confira o item da lista e qual é o município competente.
 - **Erro no cálculo matemático ("Cálculo por Fora" em vez de "Preço por Dentro"):** Como os tributos incidem sobre a própria receita bruta da Nota Fiscal, eles devem ser calculados dividindo o custo por $(1 - \text{Tributos})$. Se o órgão simplesmente somar a porcentagem sobre o custo, o valor final não cobre os impostos reais da nota fiscal na hora da emissão.
 
 #### Como cruzar e impugnar:
 
-- **Cruzamento:** Verifique a lista de impostos do Módulo 6 e a legislação tributária do Município onde o serviço será executado.
-- **Fundamento:** **Súmula nº 254 do TCU** (_"É vedada a inclusão, no orçamento de referência e nas propostas dos licitantes, de despesas a título de IRPJ e de CSLL"_); Lei Complementar nº 116/2003 (art. 3º).
+- **Cruzamento:** Verifique a lista de impostos do Módulo 6, o item da lista de serviços da LC 116/2003 e a legislação tributária do Município competente.
+- **Fundamento:** **Súmula nº 254 do TCU**, segundo a qual IRPJ e CSLL não são despesas indiretas passíveis de inclusão no BDI do orçamento-base, por serem tributos diretos e personalísticos (paráfrase, fonte secundária; citar o texto entre aspas só depois de conferir no portal do TCU); Lei Complementar nº 116/2003 (art. 3º).
 
 ---
 

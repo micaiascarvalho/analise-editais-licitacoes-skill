@@ -35,7 +35,7 @@ Abaixo está a estrutura típica completa e o objetivo de cada seção:
 - **Objetivo:** Garantir a existência de dotação orçamentária prévia para pagar o futuro contratado.
 - **O que define:**
   - A classificação funcional-programática da despesa (rubrica no orçamento público);
-  - Garantia legal de que o órgão tem dinheiro previsto em orçamento antes de iniciar o certame (art. 18, VIII e art. 150 da Lei 14.133/2021).
+  - Garantia legal de que o órgão tem dinheiro previsto em orçamento antes de iniciar o certame (art. 150 da Lei 14.133/2021, sob pena de nulidade, e caput do art. 18, que exige compatibilização com as leis orçamentárias).
 
 ---
 
@@ -44,7 +44,7 @@ Abaixo está a estrutura típica completa e o objetivo de cada seção:
 - **Objetivo:** Estabelecer quem pode e quem não pode entrar na disputa.
 - **O que define:**
   - Requisitos gerais de admissão (pessoas jurídicas, MEI, filiais, etc.);
-  - Tratamento diferenciado a Microempresas e Empresas de Pequeno Porte (itens exclusivos até R$ 80 mil ou cotas reservadas de até 25% pela LC 123/2006);
+  - Tratamento diferenciado a Microempresas e Empresas de Pequeno Porte (itens exclusivos até R$ 80 mil ou, para bens de natureza divisível, cotas reservadas de até 25% pela LC 123/2006, art. 48, III, observadas as exceções do art. 49 da LC 123/2006 e os limites do art. 4º da Lei 14.133/2021 (a conferir));
   - Regras para consórcios de empresas (se admitidos ou vedados) e cooperativas;
   - Rol de impedimentos legais (empresas suspensas, inidôneas, em falência ou com vínculos de parentesco com servidores do órgão).
 
@@ -68,7 +68,7 @@ Abaixo está a estrutura típica completa e o objetivo de cada seção:
   - Horário de abertura da etapa de lances pelo pregoeiro/agente de contratação;
   - Mecânica do modo de disputa (ex.: tempo fixo de 10 minutos com prorrogações sucessivas de 2 minutos no modo aberto);
   - Intervalo mínimo de diferença de valores ou percentuais entre lances sucessivos (passo de lance);
-  - Critérios de desempate (preferência para ME/EPP, bens sustentáveis, sorteio).
+  - Critérios de desempate do art. 60 da Lei 14.133/2021, nesta ordem: disputa final entre os empatados, avaliação do desempenho contratual prévio, ações de equidade de gênero no ambiente de trabalho e programa de integridade; persistindo o empate, as preferências do §1º (empresas do estado do ente, empresas brasileiras, investimento em pesquisa e desenvolvimento no País, práticas de mitigação). O empate ficto de ME/EPP corre à parte (art. 44 da LC 123/2006, ressalvado pelo §2º do art. 60). O sorteio era critério da Lei 8.666/1993 e não consta do art. 60.
 
 ---
 

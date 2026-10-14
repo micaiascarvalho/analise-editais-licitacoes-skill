@@ -2,6 +2,8 @@ Para realizar uma análise técnica ou uma impugnação contábil de alto nível
 
 No serviço público brasileiro, o padrão mais rigoroso e utilizado pelos órgãos é o modelo federal (instituído pela **IN SEGES/MPDG nº 05/2017** e atualizado pela **IN SEGES/MGI nº 98/2022**). Esse padrão desdobra a planilha em **6 Módulos com submódulos matemáticos detalhados**.
 
+> **Nota sobre a esfera:** a IN SEGES/MPDG nº 05/2017 e o seu modelo de planilha são normas **federais**. Estados e municípios podem ter modelo próprio ou adotar o federal; confira o regulamento do ente que publicou o edital.
+
 Abaixo está o detalhamento completo de cada módulo, suas subdivisões, fórmulas e segredos práticos:
 
 ---
@@ -31,11 +33,34 @@ Este módulo apura quanto custa a remuneração direta do trabalhador por mês. 
 
 ---
 
-### Módulo 2: Benefícios Mensais e Diários + Encargos Previdenciários (GPS)
+### Módulo 2: Encargos e Benefícios Anuais, Mensais e Diários
 
-Este módulo divide-se em duas grandes vertentes: o que vai direto para o trabalhador no dia a dia e o que vai para o Governo (tributos sobre a folha).
+_Correspondência com o modelo da IN 5/2017, alterada pela IN 7/2018: (a conferir no Anexo VII-D da IN 5/2017)._
 
-#### Submódulo 2.1: Benefícios Mensais e Diários (Custo Direto do Trabalhador)
+Este módulo divide-se em três vertentes: as provisões anuais do trabalhador (13º e férias), o que vai para o Governo (tributos sobre a folha) e o que vai direto para o trabalhador no dia a dia (benefícios).
+
+#### Submódulo 2.1: 13º Salário, Férias e Adicional de Férias
+
+- **13º Salário:** provisão mensal de 1/12 da remuneração = **8,33%** (a conferir).
+- **Férias e Adicional de Férias (1/3 constitucional):** provisão mensal das férias do titular acrescidas do terço (percentual a conferir).
+  - _Atenção:_ esta provisão e o substituto de férias do Submódulo 4.1-A **não devem ser somados quando cobrem o mesmo custo** (ver a Análise, item 4).
+
+#### Submódulo 2.2: GPS, FGTS e Outras Contribuições
+
+São as alíquotas incidentes sobre a folha de pagamento:
+
+- **INSS Patronal:** **20,00%** (contribuição previdenciária da cota patronal). Se a empresa estiver na desoneração (CPRB), veja a transição da Lei nº 14.973/2024 no Módulo 6;
+- **FGTS:** **8,00%**;
+- **Salário-Educação:** **2,50%**;
+- **INCRA:** **0,20%**;
+- **Sistema "S" (SESI/SENAI, SESC/SENAC, SEST/SENAT):** desdobrar por entidade conforme o código FPAS da atividade. SESC+SENAC (ou SESI+SENAI) somam **2,5%**; o percentual usual de 3,10% parece já incluir o SEBRAE (a conferir na tabela FPAS);
+- **SEBRAE:** **0,60%** (não somar de novo se já estiver incluído no percentual do Sistema "S");
+- **RAT/SAT ajustado pelo FAP:**
+  - RAT (Risco Ambiental do Trabalho): alíquota base de **1%, 2% ou 3%** conforme o risco da atividade.
+  - FAP (Fator Acidentário de Prevenção): multiplicador que varia de **0,5 a 2,0**.
+  - _O RAT Final:_ Pode variar de **0,5% até 6,0%**. A planilha do órgão normalmente adota FAP neutro (1,0).
+
+#### Submódulo 2.3: Benefícios Mensais e Diários (Custo Direto do Trabalhador)
 
 - **Vale-Transporte (VT):**
   - Cálculo: $(Tarifa \times 2 \text{ viagens} \times Dias Trabalhados) - Desconto Legal$.
@@ -47,21 +72,6 @@ Este módulo divide-se em duas grandes vertentes: o que vai direto para o trabal
 - **Seguro de Vida em Grupo:**
   - Apólice obrigatória exigida na quase totalidade das CCTs de vigilância e limpeza (geralmente entre R$ 5,00 e R$ 15,00 por funcionário/mês).
 
-#### Submódulo 2.2: Encargos Previdenciários (GPS), FGTS e Contribuições Sociais
-
-São as alíquotas incidentes sobre a folha de pagamento:
-
-- **INSS Patronal:** **20,00%** (contribuição previdenciária da cota patronal);
-- **FGTS:** **8,00%**;
-- **Salário-Educação:** **2,50%**;
-- **INCRA:** **0,20%**;
-- **Sistema "S" (SESI/SENAI, SESC/SENAC, SEST/SENAT):** Varia entre **3,10% e 3,30%** conforme o código FPAS da atividade;
-- **SEBRAE:** **0,60%**;
-- **RAT/SAT ajustado pelo FAP:**
-  - RAT (Risco Ambiental do Trabalho): alíquota base de **1%, 2% ou 3%** conforme o risco da atividade.
-  - FAP (Fator Acidentário de Prevenção): multiplicador que varia de **0,5 a 2,0**.
-  - _O RAT Final:_ Pode variar de **0,5% até 6,0%**. A planilha do órgão normalmente adota FAP neutro (1,0).
-
 ---
 
 ### Módulo 3: Provisão para Rescisão Contratual
@@ -70,8 +80,10 @@ A Administração retém ou provisiona esses valores todo mês para garantir que
 
 - **3.1. Aviso Prévio Trabalhado:**
   - Percentual mensal guardado para pagar o salário do último mês em que o trabalhador cumpre o aviso.
-- **3.2. Aviso Prévio Indenizado (Lei nº 12.506/2011):**
-  - Para contratos que duram mais de 1 ano, o trabalhador ganha **3 dias a mais por ano de serviço** até o teto de 90 dias. A planilha precisa conter uma fração atuarial para essa indenização.
+  - _Parâmetro do TCU:_ **1,94%** no 1º ano de contrato (Acórdão 1186/2017-Plenário). Para as prorrogações, o Acórdão 58/2026-Plenário e a Nota Técnica SEI 35883/2026/MGI alteram a regra (fonte secundária, a conferir).
+- **3.2. Aviso Prévio Indenizado e Aviso Prévio Proporcional:**
+  - _Indenizado:_ o trabalhador é dispensado de cumprir o período e a empresa paga o valor correspondente.
+  - _Proporcional (Lei nº 12.506/2011):_ para contratos que duram mais de 1 ano, o trabalhador ganha **3 dias a mais por ano de serviço** até o teto de 90 dias. A planilha precisa conter uma fração atuarial para esse acréscimo.
 - **3.3. Multa Rescisória do FGTS (40%):**
   - Cálculo da indenização compensatória de 40% sobre todos os depósitos de FGTS feitos durante a vigência contratual.
   - _Ponto crítico histórico:_ A Lei Complementar nº 110/2001 previa mais 10% (totalizando 50%). A Lei nº 13.932/2019 **extinguiu os 10% adicionais**. Se a planilha do órgão ainda cobrar 50%, há erro de cálculo a ser impugnado.
@@ -84,15 +96,27 @@ A Administração retém ou provisiona esses valores todo mês para garantir que
 
 A Administração Pública não contrata um "indivíduo"; ela contrata um **"posto de serviço ininterrupto"** (ex.: a portaria não pode ficar vazia nenhum dia útil do ano). Quando o titular falta, tira férias ou adoece, a empresa precisa colocar um substituto. Este módulo precifica esse substituto.
 
-- **4.1. Cobertura de Férias do Titular:**
-  - Todo trabalhador tem direito a 30 dias de férias após 12 meses.
-  - O substituto trabalhará esses 30 dias e receberá salário + encargos + benefícios.
-  - Fração atuarial padrão: aproximadamente **8,33%** a **11%** (dependendo da escala de trabalho: 44h semanais vs. escala 12x36).
-- **4.2. Ausências Legais (Art. 473 da CLT):**
-  - Dias remunerados em que o titular falta por direito da lei: casamento (3 dias), falecimento de parente próximo (2 dias), doação de sangue (1 dia), nascimento de filho (licença paternidade de 5 a 20 dias), convocação da Justiça Eleitoral.
-  - O percentual varia de **0,28% a 0,56%** da remuneração.
-- **4.3. Licença Paternidade e Acidentes de Trabalho:**
-  - A empresa cobre os primeiros **15 dias de atestado médico** antes de o funcionário entrar no benefício previdenciário do INSS.
+_Correspondência com o modelo: (a conferir no Anexo VII-D da IN 5/2017)._
+
+- **4.1. Substituto nas Ausências Legais:**
+  - **A. Férias:**
+    - Todo trabalhador tem direito a 30 dias de férias após 12 meses.
+    - O substituto trabalhará esses 30 dias e receberá salário + encargos + benefícios.
+    - Fração atuarial padrão: aproximadamente **8,33%** a **11%** (dependendo da escala de trabalho: 44h semanais vs. escala 12x36).
+    - _Atenção:_ não somar com a provisão de férias do Submódulo 2.1 quando ambas cobrem o mesmo custo.
+  - **B. Ausências Legais (Art. 473 da CLT):**
+    - Dias remunerados em que o titular falta por direito da lei: casamento (3 dias), falecimento de parente próximo (2 dias), doação de sangue (1 dia), convocação da Justiça Eleitoral.
+    - O percentual varia de **0,28% a 0,56%** da remuneração.
+  - **C. Licença-Paternidade:**
+    - Nascimento de filho (licença-paternidade de 5 a 20 dias).
+  - **D. Ausência por Acidente de Trabalho:**
+    - A empresa cobre os primeiros **15 dias de atestado médico** antes de o funcionário entrar no benefício previdenciário do INSS.
+  - **E. Afastamento Maternidade:**
+    - Cobertura do posto durante a licença-maternidade da titular (percentual a conferir).
+  - **F. Outras Ausências:**
+    - Demais ausências previstas no modelo ou na CCT (a conferir).
+- **4.2. Substituto na Intrajornada:**
+  - Cobertura do intervalo para repouso e alimentação do titular quando o posto não pode ficar vazio (a conferir).
 
 ---
 
@@ -126,12 +150,19 @@ A Administração Pública não contrata um "indivíduo"; ela contrata um **"pos
   - **ISS:** Imposto Sobre Serviços (Municipal, entre **2,00% e 5,00%** conforme o local da prestação);
   - **PIS:** Alíquota federal (**0,65%** no lucro presumido/cumulativo ou **1,65%** no lucro real/não cumulativo);
   - **COFINS:** Alíquota federal (**3,00%** no lucro presumido ou **7,60%** no lucro real);
-  - _CPRB (Desoneração da Folha - Lei nº 12.546/2011):_ Se a atividade estiver no regime de desoneração, o INSS Patronal de 20% do Módulo 2 **desaparece** e entra aqui no Módulo 6 uma alíquota de **1,0% a 4,5% sobre a receita bruta**.
+  - _CPRB (Desoneração da Folha - Lei nº 12.546/2011) — situação em outubro de 2026:_ A desoneração está em transição pela **Lei nº 14.973/2024** (fonte secundária, a conferir):
+    - **2025:** CPRB a 80% da alíquota + 5% de INSS sobre a folha;
+    - **2026:** CPRB a 60% da alíquota + 10% de INSS sobre a folha;
+    - **2027:** CPRB a 40% da alíquota + 15% de INSS sobre a folha;
+    - **2028:** fim da CPRB; INSS Patronal integral de 20% sobre a folha.
+    - Portanto, o INSS Patronal do Submódulo 2.2 **não desaparece**: em 2026 a planilha deve trazer a CPRB reduzida aqui no Módulo 6 (alíquota base de **1,0% a 4,5% sobre a receita bruta**) e a parcela de 10% sobre a folha no Módulo 2.
+  - _Transição da Reforma Tributária (LC nº 214/2025) — situação em outubro de 2026:_ 2026 é ano-teste, com **CBS de 0,9%** e **IBS de 0,1%**, compensáveis com PIS/Cofins ou dispensados para quem cumpre as obrigações acessórias (art. 348, §1º). Em 2027 a CBS substitui o PIS e a Cofins (a conferir).
 - **O Segredo do Cálculo Matemático ("Preço por Dentro / Gross-Up"):**
   - Os impostos incidem sobre a própria Nota Fiscal emitida. Por isso, a fórmula matemática não é simplesmente somar a porcentagem, mas aplicar a fórmula de divisão:
     $$\text{Preço Final} = \frac{\text{Custo Total} + \text{Custos Indiretos} + \text{Lucro}}{1 - (\text{ISS} + \text{PIS} + \text{COFINS})}$$
-- **A Grande Vedação Legal (Súmula nº 254 do TCU):**
-  - **IRPJ** (Imposto de Renda da Pessoa Jurídica) e **CSLL** (Contribuição Social sobre o Lucro Líquido) **são impostos diretos sobre o lucro da empresa e JAMAIS podem constar na planilha pública como repasse ao Estado**. Se o órgão incluir IRPJ e CSLL na planilha, a cláusula é nula de pleno direito.
+- **IRPJ e CSLL no orçamento-base (Súmula nº 254 do TCU):**
+  - Pela Súmula 254, o **IRPJ** (Imposto de Renda da Pessoa Jurídica) e a **CSLL** (Contribuição Social sobre o Lucro Líquido) não são despesas indiretas passíveis de inclusão no BDI do orçamento-base, por serem tributos diretos e personalísticos (fonte secundária; conferir o texto oficial antes de citar entre aspas).
+  - A súmula trata do **orçamento-base** do órgão: não fala em nulidade nem proíbe o licitante de cobrir esses tributos com o seu lucro. Se o órgão incluir IRPJ e CSLL no BDI da planilha de referência, o pedido cabível é a retificação.
 
 ---
 
@@ -141,7 +172,7 @@ A Administração Pública não contrata um "indivíduo"; ela contrata um **"pos
 [MÓDULO 1] Remuneração Direta (Salário CCT + Periculosidade + Insalubridade + Noturno)
     │
     ▼ (Gera a base de cálculo para)
-[MÓDULO 2] Benefícios (VT, VR, Saúde) + Encargos de Folha (INSS, FGTS, RAT/FAP)
+[MÓDULO 2] 13º/Férias + Encargos de Folha (INSS, FGTS, RAT/FAP) + Benefícios (VT, VR, Saúde)
     │
     ▼ (Acrescenta-se o risco de saída)
 [MÓDULO 3] Provisão para Demissão (Aviso Prévio + Multa 40% FGTS)

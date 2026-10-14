@@ -73,7 +73,7 @@ Para transformar essa dinâmica em uma rotina operacional infalível, estruturam
 - **O Perigo:** A alteração mexe no preço e na cotação com fábricas. Sem tempo hábil, quem forçou a alteração de bastidores ganha a licitação sozinho.
 - **A Ação no Loop (Como Impugnar):**
   - _Tese:_ **Violação frontal ao art. 55, § 1º da Lei nº 14.133/2021** (ver também Acórdãos 2.032/2021-Plenário e 2.078/2014-Plenário do TCU, a conferir). Toda alteração que interfere na formulação da proposta exige nova divulgação na mesma forma da inicial e reabertura do prazo originalmente fixado (ex.: 8 ou 10 dias úteis); o TCU entende que se reabre o prazo do edital original (Acórdão 930/2008-Plenário, a conferir).
-  - _Pedido:_ **Pedido de suspensão da sessão pública**, dirigido ao agente de contratação/pregoeiro ou à autoridade competente, e reabertura do prazo inicial de divulgação a contar da republicação. Atenção: a impugnação não tem efeito suspensivo automático. Se o pedido for negado, as vias externas são a representação ao tribunal de contas (art. 170, § 4º) e o mandado de segurança.
+  - _Pedido:_ **Pedido de suspensão da sessão pública**, dirigido ao agente de contratação/pregoeiro ou à autoridade competente, e reabertura do prazo inicial de divulgação a contar da republicação. Reaberto o prazo, volta a contar também o prazo para impugnar ou pedir esclarecimento (até 3 dias úteis antes da nova data de abertura, art. 164). Atenção: a impugnação não tem efeito suspensivo automático. Se o pedido for negado, as vias externas são a representação ao tribunal de contas (art. 170, § 4º) e o mandado de segurança.
 
 ---
 

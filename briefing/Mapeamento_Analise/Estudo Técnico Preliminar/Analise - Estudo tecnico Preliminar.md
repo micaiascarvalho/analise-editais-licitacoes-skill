@@ -33,7 +33,8 @@ Abaixo estão os **5 pontos críticos do ETP** onde os vícios mais graves acont
 
 - **Confronte ETP vs. Histórico de Execução (Portal da Transparência):** Entre no Portal da Transparência do próprio órgão e consulte quanto foi efetivamente consumido ou executado no contrato anterior. Se nos últimos 12 meses o órgão usou 1.000 unidades, mas agora licita 10.000 unidades sem aumento no quadro de servidores ou expansão do órgão, o quantitativo é injustificado.
 - **Confronte ETP vs. TR:** Verifique se as quantidades no ETP coincidem com o TR. Erros de digitação frequentes entre os dois documentos alteram o valor global e a exequibilidade da proposta.
-- **Fundamento Jurídico:** Art. 18, § 1º, IV e art. 23 da Lei 14.133/2021; Súmula nº 177 do TCU (_a definição precisa dos quantitativos é dever indeclinável da Administração_).
+- **Em compras:** O art. 40, III exige que as quantidades sejam estimadas com base no consumo e na utilização prováveis, apuradas sempre que possível por técnicas quantitativas de estimação. Quantitativo sem essa base é vício do próprio ETP.
+- **Fundamento Jurídico:** Art. 18, § 1º, IV; art. 23; e art. 40, III (compras) da Lei 14.133/2021; Súmula nº 177 do TCU (_a definição precisa dos quantitativos é dever indeclinável da Administração_).
 
 ---
 
@@ -64,6 +65,7 @@ Este é o **campeão absoluto de impugnações acolhidas pelos Tribunais de Cont
 #### Como cruzar informações:
 
 - **Confronte ETP vs. Anexo do Mapa de Preços:** Verifique se o valor do ETP é compatível com a pesquisa definitiva de preços. Se houver discrepâncias brutais sem explicação no processo, o planejamento orçamentário foi quebrado.
+- **Cenário de orçamento sigiloso:** O valor estimado pode estar em anexo classificado (art. 18, § 1º, VI), e o sigilo exige justificativa (art. 24); os quantitativos e demais dados necessários à elaboração das propostas continuam públicos. Nesse caso o cruzamento ETP × Mapa de Preços fica limitado, e o caminho é o **pedido de esclarecimento** (ex.: justificativa do sigilo, memória de cálculo dos quantitativos).
 - **Fundamento Jurídico:** Art. 18, § 1º, VI e art. 23 da Lei 14.133/2021.
 
 ---

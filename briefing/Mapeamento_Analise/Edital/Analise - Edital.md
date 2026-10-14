@@ -16,8 +16,8 @@ Aqui o objetivo é cruzar para descobrir: **"Essa regra está excluindo competid
 - **Mecanismos de Cruzamento:**
   - **Confronto Interno (Edital vs. ETP):** Verifique se a vedação (ex.: proibição de consórcio ou cooperativas) tem estudo técnico demonstrando o risco no ETP. Se a vedação estiver no edital sem uma linha sequer no ETP, há vício de motivação.
   - **Lei Complementar nº 123/2006 (Estatuto da ME/EPP):** Cruze os valores dos lotes com os arts. 47 e 48. Se o lote for de até R$ 80.000,00 ou se o objeto for bem de natureza divisível e não houver cota reservada de até 25%, há descumprimento de lei federal, ressalvadas as exceções do art. 49 da LC 123/2006 e os limites do art. 4º da Lei 14.133/2021 (a conferir).
-  - **Lei nº 11.101/2005 (Recuperação Judicial):** Se o edital barrar empresas em recuperação, confronte com o plano aprovado em juízo e a jurisprudência.
-  - **Jurisprudência de Controle:** Súmula 247 do TCU (obrigatoriedade de parcelamento) e Súmula 50 do TCE/SP (admissão de empresas em recuperação judicial).
+  - **Lei nº 11.101/2005 (Recuperação Judicial):** Se o edital barrar empresas em recuperação, confronte com o plano aprovado em juízo. A base nacional é o art. 69, II, da Lei 14.133/2021, que pede apenas certidão negativa de **falência** (não de recuperação judicial), somado ao TCU, Acórdão 1201/2020 (a conferir). A Súmula 50 do TCE/SP entra como reforço quando o órgão licitante for paulista.
+  - **Jurisprudência de Controle:** Súmula 247 do TCU (obrigatoriedade de parcelamento); para recuperação judicial, ver o item acima.
   - **Prova Empírica de Mercado:** Consulte o número de empresas ativas no Cadastro Nacional da Pessoa Jurídica (CNAE). Se a exigência de participação afunilar o mercado para apenas 1 ou 2 fornecedores locais, você comprova na impugnação o risco de direcionamento.
 - **Critério de Decisão:**
   - _Gera Impugnação:_ Vedação sem justificativa no ETP, desrespeito aos benefícios da LC 123/2006 ou bloqueio arbitrário a consórcios/recuperação judicial.
@@ -66,7 +66,7 @@ Aqui o objetivo é cruzar para descobrir: **"Estão exigindo documentos que a le
   - **Jurisprudência Consolidada do TCU:**
     - Tempo mínimo de existência da empresa: vedação (fundamento jurisprudencial a localizar). Não confundir com tempo de experiência, que o art. 67, §5º, da Lei 14.133/2021 permite exigir até 3 anos em serviços contínuos. A Súmula nº 275 do TCU trata de capital social, patrimônio líquido ou garantias, de forma não cumulativa (a conferir);
     - Vedação de atestado com limitação de tempo e local: art. 67, §§1º e 2º, da Lei 14.133/2021; vedação de limitar o somatório de atestados: Acórdão 1101/2020-Plenário (a conferir); a Súmula nº 263 do TCU fundamenta o que é permitido (quantitativos mínimos proporcionais nas parcelas de maior relevância);
-    - Acórdãos sobre vistoria técnica (a obrigatoriedade presencial sem aceitar declaração substitutiva é ilegal).
+    - Vistoria técnica: o fundamento é a própria lei. O art. 63, §§2º e 3º, da Lei 14.133/2021 exige que o edital, sempre que previr vistoria, admita sua substituição por declaração formal do responsável técnico de que conhece as condições do local. Vistoria presencial obrigatória sem essa alternativa é ilegal.
   - **Regulamentações de Órgãos Reguladores (ANVISA, INMETRO, ANATEL):** Se o edital exige laudos ou certificações inexistentes ou que não se aplicam àquele produto conforme o catálogo oficial do órgão regulador.
 - **Critério de Decisão:**
   - _Gera Impugnação:_ Exigência de experiência acima de 50%, restrição de tempo de empresa, índices financeiros exorbitantes sem estudo no ETP ou vistoria presencial mandatória.
@@ -87,6 +87,66 @@ Aqui o objetivo é cruzar para descobrir: **"O edital está restringindo meu dir
 - **Critério de Decisão:**
   - _Gera Impugnação:_ Exigência de pagamento de taxa para recorrer, obrigatoriedade de anexar petição completa na sessão imediata ou prazos de intenção desarrazoados (ex.: menos de 10 minutos, parâmetro prático; a base legal é apenas "imediatamente", art. 165, §1º, I, + razoabilidade).
   - _Descarta:_ Prazo razoável de 20 a 30 minutos (parâmetro prático; a base legal é apenas "imediatamente", art. 165, §1º, I, + razoabilidade) para manifestação motivada no sistema eletrônico, acompanhado de 3 dias úteis para as razões finais.
+
+---
+
+### 6. Demais seções do edital (cruzamentos derivados da Estrutura)
+
+> Seção derivada do arquivo "Estrutura - Edital.md": cobre as seções do edital não analisadas acima, apenas com base legal (sem jurisprudência nova).
+
+#### 6.1 Objeto e divisão em itens/lotes
+
+- **Mecanismos de Cruzamento:**
+  - **Confronto Interno (Edital vs. TR vs. ETP):** A descrição do objeto, as unidades e os quantitativos devem ser idênticos nos três documentos.
+  - **Parcelamento:** Em compras, art. 40, V, "b", e §§2º e 3º, da Lei 14.133/2021; em serviços, art. 47, II, e §1º. Lote agrupando itens divisíveis exige justificativa técnica ou econômica no ETP.
+- **Critério de Decisão:**
+  - _Gera Impugnação:_ Divergência de objeto entre Edital, TR e ETP, ou aglutinação de itens divisíveis sem justificativa.
+  - _Descarta:_ Agrupamento motivado no ETP (ex.: perda de economia de escala ou risco à integração do objeto).
+
+#### 6.2 Recursos orçamentários
+
+- **Mecanismos de Cruzamento:**
+  - **Dotação:** Art. 150 e _caput_ do art. 18 da Lei 14.133/2021 — o edital deve indicar a dotação compatível com o objeto.
+  - **Orçamento sigiloso:** Art. 24 — o sigilo só vale se justificado, e os quantitativos e demais dados necessários à elaboração das propostas continuam públicos.
+- **Critério de Decisão:**
+  - _Gera Impugnação:_ Ausência de dotação, ou sigilo sem justificativa ou que oculte quantitativos e dados para a proposta.
+  - _Descarta:_ Sigilo motivado, com quantitativos e informações de proposta divulgados.
+
+#### 6.3 Envio de propostas e prazos mínimos
+
+- **Mecanismos de Cruzamento:**
+  - **Prazos do art. 55:** Bens: 8 dias úteis (menor preço ou maior desconto) e 15 dias úteis (demais critérios); serviços comuns: 10 dias úteis; serviços especiais: 25 dias úteis. Cruze a data de publicação com a data da sessão.
+  - **Custos trabalhistas (art. 63, §1º):** O edital deve conter cláusula exigindo declaração de que a proposta cobre todos os custos decorrentes das obrigações trabalhistas, incluindo a CCT, sob pena de desclassificação.
+- **Critério de Decisão:**
+  - _Gera Impugnação:_ Prazo inferior ao mínimo legal ou ausência da cláusula do art. 63, §1º.
+  - _Descarta:_ Prazos iguais ou superiores aos do art. 55 e cláusula prevista.
+
+#### 6.4 Adjudicação, garantia e contrato
+
+- **Mecanismos de Cruzamento:**
+  - **Confronto Interno (Edital vs. Minuta do Contrato):** Prazos de assinatura, percentual de garantia e condições devem coincidir.
+  - **Garantia (art. 96, §1º):** A escolha é do contratado entre caução (dinheiro ou títulos da dívida pública), seguro-garantia, fiança bancária ou título de capitalização.
+- **Critério de Decisão:**
+  - _Gera Impugnação:_ Edital que restringe a modalidade de garantia ou diverge da Minuta.
+  - _Descarta:_ As quatro modalidades admitidas e regras alinhadas à Minuta.
+
+#### 6.5 Sanções
+
+- **Mecanismos de Cruzamento:**
+  - **Confronto Interno (Edital vs. Minuta do Contrato):** Tipos e percentuais de sanção devem ser os mesmos.
+  - **Multa (art. 156, §3º):** Entre 0,5% e 30% do valor do contrato.
+- **Critério de Decisão:**
+  - _Gera Impugnação:_ Multa fora da faixa legal ou divergência entre Edital e Minuta.
+  - _Descarta:_ Percentuais dentro da faixa e coerentes nos dois documentos.
+
+#### 6.6 Disposições finais e rol de anexos
+
+- **Mecanismos de Cruzamento:**
+  - **Publicidade dos anexos (art. 25, §3º):** Todos os anexos devem ser divulgados na mesma data do edital, sem exigência de cadastro para acesso.
+  - **Conferência do rol:** Cruze a lista de anexos citada com os arquivos efetivamente publicados.
+- **Critério de Decisão:**
+  - _Gera Impugnação:_ Anexo ausente, publicado depois ou acessível apenas mediante cadastro.
+  - _Descarta:_ Rol completo, disponível no mesmo dia e sem cadastro.
 
 ---
 

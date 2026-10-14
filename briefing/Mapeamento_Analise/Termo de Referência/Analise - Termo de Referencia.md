@@ -119,7 +119,7 @@ Esta é a seção onde ocorrem cerca de **60% dos direcionamentos ilegais** de l
 
 ### Resumo: O "Checklist de Tiro Certo" para Impugnar o TR
 
-Quando você abrir um Termo de Referência, faça estas 6 perguntas rápidas:
+Quando você abrir um Termo de Referência, faça estas 7 perguntas rápidas:
 
 1. **A especificação técnica é tão detalhada que só 1 produto no mundo atende?** _(Cruze com fichas técnicas de concorrentes e ETP)_.
 2. **O prazo de entrega é rápido demais para ser viável por vias normais?** _(Cruze com prazos de fábrica e transportadoras)_.
@@ -127,5 +127,6 @@ Quando você abrir um Termo de Referência, faça estas 6 perguntas rápidas:
 4. **Existem obrigações caras no TR que não constam na planilha de custos?** _(Cruze com as rubricas da planilha de preços)_.
 5. **O edital exige amostra antes de saber quem venceu a disputa de preço?** _(Cruze com o art. 41, II da Lei 14.133)_.
 6. **Em serviço com dedicação exclusiva de mão de obra, o TR indica a CCT/categoria e a planilha cobre os custos trabalhistas que o licitante terá de declarar (art. 63, § 1º)?** _(Cruze com a CCT e os módulos da planilha)_.
+7. **Em serviço com dedicação exclusiva, o modelo de execução (posto de trabalho ou produtividade) é incoerente com a planilha, ou o IMR/SLA não tem indicadores objetivos com glosa proporcional?** _(Cruze com a planilha e com o art. 143 — a parcela incontroversa deve ser paga)_.
 
 Se a resposta para qualquer uma dessas perguntas for **SIM**, você tem em mãos uma tese sólida e comprovada para impugnação.

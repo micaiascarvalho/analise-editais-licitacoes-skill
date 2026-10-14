@@ -45,6 +45,8 @@ Abaixo estão os **6 maiores grupos de erros, fraudes e omissões** que costumam
 
 - **Cruzamento:** Verifique a fórmula da célula da Multa do FGTS no arquivo Excel/PDF da planilha.
 - **Fundamento:** Art. 12 da Lei nº 13.932/2019, que extinguiu os 10% adicionais. O STF (Tema 846) declarou a contribuição constitucional no período anterior à extinção (fonte secundária). A manutenção da alíquota extinta gera **sobrepreço no orçamento de referência**.
+- **Aviso prévio nas prorrogações:** Sobre a provisão do aviso prévio em contratos prorrogados, ver o Acórdão 58/2026-TCU-Plenário (fonte secundária, a conferir).
+- **Conta vinculada:** Em dedicação exclusiva, o art. 121, § 3º da Lei 14.133/2021 permite conta vinculada e pagamento direto de verbas trabalhistas inadimplidas. Cruze as provisões de rescisão do Módulo 3 com o mecanismo previsto na minuta.
 
 ---
 

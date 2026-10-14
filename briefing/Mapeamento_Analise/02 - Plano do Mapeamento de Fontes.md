@@ -68,7 +68,7 @@ Se uma fase acrescentar fonte nova, ela entra primeiro no catálogo, no mesmo co
 
 | Fase | Status | Commit |
 | :-- | :-- | :-- |
-| 1. Catálogo | pendente | — |
+| 1. Catálogo | concluída | este commit (`01 - Catalogo de Fontes.md`) |
 | 2. Edital | pendente | — |
 | 3. TR e ETP | pendente | — |
 | 4. Planilha e Pesquisa | pendente | — |

@@ -25,6 +25,7 @@ Catálogo único das fontes citadas nos 14 arquivos `Estrutura - *.md` e `Analis
 | PP-E / PP-A | `Pesquisa(Mapa) de Preços/Estrutura - Pesquisa de Precos.md` / `Analise - Pesquisa de Precos.md` |
 | MC-E / MC-A | `Minuta Contratual/Estrutura - Minuta Contratual.md` / `Analise - Minuta Contratual.md` |
 | RR-E / RR-A | `Retificações, Esclarecimentos e Respostas/Estrutura - RERI.md` / `Analise - RERI.md` |
+| ED-F | `Edital/Fontes - Edital.md` (só para fontes acrescentadas na fase 2) |
 
 ---
 
@@ -61,6 +62,8 @@ Onde consultar, para todas: texto compilado no Planalto, `https://www.planalto.g
 | EXT-LEI14133-ART6 | Art. 6º, XXIII: definição de termo de referência e alíneas "a" a "j" ("i": estimativa do valor com memória de cálculo; "j": adequação orçamentária) | Lei | federal (nacional) | Planalto | TR-E, TR-A, PL-A | a conferir |
 | EXT-LEI14133-ART9 | Art. 9º, I, "a": vedação a cláusulas que restrinjam a competitividade | Lei | federal (nacional) | Planalto | TR-A | conferido |
 | EXT-LEI14133-ART11 | Art. 11, III: objetivo de evitar sobrepreço, preços inexequíveis e superfaturamento | Lei | federal (nacional) | Planalto | PL-A, PP-A | conferido |
+| EXT-LEI14133-ART14 | Art. 14: impedimentos para disputar a licitação ou participar da execução do contrato | Lei | federal (nacional) | Planalto | ED-F | a conferir |
+| EXT-LEI14133-ART15 | Art. 15: participação em consórcio, salvo vedação justificada no processo | Lei | federal (nacional) | Planalto | ED-F | a conferir |
 | EXT-LEI14133-ART17 | Art. 17, § 3º: amostra na pré-qualificação / fases do processo | Lei | federal (nacional) | Planalto | TR-A | conferido |
 | EXT-LEI14133-ART18 | Art. 18: fase preparatória (caput: compatibilização com as leis orçamentárias; IV: orçamento com composição de custos; X: análise de riscos); § 1º, I a XIII: elementos do ETP; § 2º: elementos obrigatórios | Lei | federal (nacional) | Planalto | ED-E, ED-A, ETP-E, ETP-A, TR-A, PL-A | conferido |
 | EXT-LEI14133-ART22 | Art. 22: matriz de riscos (obrigatoriedade conforme porte e regime) | Lei | federal (nacional) | Planalto | MC-E | a conferir |
@@ -78,6 +81,7 @@ Onde consultar, para todas: texto compilado no Planalto, `https://www.planalto.g
 | EXT-LEI14133-ART63 | Art. 63: habilitação (§ 1º: declaração de que a proposta cobre os custos trabalhistas; §§ 2º e 3º: vistoria substituível por declaração) | Lei | federal (nacional) | Planalto | ED-A, PL-A, TR-A | conferido |
 | EXT-LEI14133-ART67 | Art. 67: qualificação técnica (§ 1º: parcelas de maior relevância; § 2º: limite de 50% e vedação de tempo e local; § 5º: experiência de até 3 anos em serviços contínuos) | Lei | federal (nacional) | Planalto | ED-A, TR-A | conferido |
 | EXT-LEI14133-ART69 | Art. 69: qualificação econômico-financeira (II: certidão negativa de falência; § 5º: vedação de índices não usuais; índices devidamente justificados) | Lei | federal (nacional) | Planalto | ED-A | conferido |
+| EXT-LEI14133-ART90 | Art. 90: convocação do adjudicatário para assinar o contrato no prazo e nas condições do edital | Lei | federal (nacional) | Planalto | ED-F | a conferir |
 | EXT-LEI14133-ART92 | Art. 92: cláusulas necessárias (V: preço, pagamento, reajuste e encargos moratórios; X: prazo de resposta à repactuação; XI: prazo de resposta ao reequilíbrio; § 3º: data-base do reajuste) | Lei | federal (nacional) | Planalto | TR-E, MC-E, MC-A | conferido |
 | EXT-LEI14133-ART94 | Art. 94: divulgação no PNCP como condição de eficácia (20 dias úteis na licitação; 10 na contratação direta) | Lei | federal (nacional) | Planalto | MC-E | conferido |
 | EXT-LEI14133-ART96 | Art. 96, § 1º: escolha da modalidade de garantia pelo contratado (arts. 96 a 102: garantias) | Lei | federal (nacional) | Planalto | ED-A, MC-E, MC-A | conferido |

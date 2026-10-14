@@ -58,7 +58,7 @@ Para transformar essa dinâmica em uma rotina operacional infalível, estruturam
 ### Checkpoint 1: O Teste da Natureza do Ato (A "Retificação Clandestina")
 
 - **A Armadilha do Pregoeiro:**
-  O pregoeiro altera substancialmente uma regra técnica no texto de uma simples resposta no chat (ex.: _"Em atenção à empresa X, informamos que a exigência da certificação ISO 9001 está dispensada"_), mas **não publica uma retificação formal no Diário Oficial nem no PNCP**.
+  O pregoeiro altera substancialmente uma regra técnica no texto de uma simples resposta a esclarecimento (ex.: _"Em atenção à empresa X, informamos que a exigência da certificação ISO 9001 está dispensada"_), mas **não publica uma retificação formal no Diário Oficial nem no PNCP**.
 - **O Perigo:** Essa resposta vincula a Administração apenas quanto à **interpretação** do edital; ela **não tem força para alterar regra**. Dispensar uma exigência é mudança de regra e só vale por retificação formal (art. 55, § 1º). Se você participar sem a ISO, o pregoeiro pode voltar atrás na sessão e inabilitar sua empresa com base no texto "original" que nunca foi formalmente alterado.
 - **A Ação no Loop (Como Impugnar):**
   - _Tese:_ **Violação ao Princípio da Vinculação e da Publicidade Obrigatória (art. 54 e art. 55, § 1º da Lei 14.133/2021).** Resposta a esclarecimento interpreta o edital, mas não substitui retificação formal quando altera regra.

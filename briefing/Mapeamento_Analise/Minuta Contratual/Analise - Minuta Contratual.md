@@ -36,7 +36,7 @@ Este é o erro mais perigoso para contratos com mais de 12 meses de duração.
 #### Como fundamentar a impugnação:
 
 - **Fundamento:** Arts. 92, V; 141; e 143 da Lei 14.133/2021. A existência de dotação orçamentária é pré-requisito da licitação (art. 150: nenhuma contratação sem a indicação dos créditos orçamentários, sob pena de nulidade); o órgão não pode subordinar o pagamento a eventos incertos de terceiros.
-- **O Pedido:** Estabelecer prazo improrrogável de pagamento (geralmente até 10 ou 30 dias úteis após o ateste) e prever obrigatoriamente a fórmula de juros moratórios e correção monetária em caso de mora do Estado. Pedir também que, havendo controvérsia sobre parte da execução, a parcela incontroversa seja liberada no prazo de pagamento (art. 143) — ver a seção 5 (retenção) para a nuance trabalhista.
+- **O Pedido:** Estabelecer prazo improrrogável de pagamento (o prazo não está na lei; como parâmetro de regulamento, costuma-se ver até 10 ou 30 dias úteis após o ateste — conferir o regulamento do ente) e prever obrigatoriamente a fórmula de juros moratórios e correção monetária em caso de mora do Estado. Pedir também que, havendo controvérsia sobre parte da execução, a parcela incontroversa seja liberada no prazo de pagamento (art. 143) — ver a seção 5 (retenção) para a nuance trabalhista.
 
 ---
 

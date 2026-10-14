@@ -1,8 +1,8 @@
-Vamos avançar para o **Anexo 6: Avisos de Retificação, Esclarecimentos e Respostas a Impugnações Anteriores**.
+Este documento trata do **Anexo 6: Avisos de Retificação, Esclarecimentos e Respostas a Impugnações Anteriores**.
 
 Este é o documento **mais dinâmico e "vivo"** de todo o processo licitatório. Enquanto todos os outros anexos nascem prontos no dia da publicação, os Avisos e Esclarecimentos vão sendo gerados **ao longo do período de divulgação do edital**, até as vésperas da sessão pública.
 
-Seguindo a nossa metodologia, vamos dividir a análise em duas partes:
+A análise está dividida em duas partes:
 
 1. **Compreensão da Natureza Jurídica e Estrutura** (para que servem e qual o peso legal de cada um);
 2. **Análise de Erros, Armadilhas e Hipóteses de Impugnação** (onde a comissão/pregoeiro erra e como atacar).
@@ -34,7 +34,7 @@ Estes documentos representam a **comunicação oficial entre o mercado e a Admin
 - **O Prazo Legal:**
   - Envio pelo interessado: até **3 (três) dias úteis antes** da data de abertura do certame;
   - Resposta do órgão: prazo de até **3 (três) dias úteis**, limitado ao último dia útil anterior à abertura da sessão.
-- **O Efeito Jurídico:** A resposta ao esclarecimento **vincula a Administração e todos os participantes quanto à interpretação do edital** (fundamento jurisprudencial a localizar). Se o pregoeiro respondeu no chat oficial que o produto da marca X é aceito, ele não pode desclassificar essa marca na sessão.
+- **O Efeito Jurídico:** A resposta ao esclarecimento **vincula a Administração e todos os participantes quanto à interpretação do edital** (fundamento jurisprudencial a localizar). Se o pregoeiro respondeu, em resposta divulgada no sítio eletrônico oficial (art. 164, parágrafo único), que o produto da marca X é aceito, ele não pode desclassificar essa marca na sessão.
   - **Limite:** a resposta **não pode alterar regra** do edital. Mudança de regra (exigência, especificação, prazo, critério) só vale por **retificação formal**, com nova divulgação na mesma forma da inicial e observância dos prazos originais (art. 55, § 1º).
 
 ---
@@ -53,7 +53,7 @@ Estes documentos representam a **comunicação oficial entre o mercado e a Admin
 - **O que é:** O ato administrativo oficial pelo qual a autoridade **altera o texto original do Edital ou de qualquer anexo** (TR, Planilha, Minuta).
 - **A Regra de Ouro da Retificação (Art. 55, § 1º):**
   - Toda modificação no edital que **afete a formulação das propostas** ou a **participação dos licitantes** exige a **REABERTURA INTEGRAL DO PRAZO ORIGINAL**.
-  - _Exemplo:_ Se o pregão exigia 8 dias úteis de publicação e o órgão alterou uma especificação técnica no 7º dia, ele é **obrigado por lei a reiniciar a contagem dos 8 dias úteis do zero**, remarcando a data da sessão.
+  - _Exemplo:_ Se o edital fixou 8 dias úteis de publicação e o órgão alterou uma especificação técnica no 7º dia, ele deve cumprir de novo **os mesmos prazos dos atos e procedimentos originais** (art. 55, § 1º), contados da nova divulgação, remarcando a data da sessão. Se o edital original fixou prazo maior que o mínimo legal, o TCU entende que se reabre o prazo do edital original, e não apenas o mínimo legal (Acórdão 930/2008-Plenário, a conferir).
 
 ---
 
@@ -87,6 +87,6 @@ Estes documentos representam a **comunicação oficial entre o mercado e a Admin
                            │
              ┌─────────────┴─────────────┐
              ▼                           ▼
-        [SIM - Afeta]             [NÃO - Erro bobo]
+        [SIM - Afeta]           [NÃO - Erro material]
     REABRE PRAZO INTEGRAL       MANTÉM A DATA DA SESSÃO
 ```

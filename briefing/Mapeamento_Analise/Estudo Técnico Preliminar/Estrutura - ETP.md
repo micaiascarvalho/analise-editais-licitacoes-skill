@@ -1,22 +1,3 @@
-Aqui está o quadro de controle do nosso progresso sobre os anexos obrigatórios da licitação:
-
-### Status da Análise dos Anexos
-
-| Anexo                                                     | Compreensão da Estrutura | Análise de Pontos Impugnáveis |    Status Geral     |
-| :-------------------------------------------------------- | :----------------------: | :---------------------------: | :-----------------: |
-| **1. Termo de Referência (TR) / Projeto Básico**          |           [X]            |              [X]              |    **Concluído**    |
-| **2. Estudo Técnico Preliminar (ETP)**                    |           [ ]            |              [ ]              | **Próximo da fila** |
-| **3. Planilha Estimativa de Custos e Formação de Preços** |           [ ]            |              [ ]              |      Pendente       |
-| **4. Pesquisa de Preços / Mapa de Cotações**              |           [ ]            |              [ ]              |      Pendente       |
-| **5. Minuta Contratual / Ata de Registro de Preços**      |           [ ]            |              [ ]              |      Pendente       |
-| **6. Avisos de Retificação, Esclarecimentos e Respostas** |           [ ]            |              [ ]              |      Pendente       |
-
----
-
-Seguindo exatamente o nosso método (primeiro a **compreensão da estrutura**, depois os **pontos impugnáveis**), vamos iniciar a análise do **Estudo Técnico Preliminar (ETP)**.
-
----
-
 # Anexo 2: Estudo Técnico Preliminar (ETP) – Parte 1: Compreensão da Estrutura
 
 ### O que é e qual o Objetivo do ETP?
@@ -89,4 +70,4 @@ A legislação estabelece **13 elementos** para o ETP (art. 18, § 1º, incisos 
 
 ---
 
-Com a estrutura e o propósito dos 13 tópicos do ETP bem compreendidos, estamos prontos: **vamos prosseguir para a análise dos pontos impugnáveis dentro do ETP?**
+A análise dos pontos impugnáveis do ETP está no arquivo `Analise - Estudo tecnico Preliminar.md`.

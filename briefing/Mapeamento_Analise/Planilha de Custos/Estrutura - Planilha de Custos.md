@@ -1,6 +1,6 @@
-Para realizar uma análise técnica ou uma impugnação contábil de alto nível, você precisa conhecer a **anatomia exata de cada linha (rubrica)** da planilha.
+Este documento descreve a **anatomia de cada linha (rubrica)** da planilha de custos e formação de preços.
 
-No serviço público brasileiro, o padrão mais rigoroso e utilizado pelos órgãos é o modelo federal (instituído pela **IN SEGES/MPDG nº 05/2017** e atualizado pela **IN SEGES/MGI nº 98/2022**). Esse padrão desdobra a planilha em **6 Módulos com submódulos matemáticos detalhados**.
+No serviço público brasileiro, o padrão mais rigoroso e utilizado pelos órgãos é o modelo federal instituído pela **IN SEGES/MPDG nº 05/2017**. A **IN SEGES/ME nº 98/2022** não alterou o modelo: ela determina a aplicação da IN 5/2017 às contratações regidas pela Lei nº 14.133/2021. Esse padrão desdobra a planilha em **6 Módulos com submódulos matemáticos detalhados**.
 
 > **Nota sobre a esfera:** a IN SEGES/MPDG nº 05/2017 e o seu modelo de planilha são normas **federais**. Estados e municípios podem ter modelo próprio ou adotar o federal; confira o regulamento do ente que publicou o edital.
 
@@ -27,7 +27,7 @@ Este módulo apura quanto custa a remuneração direta do trabalhador por mês. 
   - Percentual: **20%** sobre o valor da hora normal (para trabalhadores urbanos).
   - _O Detalhe Oculto (Hora Ficta):_ A hora noturna não tem 60 minutos, mas **52 minutos e 30 segundos** (art. 73, § 1º da CLT). Isso exige aplicar um fator multiplicador de **1,1428** sobre o cálculo da hora normal.
 - **1.5. Descanso Semanal Remunerado (DSR) sobre os Adicionais:**
-  - Súmula nº 172 do TST: Adicionais noturnos e horas extras habituais geram reflexo obrigatório no pagamento dos domingos e feriados (DSR).
+  - Adicionais noturnos e horas extras habituais geram reflexo no pagamento dos domingos e feriados (DSR). A Súmula nº 172 do TST trata das horas extras habituais no DSR; a integração do adicional noturno pago com habitualidade é da Súmula nº 60 do TST (a conferir).
 - **1.6. Gratificações e Adicionais Convencionais:**
   - Previsões específicas da CCT, como: adicional de função (líder de equipe), triênio, biênio, assiduidade.
 
@@ -70,7 +70,7 @@ São as alíquotas incidentes sobre a folha de pagamento:
 - **Assistência Médica e Odontológica:**
   - Valor mensal per capita, caso seja cláusula obrigatória da CCT da categoria.
 - **Seguro de Vida em Grupo:**
-  - Apólice obrigatória exigida na quase totalidade das CCTs de vigilância e limpeza (geralmente entre R$ 5,00 e R$ 15,00 por funcionário/mês).
+  - Apólice obrigatória exigida na quase totalidade das CCTs de vigilância e limpeza (parâmetro prático, sem fonte: geralmente entre R$ 5,00 e R$ 15,00 por funcionário/mês).
 
 ---
 
@@ -102,11 +102,11 @@ _Correspondência com o modelo: (a conferir no Anexo VII-D da IN 5/2017)._
   - **A. Férias:**
     - Todo trabalhador tem direito a 30 dias de férias após 12 meses.
     - O substituto trabalhará esses 30 dias e receberá salário + encargos + benefícios.
-    - Fração atuarial padrão: aproximadamente **8,33%** a **11%** (dependendo da escala de trabalho: 44h semanais vs. escala 12x36).
+    - Fração atuarial (parâmetro prático, sem fonte normativa): aproximadamente **8,33%** a **11%** (dependendo da escala de trabalho: 44h semanais vs. escala 12x36).
     - _Atenção:_ não somar com a provisão de férias do Submódulo 2.1 quando ambas cobrem o mesmo custo.
   - **B. Ausências Legais (Art. 473 da CLT):**
     - Dias remunerados em que o titular falta por direito da lei: casamento (3 dias), falecimento de parente próximo (2 dias), doação de sangue (1 dia), convocação da Justiça Eleitoral.
-    - O percentual varia de **0,28% a 0,56%** da remuneração.
+    - Parâmetro prático (sem fonte normativa): o percentual varia de **0,28% a 0,56%** da remuneração.
   - **C. Licença-Paternidade:**
     - Nascimento de filho (licença-paternidade de 5 a 20 dias).
   - **D. Ausência por Acidente de Trabalho:**
@@ -125,7 +125,7 @@ _Correspondência com o modelo: (a conferir no Anexo VII-D da IN 5/2017)._
 É onde se quantifica tudo o que é físico e perecível.
 
 - **5.1. Uniformes e EPIs (Equipamentos de Proteção Individual):**
-  - Não se joga um valor arbitrário. A fórmula obrigatória é a **depreciação mensal por vida útil**:
+  - Não se joga um valor arbitrário. A fórmula usual é a **depreciação mensal por vida útil**:
     $$\text{Custo Mensal} = \frac{\text{Quantidade de Peças} \times \text{Preço Unitário de Mercado}}{\text{Vida Útil em Meses}}$$
   - _Exemplo:_ Se o trabalhador precisa de 2 pares de botas por ano (vida útil de 6 meses cada par) a R$ 120,00 o par: $\frac{1 \times 120}{6} = \text{R\$ 20,00/mês}$.
 - **5.2. Materiais de Consumo:**
@@ -143,13 +143,14 @@ _Correspondência com o modelo: (a conferir no Anexo VII-D da IN 5/2017)._
 
 - **6.1. Custos Indiretos (Administração Central):**
   - Rateio das despesas da sede da empresa para manter aquele contrato funcionando (salário do departamento financeiro, advogados, contadores, sistemas de TI, aluguel da sede).
-  - Varia geralmente entre **1,5% e 5,0%** sobre o custo total da operação.
+  - Parâmetro prático (sem fonte normativa): varia geralmente entre **1,5% e 5,0%** sobre o custo total da operação.
 - **6.2. Lucro da Empresa:**
-  - A remuneração líquida do empresário pelo risco da operação (geralmente entre **4% e 10%**).
+  - A remuneração líquida do empresário pelo risco da operação (parâmetro prático, sem fonte normativa: geralmente entre **4% e 10%**).
 - **6.3. Tributos Incidentes sobre o Faturamento (Impostos Diretos):**
   - **ISS:** Imposto Sobre Serviços (Municipal, entre **2,00% e 5,00%** conforme o local da prestação);
   - **PIS:** Alíquota federal (**0,65%** no lucro presumido/cumulativo ou **1,65%** no lucro real/não cumulativo);
   - **COFINS:** Alíquota federal (**3,00%** no lucro presumido ou **7,60%** no lucro real);
+  - _Nota sobre o regime não cumulativo:_ 1,65% e 7,60% são alíquotas nominais. Como o regime não cumulativo gera créditos, na planilha usa-se a **alíquota efetiva** de PIS/Cofins (média recolhida após os créditos), e não a nominal (a conferir).
   - _CPRB (Desoneração da Folha - Lei nº 12.546/2011) — situação em outubro de 2026:_ A desoneração está em transição pela **Lei nº 14.973/2024** (fonte secundária, a conferir):
     - **2025:** CPRB a 80% da alíquota + 5% de INSS sobre a folha;
     - **2026:** CPRB a 60% da alíquota + 10% de INSS sobre a folha;

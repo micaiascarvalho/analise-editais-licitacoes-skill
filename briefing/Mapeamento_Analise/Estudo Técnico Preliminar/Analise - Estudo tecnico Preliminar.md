@@ -1,4 +1,4 @@
-Excelente! Vamos agora à segunda parte do **Estudo Técnico Preliminar (ETP)**: **onde os erros, omissões e vícios se escondem e como você cruza informações para fundamentar uma impugnação vitoriosa.**
+Esta é a segunda parte do **Estudo Técnico Preliminar (ETP)**: **onde os erros, omissões e vícios se escondem e como cruzar informações para fundamentar uma impugnação.**
 
 O ETP é a "certidão de nascimento" da licitação. Se ele nascer viciado, **todo o processo licitatório (incluindo o TR e o Edital) pode ficar contaminado** (art. 18 da Lei nº 14.133/2021). A nulidade não é automática: o regime está nos arts. 147 a 150, e o art. 147 exige avaliar o interesse público antes de declará-la; por isso, o pedido realista na impugnação é o **saneamento ou a retificação** do ETP.
 

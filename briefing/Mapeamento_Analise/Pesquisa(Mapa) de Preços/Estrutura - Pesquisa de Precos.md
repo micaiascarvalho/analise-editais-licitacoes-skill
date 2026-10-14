@@ -1,6 +1,4 @@
-Vamos avançar para o **Anexo 4: Pesquisa de Preços / Mapa Comparativo de Cotações**.
-
-Seguindo o nosso método, dividiremos a análise em duas partes:
+Este documento trata do **Anexo 4: Pesquisa de Preços / Mapa Comparativo de Cotações** e divide a análise em duas partes:
 
 1. **Compreensão da Estrutura e dos Parâmetros Legais** (como a Administração deve montar a pesquisa de preços segundo a lei);
 2. **Análise de Erros, Fraudes e Pontos Impugnáveis** (onde os vícios acontecem e como fundamentar a impugnação).
@@ -49,7 +47,7 @@ Para bens e serviços em geral (art. 23, § 1º, conforme regulamento), os parâ
 
 Não basta juntar qualquer número no mapa. Cada preço coletado precisa atender a critérios legais:
 
-- **Prazo de Validade dos Dados:** Os preços coletados não podem ter mais de **1 (um) ano** de antiguidade (para cotações diretas com fornecedores, a lei fixa o limite: não se admitem orçamentos obtidos com mais de **6 meses** de antecedência da divulgação do edital — art. 23, § 1º, IV);
+- **Prazo de Validade dos Dados:** A lei fixa limites temporais por parâmetro, e não um prazo único para todos os preços: contratações similares devem estar em execução ou concluídas no período de **1 (um) ano** anterior à data da pesquisa (art. 23, § 1º, II); cotações diretas com fornecedores não podem ter sido obtidas com mais de **6 meses** de antecedência da divulgação do edital (art. 23, § 1º, IV). Para os demais parâmetros, verifique o regulamento do ente;
 - **Identidade do Objeto:** O item cotado deve ser **idêntico ou estritamente similar** ao especificado no Termo de Referência (marca, potência, prazo de garantia, local de entrega);
 - **Condições Comerciais Iguais:** Quantitativo compatível (comprar 10.000 unidades tem preço unitário menor do que comprar 10 unidades no balcão).
 
@@ -78,7 +76,8 @@ Depois de coletar os preços (o padrão mínimo exigido pelos órgãos de contro
                            ▼
 ┌────────────────────────────────────────────────────────┐
 │                  FILTRO CRÍTICO                        │
-│   • Preços com menos de 1 ano                          │
+│   • Similares: até 1 ano (art. 23 §1º II)              │
+│   • Cotações diretas: até 6 meses (art. 23 §1º IV)     │
 │   • Quantidades compatíveis (Economia de Escala)       │
 │   • Expurgo de valores absurdos (Outliers)             │
 └──────────────────────────┬─────────────────────────────┘

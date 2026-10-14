@@ -1,4 +1,4 @@
-Excelente retorno à base. Assim como fizemos com o Termo de Referência (TR), vamos organizar a **estrutura formal do Edital** de ponta a ponta, detalhando o **objetivo e a função prática de cada uma das suas seções** conforme a **Lei nº 14.133/2021 (art. 25)** e os modelos padronizados da Administração Pública.
+Este documento organiza a **estrutura formal do Edital** de ponta a ponta, detalhando o **objetivo e a função prática de cada uma das suas seções** conforme a **Lei nº 14.133/2021 (art. 25)** e os modelos padronizados da Administração Pública.
 
 O Edital é a **"Constituição da Licitação"** (_princípio da vinculação ao instrumento convocatório_). Ele dita todas as regras do jogo, desde o momento em que a disputa é anunciada até a assinatura do contrato.
 
@@ -57,7 +57,7 @@ Abaixo está a estrutura típica completa e o objetivo de cada seção:
   - Prazo fatal para inserção da proposta no portal antes da abertura da sessão;
   - Sigilo da proposta até o momento de abertura pública;
   - Vedação à identificação da empresa na proposta inicial (para evitar favorecimento ou conluio);
-  - Moeda, tributos inclusos e prazo de validade da proposta comercial (geralmente 60 dias).
+  - Moeda, tributos inclusos e prazo de validade da proposta comercial (geralmente 60 dias — parâmetro prático, não exigência legal).
 
 ---
 
@@ -147,19 +147,29 @@ Abaixo está a estrutura típica completa e o objetivo de cada seção:
 ### Resumo Visual da Jornada do Edital
 
 ```
-[1. Preâmbulo & Objeto]         --> Do que se trata e onde será a disputa?
+[1. Preâmbulo & Identificação]     --> Qual licitação, qual órgão e qual regime jurídico?
         ↓
-[2. Condições de Participação]  --> Minha empresa pode entrar?
+[2. Objeto]                        --> O que está sendo contratado e como está dividido?
         ↓
-[3. Envio de Propostas]         --> Como registro minha proposta inicial em sigilo?
+[3. Recursos Orçamentários]        --> Há dotação prevista para pagar o contrato?
         ↓
-[4. Sessão Pública & Disputa]   --> Como funciona a batalha de lances em tempo real?
+[4. Condições de Participação]     --> Minha empresa pode entrar?
         ↓
-[5. Julgamento & Preços]        --> Meu preço atende aos tetos e fórmulas da comissão?
+[5. Envio de Propostas]            --> Como registro minha proposta inicial em sigilo?
         ↓
-[6. Habilitação]                --> Minhas certidões e atestados comprovam minha capacidade?
+[6. Sessão Pública & Disputa]      --> Como funciona a batalha de lances em tempo real?
         ↓
-[7. Recursos & Impugnações]     --> Como corrijo erros do edital ou defendo meu direito?
+[7. Julgamento & Aceitabilidade]   --> Meu preço atende aos tetos e fórmulas da comissão?
         ↓
-[8. Contratação & Penalidades]  --> Como assino o contrato e quais são os riscos se eu falhar?
+[8. Habilitação]                   --> Minhas certidões e atestados comprovam minha capacidade?
+        ↓
+[9. Esclarecimentos & Impugnação]  --> Como questiono ou corrijo o edital antes da disputa?
+        ↓
+[10. Recursos Administrativos]     --> Como defendo meu direito contra o julgamento?
+        ↓
+[11. Adjudicação & Contrato]       --> Como assino o contrato e presto a garantia?
+        ↓
+[12. Infrações & Sanções]          --> Quais são os riscos se eu falhar?
+        ↓
+[13. Disposições Finais & Anexos]  --> Qual o foro e quais anexos integram o edital?
 ```

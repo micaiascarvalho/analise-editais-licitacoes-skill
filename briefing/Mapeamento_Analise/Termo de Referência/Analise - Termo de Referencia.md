@@ -1,4 +1,4 @@
-Perfeito! Vamos dissecar o **Termo de Referência (TR)** com foco cirúrgico em **onde os problemas se escondem** e **como você cruza as informações para fundamentar uma impugnação vitoriosa**.
+Este documento analisa o **Termo de Referência (TR)** com foco em **onde os problemas se escondem** e **como cruzar as informações para fundamentar uma impugnação**.
 
 Para cada seção do TR, analisaremos:
 
@@ -26,8 +26,6 @@ Para cada seção do TR, analisaremos:
 
 ### 2. Na "Descrição da Solução e Requisitos Técnicos" (Especificações)
 
-Esta é a seção onde ocorrem cerca de **60% dos direcionamentos ilegais** de licitações.
-
 #### Onde o erro se esconde:
 
 - **"Digital de fabricante" (Especificação direcionada):** O órgão não cita o nome da marca expressamente (o art. 41, I só admite indicar marca excepcionalmente e com justificativa enquadrada em suas hipóteses), mas copia e cola o catálogo técnico de um único fabricante com detalhes milimétricos irrelevantes (ex.: peso exato de 2,34 kg, parafuso de rosca proprietária, conector exclusivo).
@@ -46,7 +44,7 @@ Esta é a seção onde ocorrem cerca de **60% dos direcionamentos ilegais** de l
 
 #### Onde o erro se esconde:
 
-- **Prazo de entrega relâmpago / inexequível:** Prazo de entrega de 5 a 10 dias para produtos sob encomenda ou que dependem de fabricação e frete interestadual. Isso é o indicativo clássico de que **alguém já tinha o produto pronto no estoque esperando a licitação sair**.
+- **Prazo de entrega relâmpago / inexequível:** Prazo de entrega de 5 a 10 dias para produtos sob encomenda ou que dependem de fabricação e frete interestadual. Isso é indício (não prova) de que **alguém já tinha o produto pronto no estoque esperando a licitação sair**; para sustentar a impugnação, é preciso juntar declarações de fabricantes e transportadoras sobre os prazos usuais (ver abaixo).
 - **Indefinição de locais ou rotas de entrega:** Exigir que o fornecedor entregue "em quaisquer unidades da Secretaria em todo o estado", sem fornecer a lista dos endereços, distâncias e quantitativos por polo. O licitante não consegue cotar frete com precisão.
 
 #### Como cruzar informações:

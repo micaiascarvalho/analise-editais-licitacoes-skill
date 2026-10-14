@@ -1,10 +1,10 @@
-Excelente decisão metodológica. Para saber onde atacar e encontrar as falhas de um Termo de Referência (TR), primeiro precisamos entender com precisão **o que ele é**, **para que serve** e **como cada uma de suas engrenagens funciona**.
+Este documento descreve com precisão **o que é** o Termo de Referência (TR), **para que serve** e **como cada uma de suas engrenagens funciona**, como base para identificar onde estão suas falhas.
 
 ---
 
 ### 1. O que é e qual o Objetivo do Termo de Referência (TR)?
 
-Pela **Lei nº 14.133/2021 (art. 6º, inciso XXIII)**, o Termo de Referência é o documento obrigatório para a contratação de **bens e serviços** (para obras de engenharia, o documento equivalente é o _Projeto Básico_).
+Pela **Lei nº 14.133/2021 (art. 6º, inciso XXIII)**, o Termo de Referência é o documento obrigatório para a contratação de **bens e serviços** (para obras e serviços de engenharia, o documento equivalente é o _Projeto Básico_).
 
 - **A Analogia Didática:** Se o Edital é o **convite oficial com as regras do evento**, o Termo de Referência é a **encomenda detalhada do buffet**. É no TR que você define se os salgados serão assados ou fritos, quantas garçons por mesa, a que horas a comida deve ser servida, como será conferida a temperatura das bebidas e o que acontece se o bolo chegar amassado.
 - **O Objetivo Central:** Transformar a necessidade da Administração em **obrigações contratuais claras, mensuráveis e executáveis**, garantindo que tanto a Administração quanto os licitantes compreendam exatamente o que deve ser entregue.
@@ -23,7 +23,7 @@ A legislação (art. 6º, XXIII, alíneas "a" a "j" (a conferir)) e os modelos p
 - **O que você encontra aqui:**
   - Descrição clara dos itens ou serviços;
   - Quantitativos totais estimados;
-  - Prazo de vigência contratual (ex.: 12 meses, prorrogável até 5 anos ou até 10 anos nos termos dos arts. 106 e 107 da Lei 14.133).
+  - Prazo de vigência contratual (ex.: 12 meses). Em serviços e fornecimentos contínuos, a vigência inicial pode ser de até 5 anos (art. 106 da Lei 14.133) e as prorrogações sucessivas podem levar a vigência total a até 10 anos (art. 107) (a conferir).
 - **Exemplo Prático:**
   > _"Contratação de serviços continuados de suporte técnico em TI (Help Desk), compreendendo 5.000 chamados anuais, para atendimento presencial e remoto, pelo período de 12 meses"_.
 
@@ -156,4 +156,4 @@ A legislação (art. 6º, XXIII, alíneas "a" a "j" (a conferir)) e os modelos p
 └──────────────────────────┴─────────────────────────────┘
 ```
 
-Com essa estrutura clara, estamos prontos para a próxima etapa: **analisar onde os erros, abusos e armadilhas costumam se esconder dentro dessas seções e como você cruza informações para impugnar o TR**.
+A análise de onde os erros, abusos e armadilhas costumam se esconder nessas seções, e de como cruzar informações para impugnar o TR, está no arquivo "Analise - Termo de Referencia.md".

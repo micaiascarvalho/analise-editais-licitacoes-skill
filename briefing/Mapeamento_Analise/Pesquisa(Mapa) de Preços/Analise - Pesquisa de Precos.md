@@ -20,7 +20,7 @@ Este é o vício clássico apontado em operações da Polícia Federal e auditor
   - _O que procurar:_ Mesmos sócios, mesmo endereço físico, e-mails com o mesmo domínio ou números de telefone idênticos.
   - _Como registrar o resultado:_ anote só o vínculo encontrado (sim/não e o tipo — sócio em comum, mesmo endereço, mesmo contador, parentesco), sem nomes nem CPF de sócios.
 - **Confronto com o CNAE:** Verifique se as empresas que enviaram os orçamentos possuem Classificação Nacional de Atividades Econômicas (CNAE) compatível com o objeto. Uma empresa de "comércio varejista de bebidas" não pode cotar "serviços de engenharia e climatização".
-- **Fundamento Jurídico:** Violação ao art. 11, III (combate a fraudes) e art. 23 da Lei 14.133/2021; Acórdãos recorrentes do TCU sobre **fraude na fase de pesquisa de preços por vínculos entre cotistas**.
+- **Fundamento Jurídico:** Violação ao art. 11, III (objetivo de evitar contratações com sobrepreço ou com preços manifestamente inexequíveis e superfaturamento na execução) e art. 23 da Lei 14.133/2021; Acórdãos recorrentes do TCU sobre **fraude na fase de pesquisa de preços por vínculos entre cotistas**.
 
 ---
 
@@ -29,12 +29,12 @@ Este é o vício clássico apontado em operações da Polícia Federal e auditor
 #### Onde o erro se esconde:
 
 - **Cotação de prateleira para compras gigantes:** O órgão licita **100.000 resmas de papel A4**, mas para fixar o preço de referência ele tirou três prints de tela de sites de e-commerce comuns (ex.: Kalunga, Magazine Luiza, Amazon), onde o produto é vendido no varejo unitário com embalagem individual e frete embutido para consumidor final.
-- **O Efeito:** O preço de referência fica inflado em 40% a 60% em relação ao preço praticado diretamente pela indústria ou por grandes distribuidores de atacado.
+- **O Efeito:** O preço de referência fica inflado (exemplo ilustrativo, sem fonte: 40% a 60%) em relação ao preço praticado diretamente pela indústria ou por grandes distribuidores de atacado.
 
 #### Como cruzar e demonstrar na impugnação:
 
-- **Cruzamento:** Confronte o **Volume Licitado no TR vs. Contratações Similares no Painel de Preços do Governo Federal (PNCP)**.
-- **A Prova:** Mostre que compras públicas do mesmo porte (dezenas de milhares de unidades) foram homologadas em outros órgãos com valor 30% a 50% menor por aplicarem a **economia de escala**.
+- **Cruzamento:** Confronte o **Volume Licitado no TR vs. Contratações Similares** registradas no **Painel de Preços do Governo Federal** e no **Portal Nacional de Contratações Públicas (PNCP)** — são sistemas distintos; consulte os dois.
+- **A Prova:** Mostre que compras públicas do mesmo porte (dezenas de milhares de unidades) foram homologadas em outros órgãos com valor menor (exemplo ilustrativo, sem fonte: 30% a 50%) por aplicarem a **economia de escala**.
 - **Fundamento Jurídico:** Art. 23, caput, da Lei 14.133/2021, que manda observar "a potencial economia de escala" na estimativa do valor (fundamento principal), combinado com o § 1º. A Súmula nº 177 do TCU trata da definição do objeto, e o Acórdão nº 2.637/2015-Plenário, segundo fonte secundária, trata de pesquisa restrita a poucos fornecedores; use-os só como reforço, depois de conferidos (a conferir).
 
 ---
@@ -53,7 +53,7 @@ Este é o vício clássico apontado em operações da Polícia Federal e auditor
 
 - **Cruzamento:** Refaça a conta da planilha aplicando o **método da Mediana** ou o **desvio-padrão** para identificar valores discrepantes.
 - **A Prova:** Demonstre que a simples aplicação da Mediana (que seria R$ 110,00) ou o descarte do valor desarrazoado reduziria o orçamento para o patamar real do mercado.
-- **Fundamento Jurídico:** Art. 23 da Lei 14.133/2021 e **IN SEGES/ME nº 65/2021 (art. 6º, § 4º)** (norma federal; em estados e municípios, conferir o regulamento do ente): _devem ser desconsiderados os valores inexequíveis, inconsistentes e os excessivamente elevados_.
+- **Fundamento Jurídico:** Art. 23 da Lei 14.133/2021 e **IN SEGES/ME nº 65/2021 (art. 6º, caput)** (norma federal; em estados e municípios, conferir o regulamento do ente): _devem ser desconsiderados os valores inexequíveis, inconsistentes e os excessivamente elevados_.
 
 ---
 
@@ -95,10 +95,10 @@ Ao auditar o Mapa de Preços, verifique:
 ```
 [ ] 1. Existem pelo menos 3 preços válidos e independentes para cada item?
 [ ] 2. Os CNPJs que forneceram as cotações têm sócios em comum ou mesmo endereço?
-[ ] 3. Os preços coletados têm menos de 1 ano de antiguidade?
+[ ] 3. Os preços respeitam os limites de antiguidade (contratações similares até 1 ano; cotações diretas até 6 meses — art. 23, § 1º, II e IV)?
 [ ] 4. Foi usado preço de varejo para compra em grande escala?
 [ ] 5. Há preços discrepantes ("outliers") que deveriam ter sido expurgados da média?
-[ ] 6. O órgão consultou o Painel de Preços/PNCP ou usou apenas orçamentos diretos?
+[ ] 6. O órgão consultou o Painel de Preços e o PNCP ou usou apenas orçamentos diretos?
 ```
 
 Se você marcar **SIM** para qualquer uma dessas anomalias, você tem os elementos necessários para protocolar uma **impugnação técnica com pedido de anulação ou retificação do orçamento estimado**.

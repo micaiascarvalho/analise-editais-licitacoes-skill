@@ -15,7 +15,7 @@ Abaixo estão os **6 maiores grupos de erros, fraudes e omissões** que costumam
 #### Como cruzar e impugnar:
 
 - **Cruzamento:** Confronte a **Planilha vs. CCT da Categoria no Sistema MEDIADOR do MTE** e com a **Súmula nº 448 do TST** (insalubridade em banheiros públicos).
-- **Fundamento:** Violação ao art. 23 e art. 59, III da Lei 14.133/2021. Se a planilha adota piso salarial defasado, ela induz os licitantes a apresentarem propostas que violam normas trabalhistas cogentes. Reforço: o art. 63, §1º exige que o licitante declare que sua proposta cobre todos os custos trabalhistas, incluindo os da CCT, o que fica inviável com piso defasado. Se a nova CCT for homologada depois da data do orçamento, o reequilíbrio no contrato se dá por repactuação (art. 25, §8º, II e art. 135).
+- **Fundamento:** O vício está no orçamento: violação ao art. 23, caput (valor estimado compatível com os valores praticados) e ao art. 18, IV (orçamento com composição de custos) da Lei 14.133/2021. Se a planilha adota piso salarial defasado, ela induz os licitantes a apresentarem propostas que violam normas trabalhistas cogentes. A consequência aparece no art. 59, III: propostas que cubram o piso correto ficam acima do orçamento estimado e podem ser desclassificadas. Reforço: o art. 63, §1º exige que o licitante declare que sua proposta cobre todos os custos trabalhistas, incluindo os da CCT, o que fica inviável com piso defasado. Se a nova CCT for homologada depois da data do orçamento, o reequilíbrio no contrato se dá por repactuação (art. 25, §8º, II e art. 135).
 
 ---
 

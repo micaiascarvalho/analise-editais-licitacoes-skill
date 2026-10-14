@@ -1,8 +1,8 @@
-Sua percepção é absolutamente cirúrgica. A Minuta Contratual é, sem dúvida, o anexo de **maior densidade e complexidade jurídica** de todo o processo licitatório.
+A Minuta Contratual é o anexo de **maior densidade e complexidade jurídica** de todo o processo licitatório.
 
 Diferente do Edital (que se esgota no momento em que a licitação termina), a Minuta Contratual é o documento que **regerá a vida da sua empresa por 1, 2, 5 ou até 10 anos**. Uma cláusula mal redigida aqui pode levar uma empresa sólida à falência meses após vencer o certame.
 
-Para garantir que você domine cada detalhe com profundidade jurídica e prática, vamos dissecar as **cláusulas essenciais da Minuta Contratual** sob a ótica da **Lei nº 14.133/2021 (especialmente arts. 89 a 154)**, detalhando suas subdivisões, regras obrigatórias e implicações operacionais:
+Este documento detalha as **cláusulas essenciais da Minuta Contratual** sob a ótica da **Lei nº 14.133/2021 (especialmente arts. 89 a 154)**, detalhando suas subdivisões, regras obrigatórias e implicações operacionais:
 
 ---
 
@@ -11,7 +11,7 @@ Para garantir que você domine cada detalhe com profundidade jurídica e prátic
 Esta cláusula define o ciclo de vida temporal da relação jurídica entre as partes.
 
 - **1.1. Condição de Eficácia (Publicação no PNCP):**
-  - _O Detalhe Jurídico:_ O contrato **não tem validade legal** no momento da assinatura. Pelo art. 94 da Lei 14.133/2021, a publicação do contrato no **Portal Nacional de Contratações Públicas (PNCP)** no prazo de **20 dias úteis** após a assinatura é condição indispensável para sua eficácia. Se a Administração atrasar essa publicação, o início da contagem dos prazos de execução fica suspenso.
+  - _O Detalhe Jurídico:_ O contrato assinado **não produz efeitos** enquanto não for divulgado. Pelo art. 94 da Lei 14.133/2021, a divulgação do contrato e de seus aditamentos no **Portal Nacional de Contratações Públicas (PNCP)** é condição indispensável para sua eficácia e deve ocorrer em até **20 dias úteis** da assinatura, no caso de licitação (10 dias úteis na contratação direta).
 - **1.2. Distinção entre Vigência por Escopo vs. Vigência Contínua:**
   - _Contrato por Escopo (Entrega Certa / Obras / Bens Pontuais):_ O prazo estipulado no contrato é para **cumprimento do objeto**. Se a obra atrasar por culpa da Administração (falta de licença ambiental, atraso de repasse), o prazo de vigência **é prorrogado automaticamente** pelo tempo necessário para a conclusão (art. 111).
   - _Serviços e Fornecimentos Contínuos (Limpeza, Vigilância, TI, Locação):_ O contrato pode ter vigência inicial de até **5 anos** (art. 106).
@@ -29,18 +29,19 @@ Esta cláusula define o ciclo de vida temporal da relação jurídica entre as p
 
 - **2.1. O Rito da Liquidação (Aferição e Ateste):**
   - A minuta deve dividir o recebimento em duas fases formais com prazos explícitos:
-    - **Recebimento Provisório:** Feito pelo fiscal do contrato em até X dias (geralmente até 15 dias) para conferência física e técnica;
-    - **Recebimento Definitivo:** Feito pelo gestor em até X dias (geralmente até 30 dias) após comprovação de que o serviço ou bem atende a todas as exigências.
+    - **Recebimento Provisório:** Feito pelo fiscal do contrato em até X dias para conferência física e técnica;
+    - **Recebimento Definitivo:** Feito pelo gestor em até X dias após comprovação de que o serviço ou bem atende a todas as exigências.
+  - _Os prazos não estão na Lei 14.133/2021; vêm do regulamento do ente ou do próprio contrato (parâmetro de regulamento: costuma-se ver até 15 dias para o provisório e até 30 dias para o definitivo — a conferir no regulamento aplicável)._
 - **2.2. O Prazo Fatal de Pagamento:**
-  - A minuta deve fixar o prazo de pagamento (geralmente até **10 ou 30 dias úteis** contados a partir da emissão do termo de recebimento definitivo e liquidação da nota fiscal).
+  - A minuta deve fixar o prazo de pagamento, contado a partir da emissão do termo de recebimento definitivo e liquidação da nota fiscal. _O prazo não está na lei; vem do regulamento do ente ou do contrato (parâmetro de regulamento: costuma-se ver até **10 ou 30 dias úteis** — a conferir no regulamento aplicável)._
 - **2.3. Ordem Cronológica de Pagamentos (Art. 141):**
-  - A Administração é proibida de furar a fila. O pagamento deve respeitar a ordem cronológica de inscrição das notas fiscais liquidadas por categoria de contrato (bens, serviços, obras). A quebra injustificada dessa ordem sujeita o ordenador de despesas a processo por improbidade administrativa.
+  - A Administração é proibida de furar a fila. O pagamento deve respeitar a ordem cronológica de inscrição das notas fiscais liquidadas por categoria de contrato (bens, serviços, obras). A quebra injustificada dessa ordem leva à apuração de responsabilidade do agente responsável (a conferir: art. 141 e regulamento do ente).
 - **2.4. Encargos Moratórios por Atraso no Pagamento (Art. 92, V):**
-  - A minuta é **obrigada por lei** a prever a fórmula de atualização financeira e juros de mora que o órgão deverá pagar à empresa caso atrase o depósito bancário (geralmente correção pelo IPCA $+$ juros de 0,5% a 1% ao mês _pro rata die_).
+  - A minuta é **obrigada por lei** a prever a fórmula de atualização financeira e juros de mora que o órgão deverá pagar à empresa caso atrase o depósito bancário (parâmetro prático, não exigência legal: correção pelo IPCA $+$ juros de 0,5% a 1% ao mês _pro rata die_).
 
 ---
 
-### 3. Cláusula de Preservação do Equilíbrio Econômico-Financeiro (Art. 92, XI e Arts. 124 a 136)
+### 3. Cláusula de Preservação do Equilíbrio Econômico-Financeiro (Art. 92, X — prazo de resposta ao pedido de repactuação; Art. 92, XI — prazo de resposta ao pedido de restabelecimento do equilíbrio; Arts. 124 a 136)
 
 Esta é a cláusula mais importante para a saúde financeira de longo prazo da empresa. Ela disciplina os **três institutos distintos** de recomposição de preços:
 
@@ -116,7 +117,7 @@ Define a régua disciplinar do contrato, detalhando as penalidades e o procedime
 - **7.1. O Rol Taxativo de Penalidades:**
   - **I - Advertência:** Falhas leves que não gerem prejuízo relevante à execução;
   - **II - Multa:** Dividida em:
-    - _Multa Moratória:_ Cobrada por dia de atraso injustificado no cumprimento de prazos (geralmente entre 0,1% e 0,5% ao dia sobre o valor da parcela em atraso);
+    - _Multa Moratória:_ Cobrada por dia de atraso injustificado no cumprimento de prazos (parâmetro prático, não exigência legal: entre 0,1% e 0,5% ao dia sobre o valor da parcela em atraso);
     - _Multa Compensatória:_ Cobrada pela inexecução parcial ou total do contrato ou rescisão culposa (geralmente fixada entre 0,5% e 30% do valor do contrato, conforme art. 156, § 3º);
   - **III - Impedimento de Licitar e Contratar:** Suspensão temporária pelo prazo de até **3 anos** (aplicável no âmbito do ente federativo que sancionou);
   - **IV - Declaração de Inidoneidade:** A pena máxima, aplicada por infrações gravíssimas (fraude, corrupção, apresentação de documentos falsos), com prazo de **3 a 6 anos** de proibição de licitar com toda a Administração Pública brasileira (União, Estados e Municípios).
@@ -152,16 +153,25 @@ Lista as hipóteses de término antecipado do vínculo e protege a empresa contr
 
 ```
 ┌────────────────────────────────────────────────────────┐
-│             MINUTA DO CONTRATO ADMINISTRATIVO          │
+│           MINUTA DO CONTRATO ADMINISTRATIVO            │
 ├──────────────────────────┬─────────────────────────────┤
-│ 1. O QUÊ E QUANTO?       │ Objeto, Regime e Preço      │
+│ 1. QUANDO VALE?          │ Vigência, Eficácia (PNCP)   │
 ├──────────────────────────┼─────────────────────────────┤
-│ 2. POR QUANTO TEMPO?     │ Vigência e Prorrogações     │
+│ 2. COMO PAGA?            │ Recebimento e Pagamento     │
 ├──────────────────────────┼─────────────────────────────┤
-│ 3. COMO PAGA E REAJUSTA? │ Prazos, Faturas e Reajuste  │
+│ 3. COMO RECOMPÕE?        │ Reajuste, Repactuação       │
+│                          │ e Reequilíbrio              │
 ├──────────────────────────┼─────────────────────────────┤
-│ 4. QUAL A PROTEÇÃO?      │ Garantia (5%) e Riscos      │
+│ 4. QUAL A PROTEÇÃO?      │ Garantia (4 modalidades)    │
 ├──────────────────────────┼─────────────────────────────┤
-│ 5. E SE DER PROBLEMA?    │ Multas, Sanções e Rescisão  │
+│ 5. QUEM ASSUME O RISCO?  │ Matriz de Riscos            │
+├──────────────────────────┼─────────────────────────────┤
+│ 6. PODE MUDAR?           │ Alterações e Aditivos       │
+├──────────────────────────┼─────────────────────────────┤
+│ 7. E SE DESCUMPRIR?      │ Sanções e Dosimetria        │
+├──────────────────────────┼─────────────────────────────┤
+│ 8. COMO TERMINA?         │ Extinção e Indenização      │
+├──────────────────────────┼─────────────────────────────┤
+│ 9. ONDE SE DISCUTE?      │ Foro e Meios Alternativos   │
 └──────────────────────────┴─────────────────────────────┘
 ```

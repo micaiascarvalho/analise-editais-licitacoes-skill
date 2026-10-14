@@ -5,7 +5,7 @@ Para fundamentar uma impugnação que não seja apenas retórica, o analista nã
 3. **Jurisprudência dos Tribunais:** Súmulas e acórdãos do TCU, STF e STJ.
 4. **Prova Empírica de Mercado:** Dados reais do mercado (quantos concorrentes existem, prazos de fábrica, etc.).
 
-Abaixo está o mapa completo de mecanismos de cruzamento para cada uma das 5 seções críticas:
+Abaixo está o mapa completo de mecanismos de cruzamento para cada uma das 5 seções críticas, seguido da seção 6, com os cruzamentos derivados das demais seções do edital:
 
 ---
 
@@ -18,7 +18,7 @@ Aqui o objetivo é cruzar para descobrir: **"Essa regra está excluindo competid
   - **Lei Complementar nº 123/2006 (Estatuto da ME/EPP):** Cruze os valores dos lotes com os arts. 47 e 48. Se o lote for de até R$ 80.000,00 ou se o objeto for bem de natureza divisível e não houver cota reservada de até 25%, há descumprimento de lei federal, ressalvadas as exceções do art. 49 da LC 123/2006 e os limites do art. 4º da Lei 14.133/2021 (a conferir).
   - **Lei nº 11.101/2005 (Recuperação Judicial):** Se o edital barrar empresas em recuperação, confronte com o plano aprovado em juízo. A base nacional é o art. 69, II, da Lei 14.133/2021, que pede apenas certidão negativa de **falência** (não de recuperação judicial), somado ao TCU, Acórdão 1201/2020 (a conferir). A Súmula 50 do TCE/SP entra como reforço quando o órgão licitante for paulista.
   - **Jurisprudência de Controle:** Súmula 247 do TCU (obrigatoriedade de parcelamento); para recuperação judicial, ver o item acima.
-  - **Prova Empírica de Mercado:** Consulte o número de empresas ativas no Cadastro Nacional da Pessoa Jurídica (CNAE). Se a exigência de participação afunilar o mercado para apenas 1 ou 2 fornecedores locais, você comprova na impugnação o risco de direcionamento.
+  - **Prova Empírica de Mercado:** Consulte o número de empresas ativas na base do CNPJ filtrada pelo CNAE (Classificação Nacional de Atividades Econômicas) do objeto. A contagem por CNAE é prova fraca, porque o CNAE secundário infla o número; complemente com o histórico de participantes em licitações de objeto igual no PNCP. Se a exigência de participação afunilar o mercado para apenas 1 ou 2 fornecedores locais, você comprova na impugnação o risco de direcionamento.
 - **Critério de Decisão:**
   - _Gera Impugnação:_ Vedação sem justificativa no ETP, desrespeito aos benefícios da LC 123/2006 ou bloqueio arbitrário a consórcios/recuperação judicial.
   - _Descarta:_ A vedação a consórcio foi fundamentada no ETP provando que o mercado é amplo e a gestão de consórcio encareceria a fiscalização.
@@ -45,7 +45,7 @@ Aqui o objetivo é cruzar para descobrir: **"A mecânica de lances impede a busc
 Aqui o objetivo é cruzar para descobrir: **"O critério de aceitabilidade me desclassifica injustamente ou protege preços de ficção?"**
 
 - **Mecanismos de Cruzamento:**
-  - **Confronto Interno (Edital vs. TR e Pesquisa de Preços):** Cruze o preço máximo unitário do edital com os preços do Mapa de Cotações. Se o órgão fixou um teto unitário abaixo do menor valor encontrado na própria pesquisa dele, o preço de referência é inexequível por erro de cálculo interno.
+  - **Confronto Interno (Edital vs. TR e Pesquisa de Preços):** Cruze o preço máximo unitário do edital com os preços do Mapa de Cotações. Se o órgão fixou um teto unitário abaixo do menor valor encontrado na própria pesquisa dele, o orçamento estimado está subestimado por erro de cálculo interno (art. 23, _caput_, da Lei 14.133/2021). "Inexequível" qualifica proposta, não o orçamento.
   - **Sistemas Oficiais de Custos da Construção (SINAPI / SICRO):** Em obras e serviços de engenharia, confronte os valores unitários do edital com as tabelas oficiais da Caixa (SINAPI) e DNIT (SICRO). Se o teto do edital estiver abaixo das tabelas públicas sem justificativa, há irregularidade.
   - **Convenções Coletivas de Trabalho (CCT) e Ministério do Trabalho:** Em serviços terceirizados, cruze o piso salarial, tíquete-refeição e benefícios previstos no edital com a **CCT vigente registrada no MTE**. Se o edital adotou convenção vencida ou salário defasado, a proposta que seguir o edital violará leis trabalhistas.
   - **Jurisprudência do TCU:** Súmula nº 262 do TCU (obrigatoriedade de dar prazo ao licitante para justificar a exequibilidade antes de desclassificar), precedente firmado sob a Lei 8.666/1993 (art. 48); o tema hoje está no art. 59, §§2º a 4º, da Lei 14.133/2021, e a continuidade da presunção relativa deve ser confirmada em acórdão posterior a 2021 (a conferir). BDI e custos diretos: (fundamento jurisprudencial a localizar).
@@ -81,7 +81,7 @@ Aqui o objetivo é cruzar para descobrir: **"O edital está restringindo meu dir
 - **Mecanismos de Cruzamento:**
   - **Constituição Federal (Art. 5º, LIV e LV):** Princípios do Contraditório, da Ampla Defesa e do Devido Processo Legal.
   - **Jurisprudência do Supremo Tribunal Federal (STF):**
-    - **Súmula Vinculante nº 21 do STF:** É inconstitucional qualquer exigência de taxa de expediente, caução ou depósito em dinheiro como condição para protocolar recurso administrativo.
+    - **Súmula Vinculante nº 21 do STF:** Declara inconstitucional a exigência de depósito ou arrolamento prévios de dinheiro ou bens para admissibilidade de recurso administrativo. Sua aplicação a "taxa de expediente" ou caução para recorrer é por analogia.
   - **Lei nº 9.784/1999 (Lei do Processo Administrativo Federal; estados e municípios podem ter lei própria):** Garante o direito de vista dos autos e o dever de decisão motivada pelo órgão julgador. Atenção: essa lei conta prazos em dias contínuos (art. 66) (a conferir); a contagem em dias úteis vem do art. 183, III, da Lei 14.133/2021, aplicado aos prazos dos arts. 164 e 165.
   - **Confronto de Prazos Internos (Edital vs. Art. 165 da Lei 14.133/2021):** Verifique se o edital suprime os **3 dias úteis** garantidos por lei para a apresentação das razões recursais completas.
 - **Critério de Decisão:**
@@ -155,6 +155,8 @@ Aqui o objetivo é cruzar para descobrir: **"O edital está restringindo meu dir
 ```
                     ┌─────────────────────────┐
                     │    EDITAL DA LICITAÇÃO  │
+                    │  Seções críticas 1–5    │
+                    │  + Seção 6 (derivadas)  │
                     └────────────┬────────────┘
                                  │
            ┌─────────────────────┼─────────────────────┐

@@ -14,7 +14,8 @@ Esta pasta reúne o necessário para continuar o trabalho em outro computador (o
    - `837df5f` — Baixa
 4. **Mapeamento de fontes em 6 fases:** plano em `briefing/Mapeamento_Analise/02 - Plano do Mapeamento de Fontes.md` (commit `6bfc323`).
    - Fase 1 (catálogo `01 - Catalogo de Fontes.md`): concluída, commit `1d04c47`. `conferido` só para artigos da Lei 14.133 conferidos no Planalto.
-   - Fase 2 (`Edital/Fontes - Edital.md`): iniciada em sessão separada; verifique a tabela "Andamento" do plano e o `git log` para saber se foi concluída.
+   - Fase 2 (`Edital/Fontes - Edital.md`): concluída, commit `4f29ecb` (13 seções; arts. 14, 15 e 90 entraram no catálogo como `a conferir`).
+   - Próxima: Fase 3 (TR e ETP).
 
 ## 2. Decisões que valem para as próximas fases
 

@@ -1,0 +1,3 @@
+- [Checklist dos 6 documentos](checklist-seis-documentos-impugnacao.md) — documentos exigidos por impugnação e onde ficam as pastas
+- [PNCP e base legal do sigilo](pncp-api-e-base-legal-sigilo.md) — endpoints que funcionam e artigos da Lei 14.133 conferidos
+- [Mapeamento de fontes em fases](mapeamento-fontes-em-fases.md) — 6 fases, uma por sessão; andamento no "02 - Plano do Mapeamento de Fontes.md"

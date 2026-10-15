@@ -70,9 +70,23 @@ Se uma fase acrescentar fonte nova, ela entra primeiro no catálogo, no mesmo co
 | :-- | :-- | :-- |
 | 1. Catálogo | concluída | este commit (`01 - Catalogo de Fontes.md`) |
 | 2. Edital | concluída | este commit (`Edital/Fontes - Edital.md`; catálogo: `EXT-LEI14133-ART14`, `ART15`, `ART90`) |
-| 3. TR e ETP | pendente | — |
+| 3. TR e ETP | concluída | este commit (`Termo de Referência/Fontes - Termo de Referencia.md`, `Estudo Técnico Preliminar/Fontes - ETP.md`; catálogo: `EXT-LEI14133-ART16`, `ART117`, `ART140`, `EXT-TCU-SUM281`, `EXT-MTE-NR15`, `EXT-MTE-NR16`) |
 | 4. Planilha e Pesquisa | pendente | — |
 | 5. Minuta e RERI | pendente | — |
 | 6. Consolidação | pendente | — |
 
 Ao concluir uma fase, atualize esta tabela no mesmo commit.
+
+## 7. Pendências registradas para a Fase 6
+
+Levantadas na revisão da Fase 3 (simetria com o mapa do Edital). A Fase 3 não editou `Edital/Fontes - Edital.md`; estes ajustes ficam para a consolidação.
+
+1. **Matriz do Edital:** nas colunas INT-TR e INT-ETP, trocar o ✓ pelas seções do TR e pelos incisos do ETP cruzados, como nas matrizes do TR e do ETP. Linhas 3 (Recursos orçamentários) e 7 (Julgamento): INT-ETP passa de "—" para os incisos IV e VI. Linha 5 (Envio de propostas): INT-TR passa a citar as seções III e IV.
+2. **Seção 2 (Objeto), "Descrição, unidades e quantitativos":** citar INT-ETP (incisos I, IV e VII).
+3. **Seção 3, "Orçamento sigiloso":** acrescentar INT-TR (seção IX) e INT-ETP (incisos IV e VI); trocar INT-PLANILHA e INT-PESQUISA sem seção por INT-PLANILHA (Módulos 1 a 6) e INT-PESQUISA (item 3, mapa de preços).
+4. **Seção 4:** dividir "Vedação a consórcio ou cooperativa" como no mapa do ETP (consórcio: `EXT-LEI14133-ART15`; cooperativa: `EXT-LEI14133-ART16`, `EXT-TCU-SUM281` a conferir). Em "Tratamento de ME/EPP", acrescentar INT-ETP (incisos IV e VIII); acrescentar a volta do ETP III (motivação de exigências de habilitação).
+5. **Seção 5:** em "Declaração de custos trabalhistas", acrescentar INT-TR (seção IV); incluir a volta do TR III (prazo para obter laudo ou catálogo).
+6. **Seções 6 e 7:** volta do TR VIII (critério de julgamento e modo de disputa) e INT-TR (seção VIII) na amostra antes dos lances; na seção 7, "Teto unitário versus pesquisa", acrescentar INT-ETP (inciso VI) e trocar INT-PESQUISA (mapa de cotações) por INT-PESQUISA (item 3, mapa de preços) e INT-PLANILHA sem seção por INT-PLANILHA (Módulo 6, preço final).
+7. **Seção 8:** acrescentar INT-TR (seção VIII) em "Limitação de tempo, local ou somatório" e em "Tempo de existência versus tempo de experiência"; criar a linha "Atestados só de órgão público" (volta do TR VIII); em "Índices contábeis", trocar INT-ETP (justificativa) por INT-ETP (justificativa das exigências de habilitação, se houver; ver `Fontes - ETP.md`, inciso III); dar a `EXT-PEND-TEMPOEXIST` a mesma ressalva "(a localizar)" usada no TR.
+8. **Modo de citar seções:** uniformizar as fontes internas do Edital para `INT-EDITAL (seção N)`, `INT-PLANILHA (Módulo N; submódulo N.N)` e `INT-PESQUISA (item N, …)`, como nos mapas do TR e do ETP.
+9. **Catálogo:** acrescentar `ED-F` em "Usado em" das fontes que o mapa do Edital usa e ainda não marcam a sigla (conferir por script, como foi feito para `TR-F` e `ETP-F`).

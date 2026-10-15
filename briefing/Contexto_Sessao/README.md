@@ -15,7 +15,8 @@ Esta pasta reúne o necessário para continuar o trabalho em outro computador (o
 4. **Mapeamento de fontes em 6 fases:** plano em `briefing/Mapeamento_Analise/02 - Plano do Mapeamento de Fontes.md` (commit `6bfc323`).
    - Fase 1 (catálogo `01 - Catalogo de Fontes.md`): concluída, commit `1d04c47`. `conferido` só para artigos da Lei 14.133 conferidos no Planalto.
    - Fase 2 (`Edital/Fontes - Edital.md`): concluída, commit `4f29ecb` (13 seções; arts. 14, 15 e 90 entraram no catálogo como `a conferir`).
-   - Próxima: Fase 3 (TR e ETP).
+   - Fase 3 (`Fontes - Termo de Referencia.md` e `Fontes - ETP.md`): concluída. Feita por workflow (rascunho, revisão por 4 lentes, correção, simetria TR x ETP, catálogo e revisão final). Entraram no catálogo os arts. 16, 117 e 140 da Lei 14.133 (conferidos), a Súmula 281 do TCU e as NR-15 e NR-16 (a conferir). Os ajustes de simetria no mapa do Edital ficaram registrados na seção 7 do plano, para a Fase 6.
+   - Próxima: Fase 4 (Planilha e Pesquisa).
 
 ## 2. Decisões que valem para as próximas fases
 

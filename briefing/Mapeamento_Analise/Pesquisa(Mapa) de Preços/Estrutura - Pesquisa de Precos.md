@@ -26,7 +26,7 @@ A Nova Lei de Licitações exige que o valor estimado seja compatível com os va
 
 Para bens e serviços em geral (art. 23, § 1º, conforme regulamento), os parâmetros abaixo podem ser adotados **de forma combinada ou não**:
 
-- **Parâmetro I – Painel de Preços / Banco de Preços em Saúde:**
+- **Parâmetro I – Sistemas oficiais de preços / Banco de Preços em Saúde:**
   - Composição de custos unitários menores ou iguais à **mediana** do item no painel para consulta de preços ou no banco de preços em saúde disponíveis no Portal Nacional de Contratações Públicas (PNCP).
 - **Parâmetro II – Contratações Similares da Administração:**
   - Contratações similares feitas pela Administração Pública, em execução ou concluídas no período de **1 (um) ano** anterior à data da pesquisa, inclusive mediante sistema de registro de preços, com aplicação de índice de atualização de preços.
@@ -61,7 +61,7 @@ Depois de coletar os preços (o padrão mínimo exigido pelos órgãos de contro
   - Antes de calcular o preço final, o órgão **deve expurgar** valores excessivamente altos (que inflariam o orçamento) ou excessivamente baixos (que rebaixariam o valor artificialmente).
 - **Critério Estatístico:**
   - Os métodos de cálculo não estão na lei, e sim no regulamento. Na esfera federal, a IN SEGES/ME 65/2021 (art. 6º, caput) admite a **Média**, a **Mediana** ou o **Menor dos valores obtidos**, calculados sobre ao menos 3 preços, desconsiderados os inexequíveis, os inconsistentes e os excessivamente elevados (a conferir).
-  - A IN 65/2021 **não dá preferência à Mediana**. A mediana só funciona como limite quando o preço vem de uma única fonte do Painel de Preços, que não pode superá-la (art. 6º, § 6º) (a conferir). Em estados e municípios, verifique o regulamento do ente.
+  - A IN 65/2021 **não dá preferência à Mediana**. A mediana só funciona como limite quando o preço vem apenas do parâmetro I (sistemas oficiais), caso em que não pode superar a mediana do item (art. 6º, § 6º). Em estados e municípios, verifique o regulamento do ente.
 
 ---
 
@@ -70,7 +70,7 @@ Depois de coletar os preços (o padrão mínimo exigido pelos órgãos de contro
 ```
 ┌────────────────────────────────────────────────────────┐
 │             FONTES DE COLETA DE PREÇOS                 │
-│  [Painel de Preços] + [Outros Contratos] + [Mercado]   │
+│  [Sist. Oficiais] + [Outros Contratos] + [Mercado]     │
 └──────────────────────────┬─────────────────────────────┘
                            │
                            ▼

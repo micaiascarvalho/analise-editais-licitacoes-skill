@@ -79,7 +79,7 @@ Este é o erro mais perigoso para contratos com mais de 12 meses de duração.
 
 - **Fundamento:** Art. 143 da Lei 14.133/2021: a parcela incontroversa deve ser liberada no prazo de pagamento; reter além da parcela controvertida viola esse dispositivo e o Princípio da Vedação ao Enriquecimento Sem Causa do Estado.
 - **Nuance:** A retenção vinculada a verbas trabalhistas do próprio contrato é lícita. Nos contratos com dedicação exclusiva de mão de obra, o art. 121, § 3º permite exigir garantia para verbas rescisórias, condicionar o pagamento à quitação das obrigações trabalhistas vencidas do contrato, usar conta vinculada e pagar diretamente verbas inadimplidas, deduzindo do pagamento. O argumento deve atacar a retenção desvinculada (ex.: 100% da fatura por certidão acessória ou falta pontual).
-- _(Precedente do STJ antes citado — REsp 1.733.688/SC — não localizado; buscar precedente verificado.)_
+- **Jurisprudência:** Acórdãos 964/2012-Plenário e 1.505/2026-Plenário do TCU: a perda da regularidade fiscal justifica sanções, mas não autoriza reter o pagamento de serviço já executado, sob pena de enriquecimento sem causa da Administração.
 
 ---
 

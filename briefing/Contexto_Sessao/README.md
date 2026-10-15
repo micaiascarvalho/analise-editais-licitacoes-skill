@@ -34,7 +34,7 @@ Esta pasta reúne o necessário para continuar o trabalho em outro computador (o
 
 O que ficou "a conferir" ou para decidir depois do mapeamento (os itens 10, 14 e 19 do plano foram resolvidos em 2026-10-15: o 0,83% do aviso prévio foi mantido e os arquivos de estudo foram alinhados ao catálogo):
 
-- **Fontes `a conferir` no catálogo:** `EXT-PEND-ATESTPRIV` (sem acórdão; a tese fica só com a lei), `EXT-BASE-NFE`, `EXT-BASE-PAINELCONTRAT`, `EXT-IN5-2014` e as que dependem do ente, da categoria ou do objeto (`EXT-REG-ENTE`, `EXT-NORMA-CCT`, `EXT-ISS-MUNICIPAL`, normas ABNT, INMETRO, ANVISA, ANATEL, conselhos, CFC, NR-17, modelos da AGU, Diário Oficial, site do órgão, TJ). Lista completa na seção 9.2 do catálogo.
+- **Fontes `a conferir` no catálogo:** `EXT-BASE-NFE`, `EXT-BASE-PAINELCONTRAT`, `EXT-IN5-2014` e as que dependem do ente, da categoria ou do objeto (`EXT-REG-ENTE`, `EXT-NORMA-CCT`, `EXT-ISS-MUNICIPAL`, normas ABNT, INMETRO, ANVISA, ANATEL, conselhos, CFC, NR-17, modelos da AGU, Diário Oficial, site do órgão, TJ). Lista completa na seção 9.2 do catálogo.
 
 - "jurisprudência pacífica do TCU", sem acórdão, na Análise da Minuta (seção de reajuste).
 - "ou anular a fase preparatória" no fecho da Análise do ETP.

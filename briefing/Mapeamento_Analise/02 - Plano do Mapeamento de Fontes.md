@@ -72,7 +72,7 @@ Se uma fase acrescentar fonte nova, ela entra primeiro no catálogo, no mesmo co
 | 2. Edital | concluída | este commit (`Edital/Fontes - Edital.md`; catálogo: `EXT-LEI14133-ART14`, `ART15`, `ART90`) |
 | 3. TR e ETP | concluída | este commit (`Termo de Referência/Fontes - Termo de Referencia.md`, `Estudo Técnico Preliminar/Fontes - ETP.md`; catálogo: `EXT-LEI14133-ART16`, `ART117`, `ART140`, `EXT-TCU-SUM281`, `EXT-MTE-NR15`, `EXT-MTE-NR16`) |
 | 4. Planilha e Pesquisa | concluída | este commit (`Planilha de Custos/Fontes - Planilha de Custos.md`, `Pesquisa(Mapa) de Preços/Fontes - Pesquisa de Precos.md`; sem fonte nova; catálogo: siglas PL-F e PP-F) |
-| 5. Minuta e RERI | pendente | — |
+| 5. Minuta e RERI | concluída | este commit (`Minuta Contratual/Fontes - Minuta Contratual.md`, `Retificações, Esclarecimentos e Respostas/Fontes - RERI.md`; catálogo: `EXT-LEI14133-ART157`, `ART158`; Nomes de `ART137` e `ART156` ampliados; siglas MC-F e RR-F) |
 | 6. Consolidação | pendente | — |
 
 Ao concluir uma fase, atualize esta tabela no mesmo commit.
@@ -102,3 +102,12 @@ A Fase 4 não editou os mapas do Edital, do TR e do ETP nem os arquivos `Estrutu
 14. **Arquivos de estudo:** `Estrutura - Planilha de Custos.md` ainda diz "Súmula 254 ... fonte secundária; conferir o texto oficial" e marca a Lei 14.973/2024 como "fonte secundária, a conferir", mas as duas estão `conferido` no catálogo; `Analise - Planilha de Custos.md` (grupo 4) ainda cita o esclarecimento do MEC como "fonte secundária", já conferido (`EXT-ADM-MEC-2024`). `Analise - Pesquisa de Precos.md` (vício 5) marca a IN 65/2021 e o Acórdão 1.445/2015 como "a conferir", já conferidos. Os módulos 4.1-D e 4.1-E (acidente e maternidade) não têm fonte no catálogo.
 15. **Catálogo, siglas:** `EXT-IN65-GERAL` não é usado por nenhum mapa (os mapas usam `ART5` e `ART6`); verificar órfãos na Fase 6.
 
+### 7.2 Levantadas na Fase 5 (Minuta e RERI)
+
+A Fase 5 não editou os mapas anteriores nem os arquivos `Estrutura`/`Analise`. Os mapas da Minuta e da RERI já trazem as linhas de volta de todos os cruzamentos que os mapas anteriores fazem com eles.
+
+16. **Coluna INT-MINUTA nas matrizes:** nos mapas do Edital e do TR, trocar o ✓ pelas cláusulas cruzadas (Edital: seção 5 → cl. 1; seção 11 → cl. 1 e 4; seção 12 → cl. 7; seção 13 → cl. 1, 3 e 9. TR: I → cl. 1, 3 e 6; V → cl. 2; VI → cl. 2 e 7; VII → cl. 2, 5 e 8; X → cl. 2). No ETP, inciso X → cl. 4 e 5.
+17. **Voltas que faltam nos mapas anteriores:** o mapa da Minuta cruza com lugares que ainda não o citam. Edital, seção 2 (natureza do objeto e regime: cl. 1 e 5) e seção 13 (previsão de prorrogação e critério de reajuste: cl. 1 e 3). TR, seção IV (dedicação exclusiva: cl. 3; riscos da execução: cl. 5). ETP, inciso X (percentual da garantia acima de 5% justificado pelos riscos: cl. 4). Planilha, Módulos 2 e 4 (troca da provisão de férias nas prorrogações: cl. 1), Módulo 6 (preço do posto como base da retenção e da multa de mora: cl. 2 e 7) e Módulo 2 (provisões e conta vinculada: cl. 2). Pesquisa, item 3 (data do mapa de preços como data-base do reajuste: cl. 3), sem linha no mapa da Pesquisa.
+18. **Coluna INT-RERI:** os mapas anteriores dizem que `INT-RERI` "vale para todas as seções". O mapa da RERI faz a volta pelos checkpoints 1 e 3 (Edital seção 8; TR III, IV, VII e VIII; ETP IV e VI; Planilha Módulos 1 a 6; Pesquisa itens 1 a 3; Minuta cl. 3 e 4). A Fase 6 decide se basta a regra geral ou se as matrizes passam a marcar essas seções.
+19. **Arquivos de estudo da Minuta e da RERI:** `Estrutura - Minuta Contratual.md` ainda marca "a conferir" o art. 141 (2.3) e o art. 22 (5.3), já conferidos, e não cita os artigos da defesa prévia de 15 dias úteis (7.2), que são os arts. 157 e 158 (`EXT-LEI14133-ART157`, `ART158`). `Estrutura - RERI.md` diz "fundamento jurisprudencial a localizar" para o efeito vinculante do esclarecimento, já resolvido por `EXT-TCU-AC915-2009`; `Analise - RERI.md` marca "a conferir" os Acórdãos 2.032/2021, 2.078/2014 e 930/2008, já conferidos.
+20. **Catálogo:** a coluna "Usado em" de `EXT-TCU-AC7184-2018` passou de "—" para MC-F; o órfão que restava nela deixa de existir. Na verificação de órfãos da Fase 6, considerar MC-F e RR-F.

@@ -13,11 +13,13 @@ Pela **Lei nº 14.133/2021 (art. 6º, inciso XXIII)**, o Termo de Referência é
 
 ### 2. A Estrutura Típica de um TR e a Finalidade de Cada Seção
 
-A legislação (art. 6º, XXIII, alíneas "a" a "j" (a conferir)) e os modelos padronizados da Administração Pública (como os da Advocacia-Geral da União - AGU) orientam a divisão do TR nas seções abaixo. A correspondência de cada seção com as alíneas do art. 6º, XXIII está indicada entre parênteses (a conferir); seções sem alínea vêm do modelo da AGU. Para compras, o art. 40, § 1º acrescenta a especificação do produto, o local de entrega e as regras de recebimento e a garantia.
+A legislação (art. 6º, XXIII, alíneas "a" a "j", da Lei 14.133/2021) e os modelos padronizados da Administração Pública (como os da Advocacia-Geral da União - AGU) orientam a divisão do TR nas seções abaixo. A correspondência de cada seção com as alíneas do art. 6º, XXIII está indicada em nota no início da seção (texto conferido no Planalto): "a" → I, "b" → II, "c" e "d" → III, "e" → IV, "f" → V, "g" → VI, "h" → VIII, "i" → IX e "j" → X. A seção VII (obrigações das partes) não tem alínea; vem do modelo da AGU. Para compras, o art. 40, § 1º acrescenta a especificação do produto, o local de entrega e as regras de recebimento e a garantia.
 
 ---
 
 #### Seção I: Definição do Objeto
+
+> _Corresponde à alínea "a" do art. 6º, XXIII (definição do objeto, incluídos natureza, quantitativos, prazo do contrato e, se for o caso, possibilidade de prorrogação)._
 
 - **A Finalidade:** Dizer com precisão cirúrgica **o que** está sendo contratado, sua natureza, se é fornecimento contínuo ou pontual, quantitativos e prazo de vigência.
 - **O que você encontra aqui:**
@@ -31,6 +33,8 @@ A legislação (art. 6º, XXIII, alíneas "a" a "j" (a conferir)) e os modelos p
 
 #### Seção II: Justificativa e Fundamentação da Contratação
 
+> _Corresponde à alínea "b" do art. 6º, XXIII (fundamentação da contratação, com referência ao ETP ou, se não puder ser divulgado, ao extrato das partes não sigilosas)._
+
 - **A Finalidade:** Fazer a ponte oficial entre o TR e o ETP (Estudo Técnico Preliminar). Justifica **por que** o órgão precisa daquilo e **qual interesse público** será atendido.
 - **O que você encontra aqui:**
   - O problema real enfrentado pelo órgão (ex.: falta de pessoal, computadores obsoletos);
@@ -39,6 +43,8 @@ A legislação (art. 6º, XXIII, alíneas "a" a "j" (a conferir)) e os modelos p
 ---
 
 #### Seção III: Descrição da Solução e Requisitos da Contratação (Especificações Técnicas)
+
+> _Corresponde às alíneas "c" (descrição da solução como um todo, considerado todo o ciclo de vida do objeto) e "d" (requisitos da contratação) do art. 6º, XXIII._
 
 - **A Finalidade:** O detalhamento do padrão de qualidade. Define as características mínimas obrigatórias do produto ou serviço, além de exigências ambientais e regulatórias.
 - **O que você encontra aqui:**
@@ -52,6 +58,8 @@ A legislação (art. 6º, XXIII, alíneas "a" a "j" (a conferir)) e os modelos p
 
 #### Seção IV: Modelo de Execução do Objeto (A Operação)
 
+> _Corresponde à alínea "e" do art. 6º, XXIII (modelo de execução do objeto)._
+
 - **A Finalidade:** Definir o **"como, onde e quando"**. É o roteiro prático da prestação do serviço ou da entrega física da mercadoria.
 - **O que você encontra aqui:**
   - Endereços exatos de entrega e horários de recebimento;
@@ -63,6 +71,8 @@ A legislação (art. 6º, XXIII, alíneas "a" a "j" (a conferir)) e os modelos p
 
 #### Seção V: Modelo de Gestão e Fiscalização Contratual
 
+> _Corresponde à alínea "f" do art. 6º, XXIII (modelo de gestão do contrato: como a execução será acompanhada e fiscalizada)._
+
 - **A Finalidade:** Definir **quem manda e quem fiscaliza**. Estabelece os papéis das pessoas envolvidas na rotina do contrato para evitar abusos ou cobranças informais.
 - **O que você encontra aqui:**
   - Atribuições do **Gestor do Contrato** (cuida da parte burocrática e financeira);
@@ -73,6 +83,8 @@ A legislação (art. 6º, XXIII, alíneas "a" a "j" (a conferir)) e os modelos p
 ---
 
 #### Seção VI: Critérios de Medição, Avaliação e Pagamento (SLA / IMR)
+
+> _Corresponde à alínea "g" do art. 6º, XXIII (critérios de medição e de pagamento)._
 
 - **A Finalidade:** Definir **como o serviço é avaliado para que o pagamento seja liberado**. Em serviços modernos, não se paga apenas por "estar presente", mas por resultado entregue.
 - **O que você encontra aqui:**
@@ -87,7 +99,7 @@ A legislação (art. 6º, XXIII, alíneas "a" a "j" (a conferir)) e os modelos p
 
 #### Seção VII: Obrigações da Contratada e da Contratante
 
-> _Seção do modelo da AGU; não corresponde a uma alínea do art. 6º, XXIII (a conferir)._
+> _Seção do modelo da AGU; não corresponde a uma alínea do art. 6º, XXIII (as alíneas "a" a "j" não tratam das obrigações das partes)._
 
 - **A Finalidade:** É a **balança de responsabilidades** das partes para que não haja dúvidas sobre quem paga o quê.
 - **O que você encontra aqui:**
@@ -98,6 +110,8 @@ A legislação (art. 6º, XXIII, alíneas "a" a "j" (a conferir)) e os modelos p
 
 #### Seção VIII: Critérios de Seleção do Fornecedor e Parâmetros de Habilitação
 
+> _Corresponde à alínea "h" do art. 6º, XXIII (forma e critérios de seleção do fornecedor)._
+
 - **A Finalidade:** Amarração técnica dos requisitos de capacidade com o objeto.
 - **O que você encontra aqui:**
   - Definição precisa de quais **parcelas de maior relevância técnica** serão exigidas nos atestados de capacidade (ex.: _"para comprovar qualificação técnica, o atestado deve comprovar instalação de ar-condicionado central tipo VRF, que representa a parcela crítica do serviço"_);
@@ -107,7 +121,7 @@ A legislação (art. 6º, XXIII, alíneas "a" a "j" (a conferir)) e os modelos p
 
 #### Seção IX: Estimativa do Valor da Contratação
 
-> _Corresponde à alínea "i" do art. 6º, XXIII (a conferir)._
+> _Corresponde à alínea "i" do art. 6º, XXIII (estimativas do valor da contratação, com preços unitários referenciais, memórias de cálculo e documentos de suporte, que devem constar de documento separado e classificado)._
 
 - **A Finalidade:** Apresentar o valor estimado da contratação com memória de cálculo e documentos de suporte (preços unitários referenciais).
 - **O que você encontra aqui:**
@@ -119,7 +133,7 @@ A legislação (art. 6º, XXIII, alíneas "a" a "j" (a conferir)) e os modelos p
 
 #### Seção X: Adequação Orçamentária
 
-> _Corresponde à alínea "j" do art. 6º, XXIII (a conferir)._
+> _Corresponde à alínea "j" do art. 6º, XXIII (adequação orçamentária)._
 
 - **A Finalidade:** Demonstrar que há recurso para a despesa.
 - **O que você encontra aqui:**

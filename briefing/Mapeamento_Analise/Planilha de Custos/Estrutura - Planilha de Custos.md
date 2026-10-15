@@ -35,14 +35,14 @@ Este módulo apura quanto custa a remuneração direta do trabalhador por mês. 
 
 ### Módulo 2: Encargos e Benefícios Anuais, Mensais e Diários
 
-_Correspondência com o modelo da IN 5/2017, alterada pela IN 7/2018: (a conferir no Anexo VII-D da IN 5/2017)._
+_Correspondência com o modelo da IN 5/2017, alterada pela IN 7/2018 (Anexo VII-D, conferido no Portal de Compras): o Módulo 2 tem os mesmos três submódulos — 2.1 (13º Salário, Férias e Adicional de Férias), 2.2 (GPS, FGTS e outras contribuições: INSS 20%, Salário-Educação 2,5%, SAT, SESC ou SESI 1,5%, SENAI ou SENAC 1,0%, SEBRAE 0,6%, INCRA 0,2% e FGTS 8%) e 2.3 (Benefícios Mensais e Diários: transporte, auxílio-refeição/alimentação, assistência médica e familiar e outros). O seguro de vida da CCT entra em "outros" do 2.3. Pela Nota 3 do 2.2, esses percentuais incidem sobre o Módulo 1 e o Submódulo 2.1._
 
 Este módulo divide-se em três vertentes: as provisões anuais do trabalhador (13º e férias), o que vai para o Governo (tributos sobre a folha) e o que vai direto para o trabalhador no dia a dia (benefícios).
 
 #### Submódulo 2.1: 13º Salário, Férias e Adicional de Férias
 
-- **13º Salário:** provisão mensal de 1/12 da remuneração = **8,33%** (a conferir).
-- **Férias e Adicional de Férias (1/3 constitucional):** provisão mensal das férias do titular acrescidas do terço (percentual a conferir).
+- **13º Salário:** provisão mensal de 1/12 da remuneração = **8,33%** (Anexo VII-D, Submódulo 2.1, Nota 1; o mesmo 8,33% aparece na tabela da conta vinculada, Anexo XII, item 14).
+- **Férias e Adicional de Férias (1/3 constitucional):** provisão mensal de 1/12 das férias (8,33%) mais 1/12 do terço (2,78%) = **11,11%** no 1º ano (Anexo VII-D, Submódulo 2.1, Notas 1 e 2). Pela Nota 3, a rubrica férias vira **custo não renovável** na prorrogação; a partir dela, o Esclarecimento 09 do MEC no Pregão 90011/2024 mantém só o terço (2,78%) no 2.1 e passa o substituto de férias (8,33%) para o Módulo 4. A tabela da conta vinculada (Anexo XII, item 14) usa 12,10% para "férias e 1/3"; esse percentual é o da retenção na conta, não a rubrica da planilha.
   - _Atenção:_ esta provisão e o substituto de férias do Submódulo 4.1-A **não devem ser somados quando cobrem o mesmo custo** (ver a Análise, item 4).
 
 #### Submódulo 2.2: GPS, FGTS e Outras Contribuições
@@ -96,7 +96,7 @@ A Administração retém ou provisiona esses valores todo mês para garantir que
 
 A Administração Pública não contrata um "indivíduo"; ela contrata um **"posto de serviço ininterrupto"** (ex.: a portaria não pode ficar vazia nenhum dia útil do ano). Quando o titular falta, tira férias ou adoece, a empresa precisa colocar um substituto. Este módulo precifica esse substituto.
 
-_Correspondência com o modelo: (a conferir no Anexo VII-D da IN 5/2017)._
+_Correspondência com o modelo (Anexo VII-D da IN 5/2017, na redação da IN 7/2018, conferido no Portal de Compras): Submódulo 4.1, "Substituto nas Ausências Legais", com as mesmas alíneas A a F (substituto na cobertura de férias, ausências legais, licença-paternidade, ausência por acidente de trabalho, afastamento maternidade e outras ausências), e Submódulo 4.2, "Substituto na Intrajornada" (alínea A, intervalo para repouso ou alimentação). Pela Nota 1 do Módulo 4, os itens são o custo dos dias trabalhados pelo substituto quando o empregado alocado estiver ausente, conforme a legislação. A nota que mandava incidir o Submódulo 2.2 sobre o Módulo 4 foi revogada pela IN 7/2018._
 
 - **4.1. Substituto nas Ausências Legais:**
   - **A. Férias:**
@@ -112,11 +112,11 @@ _Correspondência com o modelo: (a conferir no Anexo VII-D da IN 5/2017)._
   - **D. Ausência por Acidente de Trabalho:**
     - A empresa paga o salário dos primeiros **15 dias** de afastamento antes de o empregado entrar no benefício previdenciário do INSS (Lei nº 8.213/1991, art. 60, § 3º).
   - **E. Afastamento Maternidade:**
-    - Cobertura do posto durante a licença-maternidade de 120 dias da titular (CLT, art. 392); o custo na planilha é o do substituto (percentual a conferir).
+    - Cobertura do posto durante a licença-maternidade de 120 dias da titular (CLT, art. 392); o custo na planilha é o do substituto. O modelo do Anexo VII-D só nomeia a rubrica (4.1, alínea E) e não traz fórmula nem percentual: a memória de cálculo vem do órgão e deve constar da planilha do edital.
   - **F. Outras Ausências:**
     - Demais ausências previstas no modelo ou na CCT (conferir no modelo da IN 5/2017 e na CCT da categoria).
 - **4.2. Substituto na Intrajornada:**
-  - Cobertura do intervalo para repouso e alimentação do titular quando o posto não pode ficar vazio (a conferir).
+  - Cobertura do intervalo para repouso e alimentação do titular quando o posto não pode ficar vazio. O modelo do Anexo VII-D só nomeia a rubrica (4.2, alínea A) e não traz fórmula: o custo depende da escala e da duração do intervalo e deve vir com memória de cálculo na planilha do edital.
 
 ---
 
@@ -150,14 +150,14 @@ _Correspondência com o modelo: (a conferir no Anexo VII-D da IN 5/2017)._
   - **ISS:** Imposto Sobre Serviços (Municipal, entre **2,00% e 5,00%** conforme o local da prestação);
   - **PIS:** Alíquota federal (**0,65%** no lucro presumido/cumulativo ou **1,65%** no lucro real/não cumulativo);
   - **COFINS:** Alíquota federal (**3,00%** no lucro presumido ou **7,60%** no lucro real);
-  - _Nota sobre o regime não cumulativo:_ 1,65% e 7,60% são alíquotas nominais. Como o regime não cumulativo gera créditos, na planilha usa-se a **alíquota efetiva** de PIS/Cofins (média recolhida após os créditos), e não a nominal (a conferir).
+  - _Nota sobre o regime não cumulativo:_ 1,65% e 7,60% são alíquotas nominais. Como o regime não cumulativo gera créditos, na planilha usa-se a **alíquota efetiva** de PIS/Cofins (média recolhida após os créditos), e não a nominal. A IN 5/2017 não trata do tema (o Módulo 6 do Anexo VII-D só manda aplicar o percentual dos tributos sobre o faturamento); o fundamento é o Acórdão 2.622/2013-Plenário do TCU, item 9.3.2.4, que manda exigir nos editais, das empresas no regime não cumulativo, demonstrativo de que os percentuais de PIS e Cofins adotados correspondem à média dos percentuais efetivos recolhidos (o acórdão trata do BDI de obras).
   - _CPRB (Desoneração da Folha - Lei nº 12.546/2011) — situação em outubro de 2026:_ A desoneração está em transição pela **Lei nº 14.973/2024** (texto conferido no Planalto):
     - **2025:** CPRB a 80% da alíquota + 5% de INSS sobre a folha;
     - **2026:** CPRB a 60% da alíquota + 10% de INSS sobre a folha;
     - **2027:** CPRB a 40% da alíquota + 15% de INSS sobre a folha;
     - **2028:** fim da CPRB; INSS Patronal integral de 20% sobre a folha.
     - Portanto, o INSS Patronal do Submódulo 2.2 **não desaparece**: em 2026 a planilha deve trazer a CPRB reduzida aqui no Módulo 6 (alíquota base de **1,0% a 4,5% sobre a receita bruta**) e a parcela de 10% sobre a folha no Módulo 2.
-  - _Transição da Reforma Tributária (LC nº 214/2025) — situação em outubro de 2026:_ 2026 é ano-teste, com **CBS de 0,9%** e **IBS de 0,1%**, compensáveis com PIS/Cofins ou dispensados para quem cumpre as obrigações acessórias (art. 348, §1º). Em 2027 a CBS substitui o PIS e a Cofins (a conferir).
+  - _Transição da Reforma Tributária (LC nº 214/2025) — situação em outubro de 2026:_ 2026 é ano-teste, com **CBS de 0,9%** e **IBS de 0,1%**, compensáveis com PIS/Cofins ou dispensados para quem cumpre as obrigações acessórias (art. 348, §1º). Em 2027 a CBS substitui o PIS e a Cofins: o art. 542 da LC 214/2025 revoga, a partir de 1º/01/2027, os dispositivos que instituem as duas contribuições (entre eles, LC 7/1970, LC 70/1991, Lei 9.718/1998, Lei 10.637/2002 e Lei 10.833/2003), e em 2027 e 2028 a CBS é cobrada pela alíquota de referência reduzida em 0,1 ponto percentual (art. 347).
 - **O Segredo do Cálculo Matemático ("Preço por Dentro / Gross-Up"):**
   - Os impostos incidem sobre a própria Nota Fiscal emitida. Por isso, a fórmula matemática não é simplesmente somar a porcentagem, mas aplicar a fórmula de divisão:
     $$\text{Preço Final} = \frac{\text{Custo Total} + \text{Custos Indiretos} + \text{Lucro}}{1 - (\text{ISS} + \text{PIS} + \text{COFINS})}$$

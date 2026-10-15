@@ -31,7 +31,7 @@ Esta cláusula define o ciclo de vida temporal da relação jurídica entre as p
   - A minuta deve dividir o recebimento em duas fases formais com prazos explícitos:
     - **Recebimento Provisório:** Feito pelo fiscal do contrato em até X dias para conferência física e técnica;
     - **Recebimento Definitivo:** Feito pelo gestor em até X dias após comprovação de que o serviço ou bem atende a todas as exigências.
-  - _Os prazos não estão na Lei 14.133/2021; vêm do regulamento do ente ou do próprio contrato (parâmetro de regulamento: costuma-se ver até 15 dias para o provisório e até 30 dias para o definitivo). Conferir no regulamento do ente; na União, IN SEGES/ME 77/2022._
+  - _Os prazos não estão fixados na Lei 14.133/2021: pelo art. 140, § 3º, os prazos e os métodos dos recebimentos provisório e definitivo são definidos em regulamento ou no contrato (parâmetro de regulamento: costuma-se ver até 15 dias para o provisório e até 30 dias para o definitivo). Conferir no regulamento do ente._
 - **2.2. O Prazo Fatal de Pagamento:**
   - A minuta deve fixar o prazo de pagamento, contado a partir da emissão do termo de recebimento definitivo e liquidação da nota fiscal. _O prazo não está na lei; vem do regulamento do ente ou do contrato. Na União, até **10 + 10 dias úteis** (IN SEGES/ME 77/2022, art. 7º: liquidação e pagamento); nos demais entes, conferir o regulamento._
 - **2.3. Ordem Cronológica de Pagamentos (Art. 141):**
@@ -138,7 +138,7 @@ Lista as hipóteses de término antecipado do vínculo e protege a empresa contr
     - Suspensão da execução por ordem escrita do órgão por mais de 3 (três) meses;
     - Não liberação do local de trabalho, terreno ou ordem de serviço no prazo combinado.
 - **8.3. Indenização à Empresa em Extinção por Culpa Exclusiva da Administração:**
-  - Quando a extinção decorrer de culpa exclusiva da Administração, a contratada tem direito ao ressarcimento dos prejuízos regularmente comprovados, à devolução da garantia, aos pagamentos devidos pela execução até a extinção e ao pagamento do custo da desmobilização (art. 138, § 2º). _O regime da extinção por razões de interesse público deve ser verificado à parte (a conferir)._
+  - Quando a extinção decorrer de culpa exclusiva da Administração, a contratada tem direito ao ressarcimento dos prejuízos regularmente comprovados, à devolução da garantia, aos pagamentos devidos pela execução até a extinção e ao pagamento do custo da desmobilização (art. 138, § 2º). _A extinção por razões de interesse público é outro motivo (art. 137, VIII: razões justificadas pela autoridade máxima do órgão ou da entidade contratante); quando determinada por ato unilateral, depende de autorização escrita e fundamentada da autoridade competente (art. 138, I, e § 1º). A Lei 14.133 não traz regra própria de indenização para essa hipótese: o art. 138, § 2º, cobre só a culpa exclusiva da Administração. Se a minuta for omissa sobre o que a contratada recebe nesse caso, cabe pedir esclarecimento._
 
 ---
 

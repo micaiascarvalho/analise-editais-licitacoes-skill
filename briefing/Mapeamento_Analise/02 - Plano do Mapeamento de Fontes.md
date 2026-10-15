@@ -71,7 +71,7 @@ Se uma fase acrescentar fonte nova, ela entra primeiro no catálogo, no mesmo co
 | 1. Catálogo | concluída | este commit (`01 - Catalogo de Fontes.md`) |
 | 2. Edital | concluída | este commit (`Edital/Fontes - Edital.md`; catálogo: `EXT-LEI14133-ART14`, `ART15`, `ART90`) |
 | 3. TR e ETP | concluída | este commit (`Termo de Referência/Fontes - Termo de Referencia.md`, `Estudo Técnico Preliminar/Fontes - ETP.md`; catálogo: `EXT-LEI14133-ART16`, `ART117`, `ART140`, `EXT-TCU-SUM281`, `EXT-MTE-NR15`, `EXT-MTE-NR16`) |
-| 4. Planilha e Pesquisa | pendente | — |
+| 4. Planilha e Pesquisa | concluída | este commit (`Planilha de Custos/Fontes - Planilha de Custos.md`, `Pesquisa(Mapa) de Preços/Fontes - Pesquisa de Precos.md`; sem fonte nova; catálogo: siglas PL-F e PP-F) |
 | 5. Minuta e RERI | pendente | — |
 | 6. Consolidação | pendente | — |
 
@@ -90,3 +90,15 @@ Levantadas na revisão da Fase 3 (simetria com o mapa do Edital). A Fase 3 não 
 7. **Seção 8:** acrescentar INT-TR (seção VIII) em "Limitação de tempo, local ou somatório" e em "Tempo de existência versus tempo de experiência"; criar a linha "Atestados só de órgão público" (volta do TR VIII); em "Índices contábeis", trocar INT-ETP (justificativa) por INT-ETP (justificativa das exigências de habilitação, se houver; ver `Fontes - ETP.md`, inciso III); dar a `EXT-PEND-TEMPOEXIST` a mesma ressalva "(a localizar)" usada no TR.
 8. **Modo de citar seções:** uniformizar as fontes internas do Edital para `INT-EDITAL (seção N)`, `INT-PLANILHA (Módulo N; submódulo N.N)` e `INT-PESQUISA (item N, …)`, como nos mapas do TR e do ETP.
 9. **Catálogo:** acrescentar `ED-F` em "Usado em" das fontes que o mapa do Edital usa e ainda não marcam a sigla (conferir por script, como foi feito para `TR-F` e `ETP-F`).
+
+### 7.1 Levantadas na Fase 4 (Planilha e Pesquisa)
+
+A Fase 4 não editou os mapas do Edital, do TR e do ETP nem os arquivos `Estrutura`/`Analise`. Os mapas da Planilha e da Pesquisa já trazem as linhas de volta de todos os cruzamentos que aqueles mapas fazem com eles.
+
+10. **Catálogo, aviso prévio:** as linhas `EXT-TCU-AC1186-2017` ("percentual de prorrogação superado"), `EXT-MGI-NT35883`, `EXT-TCU-AC58-2026` e a observação 7 da seção 7 ainda tratam o 0,83% como regra vigente, mas o commit `a701461` retirou a Nota Técnica e o Acórdão 58/2026 dos arquivos de estudo e deixou o aviso prévio só com o 1.186/2017. O mapa da Planilha seguiu o commit. Decidir se as duas fontes saem do catálogo ou entram na lista "Não usar", e alinhar o Nome do 1.186/2017.
+11. **Mapa do Edital, seção 7, "Serviços com mão de obra: CCT":** trocar INT-PLANILHA (módulos 1 e 2.3) por INT-PLANILHA (Módulo 1; submódulo 2.3); na mesma seção, "BDI e custos diretos" passa a INT-PLANILHA (Módulo 6; submódulos 6.1 e 6.2). Seção 6 (lances): INT-PLANILHA (valor do item) fica, como na seção 7 do mapa da Planilha.
+12. **Mapa do Edital, seção 5, "Declaração de custos trabalhistas":** citar INT-PLANILHA (Módulo 1; submódulo 2.3), como o mapa da Planilha (Módulo 1 e Submódulo 2.3).
+13. **Mapas do TR e do ETP:** a seção IX do TR e o inciso VI do ETP citam a Pesquisa por "item 3"; o mapa da Pesquisa usa os mesmos itens (1 a 3 da Estrutura) e cria as seções 9 a 13 para os vícios. Se a Fase 6 quiser apontar o vício, trocar "detalhe em `Fontes - Pesquisa de Precos.md`" por "seções 6 e 13" no TR IX ("Parâmetros da pesquisa de preços").
+14. **Arquivos de estudo:** `Estrutura - Planilha de Custos.md` ainda diz "Súmula 254 ... fonte secundária; conferir o texto oficial" e marca a Lei 14.973/2024 como "fonte secundária, a conferir", mas as duas estão `conferido` no catálogo; `Analise - Planilha de Custos.md` (grupo 4) ainda cita o esclarecimento do MEC como "fonte secundária", já conferido (`EXT-ADM-MEC-2024`). `Analise - Pesquisa de Precos.md` (vício 5) marca a IN 65/2021 e o Acórdão 1.445/2015 como "a conferir", já conferidos. Os módulos 4.1-D e 4.1-E (acidente e maternidade) não têm fonte no catálogo.
+15. **Catálogo, siglas:** `EXT-IN65-GERAL` não é usado por nenhum mapa (os mapas usam `ART5` e `ART6`); verificar órfãos na Fase 6.
+

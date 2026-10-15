@@ -16,7 +16,8 @@ Esta pasta reúne o necessário para continuar o trabalho em outro computador (o
    - Fase 1 (catálogo `01 - Catalogo de Fontes.md`): concluída, commit `1d04c47`. `conferido` só para artigos da Lei 14.133 conferidos no Planalto.
    - Fase 2 (`Edital/Fontes - Edital.md`): concluída, commit `4f29ecb` (13 seções; arts. 14, 15 e 90 entraram no catálogo como `a conferir`).
    - Fase 3 (`Fontes - Termo de Referencia.md` e `Fontes - ETP.md`): concluída. Feita por workflow (rascunho, revisão por 4 lentes, correção, simetria TR x ETP, catálogo e revisão final). Entraram no catálogo os arts. 16, 117 e 140 da Lei 14.133 (conferidos), a Súmula 281 do TCU e as NR-15 e NR-16 (a conferir). Os ajustes de simetria no mapa do Edital ficaram registrados na seção 7 do plano, para a Fase 6.
-   - Próxima: Fase 4 (Planilha e Pesquisa).
+   - Fase 4 (`Fontes - Planilha de Custos.md` e `Fontes - Pesquisa de Precos.md`): concluída. Planilha com os 6 módulos e os submódulos 2.1 a 2.3, 4.1 e 4.2, mais a seção 7 (planilha como um todo); Pesquisa com os 5 parâmetros, validade, tratamento matemático, cruzamentos no processo e os 5 vícios. Nenhuma fonte nova; siglas PL-F e PP-F no catálogo. Aviso prévio só por `EXT-TCU-AC1186-2017`. Ajustes de simetria e a divergência do catálogo sobre o aviso prévio ficaram na seção 7 do plano.
+   - Próxima: Fase 5 (Minuta e RERI).
 
 ## 2. Decisões que valem para as próximas fases
 

@@ -30,18 +30,17 @@ Esta pasta reúne o necessário para continuar o trabalho em outro computador (o
 - Sem dados pessoais (PII) nas saídas; grafia "Servfaz".
 - Uma fase por sessão, terminando com commit e atualização da tabela "Andamento".
 
-## 3. Pendências conhecidas (não cobertas pela auditoria)
+## 3. Fechamento do estudo (2026-10-15)
 
-**Fechamento do estudo:** plano em `briefing/Mapeamento_Analise/03 - Plano de Fechamento do Estudo.md` (marcas "a conferir" nos arquivos de estudo, redação pendente e push), com tabela de andamento.
+Executado conforme `briefing/Mapeamento_Analise/03 - Plano de Fechamento do Estudo.md`:
 
-O que ficou "a conferir" ou para decidir depois do mapeamento (os itens 10, 14 e 19 do plano foram resolvidos em 2026-10-15: o 0,83% do aviso prévio foi mantido e os arquivos de estudo foram alinhados ao catálogo):
+- **Etapas 1 e 3** (`7adfae3`): marcas "a conferir" sobre fontes já conferidas retiradas e texto alinhado ao catálogo; marcas que dependem do ente ou da categoria trocadas por orientação ("conferir no regulamento do ente", "conferir na CCT", FPAS); os quatro trechos de redação pendentes reescritos (o reajuste passou a citar o Acórdão 7.184/2018-Segunda Câmara; o ETP passou ao pedido de retificação; fechos neutros na Minuta e na RERI).
+- **Etapa 2** (`bd4f2b3`): conferência nova na fonte oficial (Planalto, Portal de Compras, Pesquisa do TCU): correspondência das seções do TR com as alíneas do art. 6º, XXIII; Módulos 2 e 4 da IN 5/2017 (Anexo VII-D); alíquota efetiva de PIS/Cofins (Acórdão 2.622/2013-Plenário); extinção de PIS/Cofins em 2027 (LC 214/2025, arts. 347 e 542); extinção por interesse público (arts. 137, VIII, e 138). Recebimento passou a se fundar no art. 140, § 3º.
+- **Etapa 4:** recebimento definitivo alinhado ao art. 140, I, "b"; este README atualizado.
 
-- **Fontes `a conferir` no catálogo:** `EXT-BASE-NFE`, `EXT-BASE-PAINELCONTRAT`, `EXT-IN5-2014` e as que dependem do ente, da categoria ou do objeto (`EXT-REG-ENTE`, `EXT-NORMA-CCT`, `EXT-ISS-MUNICIPAL`, normas ABNT, INMETRO, ANVISA, ANATEL, conselhos, CFC, NR-17, modelos da AGU, Diário Oficial, site do órgão, TJ). Lista completa na seção 9.2 do catálogo.
+Nenhuma marca "a conferir" restou nos arquivos `Estrutura`/`Analise`. O que continua `a conferir` está só no catálogo (seção 9.2) e depende do edital concreto (regulamento do ente, CCT, ISS do município, normas do objeto) ou de bases sem endereço oficial confirmado. Antes de citar em peça, confirme a fonte no catálogo.
 
-- "jurisprudência pacífica do TCU", sem acórdão, na Análise da Minuta (seção de reajuste).
-- "ou anular a fase preparatória" no fecho da Análise do ETP.
-- Fechos de tom promocional ("tese perfeita de impugnação", "um passo à frente") nas Análises da Minuta e da RERI.
-- Confirmar no portal do TCU/STF as fontes `a conferir` antes de usar em peça.
+**Próximo passo:** levar a estrutura (análises, mapas de fontes e catálogo) para a skill de impugnação (`skills/impugnacao-editais-tcu/`).
 
 ## 4. Como retomar em outro computador
 

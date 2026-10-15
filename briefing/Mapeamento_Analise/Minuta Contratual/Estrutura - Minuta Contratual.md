@@ -30,7 +30,7 @@ Esta cláusula define o ciclo de vida temporal da relação jurídica entre as p
 - **2.1. O Rito da Liquidação (Aferição e Ateste):**
   - A minuta deve dividir o recebimento em duas fases formais com prazos explícitos:
     - **Recebimento Provisório:** Feito pelo fiscal do contrato em até X dias para conferência física e técnica;
-    - **Recebimento Definitivo:** Feito pelo gestor em até X dias após comprovação de que o serviço ou bem atende a todas as exigências.
+    - **Recebimento Definitivo:** Feito por servidor ou comissão designada pela autoridade competente (art. 140, I, "b") em até X dias após comprovação de que o serviço ou bem atende a todas as exigências.
   - _Os prazos não estão fixados na Lei 14.133/2021: pelo art. 140, § 3º, os prazos e os métodos dos recebimentos provisório e definitivo são definidos em regulamento ou no contrato (parâmetro de regulamento: costuma-se ver até 15 dias para o provisório e até 30 dias para o definitivo). Conferir no regulamento do ente._
 - **2.2. O Prazo Fatal de Pagamento:**
   - A minuta deve fixar o prazo de pagamento, contado a partir da emissão do termo de recebimento definitivo e liquidação da nota fiscal. _O prazo não está na lei; vem do regulamento do ente ou do contrato. Na União, até **10 + 10 dias úteis** (IN SEGES/ME 77/2022, art. 7º: liquidação e pagamento); nos demais entes, conferir o regulamento._

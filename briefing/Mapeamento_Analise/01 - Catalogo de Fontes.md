@@ -164,7 +164,6 @@ Onde consultar, para todas: texto compilado no Planalto, `https://www.planalto.g
 | EXT-IN98-2022 | IN SEGES/ME 98/2022: **autoriza** aplicar a IN 5/2017, "no que couber", às contratações da Lei 14.133/2021 (não "determina") | Instrução normativa | federal (União) | `https://www.gov.br/compras/pt-br/acesso-a-informacao/legislacao/instrucoes-normativas/instrucao-normativa-seges-me-no-98-de-26-de-dezembro-de-2022` | PL-E | conferido |
 | EXT-IN77-2022 | IN SEGES/ME 77/2022: ordem cronológica de pagamentos; art. 7º: até 10 dias úteis para liquidação (do recebimento da nota fiscal) e até 10 dias úteis para pagamento (da liquidação), na esfera federal | Instrução normativa | federal (União) | `https://www.gov.br/compras/pt-br/acesso-a-informacao/legislacao/instrucoes-normativas/instrucao-normativa-seges-me-no-77-de-4-de-novembro-de-2022` | TR-E, TR-F | conferido |
 | EXT-IN5-2014 | IN SLTI/MP 5/2014 (revogada): pesquisa de preços. Uso só histórico, para datar o Acórdão 1.445/2015 | Instrução normativa | federal (União) | `https://www.gov.br/compras` (Legislação) | PP-A | a conferir |
-| EXT-MGI-NT35883 | Nota Técnica SEI 35883/2026/MGI: provisão de aviso prévio em prorrogações (fonte secundária) | Nota técnica | federal (União) | `https://www.gov.br/compras` (a localizar) | PL-E | a conferir |
 | EXT-AGU-MODELOS | Modelos padronizados da AGU (termo de referência, edital, contrato) | Modelo de documento | federal (União) | `https://www.gov.br/agu` (modelos de licitações e contratos) | TR-E, TR-F | a conferir |
 | EXT-NORMA-CCT | Convenção Coletiva de Trabalho da categoria (piso, benefícios, data-base, adicionais) | Instrumento coletivo de trabalho | por base territorial do sindicato | Sistema Mediador do MTE (`EXT-BASE-MEDIADOR`); sindicatos da categoria | ED-A, TR-A, PL-E, PL-A, MC-E, MC-A, RR-A, TR-F | a conferir |
 | EXT-MTE-NR17 | Norma Regulamentadora NR-17 (ergonomia) do MTE | Norma regulamentadora | federal (nacional) | `https://www.gov.br/trabalho-e-emprego` (Normas Regulamentadoras) | TR-E, TR-F | a conferir |
@@ -210,7 +209,7 @@ Onde consultar: Pesquisa de Jurisprudência do TCU, `https://pesquisa.apps.tcu.g
 | EXT-TCU-AC2078-2014 | Acórdão 2.078/2014-Plenário: alteração que afeta propostas exige divulgação pela mesma forma do original e reabertura do prazo inicialmente estabelecido (caso Sebrae, sob a Lei 8.666) | Acórdão | federal | Pesquisa TCU | RR-A | conferido |
 | EXT-TCU-AC1445-2015 | Acórdão 1.445/2015-Plenário: orçamento só com consulta a fornecedores contraria a jurisprudência; priorizar Portal de Compras e contratações similares (IN 5/2014, art. 2º, I e III) | Acórdão | federal | Pesquisa TCU | PP-A | conferido |
 | EXT-TCU-AC2637-2015 | Acórdão 2.637/2015-Plenário: pesquisa de preços com amplitude insuficiente (poucos fornecedores, mercado vasto) e cotação discrepante | Acórdão | federal | Pesquisa TCU | PP-A | conferido |
-| EXT-TCU-AC1186-2017 | Acórdão 1.186/2017-Plenário: aviso prévio trabalhado de até 1,94% só no 1º ano e até 0,194% a cada ano de prorrogação (Lei 12.506/2011), conforme itens 9.1.1 e 9.2; cálculo [(100%/30) x 7]/12, vindo dos Acórdãos 1.904/2007 e 3.006/2010 | Acórdão | federal | Pesquisa TCU | PL-E | conferido |
+| EXT-TCU-AC1186-2017 | Acórdão 1.186/2017-Plenário: aviso prévio trabalhado de até 1,94% só no 1º ano e até 0,194% a cada ano de prorrogação (Lei 12.506/2011), conforme itens 9.1.1 e 9.2; cálculo [(100%/30) x 7]/12, vindo dos Acórdãos 1.904/2007 e 3.006/2010. **Fonte única** para o aviso prévio nas prorrogações (ver seção 7, item 7) | Acórdão | federal | Pesquisa TCU | PL-E | conferido |
 | EXT-TCU-AC248-2017 | Acórdão 248/2017-Plenário: restringir a um fabricante só é aceitável com ETP fundado em ampla pesquisa e comparação efetiva de alternativas e custos (enunciado da Jurisprudência Selecionada do TCU) | Acórdão | federal | Pesquisa TCU | TR-F, ETP-F (resolve `EXT-PEND-MOTIVCOMP`) | conferido |
 | EXT-TCU-AC7184-2018 | Acórdão 7.184/2018-Segunda Câmara: o critério de reajuste no edital e no contrato é imposição, não discricionariedade, mesmo em vigência até 12 meses; a falta da cláusula não impede o reequilíbrio (sob a Lei 8.666) (enunciado da Jurisprudência Selecionada do TCU) | Acórdão | federal | Pesquisa TCU | — (resolve `EXT-PEND-REAJUSTE`) | conferido |
 | EXT-TCU-AC2622-2013 | Acórdão 2.622/2013-Plenário: percentuais de referência de BDI e de administração local em obras públicas; administração local como custo direto | Acórdão | federal | Pesquisa TCU | — (acrescentada na conferência de 2026-10-15; reforço de `EXT-PEND-BDI`) | conferido |
@@ -224,7 +223,6 @@ Onde consultar: Pesquisa de Jurisprudência do TCU, `https://pesquisa.apps.tcu.g
 | EXT-TCU-AC1798-2024 | Acórdão 1.798/2024-Plenário: parentesco entre sócios, sozinho, não é fraude; indícios convergentes (mesmo IP nos lances, contador ou endereço em comum) podem caracterizá-la | Acórdão | federal | Pesquisa TCU | — (acrescentada na conferência de 2026-10-15; reforço de `EXT-PEND-FRAUDECOT`) | conferido |
 | EXT-TCU-AC214-2025 | Acórdão 214/2025-Plenário: reafirma, por maioria, a presunção relativa do Acórdão 465/2024 | Acórdão | federal | Pesquisa TCU | ED-F (acrescentada na conferência de 2026-10-15) | conferido |
 | EXT-TCU-AC1505-2026 | Acórdão 1.505/2026-Plenário: verificada a irregularidade fiscal, é vedado reter pagamento por serviço executado ou bem entregue, sob pena de enriquecimento sem causa (enunciado da Jurisprudência Selecionada do TCU) | Acórdão | federal | Pesquisa TCU | TR-F (resolve `EXT-PEND-RETENCAO`) | conferido |
-| EXT-TCU-AC58-2026 | Acórdão de Relação 58/2026-Plenário (serviço de recepcionistas; representação improcedente; cópia dos pareceres à Câmara Nacional de Modelos da AGU). O texto do acórdão (conferido também em PDF) não traz a tese sobre aviso prévio, que está nos pareceres do processo TC 028.944/2024-0 | Acórdão | federal | Pesquisa TCU | PL-E, PL-A | a conferir |
 | EXT-TCU-INFO2026-INDICES | Informativo do TCU de 2026: índices contábeis acima de 1 cumulados com PL de até 10% | Informativo de jurisprudência | federal | `https://portal.tcu.gov.br` (Informativos de Licitações e Contratos) | ED-A | a conferir |
 
 ### 4.3 Outros tribunais e precedentes administrativos
@@ -314,6 +312,7 @@ Provas produzidas pela Servfaz para cada caso. Não têm texto a conferir; o cui
 4. **Não usar:** `EXT-STJ-RESP1733688` (não localizado), `EXT-TCU-AC1182-2020` (número errado: o acórdão trata de outro assunto) e os `EXT-PEND-*` ainda `a conferir`.
 5. **Fonte interna nova.** `INT-PCA` não estava na lista do plano; foi acrescentada porque o ETP (inciso II) e o TR (seção II) pedem o cruzamento com o Plano de Contratações Anual.
 6. **URLs.** Os endereços do Planalto seguem o padrão do texto compilado; os demais apontam para o portal oficial do órgão quando o caminho exato não foi confirmado. Confira o link ao trocar o status para `conferido`.
+7. **Fontes descartadas (não recriar).** O Acórdão de Relação 58/2026-Plenário e a Nota Técnica SEI 35883/2026/MGI são citados em `Estrutura - Planilha de Custos.md` e `Analise - Planilha de Custos.md` como mudança na regra do aviso prévio em prorrogações. Saíram do catálogo em 2026-10-15: o acórdão julgou a representação improcedente e a tese está em pareceres sem acesso público, e a nota técnica não tem origem conhecida. Para o aviso prévio, use `EXT-TCU-AC1186-2017`. Os mapas não devem citar essas duas fontes.
 
 ## 8. Como foi verificado
 
@@ -335,14 +334,13 @@ Busca nos 14 arquivos por `art.`/`arts.`, `Lei`, `LC`, `Súmula`, `Acórdão`, `
 - **Segunda rodada (mesmo dia):** o 1,94% do aviso prévio está no item 9.2 do Acórdão 1.186/2017, com 0,194% por ano de prorrogação. Na Jurisprudência Selecionada do TCU foram achados os fundamentos de cinco pendências (BDI, vinculação do esclarecimento, comparação de soluções no ETP, reajuste e retenção) e apoio parcial ao tempo de existência. Os acórdãos novos foram conferidos pelo enunciado; antes de citar trecho literal, abra o inteiro teor. IBGE, FGV IBRE, SUSEP e Portal de Compras abriram e foram conferidos.
 
 - **Fase 3 (mapas do TR e do ETP):** acrescentados `EXT-LEI14133-ART117` (fiscalização do contrato) e `EXT-LEI14133-ART140` (recebimento provisório e definitivo; § 3º remete prazos e métodos ao regulamento ou ao contrato), ambos lidos no Planalto. As siglas TR-F e ETP-F foram acrescentadas na coluna "Usado em" das fontes que esses mapas citam.
-- **Súmulas do TST e Acórdão 58/2026:** Súmulas 60, 172 e 448 do TST conferidas com o texto trazido do site do TST pela usuária. O PDF do Acórdão 58/2026 tem só a página do acórdão, sem os pareceres.
+- **Súmulas do TST:** Súmulas 60, 172 e 448 do TST conferidas com o texto trazido do site do TST pela usuária.
+- **Fontes descartadas:** Acórdão 58/2026-Plenário e Nota Técnica SEI 35883/2026/MGI saíram do catálogo (seção 7, item 7).
 
 ### 9.2 O que ficou para conferência manual
 
 | ID | Por que não foi conferido | O que fazer |
 | :-- | :-- | :-- |
-| EXT-TCU-AC58-2026 | Acórdão de relação: a tese sobre aviso prévio está nos pareceres. O PDF do acórdão (1 página) não os inclui | Baixar o processo TC 028.944/2024-0 ou os pareceres no portal do TCU |
-| EXT-MGI-NT35883 | Nota técnica do SEI do MGI; não localizada em página pública | Localizar no Portal de Compras ou pedir o documento |
 | EXT-TCU-INFO2026-INDICES | Informativo sem número nem data no arquivo de origem | Indicar o número do informativo ou do acórdão |
 | EXT-BASE-PAINELPRECOS | Site fora do ar no teste; o comunicado nº 30/25 pede login no Portal de Compras | Confirmar o comunicado e decidir se o Painel sai do catálogo |
 | EXT-ADM-MEC-2024 | Esclarecimento de pregão sem número ou link | Indicar o pregão (número e UASG) para localizar no Compras.gov.br |

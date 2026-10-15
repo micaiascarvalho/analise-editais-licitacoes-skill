@@ -35,7 +35,7 @@ Este é o vício clássico apontado em operações da Polícia Federal e auditor
 
 - **Cruzamento:** Confronte o **Volume Licitado no TR vs. Contratações Similares** registradas na **Pesquisa de Preços do Compras.gov.br** e no **Portal Nacional de Contratações Públicas (PNCP)** — são sistemas distintos; consulte os dois. (O antigo Painel de Preços deixou de ser atualizado em 04/07/2025.)
 - **A Prova:** Mostre que compras públicas do mesmo porte (dezenas de milhares de unidades) foram homologadas em outros órgãos com valor menor (exemplo ilustrativo, sem fonte: 30% a 50%) por aplicarem a **economia de escala**.
-- **Fundamento Jurídico:** Art. 23, caput, da Lei 14.133/2021, que manda observar "a potencial economia de escala" na estimativa do valor (fundamento principal), combinado com o § 1º. A Súmula nº 177 do TCU trata da definição do objeto, e o Acórdão nº 2.637/2015-Plenário, segundo fonte secundária, trata de pesquisa restrita a poucos fornecedores; use-os só como reforço, depois de conferidos (a conferir).
+- **Fundamento Jurídico:** Art. 23, caput, da Lei 14.133/2021, que manda observar "a potencial economia de escala" na estimativa do valor (fundamento principal), combinado com o § 1º. A Súmula nº 177 do TCU trata da definição do objeto, e o Acórdão nº 2.637/2015-Plenário trata de pesquisa restrita a poucos fornecedores; use-os só como reforço.
 
 ---
 
@@ -84,7 +84,7 @@ Nem todo erro na pesquisa serve para gerar sobrepreço; muitas vezes o erro serv
 
 - **Cruzamento:** Entre na **Pesquisa de Preços do Compras.gov.br (pesquisaprecos.compras.gov.br)** e pesquise o mesmo item (usando o código CATMAT/CATSER). O Painel de Preços, citado em materiais antigos, deixou de ser atualizado em 04/07/2025.
 - **A Prova:** Mostre que existem dezenas de contratações recentes de outros órgãos para o mesmo objeto registradas no sistema oficial por valores substancialmente menores, as quais foram arbitrariamente ignoradas pelo órgão promotor da licitação.
-- **Fundamento Jurídico:** Art. 23, caput e § 1º, I e II, da Lei 14.133/2021; IN SEGES/ME nº 65/2021, art. 5º, § 1º (esfera federal) (a conferir); Acórdão nº 1.445/2015-Plenário do TCU, que deu prioridade ao Comprasnet e às contratações similares, ainda sob a IN 5/2014 (a conferir).
+- **Fundamento Jurídico:** Art. 23, caput e § 1º, I e II, da Lei 14.133/2021; IN SEGES/ME nº 65/2021, art. 5º, § 1º (esfera federal); Acórdão nº 1.445/2015-Plenário do TCU, que deu prioridade ao Comprasnet e às contratações similares, ainda sob a IN 5/2014.
 
 ---
 

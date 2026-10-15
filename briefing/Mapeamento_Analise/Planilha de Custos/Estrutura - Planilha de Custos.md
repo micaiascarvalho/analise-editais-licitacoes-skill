@@ -80,7 +80,7 @@ A Administração retém ou provisiona esses valores todo mês para garantir que
 
 - **3.1. Aviso Prévio Trabalhado:**
   - Percentual mensal guardado para pagar o salário do último mês em que o trabalhador cumpre o aviso.
-  - _Parâmetro do TCU:_ o Acórdão 1186/2017-Plenário exclui o aviso prévio trabalhado da planilha após o 1º ano de contrato. O percentual usual de **1,94%** no 1º ano não aparece no texto público do acórdão (parâmetro prático, a conferir no relatório ou voto).
+  - _Parâmetros:_ o Acórdão 1186/2017-Plenário fixa até **1,94%** no 1º ano de contrato e até **0,194%** a cada ano de prorrogação. Na esfera federal, a Nota Técnica SEI 35883/2026/MGI (Orientação 46 do Portal de Compras, agosto de 2026), a partir do Acórdão 58/2026-Plenário, recomenda **1,94%** no 1º ano e **0,83%** a cada prorrogação em que o empregado permanecer alocado, avaliados os custos não renováveis já amortizados. Em estados e municípios, conferir se o ente segue a nota técnica, o acórdão de 2017 ou regra própria.
 - **3.2. Aviso Prévio Indenizado e Aviso Prévio Proporcional:**
   - _Indenizado:_ o trabalhador é dispensado de cumprir o período e a empresa paga o valor correspondente.
   - _Proporcional (Lei nº 12.506/2011):_ para contratos que duram mais de 1 ano, o trabalhador ganha **3 dias a mais por ano de serviço** até o teto de 90 dias. A planilha precisa conter uma fração atuarial para esse acréscimo.
@@ -110,9 +110,9 @@ _Correspondência com o modelo: (a conferir no Anexo VII-D da IN 5/2017)._
   - **C. Licença-Paternidade:**
     - Nascimento de filho (licença-paternidade de 5 a 20 dias).
   - **D. Ausência por Acidente de Trabalho:**
-    - A empresa cobre os primeiros **15 dias de atestado médico** antes de o funcionário entrar no benefício previdenciário do INSS.
+    - A empresa paga o salário dos primeiros **15 dias** de afastamento antes de o empregado entrar no benefício previdenciário do INSS (Lei nº 8.213/1991, art. 60, § 3º).
   - **E. Afastamento Maternidade:**
-    - Cobertura do posto durante a licença-maternidade da titular (percentual a conferir).
+    - Cobertura do posto durante a licença-maternidade de 120 dias da titular (CLT, art. 392); o custo na planilha é o do substituto (percentual a conferir).
   - **F. Outras Ausências:**
     - Demais ausências previstas no modelo ou na CCT (a conferir).
 - **4.2. Substituto na Intrajornada:**
@@ -151,7 +151,7 @@ _Correspondência com o modelo: (a conferir no Anexo VII-D da IN 5/2017)._
   - **PIS:** Alíquota federal (**0,65%** no lucro presumido/cumulativo ou **1,65%** no lucro real/não cumulativo);
   - **COFINS:** Alíquota federal (**3,00%** no lucro presumido ou **7,60%** no lucro real);
   - _Nota sobre o regime não cumulativo:_ 1,65% e 7,60% são alíquotas nominais. Como o regime não cumulativo gera créditos, na planilha usa-se a **alíquota efetiva** de PIS/Cofins (média recolhida após os créditos), e não a nominal (a conferir).
-  - _CPRB (Desoneração da Folha - Lei nº 12.546/2011) — situação em outubro de 2026:_ A desoneração está em transição pela **Lei nº 14.973/2024** (fonte secundária, a conferir):
+  - _CPRB (Desoneração da Folha - Lei nº 12.546/2011) — situação em outubro de 2026:_ A desoneração está em transição pela **Lei nº 14.973/2024** (texto conferido no Planalto):
     - **2025:** CPRB a 80% da alíquota + 5% de INSS sobre a folha;
     - **2026:** CPRB a 60% da alíquota + 10% de INSS sobre a folha;
     - **2027:** CPRB a 40% da alíquota + 15% de INSS sobre a folha;
@@ -162,7 +162,7 @@ _Correspondência com o modelo: (a conferir no Anexo VII-D da IN 5/2017)._
   - Os impostos incidem sobre a própria Nota Fiscal emitida. Por isso, a fórmula matemática não é simplesmente somar a porcentagem, mas aplicar a fórmula de divisão:
     $$\text{Preço Final} = \frac{\text{Custo Total} + \text{Custos Indiretos} + \text{Lucro}}{1 - (\text{ISS} + \text{PIS} + \text{COFINS})}$$
 - **IRPJ e CSLL no orçamento-base (Súmula nº 254 do TCU):**
-  - Pela Súmula 254, o **IRPJ** (Imposto de Renda da Pessoa Jurídica) e a **CSLL** (Contribuição Social sobre o Lucro Líquido) não são despesas indiretas passíveis de inclusão no BDI do orçamento-base, por serem tributos diretos e personalísticos (fonte secundária; conferir o texto oficial antes de citar entre aspas).
+  - Pela Súmula 254, o **IRPJ** (Imposto de Renda da Pessoa Jurídica) e a **CSLL** (Contribuição Social sobre o Lucro Líquido) não são despesas indiretas passíveis de inclusão no BDI do orçamento-base, por serem tributos diretos e personalísticos (paráfrase do enunciado oficial, conferido).
   - A súmula trata do **orçamento-base** do órgão: não fala em nulidade nem proíbe o licitante de cobrir esses tributos com o seu lucro. Se o órgão incluir IRPJ e CSLL no BDI da planilha de referência, o pedido cabível é a retificação.
 
 ---

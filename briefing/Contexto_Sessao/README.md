@@ -32,10 +32,8 @@ Esta pasta reúne o necessário para continuar o trabalho em outro computador (o
 
 ## 3. Pendências conhecidas (não cobertas pela auditoria)
 
-O que ficou "a conferir" ou para decidir depois do mapeamento:
+O que ficou "a conferir" ou para decidir depois do mapeamento (os itens 10, 14 e 19 do plano foram resolvidos em 2026-10-15: o 0,83% do aviso prévio foi mantido e os arquivos de estudo foram alinhados ao catálogo):
 
-- **Aviso prévio nas prorrogações:** decidir se o 0,83% (`EXT-MGI-NT35883`, `EXT-TCU-AC58-2026`, ambos conferidos) volta aos arquivos de estudo e ao mapa da Planilha, que hoje seguem só o `EXT-TCU-AC1186-2017`, ou se as duas fontes vão para "Não usar" (catálogo, observação 7).
-- **Arquivos de estudo desatualizados em relação ao catálogo** (itens 14 e 19 do plano; a Fase 6 não os alterou). Ainda marcam como "a conferir" ou "fonte secundária" fontes já conferidas: Súmula 254 e Lei 14.973/2024 na Estrutura da Planilha; esclarecimento do MEC na Análise da Planilha; IN 65/2021 e Acórdão 1.445/2015 na Análise da Pesquisa; arts. 141 e 22 na Estrutura da Minuta; Acórdãos 2.032/2021, 2.078/2014 e 930/2008 na Análise da RERI. A Estrutura da Minuta não cita os arts. 157 e 158 na defesa prévia (7.2). A Estrutura da RERI diz "a localizar" para o efeito vinculante do esclarecimento, já resolvido por `EXT-TCU-AC915-2009`. Os módulos 4.1-D e 4.1-E (acidente e maternidade) não têm fonte no catálogo.
 - **Fontes `a conferir` no catálogo:** `EXT-PEND-ATESTPRIV` (sem acórdão; a tese fica só com a lei), `EXT-BASE-NFE`, `EXT-BASE-PAINELCONTRAT`, `EXT-IN5-2014` e as que dependem do ente, da categoria ou do objeto (`EXT-REG-ENTE`, `EXT-NORMA-CCT`, `EXT-ISS-MUNICIPAL`, normas ABNT, INMETRO, ANVISA, ANATEL, conselhos, CFC, NR-17, modelos da AGU, Diário Oficial, site do órgão, TJ). Lista completa na seção 9.2 do catálogo.
 
 - "jurisprudência pacífica do TCU", sem acórdão, na Análise da Minuta (seção de reajuste).

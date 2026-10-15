@@ -35,7 +35,7 @@ Esta cláusula define o ciclo de vida temporal da relação jurídica entre as p
 - **2.2. O Prazo Fatal de Pagamento:**
   - A minuta deve fixar o prazo de pagamento, contado a partir da emissão do termo de recebimento definitivo e liquidação da nota fiscal. _O prazo não está na lei; vem do regulamento do ente ou do contrato (parâmetro de regulamento: costuma-se ver até **10 ou 30 dias úteis** — a conferir no regulamento aplicável)._
 - **2.3. Ordem Cronológica de Pagamentos (Art. 141):**
-  - A Administração é proibida de furar a fila. O pagamento deve respeitar a ordem cronológica de inscrição das notas fiscais liquidadas por categoria de contrato (bens, serviços, obras). A quebra injustificada dessa ordem leva à apuração de responsabilidade do agente responsável (a conferir: art. 141 e regulamento do ente).
+  - A Administração é proibida de furar a fila. O pagamento deve respeitar a ordem cronológica de inscrição das notas fiscais liquidadas por categoria de contrato (bens, serviços, obras). A quebra injustificada dessa ordem leva à apuração de responsabilidade do agente responsável (art. 141, § 2º).
 - **2.4. Encargos Moratórios por Atraso no Pagamento (Art. 92, V):**
   - A minuta é **obrigada por lei** a prever a fórmula de atualização financeira e juros de mora que o órgão deverá pagar à empresa caso atrase o depósito bancário (parâmetro prático, não exigência legal: correção pelo IPCA $+$ juros de 0,5% a 1% ao mês _pro rata die_).
 
@@ -91,7 +91,7 @@ Uma das maiores inovações da Nova Lei de Licitações. É a "tabela de divisã
 - **5.2. Riscos da Administração Pública:**
   - Demora na emissão de licenças ambientais cuja responsabilidade seja do órgão, desapropriações de terrenos judiciais atrasadas, alterações de projetos arquitetônicos por determinação do Estado, ocorrência de eventos geológicos não detectados nas sondagens prévias.
 - **5.3. Efeito Jurídico:**
-  - Cumpridas as condições do contrato e da matriz, considera-se mantido o equilíbrio econômico-financeiro, e as partes renunciam a pedidos de reequilíbrio relativos aos riscos assumidos, **exceto** nas alterações unilaterais (art. 124, I) e na variação de tributos por lei superveniente (art. 103, § 5º). Se o risco materializado foi alocado à Administração, a matriz é a base do pedido de aditivo de prazo e valor, que ainda depende de instrução e análise. A obrigatoriedade da matriz depende do porte e do regime da contratação (art. 22 — a conferir).
+  - Cumpridas as condições do contrato e da matriz, considera-se mantido o equilíbrio econômico-financeiro, e as partes renunciam a pedidos de reequilíbrio relativos aos riscos assumidos, **exceto** nas alterações unilaterais (art. 124, I) e na variação de tributos por lei superveniente (art. 103, § 5º). Se o risco materializado foi alocado à Administração, a matriz é a base do pedido de aditivo de prazo e valor, que ainda depende de instrução e análise. A matriz é facultativa (art. 22, caput) e obrigatória só nas hipóteses do art. 22, § 3º (grande vulto e contratação integrada ou semi-integrada).
 
 ---
 
@@ -122,7 +122,7 @@ Define a régua disciplinar do contrato, detalhando as penalidades e o procedime
   - **III - Impedimento de Licitar e Contratar:** Suspensão temporária pelo prazo de até **3 anos** (aplicável no âmbito do ente federativo que sancionou);
   - **IV - Declaração de Inidoneidade:** A pena máxima, aplicada por infrações gravíssimas (fraude, corrupção, apresentação de documentos falsos), com prazo de **3 a 6 anos** de proibição de licitar com toda a Administração Pública brasileira (União, Estados e Municípios).
 - **7.2. Garantia do Contraditório e Ampla Defesa:**
-  - A minuta deve prever o prazo mínimo legal de **15 dias úteis** para apresentação de defesa prévia da empresa antes da aplicação de penalidades mais graves (multas pesadas, impedimento ou inidoneidade).
+  - A minuta deve prever o prazo mínimo legal de **15 dias úteis** para apresentação de defesa prévia da empresa antes da aplicação de penalidades mais graves: na multa, defesa em 15 dias úteis da intimação (art. 157); no impedimento e na inidoneidade, defesa escrita em 15 dias úteis no processo de responsabilização conduzido por comissão (art. 158).
 
 ---
 

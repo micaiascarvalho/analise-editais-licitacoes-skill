@@ -129,15 +129,15 @@ Cada item foi conferido no mapa de origem e no catálogo antes de ser aplicado.
 | 7 | resolvida em parte | Feita a linha "Atestados só de órgão público", com `EXT-PEND-ATESTPRIV (a localizar)`, como no TR. **Rejeitada** a ressalva "(a localizar)" para `EXT-PEND-TEMPOEXIST`: o mapa do TR não cita esse ID, e o catálogo o dá como resolvido (`EXT-TCU-AC733-2026`). O TR-F foi retirado do "Usado em" dele. |
 | 8 | resolvida | Todas as referências do Edital a si mesmo passaram a `INT-EDITAL (seção N)`. |
 | 9 | resolvida | ED-F marcada por script em todas as fontes do mapa. |
-| 10 | decidida em parte | `EXT-MGI-NT35883` e `EXT-TCU-AC58-2026` ficam no catálogo, conferidas, com "Usado em" "—" e nota. O Nome do 1.186/2017 deixou de dizer "superado". Fica com a usuária decidir se o 0,83% volta à Planilha ou se as duas fontes vão para "Não usar" (catálogo, observação 7). |
+| 10 | resolvida | Decisão da usuária (2026-10-15): manter `EXT-MGI-NT35883` e `EXT-TCU-AC58-2026`. O 0,83% por prorrogação (só União) voltou à Estrutura e à Análise da Planilha e aos mapas da Planilha e da Minuta; o 1.186/2017 ficou como regra anterior (catálogo, observação 7). |
 | 11, 12 | resolvidas | |
 | 13 | resolvida, com ajuste | "seções 6, 10 e 13", e não "6 e 13": a linha do TR IX cita também a economia de escala (seção 10 do mapa da Pesquisa). |
-| 14 | fora do escopo | A Fase 6 não altera os arquivos `Estrutura`/`Analise`. Continua aberta. |
+| 14 | resolvida | Marcas de "fonte secundária"/"a conferir" retiradas das fontes já conferidas (Súmula 254, Lei 14.973/2024, Tema 846, esclarecimento do MEC, IN 65/2021, Acórdãos 1.445/2015 e 2.637/2015). Os itens 4.1-D e 4.1-E ganharam base legal conferida: `EXT-LEI8213-ART60` (§ 3º) e `EXT-CLT-ART392`, citados também no mapa da Planilha. |
 | 15 | decidida | `EXT-IN65-GERAL` fica, com nota (catálogo, observação 8). |
 | 16 | resolvida, com ajuste | Edital: além do previsto, seção 2 → cl. 1 e 5. TR: as células vêm da tabela do próprio TR (I → cl. 1; IV → cl. 3 e 5; VII → cl. 2 e 5). A Minuta cruza cl. 3 e 6 com o TR I e cl. 8 com o TR VII, e as voltas estão no TR I (cl. 1) e no TR IV (cl. 3). ETP X → cl. 4 e 5. |
 | 17 | resolvida | Voltas criadas no Edital (seções 2 e 13), no TR IV, no ETP X, na Planilha (Módulos 2, 4, 5 e 6) e na Pesquisa (seção 8). |
 | 18 | decidida | Fica a regra geral ("vale para todas as seções"). O mapa da RERI faz a volta pelos checkpoints 1 e 3, e a legenda da matriz do Edital passou a dizer isso. |
-| 19 | fora do escopo | Arquivos `Estrutura`/`Analise`. Continua aberta. |
+| 19 | resolvida | Estrutura da Minuta: art. 141 § 2º (apuração de responsabilidade), art. 22 (matriz facultativa; § 3º) e arts. 157 e 158 (defesa prévia de 15 dias úteis). RERI: efeito vinculante do esclarecimento pelo Acórdão 915/2009 e Acórdãos 930/2008, 2.032/2021 e 2.078/2014 sem "a conferir". |
 | 20 | resolvida | Órfãos verificados com MC-F e RR-F (seção 8). |
 
 ## 8. Verificação final da Fase 6

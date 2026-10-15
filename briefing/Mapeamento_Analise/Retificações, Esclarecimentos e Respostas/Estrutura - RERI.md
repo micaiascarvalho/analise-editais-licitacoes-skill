@@ -34,7 +34,7 @@ Estes documentos representam a **comunicação oficial entre o mercado e a Admin
 - **O Prazo Legal:**
   - Envio pelo interessado: até **3 (três) dias úteis antes** da data de abertura do certame;
   - Resposta do órgão: prazo de até **3 (três) dias úteis**, limitado ao último dia útil anterior à abertura da sessão.
-- **O Efeito Jurídico:** A resposta ao esclarecimento **vincula a Administração e todos os participantes quanto à interpretação do edital** (fundamento jurisprudencial a localizar). Se o pregoeiro respondeu, em resposta divulgada no sítio eletrônico oficial (art. 164, parágrafo único), que o produto da marca X é aceito, ele não pode desclassificar essa marca na sessão.
+- **O Efeito Jurídico:** A resposta ao esclarecimento **vincula a Administração e todos os participantes quanto à interpretação do edital** (Acórdão 915/2009-Plenário do TCU). Se o pregoeiro respondeu, em resposta divulgada no sítio eletrônico oficial (art. 164, parágrafo único), que o produto da marca X é aceito, ele não pode desclassificar essa marca na sessão.
   - **Limite:** a resposta **não pode alterar regra** do edital. Mudança de regra (exigência, especificação, prazo, critério) só vale por **retificação formal**, com nova divulgação na mesma forma da inicial e observância dos prazos originais (art. 55, § 1º).
 
 ---
@@ -53,7 +53,7 @@ Estes documentos representam a **comunicação oficial entre o mercado e a Admin
 - **O que é:** O ato administrativo oficial pelo qual a autoridade **altera o texto original do Edital ou de qualquer anexo** (TR, Planilha, Minuta).
 - **A Regra de Ouro da Retificação (Art. 55, § 1º):**
   - Toda modificação no edital que **afete a formulação das propostas** ou a **participação dos licitantes** exige a **REABERTURA INTEGRAL DO PRAZO ORIGINAL**.
-  - _Exemplo:_ Se o edital fixou 8 dias úteis de publicação e o órgão alterou uma especificação técnica no 7º dia, ele deve cumprir de novo **os mesmos prazos dos atos e procedimentos originais** (art. 55, § 1º), contados da nova divulgação, remarcando a data da sessão. Se o edital original fixou prazo maior que o mínimo legal, o TCU entende que se reabre o prazo do edital original, e não apenas o mínimo legal (Acórdão 930/2008-Plenário, a conferir).
+  - _Exemplo:_ Se o edital fixou 8 dias úteis de publicação e o órgão alterou uma especificação técnica no 7º dia, ele deve cumprir de novo **os mesmos prazos dos atos e procedimentos originais** (art. 55, § 1º), contados da nova divulgação, remarcando a data da sessão. Se o edital original fixou prazo maior que o mínimo legal, o TCU entende que se reabre o prazo do edital original, e não apenas o mínimo legal (Acórdão 930/2008-Plenário).
 
 ---
 

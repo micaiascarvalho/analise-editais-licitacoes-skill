@@ -73,11 +73,13 @@ Se uma fase acrescentar fonte nova, ela entra primeiro no catálogo, no mesmo co
 | 3. TR e ETP | concluída | este commit (`Termo de Referência/Fontes - Termo de Referencia.md`, `Estudo Técnico Preliminar/Fontes - ETP.md`; catálogo: `EXT-LEI14133-ART16`, `ART117`, `ART140`, `EXT-TCU-SUM281`, `EXT-MTE-NR15`, `EXT-MTE-NR16`) |
 | 4. Planilha e Pesquisa | concluída | este commit (`Planilha de Custos/Fontes - Planilha de Custos.md`, `Pesquisa(Mapa) de Preços/Fontes - Pesquisa de Precos.md`; sem fonte nova; catálogo: siglas PL-F e PP-F) |
 | 5. Minuta e RERI | concluída | este commit (`Minuta Contratual/Fontes - Minuta Contratual.md`, `Retificações, Esclarecimentos e Respostas/Fontes - RERI.md`; catálogo: `EXT-LEI14133-ART157`, `ART158`; Nomes de `ART137` e `ART156` ampliados; siglas MC-F e RR-F) |
-| 6. Consolidação | pendente | — |
+| 6. Consolidação | concluída | este commit (pendências da seção 7 aplicadas nos 5 mapas anteriores; catálogo: "Usado em" recalculado, observações 7 e 8; `00 - Objetivos_Organizacao.md` atualizado; verificação na seção 8) |
 
 Ao concluir uma fase, atualize esta tabela no mesmo commit.
 
 ## 7. Pendências registradas para a Fase 6
+
+Resultado da Fase 6 de cada item na seção 7.3.
 
 Levantadas na revisão da Fase 3 (simetria com o mapa do Edital). A Fase 3 não editou `Edital/Fontes - Edital.md`; estes ajustes ficam para a consolidação.
 
@@ -111,3 +113,39 @@ A Fase 5 não editou os mapas anteriores nem os arquivos `Estrutura`/`Analise`. 
 18. **Coluna INT-RERI:** os mapas anteriores dizem que `INT-RERI` "vale para todas as seções". O mapa da RERI faz a volta pelos checkpoints 1 e 3 (Edital seção 8; TR III, IV, VII e VIII; ETP IV e VI; Planilha Módulos 1 a 6; Pesquisa itens 1 a 3; Minuta cl. 3 e 4). A Fase 6 decide se basta a regra geral ou se as matrizes passam a marcar essas seções.
 19. **Arquivos de estudo da Minuta e da RERI:** `Estrutura - Minuta Contratual.md` ainda marca "a conferir" o art. 141 (2.3) e o art. 22 (5.3), já conferidos, e não cita os artigos da defesa prévia de 15 dias úteis (7.2), que são os arts. 157 e 158 (`EXT-LEI14133-ART157`, `ART158`). `Estrutura - RERI.md` diz "fundamento jurisprudencial a localizar" para o efeito vinculante do esclarecimento, já resolvido por `EXT-TCU-AC915-2009`; `Analise - RERI.md` marca "a conferir" os Acórdãos 2.032/2021, 2.078/2014 e 930/2008, já conferidos.
 20. **Catálogo:** a coluna "Usado em" de `EXT-TCU-AC7184-2018` passou de "—" para MC-F; o órfão que restava nela deixa de existir. Na verificação de órfãos da Fase 6, considerar MC-F e RR-F.
+
+### 7.3 Resultado na Fase 6
+
+Cada item foi conferido no mapa de origem e no catálogo antes de ser aplicado.
+
+| Item | Resultado | Observação |
+| :-- | :-- | :-- |
+| 1 | resolvida, com ajuste | Matriz do Edital refeita a partir das tabelas, com seções do TR, incisos do ETP, módulos da Planilha, itens da Pesquisa e cláusulas da Minuta. Linha 3: ETP IV e VI. Linha 7: só o ETP VI. O ETP IV cruza com a seção 7 pela linha "Orçamento sigiloso" da seção 3 ("seções 3 e 7"), e a seção 7 não tem ponto de quantitativos. Linha 5: TR III e IV. |
+| 2 | resolvida | INT-ETP (incisos I, IV e VII). |
+| 3 | resolvida | |
+| 4 | resolvida | Consórcio e cooperativa em linhas separadas, com o texto do mapa do ETP. A Súmula 281 vai como "súmula em reanálise, ver catálogo" e não como "a conferir": o status no catálogo é `conferido`. O mesmo ajuste foi feito no mapa do ETP. A volta do ETP III é a linha nova "Motivação das exigências de habilitação". |
+| 5 | resolvida | Linha nova "Prazo para obter laudo ou catálogo". |
+| 6 | resolvida | O Edital não tinha linha de amostra. Foi criada "Amostra ou prova de conceito" na seção 7, onde o TR VIII a cruza. |
+| 7 | resolvida em parte | Feita a linha "Atestados só de órgão público", com `EXT-PEND-ATESTPRIV (a localizar)`, como no TR. **Rejeitada** a ressalva "(a localizar)" para `EXT-PEND-TEMPOEXIST`: o mapa do TR não cita esse ID, e o catálogo o dá como resolvido (`EXT-TCU-AC733-2026`). O TR-F foi retirado do "Usado em" dele. |
+| 8 | resolvida | Todas as referências do Edital a si mesmo passaram a `INT-EDITAL (seção N)`. |
+| 9 | resolvida | ED-F marcada por script em todas as fontes do mapa. |
+| 10 | decidida em parte | `EXT-MGI-NT35883` e `EXT-TCU-AC58-2026` ficam no catálogo, conferidas, com "Usado em" "—" e nota. O Nome do 1.186/2017 deixou de dizer "superado". Fica com a usuária decidir se o 0,83% volta à Planilha ou se as duas fontes vão para "Não usar" (catálogo, observação 7). |
+| 11, 12 | resolvidas | |
+| 13 | resolvida, com ajuste | "seções 6, 10 e 13", e não "6 e 13": a linha do TR IX cita também a economia de escala (seção 10 do mapa da Pesquisa). |
+| 14 | fora do escopo | A Fase 6 não altera os arquivos `Estrutura`/`Analise`. Continua aberta. |
+| 15 | decidida | `EXT-IN65-GERAL` fica, com nota (catálogo, observação 8). |
+| 16 | resolvida, com ajuste | Edital: além do previsto, seção 2 → cl. 1 e 5. TR: as células vêm da tabela do próprio TR (I → cl. 1; IV → cl. 3 e 5; VII → cl. 2 e 5). A Minuta cruza cl. 3 e 6 com o TR I e cl. 8 com o TR VII, e as voltas estão no TR I (cl. 1) e no TR IV (cl. 3). ETP X → cl. 4 e 5. |
+| 17 | resolvida | Voltas criadas no Edital (seções 2 e 13), no TR IV, no ETP X, na Planilha (Módulos 2, 4, 5 e 6) e na Pesquisa (seção 8). |
+| 18 | decidida | Fica a regra geral ("vale para todas as seções"). O mapa da RERI faz a volta pelos checkpoints 1 e 3, e a legenda da matriz do Edital passou a dizer isso. |
+| 19 | fora do escopo | Arquivos `Estrutura`/`Analise`. Continua aberta. |
+| 20 | resolvida | Órfãos verificados com MC-F e RR-F (seção 8). |
+
+## 8. Verificação final da Fase 6
+
+Feita por script sobre os 7 mapas e o catálogo:
+
+1. **IDs:** todo `INT-*`/`EXT-*` dos mapas existe no catálogo. Ficam sem uso em mapa, com nota na observação 8 do catálogo: `EXT-IN65-GERAL`, `EXT-TCU-AC2622-2013`, `EXT-TJ-GERAL`, `EXT-TCU-AC1182-2020` (não usar), `EXT-MGI-NT35883` e `EXT-TCU-AC58-2026` (decisão pendente, item 10) e os oito `EXT-PEND-*` já resolvidos.
+2. **Seções:** cada seção da `Estrutura` aparece no mapa: Edital 13, TR 10, ETP 13 incisos e o checklist, Planilha 6 módulos e a planilha como um todo, Pesquisa 3 itens (seções 1 a 8) e os 5 vícios, Minuta 9 cláusulas, RERI 3 atos, 5 checkpoints e a tabela de controle.
+3. **Simetria:** se a seção S do mapa de A cita INT-B na seção L, a seção L do mapa de B cita INT-A. Isso vale para todos os pares, menos a RERI, que segue a regra geral (item 18). Para a Planilha, a seção 7 (planilha como um todo) responde por "Módulos 1 a 6". Para a Pesquisa, os itens 1, 2 e 3 correspondem às seções 1 a 5, 6 e 7, e as seções 8 a 13 respondem pelo conjunto. As matrizes resumo batem com as tabelas. Na conferência por seção exata da origem, ficam cruzamentos que a volta cobre por outra seção do mesmo mapa (exemplo: a Minuta cl. 6 cita o TR I, e o TR I volta só pela cl. 1).
+4. **Citação por extenso:** nenhum mapa cita artigo, súmula, acórdão, lei ou IN por número fora do ID.
+5. **"Usado em":** as siglas ED-F a RR-F do catálogo coincidem com o uso real nos mapas.

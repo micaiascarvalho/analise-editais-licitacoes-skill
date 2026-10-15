@@ -115,6 +115,7 @@ Pergunta-chave: "O valor do mapa é o mesmo do TR, da Planilha, do ETP e do teto
 | Pesquisa não publicada | INT-EDITAL (seção 13); INT-PESQUISA | EXT-LEI14133-ART25 (§ 3º), EXT-LEI14133-ART54, EXT-LEI12527-GERAL, EXT-BASE-PNCP | Rol de anexos e arquivos no PNCP; se a pesquisa é anexo ou documento preparatório | Pesquisa listada como anexo e não publicada (ver `Fontes - Edital.md`, seção 13); se preparatória, pedir acesso antes de impugnar | Publicada, ou acesso pedido no prazo |
 | Valor por item e ME/EPP | INT-PESQUISA (item 3, valor por item); INT-EDITAL (seção 4); INT-ETP (inciso VIII) | EXT-LC123-ART48 | Valor estimado de cada item ao lado do limite para item exclusivo | Item até o limite sem exclusividade e sem justificativa (ver `Fontes - Edital.md`, seção 4, e `Fontes - ETP.md`, inciso VIII) | Item acima do limite, ou exceção justificada |
 | Pesquisa x planilha de custos (mão de obra) | INT-PESQUISA (item 1); INT-PLANILHA (Módulos 1 a 6) | EXT-NORMA-CCT, EXT-BASE-MEDIADOR | Se o valor de serviço com dedicação exclusiva veio de cotações globais ou da planilha com a CCT | Valor de posto fixado só por cotações, abaixo do custo da CCT vigente na planilha | Valor apoiado na planilha (ver `Fontes - Planilha de Custos.md`, seção 7) |
+| Data do mapa de preços como data-base do reajuste | INT-PESQUISA (item 3, data do mapa de preços); INT-MINUTA (cl. 3) | EXT-LEI14133-ART25 (§ 7º), EXT-LEI14133-ART92 (§ 3º) | Data do mapa de preços (orçamento estimado) ao lado do marco do reajuste na Minuta | Reajuste contado da assinatura do contrato, e não da data do orçamento (detalhe em `Fontes - Minuta Contratual.md`, seção 3) | Data-base do reajuste igual à do orçamento |
 
 ---
 
@@ -185,7 +186,7 @@ Pergunta-chave: "O órgão consultou as bases públicas ou foi direto a cotaçõ
 
 ## Matriz resumo
 
-✓ = cruzamento usado na seção. Na coluna `INT-EDITAL`, o número indica a seção do edital (numeração de `Edital/Estrutura - Edital.md`); na coluna `INT-TR`, a seção do TR; na coluna `INT-ETP`, o inciso do ETP; na coluna `INT-PLANILHA`, o módulo; na coluna `INT-PESQUISA`, o item da própria Estrutura (1: parâmetros; 2: validade; 3: tratamento e mapa). `INT-RERI` vale para todas as seções (ver "Como usar").
+✓ = cruzamento usado na seção. Na coluna `INT-EDITAL`, o número indica a seção do edital (numeração de `Edital/Estrutura - Edital.md`); na coluna `INT-TR`, a seção do TR; na coluna `INT-ETP`, o inciso do ETP; na coluna `INT-PLANILHA`, o módulo; na coluna `INT-PESQUISA`, o item da própria Estrutura (1: parâmetros; 2: validade; 3: tratamento e mapa); na coluna `INT-MINUTA`, a cláusula. `INT-RERI` vale para todas as seções (ver "Como usar").
 
 | Seção | INT-EDITAL | INT-TR | INT-ETP | INT-PLANILHA | INT-PESQUISA | INT-MINUTA | INT-RERI | Externas principais |
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
@@ -196,7 +197,7 @@ Pergunta-chave: "O órgão consultou as bases públicas ou foi direto a cotaçõ
 | 5. Parâmetro V | — | — | — | — | 1 | — | — | EXT-BASE-NFE |
 | 6. Requisitos de validade | — | I, III | VI | — | 2 | — | — | EXT-LEI14133-ART23, EXT-TCU-SUM177 |
 | 7. Tratamento matemático | — | — | — | — | 3 | — | — | EXT-IN65-ART6, EXT-REG-ENTE |
-| 8. Pesquisa no processo | 3, 4, 7, 13 | IX | VI, VIII | 1 a 6 | 1, 3 | — | — | EXT-LEI14133-ART23, EXT-LEI14133-ART24, EXT-LC123-ART48 |
+| 8. Pesquisa no processo | 3, 4, 7, 13 | IX | VI, VIII | 1 a 6 | 1, 3 | 3 | — | EXT-LEI14133-ART23, EXT-LEI14133-ART24, EXT-LC123-ART48 |
 | 9. Cotações de cobertura | — | I | — | — | 1, 3 | — | — | EXT-BASE-CNPJ, EXT-TCU-AC1798-2024, EXT-TCU-AC1616-2023 |
 | 10. Economia de escala | — | I | — | — | 1 | — | — | EXT-BASE-PESQPRECOS, EXT-TCU-AC2637-2015 |
 | 11. Expurgo de discrepantes | — | — | — | — | 3 | — | — | EXT-IN65-ART6 |

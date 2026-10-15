@@ -36,7 +36,8 @@ Pergunta-chave: "As provisões, os encargos sobre a folha e os benefícios do M�
 | Ponto a verificar | Fontes internas (ID + seção) | Fontes externas (IDs) | Prova (o que extrair ou demonstrar) | Gera impugnação se… | Descarta se… |
 | :-- | :-- | :-- | :-- | :-- | :-- |
 | Provisão de 13º e férias com 1/3 [derivada da Estrutura nos percentuais] | INT-PLANILHA (Módulo 2; submódulo 2.1) | EXT-IN5-2017 (Anexo VII-D), EXT-REG-ENTE | Percentuais do 2.1 e base de incidência (Módulo 1) | Percentual abaixo do devido ou base sem os adicionais do Módulo 1 | Percentuais do modelo, sobre a remuneração do Módulo 1 |
-| Duplicidade 2.1 x 4.1-A (férias) | INT-PLANILHA (Módulo 2, submódulo 2.1; Módulo 4, submódulo 4.1, alínea A); INT-PLANILHA (vigência: 1º ano ou prorrogação) | EXT-ADM-MEC-2024, EXT-IN5-2017 (Anexo VII-D), EXT-LEI14133-ART5, EXT-LEI14133-ART11 (III) | Fórmulas do 2.1 e do 4.1-A lado a lado e o ano de contrato a que a planilha se refere; valor da duplicidade por posto e no total | As duas rubricas cobrem o mesmo custo (no 1º ano, férias no 2.1 e substituto de férias também cheio no 4.1-A), inflando o teto | Uma das duas provisões zerada ou reduzida conforme o ano de contrato, na lógica de EXT-ADM-MEC-2024 |
+| Duplicidade 2.1 x 4.1-A (férias) | INT-PLANILHA (Módulo 2, submódulo 2.1; Módulo 4, submódulo 4.1, alínea A); INT-PLANILHA (vigência: 1º ano ou prorrogação); INT-MINUTA (cl. 1, prorrogação) | EXT-ADM-MEC-2024, EXT-IN5-2017 (Anexo VII-D), EXT-LEI14133-ART5, EXT-LEI14133-ART11 (III) | Fórmulas do 2.1 e do 4.1-A lado a lado e o ano de contrato a que a planilha se refere; valor da duplicidade por posto e no total | As duas rubricas cobrem o mesmo custo (no 1º ano, férias no 2.1 e substituto de férias também cheio no 4.1-A), inflando o teto | Uma das duas provisões zerada ou reduzida conforme o ano de contrato, na lógica de EXT-ADM-MEC-2024 |
+| Provisões do 2.1 x conta vinculada | INT-PLANILHA (Módulo 2; submódulo 2.1); INT-MINUTA (cl. 2) | EXT-LEI14133-ART121 (§ 3º) | Rubricas do 2.1 (13º, férias e 1/3) que a Minuta manda depositar em conta vinculada ou pagar diretamente | — (garantia lícita; o critério está na seção 3, linha "Provisões x conta vinculada e pagamento direto") | Rubricas da planilha e garantias da Minuta coerentes |
 
 ### 2.2 Submódulo 2.2: GPS, FGTS e outras contribuições
 
@@ -81,7 +82,7 @@ Pergunta-chave: "A reposição cobre só as ausências reais do posto, sem repet
 
 | Ponto a verificar | Fontes internas (ID + seção) | Fontes externas (IDs) | Prova (o que extrair ou demonstrar) | Gera impugnação se… | Descarta se… |
 | :-- | :-- | :-- | :-- | :-- | :-- |
-| Substituto de férias (4.1-A) x provisão do 2.1 | INT-PLANILHA (Módulo 4, submódulo 4.1, alínea A; Módulo 2, submódulo 2.1) | EXT-ADM-MEC-2024, EXT-IN5-2017 (Anexo VII-D) | Ver Submódulo 2.1, linha "Duplicidade 2.1 x 4.1-A" | Ver Submódulo 2.1 | Ver Submódulo 2.1 |
+| Substituto de férias (4.1-A) x provisão do 2.1 | INT-PLANILHA (Módulo 4, submódulo 4.1, alínea A; Módulo 2, submódulo 2.1); INT-MINUTA (cl. 1, prorrogação) | EXT-ADM-MEC-2024, EXT-IN5-2017 (Anexo VII-D) | Ver Submódulo 2.1, linha "Duplicidade 2.1 x 4.1-A" | Ver Submódulo 2.1 | Ver Submódulo 2.1 |
 | Escala 12x36 x fórmula de 44 horas | INT-PLANILHA (Módulo 4; submódulo 4.1); INT-TR (seção IV, escala) | EXT-NORMA-CCT, EXT-LEI14133-ART5 | Escala do TR ao lado dos dias de ausência usados nas alíneas B a F | Posto 12x36 com reposição calculada como jornada de 44 horas semanais (superestima substitutos) | Fórmula ajustada à escala do posto |
 | Ausências legais, paternidade e outras (4.1-B, C e F) [derivada da Estrutura] | INT-PLANILHA (Módulo 4; submódulo 4.1, alíneas B, C e F) | EXT-CLT-ART473, EXT-NORMA-CCT | Dias de ausência remunerada na lei e na CCT ao lado dos percentuais | Ausência obrigatória da CCT sem cobertura, ou percentual sem memória de cálculo | Percentuais com memória, coerentes com a lei e a CCT |
 | Acidente de trabalho e maternidade (4.1-D e E) [derivada da Estrutura] | INT-PLANILHA (Módulo 4; submódulo 4.1, alíneas D e E) | EXT-IN5-2017 (Anexo VII-D) | Percentuais e memória de cálculo | — (sem fonte própria no catálogo; percentual sem memória pede esclarecimento) | Memória de cálculo apresentada |
@@ -109,6 +110,7 @@ Pergunta-chave: "Todo uniforme, EPI, material e equipamento exigido no TR tem li
 | Máquinas e equipamentos (5.3) | INT-PLANILHA (Módulo 5; submódulo 5.3); INT-TR (seção III) | EXT-MERC-COTACOES, EXT-MERC-FICHAS | Locação de mercado ou depreciação + manutenção para cada equipamento do TR | Equipamento do TR sem depreciação ou locação | Custo mensal calculado |
 | Cláusula "guarda-chuva" (lista aberta) | INT-TR (seção VII); INT-PLANILHA (Módulo 5) | EXT-LEI14133-ART18 (caput, IV), EXT-LEI14133-ART6 (XXIII) | Obrigação genérica do TR ("todos os materiais necessários") ao lado do que o Módulo 5 precifica | Lista aberta no TR sem correspondência quantificada no Módulo 5 (ver `Fontes - Termo de Referencia.md`, seção VII) | Lista fechada e precificada |
 | Posto x produtividade e produtividade de referência | INT-TR (seções IV e VI); INT-PLANILHA (Módulos 1, 4 e 5; quantidade de postos); INT-ETP (incisos IV e VII) | EXT-IN5-2017 (Anexo VI-B, item 3; Anexo VII-A, item 7.3) | Área ou volume do TR, produtividade adotada e número de postos da planilha | Número de postos incoerente com a produtividade de referência, sem justificativa (ver `Fontes - Termo de Referencia.md`, seção IV) | Postos calculados pela produtividade, ou diferença justificada |
+| Insumos na repactuação | INT-PLANILHA (Módulo 5); INT-MINUTA (cl. 3) | EXT-LEI14133-ART135 (I), EXT-LEI14133-ART25 (§ 8º, II) | Data-base dos insumos do Módulo 5 (data da proposta) ao lado da regra da Minuta para repactuar custos de mercado | Minuta sem a data da proposta como data-base dos custos de mercado (detalhe em `Fontes - Minuta Contratual.md`, seção 3) | Datas-base da Minuta iguais às legais |
 
 ---
 
@@ -128,6 +130,7 @@ Pergunta-chave: "O Módulo 6 aplica só tributos devidos, no regime do ano da da
 | Cálculo por dentro (gross-up) | INT-PLANILHA (Módulo 6; preço final) | EXT-LEI14133-ART59 (§§ 2º a 4º) | Fórmula: custo + indiretos + lucro dividido por (1 − tributos) | Tributos somados por fora: o preço final não cobre os tributos da nota e o teto fica subdimensionado | Cálculo por dentro |
 | Custos indiretos e lucro (6.1 e 6.2) [derivada da Estrutura] | INT-PLANILHA (Módulo 6; submódulos 6.1 e 6.2); INT-EDITAL (seção 7) | EXT-TCU-AC2460-2022, EXT-TCU-AC465-2024, EXT-TCU-AC214-2025 | Percentuais do órgão; se o edital desclassifica por percentual de BDI ou só pelo preço final | Edital desclassifica proposta só porque o percentual de indiretos ou lucro excede o da planilha (ver `Fontes - Edital.md`, seção 7, BDI) | Análise pelo preço final, com chance de demonstrar a exequibilidade |
 | Preposto como custo indireto ou posto | INT-TR (seção V); INT-PLANILHA (Módulo 1 ou submódulo 6.1) | EXT-LEI14133-ART118 | Onde a planilha precifica o preposto exigido no TR | TR exige preposto exclusivo e fixo e a planilha não o precifica, nem como posto nem nos indiretos (ver `Fontes - Termo de Referencia.md`, seção V) | Preposto precificado coerente com o TR |
+| Preço do posto como base da retenção e da multa | INT-PLANILHA (Módulo 6, preço final do posto); INT-MINUTA (cl. 2 e 7) | EXT-LEI14133-ART143, EXT-LEI14133-ART162 | Preço mensal do posto ao lado do valor retido ou da multa calculada pela Minuta | — (a planilha dá a prova; o critério está em `Fontes - Minuta Contratual.md`, seções 2 e 7) | Retenção e multa proporcionais ao posto ou à parcela |
 
 ---
 
@@ -160,9 +163,9 @@ Pergunta-chave: "A planilha foi publicada com o edital, seus quantitativos e seu
 | Seção | INT-EDITAL | INT-TR | INT-ETP | INT-PLANILHA | INT-PESQUISA | INT-MINUTA | INT-RERI | Externas principais |
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
 | 1. Módulo 1 | 5, 7 | IV, V | — | — | — | 3 | — | EXT-NORMA-CCT, EXT-BASE-MEDIADOR, EXT-TST-SUM448 |
-| 2. Módulo 2 (2.1 a 2.3) | 7 | I, IV | — | 1, 4, 6 | — | — | — | EXT-ADM-MEC-2024, EXT-BASE-FPAS, EXT-LEI14973-GERAL |
+| 2. Módulo 2 (2.1 a 2.3) | 7 | I, IV | — | 1, 4, 6 | — | 1, 2 | — | EXT-ADM-MEC-2024, EXT-BASE-FPAS, EXT-LEI14973-GERAL |
 | 3. Módulo 3 | — | I, VI | — | 2 | — | 1, 2 | — | EXT-LEI13932-ART12, EXT-TCU-AC1186-2017, EXT-LEI14133-ART121 |
-| 4. Módulo 4 (4.1 e 4.2) | — | IV, VII | — | 2 | — | — | — | EXT-ADM-MEC-2024, EXT-CLT-ART473, EXT-IN5-2017 |
-| 5. Módulo 5 | — | III, IV, VI, VII | IV, VII | 1, 4 | — | — | — | EXT-LEI14133-ART6, EXT-LEI14133-ART23, EXT-IN5-2017 |
-| 6. Módulo 6 | 7 | IV, V | — | 1, 2 | — | 3 | — | EXT-TCU-SUM254, EXT-LC116-ART3, EXT-LC214-ART348 |
+| 4. Módulo 4 (4.1 e 4.2) | — | IV, VII | — | 2 | — | 1 | — | EXT-ADM-MEC-2024, EXT-CLT-ART473, EXT-IN5-2017 |
+| 5. Módulo 5 | — | III, IV, VI, VII | IV, VII | 1, 4 | — | 3 | — | EXT-LEI14133-ART6, EXT-LEI14133-ART23, EXT-IN5-2017 |
+| 6. Módulo 6 | 7 | IV, V | — | 1, 2 | — | 2, 3, 7 | — | EXT-TCU-SUM254, EXT-LC116-ART3, EXT-LC214-ART348 |
 | 7. Planilha como um todo [derivada] | 2, 3, 4, 5, 6, 7, 13 | I, IV, VI, VII, IX | IV, VI | 1 a 6 | 3 | — | — | EXT-LEI14133-ART23, EXT-LEI14133-ART24, EXT-LEI14133-ART25 |

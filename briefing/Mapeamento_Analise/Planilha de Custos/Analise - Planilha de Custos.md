@@ -45,7 +45,7 @@ Abaixo estão os **6 maiores grupos de erros, fraudes e omissões** que costumam
 
 - **Cruzamento:** Verifique a fórmula da célula da Multa do FGTS no arquivo Excel/PDF da planilha.
 - **Fundamento:** Art. 12 da Lei nº 13.932/2019, que extinguiu os 10% adicionais. O STF (Tema 846) declarou a contribuição constitucional no período anterior à extinção (fonte secundária). A manutenção da alíquota extinta gera **sobrepreço no orçamento de referência**.
-- **Aviso prévio nas prorrogações:** Sobre a provisão do aviso prévio em contratos prorrogados, ver o Acórdão 58/2026-TCU-Plenário (fonte secundária, a conferir).
+- **Aviso prévio nas prorrogações:** O aviso prévio trabalhado é custo não renovável e sai da planilha após o 1º ano de contrato (Acórdão 1186/2017-Plenário). Planilha que o mantém nas prorrogações gera sobrepreço.
 - **Conta vinculada:** Em dedicação exclusiva, o art. 121, § 3º da Lei 14.133/2021 permite conta vinculada e pagamento direto de verbas trabalhistas inadimplidas. Cruze as provisões de rescisão do Módulo 3 com o mecanismo previsto na minuta.
 
 ---
@@ -62,7 +62,7 @@ Este é um dos erros técnicos mais comuns em serviços com dedicação exclusiv
 #### Como cruzar e impugnar:
 
 - **Cruzamento:** Confronte as fórmulas matemáticas dos **Submódulos 2.1 (provisão de férias) e 4.1-A (substituto nas férias)**.
-- **Fundamento:** Princípio da Economicidade. Apoio: esclarecimento do MEC, pregão 2024 (fonte secundária), que trata as duas provisões como alternativas. Acórdão nº 1.182/2020-Plenário (não localizado — a conferir). Custos em duplicidade geram orçamento inflado indevidamente.
+- **Fundamento:** Princípio da Economicidade. Apoio: esclarecimento do MEC, pregão 2024 (fonte secundária), que trata as duas provisões como alternativas. (O Acórdão 1.182/2020-Plenário, antes citado, trata de outro assunto e não serve de fundamento.) Custos em duplicidade geram orçamento inflado indevidamente.
 
 ---
 

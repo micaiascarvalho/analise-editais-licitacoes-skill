@@ -76,7 +76,7 @@ Define a caução que a empresa deve depositar para garantir que cumprirá o con
 - **4.2. Limites Percentuais:**
   - Regra geral: até **5%** do valor inicial do contrato;
   - Exceção (alta complexidade técnica e riscos financeiros elevados): até **10%**;
-  - Obras e serviços de engenharia de grande vulto: até **30%** (com a chamada cláusula de retomada pelo seguro, prevista no art. 102).
+  - Obras e serviços de engenharia de grande vulto: até **30%** (com a chamada cláusula de retomada pelo seguro, prevista no art. 99; a cláusula de retomada está no art. 102).
 - **4.3. Regras de Liberação e Restituição:**
   - A minuta deve estabelecer que a garantia será devolvida ou liberada integralmente à empresa após a emissão do termo de recebimento definitivo e quitação de todas as obrigações trabalhistas e contratuais.
 

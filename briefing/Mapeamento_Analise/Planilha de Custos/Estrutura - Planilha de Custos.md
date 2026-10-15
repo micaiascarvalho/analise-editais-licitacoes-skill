@@ -1,6 +1,6 @@
 Este documento descreve a **anatomia de cada linha (rubrica)** da planilha de custos e formação de preços.
 
-No serviço público brasileiro, o padrão mais rigoroso e utilizado pelos órgãos é o modelo federal instituído pela **IN SEGES/MPDG nº 05/2017**. A **IN SEGES/ME nº 98/2022** não alterou o modelo: ela determina a aplicação da IN 5/2017 às contratações regidas pela Lei nº 14.133/2021. Esse padrão desdobra a planilha em **6 Módulos com submódulos matemáticos detalhados**.
+No serviço público brasileiro, o padrão mais rigoroso e utilizado pelos órgãos é o modelo federal instituído pela **IN SEGES/MPDG nº 05/2017**. A **IN SEGES/ME nº 98/2022** não alterou o modelo: ela autoriza a aplicação da IN 5/2017, no que couber, às contratações regidas pela Lei nº 14.133/2021. Esse padrão desdobra a planilha em **6 Módulos com submódulos matemáticos detalhados**.
 
 > **Nota sobre a esfera:** a IN SEGES/MPDG nº 05/2017 e o seu modelo de planilha são normas **federais**. Estados e municípios podem ter modelo próprio ou adotar o federal; confira o regulamento do ente que publicou o edital.
 
@@ -80,7 +80,7 @@ A Administração retém ou provisiona esses valores todo mês para garantir que
 
 - **3.1. Aviso Prévio Trabalhado:**
   - Percentual mensal guardado para pagar o salário do último mês em que o trabalhador cumpre o aviso.
-  - _Parâmetro do TCU:_ **1,94%** no 1º ano de contrato (Acórdão 1186/2017-Plenário). Para as prorrogações, o Acórdão 58/2026-Plenário e a Nota Técnica SEI 35883/2026/MGI alteram a regra (fonte secundária, a conferir).
+  - _Parâmetro do TCU:_ o Acórdão 1186/2017-Plenário exclui o aviso prévio trabalhado da planilha após o 1º ano de contrato. O percentual usual de **1,94%** no 1º ano não aparece no texto público do acórdão (parâmetro prático, a conferir no relatório ou voto).
 - **3.2. Aviso Prévio Indenizado e Aviso Prévio Proporcional:**
   - _Indenizado:_ o trabalhador é dispensado de cumprir o período e a empresa paga o valor correspondente.
   - _Proporcional (Lei nº 12.506/2011):_ para contratos que duram mais de 1 ano, o trabalhador ganha **3 dias a mais por ano de serviço** até o teto de 90 dias. A planilha precisa conter uma fração atuarial para esse acréscimo.

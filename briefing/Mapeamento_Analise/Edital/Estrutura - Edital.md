@@ -44,7 +44,7 @@ Abaixo está a estrutura típica completa e o objetivo de cada seção:
 - **Objetivo:** Estabelecer quem pode e quem não pode entrar na disputa.
 - **O que define:**
   - Requisitos gerais de admissão (pessoas jurídicas, MEI, filiais, etc.);
-  - Tratamento diferenciado a Microempresas e Empresas de Pequeno Porte (itens exclusivos até R$ 80 mil ou, para bens de natureza divisível, cotas reservadas de até 25% pela LC 123/2006, art. 48, III, observadas as exceções do art. 49 da LC 123/2006 e os limites do art. 4º da Lei 14.133/2021 (a conferir));
+  - Tratamento diferenciado a Microempresas e Empresas de Pequeno Porte (itens exclusivos até R$ 80 mil ou, para bens de natureza divisível, cotas reservadas de até 25% pela LC 123/2006, art. 48, III, observadas as exceções do art. 49 da LC 123/2006 e os limites do art. 4º da Lei 14.133/2021);
   - Regras para consórcios de empresas (se admitidos ou vedados) e cooperativas;
   - Rol de impedimentos legais (empresas suspensas, inidôneas, em falência ou com vínculos de parentesco com servidores do órgão).
 

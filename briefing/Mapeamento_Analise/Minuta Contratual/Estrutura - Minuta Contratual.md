@@ -31,9 +31,9 @@ Esta cláusula define o ciclo de vida temporal da relação jurídica entre as p
   - A minuta deve dividir o recebimento em duas fases formais com prazos explícitos:
     - **Recebimento Provisório:** Feito pelo fiscal do contrato em até X dias para conferência física e técnica;
     - **Recebimento Definitivo:** Feito pelo gestor em até X dias após comprovação de que o serviço ou bem atende a todas as exigências.
-  - _Os prazos não estão na Lei 14.133/2021; vêm do regulamento do ente ou do próprio contrato (parâmetro de regulamento: costuma-se ver até 15 dias para o provisório e até 30 dias para o definitivo — a conferir no regulamento aplicável)._
+  - _Os prazos não estão na Lei 14.133/2021; vêm do regulamento do ente ou do próprio contrato (parâmetro de regulamento: costuma-se ver até 15 dias para o provisório e até 30 dias para o definitivo). Conferir no regulamento do ente; na União, IN SEGES/ME 77/2022._
 - **2.2. O Prazo Fatal de Pagamento:**
-  - A minuta deve fixar o prazo de pagamento, contado a partir da emissão do termo de recebimento definitivo e liquidação da nota fiscal. _O prazo não está na lei; vem do regulamento do ente ou do contrato (parâmetro de regulamento: costuma-se ver até **10 ou 30 dias úteis** — a conferir no regulamento aplicável)._
+  - A minuta deve fixar o prazo de pagamento, contado a partir da emissão do termo de recebimento definitivo e liquidação da nota fiscal. _O prazo não está na lei; vem do regulamento do ente ou do contrato. Na União, até **10 + 10 dias úteis** (IN SEGES/ME 77/2022, art. 7º: liquidação e pagamento); nos demais entes, conferir o regulamento._
 - **2.3. Ordem Cronológica de Pagamentos (Art. 141):**
   - A Administração é proibida de furar a fila. O pagamento deve respeitar a ordem cronológica de inscrição das notas fiscais liquidadas por categoria de contrato (bens, serviços, obras). A quebra injustificada dessa ordem leva à apuração de responsabilidade do agente responsável (art. 141, § 2º).
 - **2.4. Encargos Moratórios por Atraso no Pagamento (Art. 92, V):**

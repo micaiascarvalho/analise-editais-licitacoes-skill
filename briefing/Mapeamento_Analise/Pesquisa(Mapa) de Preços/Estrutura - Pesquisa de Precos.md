@@ -18,7 +18,7 @@ Pela **Lei nº 14.133/2021 (art. 23)** e pela **IN SEGES/ME nº 65/2021** (norma
 
 ### A Estrutura Formal da Pesquisa de Preços (Art. 23 da Lei 14.133/2021)
 
-A Nova Lei de Licitações exige que o valor estimado seja compatível com os valores de mercado, considerando os bancos de dados públicos e as quantidades, "observadas a potencial economia de escala e as peculiaridades do local de execução" (art. 23, caput). Para bens e serviços em geral **não há ordem obrigatória de fontes**: os parâmetros do § 1º podem ser "adotados de forma combinada ou não". Ordem obrigatória só existe para obras e serviços de engenharia (§ 2º). Na esfera federal, a IN SEGES/ME 65/2021 (art. 5º, § 1º) prioriza os parâmetros I e II (a conferir).
+A Nova Lei de Licitações exige que o valor estimado seja compatível com os valores de mercado, considerando os bancos de dados públicos e as quantidades, "observadas a potencial economia de escala e as peculiaridades do local de execução" (art. 23, caput). Para bens e serviços em geral **não há ordem obrigatória de fontes**: os parâmetros do § 1º podem ser "adotados de forma combinada ou não". Ordem obrigatória só existe para obras e serviços de engenharia (§ 2º). Na esfera federal, a IN SEGES/ME 65/2021 (art. 5º, § 1º) prioriza os parâmetros I e II.
 
 ---
 
@@ -60,7 +60,7 @@ Depois de coletar os preços (o padrão mínimo exigido pelos órgãos de contro
 - **Eliminação de Preços Anômalos ("Expurgo de Outliers"):**
   - Antes de calcular o preço final, o órgão **deve expurgar** valores excessivamente altos (que inflariam o orçamento) ou excessivamente baixos (que rebaixariam o valor artificialmente).
 - **Critério Estatístico:**
-  - Os métodos de cálculo não estão na lei, e sim no regulamento. Na esfera federal, a IN SEGES/ME 65/2021 (art. 6º, caput) admite a **Média**, a **Mediana** ou o **Menor dos valores obtidos**, calculados sobre ao menos 3 preços, desconsiderados os inexequíveis, os inconsistentes e os excessivamente elevados (a conferir).
+  - Os métodos de cálculo não estão na lei, e sim no regulamento. Na esfera federal, a IN SEGES/ME 65/2021 (art. 6º, caput) admite a **Média**, a **Mediana** ou o **Menor dos valores obtidos**, calculados sobre ao menos 3 preços, desconsiderados os inexequíveis, os inconsistentes e os excessivamente elevados.
   - A IN 65/2021 **não dá preferência à Mediana**. A mediana só funciona como limite quando o preço vem apenas do parâmetro I (sistemas oficiais), caso em que não pode superar a mediana do item (art. 6º, § 6º). Em estados e municípios, verifique o regulamento do ente.
 
 ---

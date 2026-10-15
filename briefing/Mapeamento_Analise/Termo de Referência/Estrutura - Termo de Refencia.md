@@ -23,7 +23,7 @@ A legislação (art. 6º, XXIII, alíneas "a" a "j" (a conferir)) e os modelos p
 - **O que você encontra aqui:**
   - Descrição clara dos itens ou serviços;
   - Quantitativos totais estimados;
-  - Prazo de vigência contratual (ex.: 12 meses). Em serviços e fornecimentos contínuos, a vigência inicial pode ser de até 5 anos (art. 106 da Lei 14.133) e as prorrogações sucessivas podem levar a vigência total a até 10 anos (art. 107) (a conferir).
+  - Prazo de vigência contratual (ex.: 12 meses). Em serviços e fornecimentos contínuos, a vigência inicial pode ser de até 5 anos (art. 106 da Lei 14.133) e as prorrogações sucessivas podem levar a vigência total a até 10 anos (art. 107).
 - **Exemplo Prático:**
   > _"Contratação de serviços continuados de suporte técnico em TI (Help Desk), compreendendo 5.000 chamados anuais, para atendimento presencial e remoto, pelo período de 12 meses"_.
 
@@ -79,7 +79,7 @@ A legislação (art. 6º, XXIII, alíneas "a" a "j" (a conferir)) e os modelos p
   - **Instrumento de Medição de Resultado (IMR)** ou Acordo de Nível de Serviço (**SLA**);
   - Fórmulas de descontos/glosas na fatura se o serviço atrasar ou for mal executado;
   - Prazo que o fiscal tem para atestar a nota (recebimento provisório e definitivo);
-  - Prazo de pagamento definido no contrato (art. 92, V) e no regulamento do ente (na esfera federal, IN SEGES 77/2022 (a conferir)) — não é prazo fixado pela Lei 14.133.
+  - Prazo de pagamento definido no contrato (art. 92, V) e no regulamento do ente (na esfera federal, IN SEGES/ME 77/2022, art. 7º: até 10 dias úteis para a liquidação e até 10 dias úteis para o pagamento) — não é prazo fixado pela Lei 14.133.
 - **Exemplo Prático:**
   > Em um contrato de internet: _"A disponibilidade do link deve ser de 99,5% ao mês. Para cada hora de indisponibilidade não programada além do limite, haverá glosa (desconto) de 2% no valor da fatura mensal"_.
 

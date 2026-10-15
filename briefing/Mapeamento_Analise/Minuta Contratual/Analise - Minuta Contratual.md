@@ -19,7 +19,7 @@ Este é o erro mais perigoso para contratos com mais de 12 meses de duração.
 
 #### Como fundamentar a impugnação:
 
-- **Fundamento:** Art. 92, V e X, art. 25, §§ 7º e 8º, e art. 135 da Lei 14.133/2021; art. 37, XXI da Constituição Federal; e jurisprudência pacífica do TCU.
+- **Fundamento:** Art. 92, V e X, art. 25, §§ 7º e 8º, e art. 135 da Lei 14.133/2021; art. 37, XXI da Constituição Federal; e TCU, Acórdão 7.184/2018-Segunda Câmara (o critério de reajuste no edital e no contrato é imposição, não discricionariedade, mesmo em vigência de até 12 meses; julgado sob a Lei 8.666).
 - **O Pedido (a) — bens e serviços sem dedicação exclusiva de mão de obra:** Exigir a inserção expressa de índice de reajuste (pode ser específico ou setorial) e a fixação da data-base vinculada à data do orçamento estimado (art. 25, § 7º; art. 92, § 3º).
 - **O Pedido (b) — serviços com dedicação exclusiva de mão de obra (caso típico da Servfaz):** Exigir a inserção de cláusula de repactuação (art. 25, § 8º, II), mediante demonstração analítica da variação dos custos, com as datas-base do art. 135 (proposta, para custos de mercado; acordo, convenção ou dissídio coletivo, para custos de mão de obra) e prazo de resposta ao pedido (art. 92, X).
 
@@ -123,4 +123,4 @@ Abra a Minuta do Contrato e passe este filtro rápido:
 [ ] 7. A garantia legal de suspensão após 2 meses de atraso está preservada?
 ```
 
-Se qualquer um desses itens falhar, você tem em mãos uma tese perfeita de impugnação contratual sob a égide da Lei 14.133/2021.
+Se qualquer um desses itens falhar, há base para impugnação da cláusula com fundamento na Lei 14.133/2021.

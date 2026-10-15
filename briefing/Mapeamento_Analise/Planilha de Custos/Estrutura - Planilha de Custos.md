@@ -27,7 +27,7 @@ Este módulo apura quanto custa a remuneração direta do trabalhador por mês. 
   - Percentual: **20%** sobre o valor da hora normal (para trabalhadores urbanos).
   - _O Detalhe Oculto (Hora Ficta):_ A hora noturna não tem 60 minutos, mas **52 minutos e 30 segundos** (art. 73, § 1º da CLT). Isso exige aplicar um fator multiplicador de **1,1428** sobre o cálculo da hora normal.
 - **1.5. Descanso Semanal Remunerado (DSR) sobre os Adicionais:**
-  - Adicionais noturnos e horas extras habituais geram reflexo no pagamento dos domingos e feriados (DSR). A Súmula nº 172 do TST trata das horas extras habituais no DSR; a integração do adicional noturno pago com habitualidade é da Súmula nº 60 do TST (a conferir).
+  - Adicionais noturnos e horas extras habituais geram reflexo no pagamento dos domingos e feriados (DSR). A Súmula nº 172 do TST trata das horas extras habituais no DSR; a integração do adicional noturno pago com habitualidade é da Súmula nº 60 do TST (item I; o item II estende o adicional às horas prorrogadas após a jornada noturna).
 - **1.6. Gratificações e Adicionais Convencionais:**
   - Previsões específicas da CCT, como: adicional de função (líder de equipe), triênio, biênio, assiduidade.
 
@@ -53,7 +53,7 @@ São as alíquotas incidentes sobre a folha de pagamento:
 - **FGTS:** **8,00%**;
 - **Salário-Educação:** **2,50%**;
 - **INCRA:** **0,20%**;
-- **Sistema "S" (SESI/SENAI, SESC/SENAC, SEST/SENAT):** desdobrar por entidade conforme o código FPAS da atividade. SESC+SENAC (ou SESI+SENAI) somam **2,5%**; o percentual usual de 3,10% parece já incluir o SEBRAE (a conferir na tabela FPAS);
+- **Sistema "S" (SESI/SENAI, SESC/SENAC, SEST/SENAT):** desdobrar por entidade conforme o código FPAS da atividade. SESC+SENAC (FPAS 515, limpeza e conservação) ou SESI+SENAI (FPAS 507) somam **2,5%**; o percentual usual de **3,10%** já inclui o SEBRAE (0,6%), conforme a tabela FPAS (IN RFB 2.110/2022, Anexo III; Tabela 04 do eSocial). Conferir o código FPAS da atividade;
 - **SEBRAE:** **0,60%** (não somar de novo se já estiver incluído no percentual do Sistema "S");
 - **RAT/SAT ajustado pelo FAP:**
   - RAT (Risco Ambiental do Trabalho): alíquota base de **1%, 2% ou 3%** conforme o risco da atividade.
@@ -114,7 +114,7 @@ _Correspondência com o modelo: (a conferir no Anexo VII-D da IN 5/2017)._
   - **E. Afastamento Maternidade:**
     - Cobertura do posto durante a licença-maternidade de 120 dias da titular (CLT, art. 392); o custo na planilha é o do substituto (percentual a conferir).
   - **F. Outras Ausências:**
-    - Demais ausências previstas no modelo ou na CCT (a conferir).
+    - Demais ausências previstas no modelo ou na CCT (conferir no modelo da IN 5/2017 e na CCT da categoria).
 - **4.2. Substituto na Intrajornada:**
   - Cobertura do intervalo para repouso e alimentação do titular quando o posto não pode ficar vazio (a conferir).
 

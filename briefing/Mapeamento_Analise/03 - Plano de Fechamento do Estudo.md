@@ -98,7 +98,7 @@ Verificação: `grep` pelas quatro expressões não acha nada.
 
 | Etapa | Status | Commit |
 | :-- | :-- | :-- |
-| 1. Grupos A e C | pendente | — |
+| 1. Grupos A e C | concluída (marcas do TR sobre o art. 6º, XXIII, e da CBS 2027 ficam para a etapa 2) | este commit |
 | 2. Grupo B | pendente | — |
-| 3. Redação | pendente | — |
+| 3. Redação | concluída (Acórdão 7.184/2018-Segunda Câmara citado na Análise da Minuta) | junto da etapa 1 |
 | 4. README e push | pendente | — |

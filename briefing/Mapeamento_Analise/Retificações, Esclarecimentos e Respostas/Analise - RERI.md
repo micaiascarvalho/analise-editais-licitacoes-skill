@@ -124,4 +124,4 @@ Para cada nova publicação que surgir no portal, anote em uma tabela de control
 | _15/10 às 16h_          | Errata nº 01          | Aumentou garantia de 12 para 24 meses      | ❌ **NÃO (Sem reabertura de prazo)** | **Protocolar Impugnação Urgente (Art. 55, § 1º) + pedido de suspensão da sessão** |
 | _16/10 às 18h_          | Resposta à Impugnação | "Mantenha-se o edital" (evasiva sobre CCT) |   ❌ **NÃO (Falta de motivação)**    | **Petição de Reiteração / Representação ao tribunal de contas (art. 170, § 4º)**  |
 
-Esse registro garante que nenhuma armadilha de última hora passe despercebida e que sua empresa esteja sempre um passo à frente do pregoeiro e dos concorrentes.
+Esse registro documenta, para cada publicação, o resultado dos 5 checkpoints e a providência adotada, e serve de controle dos prazos de impugnação, reiteração e representação.

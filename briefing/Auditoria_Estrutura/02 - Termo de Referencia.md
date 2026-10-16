@@ -165,3 +165,7 @@ Os ajustes refletem no `Fontes - Termo de Referencia.md`, que precisa de linhas 
   - "Usado em" recalculado para os três mapas alterados.
 
 Próximo documento: **Estudo Técnico Preliminar**.
+
+## 8. Correção (2026-10-16, na auditoria do ETP)
+
+O **D-TR-03** dizia que o TR da FMS "traz conteúdo de ETP: levantamento das alternativas (6) e estimativa dos quantitativos (7)". A releitura mostrou que a seção 6 só **remete** ao ETP ("os cenários possíveis encontram-se pormenorizados em tópico específico do Estudo Técnico Preliminar"). A seção 7 traz os quantitativos, e a 7.1.1 diz que a memória de dimensionamento ficará "em anexo". O uso sugerido passa a ser: usar os quantitativos da seção 7 e pedir acesso ao ETP e à memória de dimensionamento (ver `03 - ETP.md`, D-ETP-06).

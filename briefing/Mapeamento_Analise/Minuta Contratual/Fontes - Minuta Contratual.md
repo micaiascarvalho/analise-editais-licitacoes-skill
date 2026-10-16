@@ -114,7 +114,7 @@ Pergunta-chave: "A multa de mora incide sobre a parcela em atraso, a multa sanci
 | Ponto a verificar | Fontes internas (ID + seção) | Fontes externas (IDs) | Prova (o que extrair ou demonstrar) | Gera impugnação se… | Descarta se… |
 | :-- | :-- | :-- | :-- | :-- | :-- |
 | Multa de mora: base de cálculo | INT-MINUTA (cl. 7, subitem 7.1); INT-PLANILHA (valor da parcela ou do posto) | EXT-LEI14133-ART162, EXT-LEI14133-ART5 | Percentual diário e base (parcela em atraso x valor global); simulação com um atraso curto | Multa de mora sobre o valor global por atraso de parcela pequena, desproporcional ao dano | Multa sobre a parcela em atraso, em percentual proporcional (0,1% a 0,5% ao dia é parâmetro prático, não exigência legal) |
-| Multa sancionatória: faixa legal | INT-MINUTA (cl. 7, subitem 7.1); INT-EDITAL (seção 12) | EXT-LEI14133-ART156 (§ 3º) | Percentuais da Minuta e do edital, lado a lado | Multa acima de 30% ou abaixo de 0,5% do valor do contrato, ou percentuais divergentes entre edital e Minuta (volta de `Fontes - Edital.md`, seção 12) | Percentuais na faixa e iguais nos dois documentos |
+| Multa sancionatória: faixa legal | INT-MINUTA (cl. 7, subitem 7.1); INT-EDITAL (seção 12); INT-TR (sanções) | EXT-LEI14133-ART156 (§ 3º) | Percentuais da Minuta e do edital, lado a lado | Multa acima de 30% ou abaixo de 0,5% do valor do contrato, ou percentuais divergentes entre edital e Minuta (volta de `Fontes - Edital.md`, seção 12) | Percentuais na faixa e iguais nos dois documentos |
 | Mora x teto: soma das multas | INT-MINUTA (cl. 7) | EXT-LEI14133-ART162, EXT-LEI14133-ART156 (§ 3º) | Se a Minuta limita o acúmulo da multa de mora ou permite que ela supere o teto da multa sancionatória | Mora sem limite, que na prática ultrapassa 30% do contrato | Mora limitada ou convertida em inexecução com multa dentro da faixa |
 | Rol e prazos das sanções | INT-MINUTA (cl. 7, subitem 7.1); INT-EDITAL (seção 12) | EXT-LEI14133-ART156 (caput, §§ 4º e 5º) | Sanções previstas, prazo do impedimento e da inidoneidade e abrangência (ente ou todos os entes) | Sanção fora do rol, impedimento acima de 3 anos ou inidoneidade fora de 3 a 6 anos | Rol e prazos legais |
 | Defesa prévia (7.2) [derivada da Estrutura] | INT-MINUTA (cl. 7, subitem 7.2); INT-EDITAL (seção 12) | EXT-LEI14133-ART157, EXT-LEI14133-ART158, EXT-CF88-ART5 | Prazo de defesa antes da multa e procedimento antes do impedimento e da inidoneidade | Minuta que aplica multa sem defesa de 15 dias úteis, ou impedimento e inidoneidade sem processo de responsabilização | Prazos e procedimento legais |
@@ -158,10 +158,10 @@ Pergunta-chave: "O foro da Minuta coincide com o do edital e, se há meio altern
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
 | 1. Vigência e prorrogação [derivada] | 2, 5, 11, 13 | I | — | 2, 3, 4 | — | 3 | — | EXT-LEI14133-ART106, EXT-LEI14133-ART107, EXT-LEI14133-ART94 |
 | 2. Pagamento e retenção | — | V, VI, VII, X | — | 2, 3, 6 | — | 7 | — | EXT-LEI14133-ART143, EXT-LEI14133-ART121, EXT-TCU-AC1505-2026 |
-| 3. Equilíbrio (reajuste e repactuação) | 13 | I, IV | — | 1 a 6 | 3 | 5 | — | EXT-LEI14133-ART25, EXT-LEI14133-ART135, EXT-TCU-AC7184-2018 |
+| 3. Equilíbrio (reajuste e repactuação) | 13 | I, IV, VI | — | 1 a 6 | 3 | 5 | — | EXT-LEI14133-ART25, EXT-LEI14133-ART135, EXT-TCU-AC7184-2018 |
 | 4. Garantia | 11 | — | X | — | — | 8 | — | EXT-LEI14133-ART96, EXT-LEI14133-ART98, EXT-BASE-SUSEP |
 | 5. Matriz de riscos | 2 | IV, VII | X | — | — | 3 | — | EXT-LEI14133-ART22, EXT-LEI14133-ART103, EXT-CC-ART393 |
 | 6. Alterações [derivada] | — | I | — | — | — | 3 | — | EXT-LEI14133-ART124, EXT-LEI14133-ART125 |
-| 7. Sanções | 12 | VI | — | ✓ | — | 2 | — | EXT-LEI14133-ART156, EXT-LEI14133-ART162, EXT-LEI14133-ART157 |
+| 7. Sanções | 12 | VI, sanções | — | ✓ | — | 2 | — | EXT-LEI14133-ART156, EXT-LEI14133-ART162, EXT-LEI14133-ART157 |
 | 8. Extinção | — | VII | — | — | — | 4, 6 | — | EXT-LEI14133-ART137, EXT-LEI14133-ART138 |
 | 9. Foro [derivada] | 13 | — | — | — | — | — | — | EXT-LEI14133-ART151 |

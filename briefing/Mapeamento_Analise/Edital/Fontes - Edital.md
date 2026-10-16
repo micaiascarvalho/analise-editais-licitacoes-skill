@@ -191,7 +191,7 @@ Pergunta-chave: "As sanções do edital estão dentro da faixa legal, iguais às
 
 | Ponto a verificar | Fontes internas (ID + seção) | Fontes externas (IDs) | Prova (o que extrair ou demonstrar) | Gera impugnação se… | Descarta se… |
 | :-- | :-- | :-- | :-- | :-- | :-- |
-| Tipos e percentuais das sanções | INT-EDITAL (seção 12); INT-MINUTA (cl. 7) | EXT-LEI14133-ART156 | Tabela lado a lado das infrações, sanções e percentuais no edital e na Minuta | Multa fora da faixa de 0,5% a 30% ou divergência entre edital e Minuta | Percentuais dentro da faixa e coerentes nos dois documentos |
+| Tipos e percentuais das sanções | INT-EDITAL (seção 12); INT-MINUTA (cl. 7); INT-TR (sanções) | EXT-LEI14133-ART156 | Tabela lado a lado das infrações, sanções e percentuais no edital e na Minuta | Multa fora da faixa de 0,5% a 30% ou divergência entre edital e Minuta | Percentuais dentro da faixa e coerentes nos dois documentos |
 | Defesa prévia | INT-EDITAL (seção 12); INT-MINUTA (cl. 7) | EXT-LEI14133-ART156, EXT-LEI14133-ART157, EXT-LEI14133-ART158, EXT-CF88-ART5 | Previsão de processo sancionador com defesa de 15 dias úteis, no edital e na Minuta | Sanção aplicada sem defesa prévia, ou prazo de defesa menor que o legal | Processo com defesa no prazo legal previsto |
 
 ---
@@ -229,5 +229,5 @@ Pergunta-chave: "Todos os anexos citados foram publicados com o edital, sem cada
 | 9. Esclarecimentos e impugnação | 1, 13 | — | — | — | — | — | ✓ | EXT-LEI14133-ART164, EXT-LEI14133-ART183 |
 | 10. Recursos | — | — | — | — | — | — | — | EXT-LEI14133-ART165, EXT-STF-SV21, EXT-CF88-ART5 |
 | 11. Adjudicação e contrato [derivada] | — | — | — | — | — | 1, 4 | — | EXT-LEI14133-ART90, EXT-LEI14133-ART96 |
-| 12. Sanções [derivada] | — | — | — | — | — | 7 | — | EXT-LEI14133-ART156, EXT-LEI14133-ART157 |
+| 12. Sanções [derivada] | — | sanções | — | — | — | 7 | — | EXT-LEI14133-ART156, EXT-LEI14133-ART157 |
 | 13. Disposições finais [derivada] | — | ✓ | ✓ | ✓ | ✓ | 1, 3, 9 | ✓ | EXT-LEI14133-ART25, EXT-LEI14133-ART54, EXT-BASE-PNCP |

@@ -110,6 +110,8 @@ Pergunta-chave: "O IMR/SLA tem indicadores objetivos e glosa proporcional, e o p
 | Prazos de recebimento e pagamento | INT-TR (seção VI); INT-MINUTA (cl. 2, subitens 2.1, 2.2 e 2.4) | EXT-LEI14133-ART92 (V), EXT-LEI14133-ART140, EXT-IN77-2022 (só União), EXT-REG-ENTE | Prazos de recebimento provisório e definitivo, prazo de pagamento e encargos moratórios no TR e na Minuta; regulamento do ente | Prazo aberto ou excessivo, divergência entre TR e Minuta, ou falta de encargos moratórios; na esfera da União, prazo além do fixado em EXT-IN77-2022 (até 10 + 10 dias úteis) | Prazos certos, coerentes com a Minuta e com o regulamento do ente |
 | Ordem cronológica de pagamentos | INT-TR (seção VI); INT-MINUTA (cl. 2) | EXT-LEI14133-ART141, EXT-IN77-2022 (só União), EXT-REG-ENTE | Previsão de pagamento pela ordem cronológica e hipóteses de quebra | Cláusula que admite pagar fora da ordem sem as hipóteses justificadas | Ordem cronológica prevista |
 | Retenção por irregularidade fiscal ou documento acessório | INT-TR (seção VI); INT-MINUTA (cl. 2) | EXT-TCU-AC964-2012, EXT-TCU-AC1505-2026, EXT-LEI14133-ART143, EXT-LEI14133-ART121 (§ 3º) | Cláusula que retém pagamento por certidão vencida ou documento acessório | Retenção do pagamento de serviço executado por irregularidade fiscal (EXT-TCU-AC964-2012, EXT-TCU-AC1505-2026); ou retenção da fatura inteira por atraso de documento acessório, além da parcela controvertida (EXT-LEI14133-ART143) | Retenção vinculada às verbas trabalhistas do próprio contrato (EXT-LEI14133-ART121 (§ 3º)) |
+| Repactuação ou reajuste | INT-TR (seções I e VI); INT-MINUTA (cl. 3); INT-PLANILHA (Módulos 1 a 6) | EXT-LEI14133-ART25 (§§ 7º e 8º), EXT-LEI14133-ART135, EXT-LEI14133-ART92 (X), EXT-AGU-TR-2026 | Instituto previsto (repactuação com dedicação exclusiva ou predominância de mão de obra; reajuste nos demais), datas-base (proposta e CCT) e prazo de resposta | Serviço com dedicação exclusiva sem repactuação, reajuste por índice em lugar da repactuação, ou data-base diferente da lei | Instituto e datas-base conforme a lei, iguais aos da Minuta |
+| Conta vinculada ou pagamento pelo fato gerador | INT-TR (seções V e VI); INT-MINUTA (cl. 2); INT-PLANILHA (Módulos 2, 3 e 4) | EXT-LEI14133-ART121 (§ 3º), EXT-IN5-2017, EXT-AGU-TR-2026, EXT-REG-ENTE | Rubricas retidas (férias, 13º, rescisão), percentuais, banco, regras de liberação e de saldo ao fim do contrato | Retenção sem regra de liberação, percentuais acima das rubricas provisionadas na planilha, ou retenção de parcelas sem relação com verbas trabalhistas | Regras completas e percentuais iguais às provisões da planilha |
 
 ---
 
@@ -178,6 +180,20 @@ Pergunta-chave: "Há dotação e fonte de recursos indicadas, iguais às do edit
 
 ---
 
+## Seção complementar: Infrações e Sanções Administrativas
+
+**[derivada da Estrutura]** — sem alínea do art. 6º, XXIII; seção própria no modelo de TR da AGU (item 8) e presente nos 4 TRs da pasta de editais. Citada nos outros mapas como `INT-TR (sanções)`.
+
+Pergunta-chave: "As infrações e sanções do TR são as mesmas do Edital e da Minuta e respeitam a faixa legal?"
+
+| Ponto a verificar | Fontes internas (ID + seção) | Fontes externas (IDs) | Prova (o que extrair ou demonstrar) | Gera impugnação se… | Descarta se… |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| Coerência entre TR, Edital e Minuta | INT-TR (sanções); INT-EDITAL (seção 12); INT-MINUTA (cl. 7) | EXT-LEI14133-ART156, EXT-AGU-TR-2026 | Tabela lado a lado das infrações, sanções e percentuais nos três documentos | Percentuais ou sanções divergentes entre os documentos | Textos coincidentes |
+| Faixa legal da multa | INT-TR (sanções); INT-MINUTA (cl. 7) | EXT-LEI14133-ART156 (§ 3º), EXT-LEI14133-ART162 | Percentual da multa sancionatória e base da multa de mora | Multa fora de 0,5% a 30% do valor do contrato, ou mora calculada sobre o valor global | Multas dentro da faixa e mora sobre a parcela em atraso |
+| Processo sancionador | INT-TR (sanções); INT-EDITAL (seção 12) | EXT-LEI14133-ART157, EXT-LEI14133-ART158, EXT-CF88-ART5 | Prazo de defesa e procedimento antes da sanção | Sanção sem defesa prévia ou sem o processo do art. 158 | Defesa e procedimento previstos |
+
+---
+
 ## Matriz resumo
 
 ✓ = cruzamento usado na seção. Na coluna `INT-EDITAL`, o número indica a seção do edital a cruzar (numeração de `Edital/Estrutura - Edital.md`); na coluna `INT-TR`, o algarismo romano indica outra seção do próprio TR; na coluna `INT-ETP`, o algarismo romano indica o inciso do ETP a cruzar (`Fontes - ETP.md` tem a volta no mesmo inciso), e "justificativa" indica a justificativa das exigências de habilitação, cruzada em `Fontes - ETP.md`, inciso III; na coluna `INT-MINUTA`, a cláusula (`Fontes - Minuta Contratual.md` tem a volta na mesma cláusula). `INT-RERI` vale para todas as seções (ver "Como usar"); o ✓ marca onde ele é fonte direta. `INT-DOTACAO` (seções VI e X), `INT-PCA` (seções II, IV e X) e `INT-HIST-CONTRATO` (seção I) aparecem só nas tabelas.
@@ -189,8 +205,9 @@ Pergunta-chave: "Há dotação e fonte de recursos indicadas, iguais às do edit
 | III. Solução e requisitos | 1, 5, 8 | — | III, V, VII, XII | ✓ | ✓ | — | — | EXT-LEI14133-ART9, EXT-LEI14133-ART41, EXT-NORMA-ABNT |
 | IV. Modelo de execução | 5, 7 | VI, VII | IV, VII, X, XI | ✓ | ✓ | 3, 5 | — | EXT-NORMA-CCT, EXT-LEI14133-ART63, EXT-TCU-SUM177 |
 | V. Gestão e fiscalização | — | VII | — | ✓ | — | 2 | — | EXT-LEI14133-ART118, EXT-LEI14133-ART117, EXT-LEI14133-ART121 |
-| VI. Medição e pagamento | — | IV, X | IX | ✓ | — | 2, 7 | — | EXT-LEI14133-ART143, EXT-LEI14133-ART141, EXT-IN77-2022 |
+| VI. Medição e pagamento | — | IV, X | IX | ✓ | — | 2, 3, 7 | — | EXT-LEI14133-ART143, EXT-LEI14133-ART141, EXT-IN77-2022, EXT-LEI14133-ART135, EXT-LEI14133-ART121 |
 | VII. Obrigações | — | III, IV, VI | X | ✓ | — | 2, 5 | — | EXT-LEI14133-ART18, EXT-LEI14133-ART6, EXT-LEI14133-ART103 |
 | VIII. Seleção e habilitação | 1, 6, 7, 8 | I | justificativa | — | — | — | — | EXT-LEI14133-ART41, EXT-LEI14133-ART67, EXT-TCU-SUM263 |
 | IX. Estimativa do valor [derivada] | 3, 7 | IV, VII | VI | ✓ | ✓ | — | — | EXT-LEI14133-ART6, EXT-LEI14133-ART23, EXT-LEI14133-ART24 |
 | X. Adequação orçamentária [derivada] | 3 | VI | — | — | — | 2 | — | EXT-LEI14133-ART6, EXT-LEI14133-ART150, EXT-LEI14133-ART18 |
+| Sanções [complementar] | 12 | — | — | — | — | 7 | — | EXT-LEI14133-ART156, EXT-LEI14133-ART157, EXT-LEI14133-ART158 |

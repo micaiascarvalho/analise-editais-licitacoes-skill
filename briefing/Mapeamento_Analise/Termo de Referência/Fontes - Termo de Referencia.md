@@ -22,6 +22,7 @@ Pergunta-chave: "O objeto está definido com precisão, é o mesmo no TR, no Edi
 | Objeto e quantidade na pesquisa de preços | INT-TR (seção I); INT-PESQUISA (item 1, parâmetros II e IV; item 2, identidade e quantidade) | EXT-LEI14133-ART23, EXT-TCU-SUM177 | Objeto, quantidade e ramo das cotações e das contratações similares ao lado do objeto e dos quantitativos do TR | Pesquisa sobre objeto, porte ou ramo diferente do TR, que distorce o valor estimado (detalhe em `Fontes - Pesquisa de Precos.md`, seções 2, 6, 9 e 10) | Pesquisa sobre o mesmo objeto e porte do TR |
 | Natureza do objeto e benefícios de ME/EPP | INT-TR (seção I); INT-EDITAL (seção 4) | EXT-LC123-ART48 (III), EXT-DEC8538-2015 (art. 8º; só União) | Se o TR classifica o objeto como bem divisível ou como serviço | — (o vício, se houver, está na cláusula do edital; ver `Fontes - Edital.md`, seção 4, "Cota reservada em objeto de serviço") | Natureza clara no TR |
 | TR não divulgado com o edital | INT-EDITAL (seção 13); INT-TR | EXT-LEI14133-ART25 (§ 3º), EXT-BASE-PNCP, EXT-BASE-COMPRASGOV, EXT-BASE-SITEORGAO | Rol de anexos do Edital ao lado dos arquivos no PNCP, com data de publicação | TR ausente, publicado depois do edital ou acessível só com cadastro, conste ou não do rol de anexos (o TR integra o edital por EXT-LEI14133-ART25 (§ 3º); mesmo critério de `Fontes - Edital.md`, seção 13) | TR publicado no mesmo dia do edital, sem cadastro |
+| Objeto e vinculação na Minuta | INT-TR (seção I); INT-MINUTA (identificação e execução) | EXT-LEI14133-ART92 (I e II), EXT-LEI14133-ART89 | Objeto, quantidades e documentos vinculados na Minuta ao lado do TR | Objeto da Minuta diferente do TR, ou número de pregão ou processo errado (ver `Fontes - Minuta Contratual.md`, seção complementar "Identificação e execução") | Objeto e identificação iguais |
 
 ---
 
@@ -56,6 +57,7 @@ Pergunta-chave: "A especificação é tão detalhada que só um fabricante atend
 | Prazo para obter laudo ou catálogo | INT-TR (seção III); INT-EDITAL (seções 1 e 5) | EXT-LEI14133-ART5, EXT-MERC-DECLARACOES | Intervalo entre publicação e sessão ao lado do prazo usual de emissão do documento (declaração do fabricante) | Laudo ou catálogo que não pode ser emitido antes da sessão | Prazo compatível com a emissão usual |
 | Especificação versus item pesquisado | INT-TR (seção III); INT-PESQUISA (item 1, código do catálogo; item 2, identidade do objeto) | EXT-BASE-CATMAT, EXT-TCU-SUM177 | Código CATMAT/CATSER e descrição das cotações ao lado da especificação do TR | Preço estimado com item de especificação diferente da exigida no TR (detalhe em `Fontes - Pesquisa de Precos.md`, seções 1 e 6) | Mesmo item e mesma especificação |
 | Equipamentos e materiais da especificação na planilha | INT-TR (seção III); INT-PLANILHA (Módulo 5; submódulos 5.1 a 5.3) | EXT-LEI14133-ART6 (XXIII, "i"), EXT-LEI14133-ART23 | Equipamentos, materiais e EPIs exigidos na especificação ao lado dos itens do Módulo 5 | Item exigido na especificação sem custo na planilha (ver seção VII) | Todo item com rubrica e valor |
+| Garantia de execução e remissão da Minuta | INT-TR (seção III, garantia); INT-MINUTA (cl. 4); INT-EDITAL (seção 11) | EXT-LEI14133-ART96 (§§ 1º a 3º), EXT-LEI14133-ART98, EXT-LEI14133-ART121 (§ 3º, I) | Modalidades, percentual, base anual, prazo do seguro-garantia e cobertura trabalhista no TR, quando a Minuta remete a ele | TR que omite alguma das 4 modalidades, calcula sobre o valor plurianual ou dá menos de 1 mês para o seguro-garantia (ver `Fontes - Minuta Contratual.md`, seção 4) | Regras legais no TR e na Minuta |
 
 ---
 
@@ -93,6 +95,7 @@ Pergunta-chave: "O TR exige preposto ou equipe além do que o objeto pede, sem c
 | Preposto transformado em posto de trabalho | INT-TR (seções V e VII); INT-PLANILHA (Módulo 1) | EXT-LEI14133-ART118 | Tarefas atribuídas ao preposto além da interlocução formal | Preposto com tarefas de funcionário permanente do órgão, sem custo previsto | Papel limitado à interlocução |
 | Papéis do gestor e dos fiscais | INT-TR (seção V); INT-MINUTA (cl. 2) | EXT-LEI14133-ART117, EXT-REG-ENTE | Atribuições do gestor, do fiscal técnico e do fiscal administrativo; quem atesta e quem pode dar ordens | — (falta de definição pede esclarecimento) | Papéis definidos |
 | Fiscalização trabalhista em dedicação exclusiva | INT-TR (seção V); INT-MINUTA (cl. 2) | EXT-LEI14133-ART121 (§ 3º), EXT-IN5-2017, EXT-REG-ENTE | Documentos que o fiscal administrativo vai exigir (salários, FGTS) e garantias previstas (conta vinculada, pagamento direto) | — (as garantias de EXT-LEI14133-ART121 (§ 3º) são lícitas; impugnável só a retenção desvinculada, ver seção VI) | Exigências ligadas às verbas trabalhistas do próprio contrato |
+| Modelo de gestão na Minuta | INT-TR (seção V); INT-MINUTA (identificação e execução) | EXT-LEI14133-ART92 (XVIII), EXT-LEI14133-ART117 | Cláusula de gestão e fiscalização da Minuta ao lado do TR | Minuta e TR divergentes sobre fiscal, atribuições ou prazos (ver `Fontes - Minuta Contratual.md`, seção complementar "Identificação e execução") | Remissão ao TR ou texto igual |
 
 ---
 
@@ -113,6 +116,8 @@ Pergunta-chave: "O IMR/SLA tem indicadores objetivos e glosa proporcional, e o p
 | Retenção por irregularidade fiscal ou documento acessório | INT-TR (seção VI); INT-MINUTA (cl. 2) | EXT-TCU-AC964-2012, EXT-TCU-AC1505-2026, EXT-LEI14133-ART143, EXT-LEI14133-ART121 (§ 3º) | Cláusula que retém pagamento por certidão vencida ou documento acessório | Retenção do pagamento de serviço executado por irregularidade fiscal (EXT-TCU-AC964-2012, EXT-TCU-AC1505-2026); ou retenção da fatura inteira por atraso de documento acessório, além da parcela controvertida (EXT-LEI14133-ART143) | Retenção vinculada às verbas trabalhistas do próprio contrato (EXT-LEI14133-ART121 (§ 3º)) |
 | Repactuação ou reajuste | INT-TR (seções I e VI); INT-MINUTA (cl. 3); INT-PLANILHA (Módulos 1 a 6) | EXT-LEI14133-ART25 (§§ 7º e 8º), EXT-LEI14133-ART135, EXT-LEI14133-ART92 (X), EXT-AGU-TR-2026 | Instituto previsto (repactuação com dedicação exclusiva ou predominância de mão de obra; reajuste nos demais), datas-base (proposta e CCT) e prazo de resposta | Serviço com dedicação exclusiva sem repactuação, reajuste por índice em lugar da repactuação, ou data-base diferente da lei | Instituto e datas-base conforme a lei, iguais aos da Minuta |
 | Conta vinculada ou pagamento pelo fato gerador | INT-TR (seções V e VI); INT-MINUTA (cl. 2); INT-PLANILHA (Módulos 2, 3 e 4) | EXT-LEI14133-ART121 (§ 3º), EXT-IN5-2017, EXT-AGU-TR-2026, EXT-REG-ENTE | Rubricas retidas (férias, 13º, rescisão), percentuais, banco, regras de liberação e de saldo ao fim do contrato | Retenção sem regra de liberação, percentuais acima das rubricas provisionadas na planilha, ou retenção de parcelas sem relação com verbas trabalhistas | Regras completas e percentuais iguais às provisões da planilha |
+| Regras que a Minuta remete ao TR | INT-TR (seção VI); INT-MINUTA (cl. 2 e 3) | EXT-AGU-CONTRATO-DEMO-2025, EXT-LEI14133-ART92 (V, VI e X) | Se o TR traz o prazo de pagamento, a conta vinculada, a repactuação e o prazo de resposta que a Minuta não repete | Regra necessária ausente no TR e na Minuta (ver `Fontes - Minuta Contratual.md`, cl. 2, "Remissão ao TR") | Regra completa no TR |
+| Interregno da repactuação: TR x Minuta | INT-TR (seção VI); INT-MINUTA (cl. 3); INT-EDITAL (seção 11) | EXT-LEI14133-ART135 (§ 3º) | Marco do primeiro ano da repactuação no TR, no edital e na Minuta | TR com marco diferente do art. 135, § 3º, ou diferente da Minuta (ver `Fontes - Minuta Contratual.md`, cl. 3, "Interregno da repactuação") | Mesmo marco legal nos três |
 
 ---
 
@@ -129,6 +134,7 @@ Pergunta-chave: "Toda obrigação cara imposta à contratada tem quantitativo e 
 | Transferência de obrigações da Administração | INT-TR (seção VII); INT-ETP (inciso X) | EXT-LEI14133-ART5, EXT-AGU-MODELOS | Obrigação própria do órgão (reforma do prédio, equipamentos dos servidores) imposta à contratada | Despesa própria do órgão transferida à contratada, sem relação com o objeto | Obrigação ligada ao objeto e custeada |
 | Riscos imprevistos atribuídos à contratada | INT-TR (seção VII); INT-MINUTA (cl. 5); INT-ETP (inciso X; análise de riscos, se constar dele ou de documento próprio) | EXT-LEI14133-ART124 (II, "d"), EXT-CF88-ART37 (XXI), EXT-LEI14133-ART103, EXT-LEI14133-ART22, EXT-LEI14133-ART18 (caput, X) | Cláusula do tipo "quaisquer reformas estruturais imprevistas" e a matriz de riscos, se houver | Cláusula aberta que atribui à contratada risco imprevisível, sem matriz que o aloque e precifique, afastando o reequilíbrio | Risco alocado na matriz, com reflexo no preço |
 | Obrigações do órgão (acesso, ateste, pagamento em dia) | INT-TR (seções VI e VII); INT-MINUTA (cl. 2) | EXT-AGU-MODELOS, EXT-LEI14133-ART92 (V) | Obrigações da contratante listadas e coerência com a seção VI | — (omissão pede esclarecimento) | Obrigações do órgão previstas e coerentes |
+| Obrigações na Minuta | INT-TR (seção VII); INT-MINUTA (obrigações das partes) | EXT-LEI14133-ART92 (XIV, XVI e XVII), EXT-AGU-CONTRATO-DEMO-2025 | Obrigações do TR ao lado das da Minuta (no modelo da AGU, ficam na Minuta) | Obrigações divergentes entre TR e Minuta, ou criadas só na Minuta sem custo na planilha (ver `Fontes - Minuta Contratual.md`, seção complementar "Obrigações das partes") | Obrigações iguais, ou só na Minuta e precificadas |
 
 ---
 
@@ -201,13 +207,13 @@ Pergunta-chave: "As infrações e sanções do TR são as mesmas do Edital e da 
 
 | Seção | INT-EDITAL | INT-TR | INT-ETP | INT-PLANILHA | INT-PESQUISA | INT-MINUTA | INT-RERI | Externas principais |
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
-| I. Objeto | 2, 4, 13 | III, IV | I, IV, VII, VIII | ✓ | ✓ | 1 | — | EXT-TCU-SUM177, EXT-LEI14133-ART47, EXT-TCU-SUM247 |
+| I. Objeto | 2, 4, 13 | III, IV | I, IV, VII, VIII | ✓ | ✓ | 1, identificação | — | EXT-TCU-SUM177, EXT-LEI14133-ART47, EXT-TCU-SUM247 |
 | II. Justificativa | — | — | I, II, V, VIII, IX, XIII | — | — | — | — | EXT-LEI14133-ART18, EXT-LEI14133-ART47, EXT-TCU-AC248-2017 |
-| III. Solução e requisitos | 1, 5, 8 | — | III, V, VII, XII | ✓ | ✓ | — | — | EXT-LEI14133-ART9, EXT-LEI14133-ART41, EXT-NORMA-ABNT |
+| III. Solução e requisitos | 1, 5, 8, 11 | — | III, V, VII, XII | ✓ | ✓ | 4 | — | EXT-LEI14133-ART9, EXT-LEI14133-ART41, EXT-NORMA-ABNT |
 | IV. Modelo de execução | 5, 7 | VI, VII | IV, VII, X, XI | ✓ | ✓ | 3, 5 | — | EXT-NORMA-CCT, EXT-LEI14133-ART63, EXT-TCU-SUM177 |
-| V. Gestão e fiscalização | — | VII | — | ✓ | — | 2 | — | EXT-LEI14133-ART118, EXT-LEI14133-ART117, EXT-LEI14133-ART121 |
-| VI. Medição e pagamento | — | IV, X | IX | ✓ | — | 2, 3, 7 | — | EXT-LEI14133-ART143, EXT-LEI14133-ART141, EXT-IN77-2022, EXT-LEI14133-ART135, EXT-LEI14133-ART121 |
-| VII. Obrigações | — | III, IV, VI | X | ✓ | — | 2, 5 | — | EXT-LEI14133-ART18, EXT-LEI14133-ART6, EXT-LEI14133-ART103 |
+| V. Gestão e fiscalização | — | VII | — | ✓ | — | 2, identificação | — | EXT-LEI14133-ART118, EXT-LEI14133-ART117, EXT-LEI14133-ART121 |
+| VI. Medição e pagamento | 11 | IV, X | IX | ✓ | — | 2, 3, 7 | — | EXT-LEI14133-ART143, EXT-LEI14133-ART141, EXT-IN77-2022, EXT-LEI14133-ART135, EXT-LEI14133-ART121 |
+| VII. Obrigações | — | III, IV, VI | X | ✓ | — | 2, 5, obrigações | — | EXT-LEI14133-ART18, EXT-LEI14133-ART6, EXT-LEI14133-ART103 |
 | VIII. Seleção e habilitação | 1, 6, 7, 8 | I | justificativa | — | — | — | — | EXT-LEI14133-ART41, EXT-LEI14133-ART67, EXT-TCU-SUM263 |
 | IX. Estimativa do valor [derivada] | 3, 7 | IV, VII | VI | ✓ | ✓ | — | — | EXT-LEI14133-ART6, EXT-LEI14133-ART23, EXT-LEI14133-ART24 |
 | X. Adequação orçamentária [derivada] | 3 | VI | — | — | — | 2 | — | EXT-LEI14133-ART6, EXT-LEI14133-ART150, EXT-LEI14133-ART18 |

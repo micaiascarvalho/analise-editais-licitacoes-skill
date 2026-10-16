@@ -18,6 +18,7 @@ Pergunta-chave: "Modalidade, regime, critério de julgamento, modo de disputa e 
 | Critério de julgamento e modo de disputa | INT-EDITAL (seções 1, 6 e 7); INT-TR (seção VIII) | EXT-LEI14133-GERAL, EXT-REG-ENTE | Critério e modo declarados no preâmbulo, nas regras da sessão e no TR | Critério ou modo divergente entre preâmbulo, seção da sessão e TR | Critério e modo idênticos nos três pontos |
 | Data, horário e portal da sessão | INT-EDITAL (seção 1); INT-RERI (avisos); INT-PESQUISA (item 2, data das cotações) | EXT-BASE-PNCP, EXT-BASE-COMPRASGOV | Data de publicação e data da sessão no PNCP e no portal; usar no prazo mínimo da seção 5 e na validade de 6 meses das cotações (ver `Fontes - Pesquisa de Precos.md`, seção 4) | Data da sessão divergente entre edital, PNCP e portal | Datas coincidentes |
 | Identificação do processo e do órgão | INT-EDITAL (seção 1) | EXT-BASE-PNCP | Número do edital e do processo no PNCP | — (esclarecimento, não impugnação) | Números coincidentes |
+| Identificação repetida na Minuta | INT-EDITAL (seção 1); INT-MINUTA (identificação e execução) | EXT-LEI14133-ART92 (II), EXT-LEI14133-ART89 | Número do pregão e do processo no edital, na Minuta e no modelo de proposta | Número diferente na Minuta ou na proposta (ver `Fontes - Minuta Contratual.md`, seção complementar "Identificação e execução") | Números iguais |
 
 ---
 
@@ -46,6 +47,7 @@ Pergunta-chave: "Há dotação indicada e compatível com o objeto, e o eventual
 | :-- | :-- | :-- | :-- | :-- | :-- |
 | Indicação da dotação | INT-DOTACAO; INT-EDITAL (seção 3); INT-TR (seção X) | EXT-LEI14133-ART150, EXT-LEI14133-ART18 | Rubrica e fonte de recursos no edital e no TR | Ausência de dotação ou rubrica incompatível com o objeto | Dotação indicada e compatível |
 | Orçamento sigiloso | INT-EDITAL (seções 3 e 7); INT-TR (seção IX); INT-ETP (incisos IV e VI); INT-PLANILHA (Módulos 1 a 6); INT-PESQUISA (item 3, mapa de preços) | EXT-LEI14133-ART24, EXT-LEI12527-GERAL | Justificativa do sigilo no processo; se quantitativos e dados para a proposta foram divulgados | Sigilo sem justificativa, ou que oculta quantitativos e dados necessários à proposta | Sigilo motivado, com quantitativos e informações de proposta divulgados |
+| Dotação na Minuta | INT-EDITAL (seção 3); INT-MINUTA (identificação e execução) | EXT-LEI14133-ART92 (VIII), EXT-LEI14133-ART150 | Classificação da despesa no edital e na Minuta | Dotação divergente ou ausente na Minuta (ver `Fontes - Minuta Contratual.md`, seção complementar "Identificação e execução") | Dotação igual |
 
 ---
 
@@ -134,6 +136,7 @@ Pergunta-chave: "Estão exigindo documentos que a lei proíbe ou com quantitativ
 | Registro em conselho profissional | INT-EDITAL (seção 8); INT-TR (seção III) | EXT-REG-CONSELHOS, EXT-BASE-CNAE | Atividade principal do objeto e competência privativa do conselho exigido | Conselho incompatível com a atividade (ex.: CREA para manutenção de computadores) | Conselho com competência sobre a atividade |
 | Índices contábeis e capital ou PL | INT-EDITAL (seção 8); INT-ETP (justificativa das exigências de habilitação, se houver; ver `Fontes - ETP.md`, inciso III) | EXT-LEI14133-ART69, EXT-REG-CFC, EXT-TCU-SUM275, EXT-TCU-SUM289, EXT-TCU-AC2299-2011 | Fórmulas e valores dos índices; justificativa no processo; se cumula capital, PL e garantia; se algum índice usa rentabilidade ou lucratividade; capital ou PL acima de 10% do valor estimado | Índice não usual, sem justificativa ou com rentabilidade/lucratividade; capital ou PL acima de 10%; cumulação vedada | Índices usuais e justificados no processo |
 | Laudos e certificações | INT-EDITAL (seção 8); INT-TR (seção III) | EXT-REG-ANVISA, EXT-REG-INMETRO, EXT-REG-ANATEL, EXT-NORMA-ABNT | Catálogo do órgão regulador: se a certificação existe e se aplica ao produto | Certificação inexistente ou inaplicável ao produto | Certificação exigida pelo regulador para o produto |
+| Habilitação mantida na execução | INT-EDITAL (seção 8); INT-MINUTA (obrigações das partes) | EXT-LEI14133-ART92 (XVI e XVII), EXT-LEI14133-ART116 | Dever de manter a habilitação e a reserva de cargos durante o contrato | Minuta que exige na execução documento que o edital não exigiu na habilitação, sem base legal | Mesmas condições do edital |
 
 ---
 
@@ -176,7 +179,7 @@ Pergunta-chave: "As condições de assinatura e de garantia do edital coincidem 
 | Ponto a verificar | Fontes internas (ID + seção) | Fontes externas (IDs) | Prova (o que extrair ou demonstrar) | Gera impugnação se… | Descarta se… |
 | :-- | :-- | :-- | :-- | :-- | :-- |
 | Prazo e condições de assinatura | INT-EDITAL (seção 11); INT-MINUTA (cl. 1) | EXT-LEI14133-ART90 | Prazo de convocação e de assinatura no edital e na Minuta | Divergência entre edital e Minuta, ou prazo inexequível | Prazos coincidentes |
-| Modalidade e percentual da garantia | INT-EDITAL (seção 11); INT-MINUTA (cl. 4) | EXT-LEI14133-ART96, EXT-BASE-SUSEP | Modalidades admitidas e percentual no edital e na Minuta | Edital restringe a modalidade de garantia ou diverge da Minuta | As quatro modalidades admitidas e percentual igual à Minuta |
+| Modalidade e percentual da garantia | INT-EDITAL (seção 11); INT-MINUTA (cl. 4); INT-TR (seção III, garantia) | EXT-LEI14133-ART96, EXT-LEI14133-ART98, EXT-BASE-SUSEP | Modalidades admitidas e percentual no edital, no TR e na Minuta; lista que omite o título de capitalização (art. 96, § 1º, IV) | Edital restringe a modalidade de garantia, omite alguma das quatro ou diverge da Minuta | As quatro modalidades admitidas e percentual igual à Minuta |
 | Eficácia do contrato | INT-EDITAL (seção 11); INT-MINUTA (cl. 1) | EXT-LEI14133-ART94, EXT-BASE-PNCP | Previsão de divulgação do contrato no PNCP | — (ponto de execução, não de impugnação) | Previsão coerente |
 | Regras de execução, fiscalização e pagamento | INT-EDITAL (seção 11); INT-TR (seções IV a VII); INT-MINUTA (cl. 2, 3 e 8) | EXT-LEI14133-ART25, EXT-AGU-EDITAL-2025 | Se o edital traz as regras de fiscalização e gestão, entrega do objeto e pagamento ou remete expressamente ao TR e à Minuta; se as versões coincidem quando o edital copia o TR | Edital sem essas regras e sem remissão, ou com texto que diverge do TR ou da Minuta | Regras no edital ou remissão expressa, sem divergência |
 | Integridade e cota de mão de obra | INT-EDITAL (seção 11); INT-TR (seção VIII); INT-MINUTA (cl. 1) | EXT-LEI14133-ART25 | Valor estimado (grande vulto) e exigência de programa de integridade; percentual de mão de obra reservado e número de colaboradores | Programa de integridade ou cota exigidos sem previsão no edital, ou em desacordo com a lei | Exigências previstas conforme a lei ou não aplicáveis |
@@ -219,16 +222,16 @@ Pergunta-chave: "Todos os anexos citados foram publicados com o edital, sem cada
 
 | Seção | INT-EDITAL | INT-TR | INT-ETP | INT-PLANILHA | INT-PESQUISA | INT-MINUTA | INT-RERI | Externas principais |
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
-| 1. Preâmbulo [derivada] | 6, 7 | VIII | — | — | 2 | — | ✓ | EXT-LEI14133-GERAL, EXT-REG-ENTE, EXT-BASE-PNCP |
+| 1. Preâmbulo [derivada] | 6, 7 | VIII | — | — | 2 | identificação | ✓ | EXT-LEI14133-GERAL, EXT-REG-ENTE, EXT-BASE-PNCP |
 | 2. Objeto [derivada] | — | I | I, IV, VII, VIII | ✓ | — | 1, 5 | — | EXT-LEI14133-ART40, EXT-LEI14133-ART47, EXT-TCU-SUM247 |
-| 3. Recursos orçamentários [derivada] | 7 | IX, X | IV, VI | 1 a 6 | 3 | — | — | EXT-LEI14133-ART150, EXT-LEI14133-ART24 |
+| 3. Recursos orçamentários [derivada] | 7 | IX, X | IV, VI | 1 a 6 | 3 | identificação | — | EXT-LEI14133-ART150, EXT-LEI14133-ART24 |
 | 4. Participação | 2, 8 | I | III, IV, V, VII, VIII | ✓ | 3 | — | — | EXT-LC123-ART48, EXT-LEI14133-ART15, EXT-LEI14133-ART69, EXT-DEC8538-2015 |
 | 5. Envio de propostas [derivada] | 1 | III, IV | — | 1, 2 | — | 1 | ✓ | EXT-LEI14133-ART55, EXT-LEI14133-ART63 |
 | 6. Sessão e disputa | 1 | VIII | — | ✓ | — | — | ✓ | EXT-LEI14133-ART57, EXT-LEI14133-ART60, EXT-IN73-GERAL |
 | 7. Julgamento | — | IV, VIII, IX | VI | 1, 2, 6 | 3 | — | — | EXT-LEI14133-ART23, EXT-LEI14133-ART59, EXT-NORMA-CCT |
-| 8. Habilitação | — | I, III, VIII | III | — | — | — | — | EXT-LEI14133-ART67, EXT-LEI14133-ART69, EXT-REG-CONSELHOS |
+| 8. Habilitação | — | I, III, VIII | III | — | — | obrigações | — | EXT-LEI14133-ART67, EXT-LEI14133-ART69, EXT-REG-CONSELHOS |
 | 9. Esclarecimentos e impugnação | 1, 13 | — | — | — | — | — | ✓ | EXT-LEI14133-ART164, EXT-LEI14133-ART183 |
 | 10. Recursos | — | — | — | — | — | — | — | EXT-LEI14133-ART165, EXT-STF-SV21, EXT-CF88-ART5 |
-| 11. Adjudicação e contrato [derivada] | — | — | — | — | — | 1, 4 | — | EXT-LEI14133-ART90, EXT-LEI14133-ART96 |
+| 11. Adjudicação e contrato [derivada] | — | III | — | — | — | 1, 4 | — | EXT-LEI14133-ART90, EXT-LEI14133-ART96 |
 | 12. Sanções [derivada] | — | sanções | — | — | — | 7 | — | EXT-LEI14133-ART156, EXT-LEI14133-ART157 |
 | 13. Disposições finais [derivada] | — | ✓ | ✓ | ✓ | ✓ | 1, 3, 9 | ✓ | EXT-LEI14133-ART25, EXT-LEI14133-ART54, EXT-BASE-PNCP |

@@ -99,7 +99,7 @@ Legenda: ✅ presente · ◐ presente, com ressalva.
 
 | ID | Documento | Achado | Uso possível |
 | :-- | :-- | :-- | :-- |
-| D-ETP-01 | Pref. SL — ETP 8 × Edital × PNCP | **Três valores diferentes:** ETP R$ 114.726.154,56 (24 meses), edital R$ 110.146.458,96 (24 meses) e PNCP R$ 4.589.435,79. O ETP e o edital diferem em R$ 4.579.695,60. | Pedir esclarecimento sobre a origem do valor do edital (art. 23 e art. 18, § 1º, VI). Com o ETP e o edital lado a lado, é prova documental de inconsistência no orçamento. |
+| D-ETP-01 | Pref. SL — ETP 8 × Edital × PNCP | **Três valores diferentes:** ETP R$ 114.726.154,56 (24 meses), edital R$ 110.146.458,96 (24 meses) e PNCP R$ 4.589.435,79. O ETP e o edital diferem em R$ 4.579.695,60. **Corrigido na seção 9:** o valor do PNCP é o mensal do TR. | Pedir esclarecimento sobre a origem do valor do edital (art. 23 e art. 18, § 1º, VI). Com o ETP e o edital lado a lado, é prova documental de inconsistência no orçamento. |
 | D-ETP-02 | Pref. SL — ETP 10 | A justificativa do lote único tem um parágrafo genérico ("o parcelamento não se aplica"), sem número que mostre vantagem. O SRP é centralizado, para vários órgãos e locais. | É o vício "chavão burocrático" da Análise do ETP (ponto 3): art. 40, V, "b", art. 47 e Súmula 247 do TCU. A impugnação sobre lotes foi rejeitada por intempestiva, sem exame de mérito (ver RERI). |
 | D-ETP-03 | Pref. SL — ETP 7 | O levantamento de mercado só lista contratações iguais de outros órgãos. Não compara alternativas, como vigilância eletrônica, monitoramento ou solução mista, e conclui que "não se identificou outra alternativa". | É o vício "ausência de comparação real" da Análise do ETP (ponto 1): art. 18, § 1º, V. |
 | D-ETP-04 | Pref. SL — ETP 8 | A fonte do valor é o "Banco de Preços", ferramenta privada que agrega compras públicas, sem dizer qual parâmetro do art. 23, § 1º foi usado. A memória está no Anexo II, que não foi publicado. | Pedir acesso ao Anexo II e verificar se a pesquisa usou contratações de até 1 ano e preços compatíveis com a escala (art. 23). |
@@ -149,3 +149,7 @@ Os ajustes refletem no `Fontes - ETP.md` (linhas para equipe, anexos e a regra d
   - "Usado em" recalculado para o mapa do ETP.
 
 Próximo documento: **Planilha de Custos**.
+
+## 9. Correção (2026-10-16, na auditoria da Pesquisa de Preços)
+
+O **D-ETP-01** apontava três valores diferentes para a Pref. SL. O terceiro está explicado: o valor do PNCP (R$ 4.589.435,79) é **exatamente o valor do TR dividido por 24** (R$ 110.146.458,96 ÷ 24), ou seja, o PNCP registrou o valor mensal. Continua a diferença entre o ETP (R$ 114.726.154,56) e o TR (R$ 110.146.458,96), de R$ 4.579.695,60, que é esperada se o ETP foi só uma estimativa preliminar (Caderno de Logística da SEGES). O uso possível passa a ser: pedir a pesquisa definitiva que sustenta o valor do TR e a explicação da diferença. Ver o D-PP-06 em `05 - Pesquisa de Precos.md`.

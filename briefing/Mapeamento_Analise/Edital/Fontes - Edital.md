@@ -152,6 +152,8 @@ Pergunta-chave: "O edital garante o prazo, o canal e a resposta que a lei assegu
 | Canal e forma de envio | INT-EDITAL (seção 9) | EXT-BASE-COMPRASGOV, EXT-BASE-SITEORGAO, EXT-CF88-ART5 | Canal oficial indicado e se é acessível sem exigência indevida | Canal inexistente, inacessível ou exigência de forma não prevista em lei (ex.: protocolo presencial obrigatório) | Canal eletrônico indicado |
 | Prazo e divulgação da resposta | INT-EDITAL (seção 9); INT-RERI | EXT-LEI14133-ART164, EXT-BASE-SITEORGAO, EXT-TCU-AC915-2009, EXT-TCU-AC2032-2021 | Data da resposta e local de divulgação | Resposta fora do prazo ou não divulgada no sítio oficial | Resposta no prazo e publicada |
 | Contagem de prazos | INT-EDITAL (seções 9 e 13) | EXT-LEI14133-ART183, EXT-LEI9784-ART66 | Regra de contagem adotada no edital | Contagem em dias corridos para prazos regidos por EXT-LEI14133-GERAL | Contagem em dias úteis |
+| Calendário do órgão e data vigente | INT-EDITAL (seções 1 e 9); INT-RERI (avisos e decisões) | EXT-LEI14133-ART183 (III e § 2º), EXT-LEI14133-ART164 | Feriados locais e pontos facultativos do órgão, hora-limite do edital e data vigente da sessão | — (contar pelo expediente do órgão; ver `Fontes - RERI.md`, seção 1, "Contagem pelo calendário do órgão") | — |
+| Resposta depois do prazo de impugnar | INT-EDITAL (seção 9); INT-RERI (resposta) | EXT-LEI14133-ART164, EXT-LEI14133-ART170 (§ 4º) | Data da resposta ao lado do último dia para impugnar | — (sem nova impugnação possível: pedido de suspensão, representação e ressalva na proposta; ver `Fontes - RERI.md`, seção 1) | — |
 
 ---
 

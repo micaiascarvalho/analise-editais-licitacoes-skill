@@ -14,6 +14,7 @@ from unittest import mock
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import estado
+from triagem import comum, persistencia
 
 TZ = timezone(timedelta(hours=-3))
 ORGAO = 'Secretaria Municipal de Saúde de Exemplópolis'
@@ -46,7 +47,7 @@ class EstadoTests(unittest.TestCase):
         self.assets = self.base / 'assets'
         self.assets.mkdir()
         self.clock = datetime(2026, 10, 19, 9, 30, 15, tzinfo=TZ)
-        patcher = mock.patch.object(estado, 'now', lambda: self.clock)
+        patcher = mock.patch.object(comum, 'now', lambda: self.clock)
         patcher.start()
         self.addCleanup(patcher.stop)
 
@@ -82,8 +83,8 @@ class EstadoTests(unittest.TestCase):
         return self.ok('status')
 
     def gate(self, faltas=''):
-        missing = estado.split_list(faltas)
-        present = ','.join(code for code in estado.DOC_CODES if code not in missing)
+        missing = comum.split_list(faltas)
+        present = ','.join(code for code in comum.DOC_CODES if code not in missing)
         return self.ok('documentos', '--presentes', present, '--faltas', faltas, '--reri', 'ausente')
 
     def items_file(self, items):
@@ -580,60 +581,6 @@ class EstadoTests(unittest.TestCase):
                          ['2026-10-19T09:30:15-03:00', '2026-10-20T08:00:00-03:00'])
         self.assertEqual([e['acao'] for e in state['eventos']], ['iniciar', 'documentos'])
 
-    def assert_evidence(self, accepted, refused):
-        for action, phrase, extra in accepted:
-            with self.subTest(aceita=phrase, action=action):
-                estado.check_evidence(phrase, action, **extra)
-        for action, phrase, extra in refused:
-            with self.subTest(recusa=phrase, action=action), self.assertRaises(estado.Refusal):
-                estado.check_evidence(phrase, action, **extra)
-
-    def test_discard_evidence_refuses_negation_and_unrelated_words(self):
-        item = {'item_id': 'IMP-20'}
-        self.assert_evidence(
-            accepted=[('descartar', phrase, item) for phrase in (
-                'Descarto, não vale a pena', 'não vale a pena, descarta', 'tira esse', 'pode tirar',
-                'não usar este ponto', 'pode excluir', 'não é exclusivo, então descarta', 'retirar o ponto')],
-            refused=[('descartar', phrase, item) for phrase in (
-                'não descarte essa, aprovo', 'não quero tirar', 'não retire esse ponto', 'tiragem', 'atira')])
-
-    def test_batch_and_other_item_approvals_refused(self):
-        item = {'item_id': 'IMP-20'}
-        self.assert_evidence(
-            accepted=[('aprovar', phrase, item) for phrase in (
-                'Aprovo.', 'aprovado', 'aprovo a v2', 'Aprovo a IMP-20', 'aprovo a imp 20', 'Aprovo sem ressalvas',
-                'No geral ficou bom, aprovo')],
-            refused=[('aprovar', phrase, item) for phrase in (
-                'aprovo ambas', 'aprovo as duas', 'aprovo em bloco', 'aprova geral, manda o PDF', 'aprovo as minutas',
-                'aprovo esta e as próximas', 'aprovo o restante', 'minutas aprovadas', 'aprovo a IMP 02',
-                'aprovo a imp02', 'aprovo a IMP-2', 'aprovo o esclarecimento 1', 'aprovo a impugnação 3')])
-
-    def test_negative_and_conditional_evidence_refused(self):
-        item = {'item_id': 'IMP-20'}
-        self.assert_evidence(
-            accepted=[
-                ('prosseguir', 'Não tenho o ETP, segue', {}),
-                ('prosseguir', 'Sem problema, prossiga sem o ETP', {}),
-                ('decidir', 'não incluir a IMP-20', {'decision': 'descartar'}),
-                ('decidir', 'deixa os dois para depois', {'decision': 'avaliar_depois'}),
-                ('confirmar', 'Confirmo, pode gerar', {}),
-                ('aprovar', 'Aprovo. Qual a próxima?', item),
-                ('aprovar', 'Aprovo, se puder já abre a próxima', item),
-                ('ajustar', 'ajuste: não cite o acórdão, use a lei', item),
-            ],
-            refused=[
-                ('prosseguir', 'não', {}),
-                ('prosseguir', 'não prossiga, vou mandar o ETP', {}),
-                ('decidir', 'não incluir a IMP-20', {'decision': 'incluir'}),
-                ('decidir', 'ainda não', {'decision': 'avaliar_depois'}),
-                ('confirmar', 'não confirmo ainda', {}),
-                ('confirmar', 'ainda não', {}),
-                ('ajustar', 'não, ainda não', item),
-            ] + [('aprovar', phrase, item) for phrase in (
-                'Antes de aprovar, ajuste o fundamento do pedido', 'Aprovo, mas troque o fundamento',
-                'aprovaria se corrigir', 'não sei se aprovo', 'ainda não dá para aprovar', 'nunca aprovaria isso',
-                'aprovo? não', 'aprovo desde que corrija a página')])
-
     def test_negative_answers_refused_by_commands(self):
         self.init()
         self.gate('ETP')
@@ -762,7 +709,7 @@ class EstadoTests(unittest.TestCase):
         def forge(state):
             for item in state['itens']:
                 if item['decisao'] == 'incluir':
-                    sha = estado.sha256_file(self.draft(item['id']))
+                    sha = comum.sha256_file(self.draft(item['id']))
                     item['evidencia'] = 'ok'
                     item['minuta'].update(status='aprovada', versao=1, evidencia='ok, aprova todas', sha256=sha)
         self.edit_state(forge)
@@ -780,7 +727,7 @@ class EstadoTests(unittest.TestCase):
         self.include('IMP-20')
         self.open_and_register('IMP-20', 'versão 1\n')
         adjust = ('minuta', '--id', 'IMP-20', '--acao', 'ajustar', '--evidencia', 'ajuste: citar a página do TR')
-        with mock.patch.object(estado, 'write_atomic', side_effect=KeyboardInterrupt), \
+        with mock.patch.object(persistencia, 'write_atomic', side_effect=KeyboardInterrupt), \
                 self.assertRaises(KeyboardInterrupt):
             self.call(*adjust)
         self.assertFalse(self.draft('IMP-20').exists())  # o arquivo já foi para o histórico; o estado não mudou

@@ -67,7 +67,7 @@ O script testa as condições nesta ordem; a primeira que vale é a fase.
 | `levantamento` | Portão aberto e itens nunca registrados | `itens` (uma lista vazia `[]` registra levantamento sem itens) |
 | `selecao` | Algum item pendente | `decidir` até não sobrar pendente |
 | `minutas` | Algum item incluído com minuta não aprovada nem descartada | `minuta` (abrir, registrar, decidir) até a fila esvaziar |
-| `peca_final` | Há minuta aprovada de um tipo cuja peça não foi confirmada | `peca --acao confirmar`; sem modelo em `<skill>/assets/`, é recusado e a triagem para aqui |
+| `peca_final` | Há minuta aprovada de um tipo cuja peça não foi confirmada | `peca --acao confirmar` e, confirmada a peça, `montar_peca.py montar` e `converter` (SKILL.md, Fase 5); sem modelo em `<skill>/assets/`, a confirmação é recusada e a triagem para aqui |
 | `concluido` | Nada pendente, ou nenhuma minuta aprovada | — |
 
 Como a ordem é fixa, a fase pode voltar. Itens novos registrados durante as minutas levam a fase de volta a `selecao`, e a minuta em revisão continua esperando decisão. Um `documentos` registrado de novo com uma falta que o analista não autorizou volta a fase para `documentos`.
@@ -203,7 +203,7 @@ Toda recusa diz o que falta. A resposta certa é explicar ao analista e pedir a 
 | `a peça ainda não pode ser confirmada; pendências` | Algo não decidido | Resolva cada pendência na fase dela |
 | `nenhuma minuta aprovada` | Pendência do `peca --acao verificar` (e da recusa do `confirmar`) quando todas as minutas foram descartadas ou nenhum item foi incluído | Não se resolve: não há peça a gerar. Diga isso ao analista, lembre os itens em "avaliar depois" com o prazo, rode `validar` e encerre |
 | `não há minuta de … aprovada` | Peça de um tipo sem aprovadas | Não há peça desse tipo |
-| `não há modelo de … em assets/ da skill` | Falta o modelo em `<skill>/assets/` (é o caso hoje). A recusa vem antes de conferir a frase | Informe que a peça final só sai com o modelo e pare; não peça a frase de confirmação, não gere a peça por outro meio e não crie modelo |
+| `não há modelo de … em assets/ da skill` | Falta o modelo em `<skill>/assets/` (removido ou renomeado). A recusa vem antes de conferir a frase | Informe que a peça final só sai com o modelo e pare; não peça a frase de confirmação, não gere a peça por outro meio e não crie modelo |
 | `informe --evidencia com a frase do analista que confirma a peça` | `peca --acao confirmar` sem a frase (esta recusa vem antes da do modelo) | Sem modelo, não há o que confirmar (linha anterior); com modelo, peça a frase ao analista |
 | `entrada vazia` | O comando antes do pipe falhou (em geral o `prazo.py`) | Leia o erro do primeiro comando, corrija e rode os dois de novo |
 | `já existe: retome com "status --pasta` | `iniciar` numa triagem existente | Retome (seção 8) |

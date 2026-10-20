@@ -1,5 +1,5 @@
 """Peça final: verificação, confirmação (tipo e formato vêm da frase do analista, no formato fixo de formatos.py) e
-invalidação da confirmação (este script não gera PDF)."""
+invalidação da confirmação. A peça sai pelo montar_peca.py, que só monta a peça do tipo confirmado aqui."""
 from pathlib import Path
 
 from .arquivos import matches
@@ -57,15 +57,15 @@ def confirm_piece(state, folder, args):
                            'aprovadas': approvals}
     ids = ', '.join(entry['id'] for entry in approvals)
     log(state, 'peca_confirmar', f'{label} ({formato}) com {ids}: "{evidence}"')
-    return (f'Peça de {label} confirmada (formato {PIECE_FORMATS[formato]}) com {ids}. Este script não gera o PDF; '
-            'não assine, não protocole, não envie.')
+    return (f'Peça de {label} confirmada (formato {PIECE_FORMATS[formato]}) com {ids}. Monte-a com "montar_peca.py '
+            'montar"; não assine, não protocole, não envie.')
 
 
 def no_model(kinds):
     labels = ' nem de '.join(KIND_LABEL[kind] for kind in kinds)
     pattern = ', '.join(f'modelo-{kind}.*' for kind in kinds)
     return Refusal(f'não há modelo de {labels} em assets/ da skill ({pattern}): a peça final só sai quando o modelo '
-                   'existir (fase futura). Informe o analista e pare aqui; não gere a peça por outro meio.')
+                   'existir. Informe o analista e pare aqui; não gere a peça por outro meio nem crie modelo.')
 
 
 def cmd_piece(args):

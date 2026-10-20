@@ -103,7 +103,7 @@ def build_parser():
     p = sub.add_parser('reabrir', parents=[folder], help='volta itens para a seleção (o analista mudou de ideia)')
     p.add_argument('--evidencia', required=True, help='frase do analista: "reabro <IDs>: <motivo>"')
     p.set_defaults(handler=changing(cmd_reopen))
-    p = sub.add_parser('peca', parents=[folder], help='verifica ou confirma a peça final (não gera PDF)')
+    p = sub.add_parser('peca', parents=[folder], help='verifica ou confirma a peça final (a peça sai pelo montar_peca.py)')
     p.add_argument('--acao', required=True, choices=('verificar', 'confirmar'))
     p.add_argument('--evidencia', help='frase do analista (confirmar): "confirmo a peça de impugnação|esclarecimento '
                                        'em formato único|por ponto"')

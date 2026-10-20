@@ -137,7 +137,7 @@ def piece_action(state):
                      'ponto) separadamente para cada tipo, a cada uso, liste as versões aprovadas e peça a '
                      'confirmação no formato "confirmo a peça de <impugnação|esclarecimento> em formato <único|por '
                      f'ponto>" (por exemplo: "confirmo a peça de {ready[0]} em formato único"); registre com "peca '
-                     '--acao confirmar".')
+                     '--acao confirmar". Depois, monte a peça com "montar_peca.py montar" (SKILL.md, Fase 5).')
     return ' '.join(parts + ['Não assine, não protocole, não envie.'])
 
 
@@ -183,7 +183,11 @@ def next_action(state, folder, current):
     later = ids_with(state, 'avaliar_depois')
     if later:
         text += f' Para avaliar depois: {", ".join(later)} (retome com "decidir").'
-    return text + ' Este script não gera PDF.'
+    confirmed = [KIND_LABEL[kind] for kind in KINDS.values() if state['peca'].get(kind)]
+    if confirmed:
+        text += (f' Peça confirmada ({", ".join(confirmed)}): monte com "montar_peca.py montar", apresente o texto '
+                 'montado ao analista e, com o "ok" dele, converta com "montar_peca.py converter" (SKILL.md, Fase 5).')
+    return text + ' Não assine, não protocole, não envie.'
 
 
 def deadline_alerts(prazo):

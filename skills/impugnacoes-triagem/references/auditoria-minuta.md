@@ -38,6 +38,7 @@ Copie a tabela, troque `<ID>` e `<N>` e preencha a última coluna.
 | 14. Dado pessoal | Sem nome de servidor, CPF, e-mail ou telefone pessoal; pessoas só pelo cargo | Minuta inteira | |
 | 15. Impugnante | Sem dados da impugnante, endereçamento, fecho ou assinatura | Minuta inteira | |
 | 16. Versão | O arquivo apresentado é o registrado: `minuta_em_revisao` com `registrada: true`, `versao` igual à do cabeçalho e `sha256` igual ao de `sha256sum minutas/<ID>.md`; nenhum alerta "minuta <ID> alterada depois do registro" em `alertas`; `proxima_acao` pedindo para apresentar a minuta | `estado.py status`; `sha256sum` do arquivo | |
+| 17. Quadro resumo | IMP: "Cláusula", "Vício (resumo)" e "Pedido (resumo)" preenchidos no cabeçalho, fiéis aos fatos e ao pedido principal, sem ID, marcador de fonte ou página. ESC: não se aplica | Cabeçalho da minuta × "Dos fatos" e "Pedido principal" | |
 
 ## Como apresentar
 
@@ -84,6 +85,7 @@ Para a minuta IMP-03 v1 do exemplo de `minuta-por-ponto.md` (certame fictício),
 | 14. Dado pessoal | Nenhum | Minuta | ✓ |
 | 15. Impugnante | Nenhum dado | Minuta | ✓ |
 | 16. Versão | Registrada e sem edição | Estado da triagem | ✓ registrada, v1, sha256 igual ao do arquivo, sem alerta de alteração |
+| 17. Quadro resumo | Campos do cabeçalho | Cabeçalho, Dos fatos, Pedido principal | ✓ cláusula, vício e pedido batem com o item 8.6.3 e o pedido principal |
 
 Pendências para o analista: transcrever ou não o art. 69, § 4º, e a Súmula 275; preferência entre patrimônio líquido e capital social na redação sugerida.
 

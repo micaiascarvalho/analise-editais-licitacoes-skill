@@ -1,6 +1,6 @@
 ---
 tipo: impugnacao
-versao: 1
+versao: 2
 referencia: peça Servfaz ao Pregão Eletrônico 111/2026 da FMS Teresina
 timbre: assets/timbre-servfaz.docx
 ---
@@ -57,7 +57,7 @@ Ante o exposto, requer a Impugnante:
 {{#EFEITO_SUSPENSIVO}}
 1. a concessão de **EFEITO SUSPENSIVO**, com a suspensão da sessão pública designada para {{DATA_ABERTURA}}, ante a extensão dos vícios apontados e o risco de nulidade dos atos subsequentes;
 {{/EFEITO_SUSPENSIVO}}
-1. no mérito, o **PROVIMENTO INTEGRAL DA IMPUGNAÇÃO**, com o acolhimento dos pedidos principais e subsidiários deduzidos ao final {{FAIXA_PONTOS}};
+1. no mérito, o **PROVIMENTO INTEGRAL DA IMPUGNAÇÃO**, com o acolhimento dos pedidos{{#SUBSIDIARIOS}} principais e subsidiários{{/SUBSIDIARIOS}} deduzidos ao final {{FAIXA_PONTOS}};
 1. a consequente **RETIFICAÇÃO** do instrumento convocatório e de seus anexos{{#REPUBLICACAO}}, com nova divulgação e reabertura do prazo, nos termos do art. 55, § 1º, da Lei nº 14.133/2021{{/REPUBLICACAO}};
 1. a divulgação da decisão em sítio eletrônico oficial, nos termos do parágrafo único do art. 164 da Lei nº 14.133/2021, com comunicação à Impugnante;
 1. na hipótese de indeferimento, total ou parcial, que a decisão enfrente expressamente cada um dos fundamentos de fato e de direito ora deduzidos, em observância ao dever de motivação previsto no art. 5º da Lei nº 14.133/2021;

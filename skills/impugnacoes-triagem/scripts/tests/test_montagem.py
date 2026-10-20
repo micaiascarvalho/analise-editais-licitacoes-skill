@@ -204,7 +204,8 @@ class MontagemTests(unittest.TestCase):
                          'Sugere-se a seguinte redação:', '> (Edital, item 8.6.3, página 23)',
                          'neste ato representada por sua sócia administradora, Pessoa Fictícia'):
             self.assertIn(expected, text)
-        for absent in ('EXT-', '·', 'PDF', '{{', 'Dos fatos', 'Normas e jurisprudência', 'Pendências', 'Provas e anexos',
+        self.assertIn('com o acolhimento dos pedidos deduzidos ao final dos itens III.1 a III.2', text)
+        for absent in ('EXT-', '·', 'PDF', 'subsidiários deduzidos', '{{', 'Dos fatos', 'Normas e jurisprudência', 'Pendências', 'Provas e anexos',
                        'DA NECESSIDADE', 'EFEITO SUSPENSIVO', 'atual prestadora', 'Protesta', 'nova divulgação e',
                        'Não há', 'catálogo'):
             self.assertNotIn(absent, text)
@@ -217,6 +218,14 @@ class MontagemTests(unittest.TestCase):
                          'atual prestadora', 'Protesta a Impugnante', 'prova documental suplementar',
                          'com nova divulgação e reabertura do prazo'):
             self.assertIn(expected, text)
+
+    def test_subsidiary_wording_follows_drafts(self):
+        text = imp_draft('IMP-01', 'Capital').replace('Não há: o vício tem uma única correção.',
+                                                      '1. A motivação expressa da exigência cumulativa.')
+        self.triage(imp_text=text)
+        piece = self.assemble()[0].read_text(encoding='utf-8')
+        self.assertIn('pedidos principais e subsidiários deduzidos', piece)
+        self.assertIn('1. subsidiariamente, a motivação expressa da exigência cumulativa;', piece)
 
     def test_optional_choice_must_be_explicit(self):
         dados = dict(DADOS, opcionais={'atual_prestadora': False})
@@ -263,6 +272,13 @@ class MontagemTests(unittest.TestCase):
         self.ok('reabrir', '--evidencia', 'reabro ESC-01: o analista quer rever a pergunta')
         with self.assertRaisesRegex(Refusal, 'pendências'):
             self.assemble('esclarecimento')
+
+    def test_piece_after_deadline_refused(self):
+        self.triage()
+        from montagem.montar import assemble
+        with self.assertRaisesRegex(Refusal, 'posterior à data-limite'):
+            assemble(self.folder, 'impugnacao', when=date(2026, 10, 28))
+        self.assertFalse((self.folder / 'peca').exists())
 
     def test_changed_draft_after_approval_refused(self):
         self.triage()

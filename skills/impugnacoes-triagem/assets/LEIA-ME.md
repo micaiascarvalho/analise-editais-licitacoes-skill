@@ -2,7 +2,7 @@
 
 Esta pasta guarda os modelos da peça de impugnação e da peça de esclarecimento. Este arquivo é o contrato que eles seguem, para que a skill, os modelos e o script de montagem possam ser feitos em momentos diferentes sem se desencontrar.
 
-**Situação atual:** os modelos `modelo-impugnacao.md` e `modelo-esclarecimento.md` (versão 1, a partir da peça da FMS) estão nesta pasta, revisados pelo analista, e a Fase 5 do `SKILL.md` monta a peça com eles. O `estado.py` só procura modelo diretamente nesta pasta; rascunho de modelo novo fica em `assets/rascunho/`, que ele não lê.
+**Situação atual:** os modelos `modelo-impugnacao.md` (versão 2: o pedido c) só fala em subsidiários quando há) e `modelo-esclarecimento.md` (versão 1), a partir da peça da FMS, estão nesta pasta, revisados pelo analista, e a Fase 5 do `SKILL.md` monta a peça com eles. O `estado.py` só procura modelo diretamente nesta pasta; rascunho de modelo novo fica em `assets/rascunho/`, que ele não lê.
 
 ## Se o modelo faltar: a skill para no passo da peça
 
@@ -105,6 +105,7 @@ Blocos condicionais:
 | :-- | :-- | :-- |
 | `{{#PROCESSO}}`, `{{#UASG}}` | Campo preenchido | Como na tabela de campos |
 | `{{#FORMATO_UNICO}}` | Peça em formato único | Frase de confirmação do analista (`estado.json`, `peca`) |
+| `{{#SUBSIDIARIOS}}` | Alguma minuta da peça tem pedido subsidiário (o pedido c) fala em "pedidos principais e subsidiários"; sem ele, só em "pedidos") | Minutas aprovadas da peça, seção "Pedido subsidiário" |
 | `{{#ATUAL_PRESTADORA}}` | A Servfaz é a atual prestadora dos serviços ao órgão | Escolha do analista, a cada peça |
 | `{{#REPUBLICACAO}}` | Seção "Da necessidade de saneamento e da republicação" e, no pedido d), a nova divulgação com reabertura do prazo. Sem ela, a seção sai inteira e as seguintes são renumeradas | Escolha do analista, a cada peça: cabe quando as correções pedidas alteram a formulação das propostas |
 | `{{#EFEITO_SUSPENSIVO}}` | Pedido de suspensão da sessão | Escolha do analista, a cada peça |
@@ -167,7 +168,7 @@ Nos dois formatos, só entram as versões aprovadas, conferidas pelo sha256 regi
 
 `scripts/montar_peca.py`, com a lógica em `scripts/montagem/` (`modelo.py`: campos, blocos e trava; `pontos.py`: minuta → ponto; `montar.py`: conferências e gravação; `conversao.py`: .md → .docx). Duas etapas separadas:
 
-1. **Montagem** (`montar_peca.py montar --pasta <pasta> --tipo impugnacao|esclarecimento`): só roda com a peça do tipo confirmada no `estado.py`, sem pendências, com `modelo-<tipo>.md` em `assets/` e com cada minuta igual à versão aprovada (sha256). Grava `<pasta>/peca/peca-<tipo>.md` (formato único) ou `peca-<tipo>-<ID>.md` (por ponto). O texto das minutas entra como foi aprovado; só saem subtítulos, numeração de parágrafo e marcadores. É esse arquivo que o analista confere antes da conversão.
+1. **Montagem** (`montar_peca.py montar --pasta <pasta> --tipo impugnacao|esclarecimento`): só roda com a peça do tipo confirmada no `estado.py`, sem pendências, com a data da peça até a data-limite do art. 164 (o texto fixo afirma a tempestividade), com `modelo-<tipo>.md` em `assets/` e com cada minuta igual à versão aprovada (sha256). Grava `<pasta>/peca/peca-<tipo>.md` (formato único) ou `peca-<tipo>-<ID>.md` (por ponto). O texto das minutas entra como foi aprovado; só saem subtítulos, numeração de parágrafo e marcadores. É esse arquivo que o analista confere antes da conversão.
 2. **Conversão** (`montar_peca.py converter --entrada <peça>.md`): grava o `.docx` ao lado, sobre o `timbre-servfaz.docx`, seguindo as convenções acima.
 
 O arquivo do representante é procurado em `files/representante.json`, duas pastas acima da pasta do edital (`files/triagens/<slug>/`); `--representante` aponta outro. A data da peça é a do dia; `--data AAAA-MM-DD` a fixa. A modalidade sai por extenso para PE, PP, CC e CE; outra exige `"modalidade_extenso"` em `dados-peca.json`.

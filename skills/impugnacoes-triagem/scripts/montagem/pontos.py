@@ -104,6 +104,11 @@ def requests(sections):
     return [f'1. {re.sub(r"[.;:]+$", "", item)};' for item in items]
 
 
+def has_subsidiary(text, item_id):
+    """A minuta traz pedido subsidiário (a seção existe e não começa por "Não há")."""
+    return not none_left(blocks(parse(text, item_id)[2].get('pedido subsidiario')))
+
+
 def impugnation(text, item_id, number):
     """Tópico <número> (ex.: "III.2") da peça de impugnação e a linha do quadro resumo."""
     title, fields, sections = parse(text, item_id)

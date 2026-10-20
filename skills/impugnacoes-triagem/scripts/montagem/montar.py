@@ -90,6 +90,16 @@ def br_date(value, label):
     return f'{date:%d/%m/%Y}'
 
 
+def check_on_time(when, limit_value):
+    """O texto fixo afirma que a peça é tempestiva: depois da data-limite, a afirmação seria falsa."""
+    limit = parse_date(limit_value)
+    if limit and when > limit:
+        raise Refusal(f'a data da peça ({when:%d/%m/%Y}) é posterior à data-limite do art. 164 ({limit:%d/%m/%Y}), e '
+                      'o modelo afirma que a peça é tempestiva. Informe o analista: decidir se ainda vale protocolar é '
+                      'dele, e uma peça fora do prazo pede texto que o modelo não tem. Não mude a data da peça nem a '
+                      'data-limite para passar.')
+
+
 def approved_drafts(state, folder, kind, check):
     """As minutas da confirmação, conferidas pelo sha256: o texto montado é o que o analista aprovou."""
     confirmed = state['peca'].get(kind)
@@ -121,6 +131,7 @@ def points_fields(kind, template, flags, drafts):
     if kind == 'esclarecimento':
         return {'PONTOS': '\n\n'.join(pontos.clarification(text, item_id, n)
                                       for n, (item_id, text) in enumerate(drafts, 1))}
+    flags['SUBSIDIARIOS'] = any(pontos.has_subsidiary(text, item_id) for item_id, text in drafts)
     section = section_of_points(template, flags)
     built = [pontos.impugnation(text, item_id, f'{section}.{n}') for n, (item_id, text) in enumerate(drafts, 1)]
     numbers = [row[0] for _, row in built]
@@ -144,6 +155,7 @@ def assemble(pasta, kind, representative_file=None, when=None):
     data, flags = piece_data(folder, kind)
     rep_path = Path(representative_file) if representative_file else folder.parent.parent / 'representante.json'
     when = when or today()
+    check_on_time(when, (state['prazo'] or {}).get('data_limite'))
     process = process_number(folder)
     fields = {'DESTINATARIO': data['destinatario'], 'SETOR_ORGAO': data['setor_orgao'],
               'ENDERECO_ORGAO': data['endereco_orgao'], 'UASG': str(data.get('uasg') or '').strip(),

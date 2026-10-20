@@ -5,22 +5,31 @@ O Markdown segue as convenções de SKILL.md: "# " e "### " são seções com nu
 "#### " e parágrafo todo em negrito são subtítulos, "> " é citação recuada, "1. " é alínea a), b) (com sub-itens "- "
 recuados), tabela "|" é o quadro e <!-- centralizado --> centraliza o fecho. Cada linha não vazia é um parágrafo; linha
 seguida de outra sem linha em branco entre elas sai sem espaço depois (bloco de assinatura). O script para, sem gravar,
-se o texto trouxer campo em branco ({{CAMPO}}, [Inserir ...]), remissão [1], referência interna da triagem (ID de fonte,
+se o texto trouxer referência interna da triagem (ID de fonte,
 marcador [ID · status], catálogo de fontes) ou marcação que ele não trata (código, imagem, link, HTML, título de nível
 5 ou 6). Nada aqui assina, protocola ou envia.
 
+Os campos "[Inserir CNPJ]", "[Inserir Endereço Completo]", "[Inserir CPF]", "[Inserir RG]" e "[Inserir Nome]" são
+preenchidos com os dados da Servfaz e de quem assina, de assets/dados-servfaz.json. "[Data do Protocolo]" é
+preenchido com --data. O que faltar NÃO barra a geração: o marcador vai ao .docx como está, em destaque amarelo, e o
+script lista as pendências para o analista preencher à mão no Word.
+
 Uso:
-  gerar_minuta.py ENTRADA.md [--saida MINUTA.docx]
+  gerar_minuta.py ENTRADA.md [--saida MINUTA.docx] [--data AAAA-MM-DD]
 """
 import argparse
+import json
 import re
 import sys
 import unicodedata
+from collections import namedtuple
+from datetime import date
 from pathlib import Path
 
 from docx import Document
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
+from docx.enum.text import WD_COLOR_INDEX
 from docx.shared import Cm, Pt
 
 
@@ -38,6 +47,14 @@ STYLES = {'corpo': 'Peca Corpo', 'titulo': 'Peca Titulo', 'subtitulo': 'Peca Sub
           'alinea': 'Peca Alinea', 'centro': 'Peca Centro', 'tabela': 'Peca Tabela'}
 ROMAN_NUMBERING, ALINEA_NUMBERING = 'PecaSecao', 'PecaAlinea'
 TIMBRE = Path(__file__).resolve().parents[1] / 'assets' / 'timbre-servfaz.docx'
+DADOS = Path(__file__).resolve().parents[1] / 'assets' / 'dados-servfaz.json'
+MESES = ('janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro',
+         'novembro', 'dezembro')
+# Rótulo do "[Inserir ...]" (sem acento, minúsculo) -> chave de dados-servfaz.json.
+CAMPOS = {'cnpj': 'cnpj', 'endereco': 'endereco', 'endereco completo': 'endereco', 'cpf': 'cpf', 'rg': 'rg',
+          'nome': 'nome', 'nome do representante': 'nome', 'representante': 'nome'}
+CAMPO = re.compile(r'\[inserir ([^\]\n]+)\]', re.I)
+CAMPO_DATA = re.compile(r'\[data(?: do protocolo| da pe[cç]a)?\]', re.I)
 ITEM = re.compile(r'^\d+\.\s+(.*)$')
 BOLD_LINE = re.compile(r'^\*\*[^*]+\*\*$')
 INLINE = re.compile(r'(\*\*.+?\*\*|(?<![\w*])\*(?!\*)[^*]+?\*(?![\w*])|(?<![\w*])_(?!_).+?(?<!_)_(?!\w))')
@@ -51,16 +68,28 @@ FRONT = re.compile(r'\A---\n.*?\n---\n', re.S)
 CENTER_ON, CENTER_OFF = '<!-- centralizado -->', '<!-- /centralizado -->'
 
 
+def add_text(paragraph, text, **fmt):
+    """Texto em um ou mais trechos; o campo em branco sai com destaque amarelo."""
+    for piece in re.split(f'({PENDENTE.pattern})', text, flags=re.I):
+        if not piece:
+            continue
+        run = paragraph.add_run(piece)
+        for name, value in fmt.items():
+            setattr(run, name, value)
+        if PENDENTE.fullmatch(piece):
+            run.font.highlight_color = WD_COLOR_INDEX.YELLOW
+
+
 def add_runs(paragraph, text):
     for part in INLINE.split(text):
         if not part:
             continue
         if part.startswith('**') and part.endswith('**') and len(part) > 4:
-            paragraph.add_run(part[2:-2]).bold = True
+            add_text(paragraph, part[2:-2], bold=True)
         elif part[0] in '*_' and part[-1] == part[0] and len(part) > 2:
-            paragraph.add_run(part[1:-1]).italic = True
+            add_text(paragraph, part[1:-1], italic=True)
         else:
-            paragraph.add_run(part)
+            add_text(paragraph, part)
     return paragraph
 
 
@@ -206,18 +235,44 @@ def build(doc, text):
             paragraph.paragraph_format.space_after = Pt(0)
 
 
-# Campo em branco e remissão que o texto trouxe de quem o gerou; marcação que o conversor não trata.
-BLANK = re.compile(r'\{\{|\}\}|\[(?:inserir|preencher|informar|data|nome|cnpj|cpf|endere[cç]o)\b[^\]\n]*\]|'
-                   r'\[\d+(?:\s*[,–-]\s*\d+)*\]', re.I)
+# Campo em branco: não barra a geração; sai em destaque no .docx e entra na lista de pendências.
+PENDENTE = re.compile(r'\{\{[^}\n]*\}\}|\[(?:inserir|preencher|informar|data|nome|cnpj|cpf|endere[cç]o)\b[^\]\n]*\]', re.I)
+Resultado = namedtuple('Resultado', 'docx pendentes')
+# Marcação que o conversor não trata. Remissões como [1] passam: vão ao .docx como estão.
 UNSUPPORTED = re.compile(r'^\s*```|^#{5,}\s|!\[[^\]\n]*\]\(|\[[^\]\n]+\]\([^)\n]+\)|</?[a-z][^>\n]*>|~~', re.I)
 
 
+def load_dados(path):
+    """Dados padrão da Servfaz e de quem assina; sem o arquivo, nada é preenchido."""
+    path = Path(path)
+    if not path.is_file():
+        return {}
+    try:
+        dados = json.loads(path.read_text(encoding='utf-8'))
+    except ValueError as exc:
+        raise Refusal(f'{path.name} não é um JSON válido: {exc}.') from exc
+    if not isinstance(dados, dict) or not all(isinstance(v, str) for v in dados.values()):
+        raise Refusal(f'{path.name} deve ser um objeto com valores em texto (veja dados-servfaz.exemplo.json).')
+    return dados
+
+
+def preencher(text, dados, when=None):
+    """Preenche só os campos "[Inserir ...]" que os dados conhecem e a data; o resto fica para a trava."""
+    def campo(match):
+        label = unicodedata.normalize('NFKD', match[1]).encode('ascii', 'ignore').decode().lower().strip()
+        return dados.get(CAMPOS.get(label)) or match[0]
+
+    text = CAMPO.sub(campo, text)
+    if when:
+        text = CAMPO_DATA.sub(f'{when.day} de {MESES[when.month - 1]} de {when.year}', text)
+    return text
+
+
 def check_clean(text, label):
-    """A trava: a minuta não sai com campo em branco, remissão [n], referência interna da triagem nem marcação que o
-    conversor não trata. Cada achado leva a linha, para o analista corrigir o Markdown."""
+    """A trava: a minuta não sai com referência interna da triagem nem marcação que o conversor não trata. Cada achado leva a linha, para o analista corrigir o Markdown."""
     problems = []
     for number, line in enumerate(text.split('\n'), 1):
-        for regex, what in ((BLANK, 'campo em branco ou remissão'), (INTERNAL, 'referência interna'),
+        for regex, what in ((INTERNAL, 'referência interna'),
                             (UNSUPPORTED, 'marcação que o conversor não trata')):
             found = regex.search(line)
             if found:
@@ -229,9 +284,15 @@ def check_clean(text, label):
     return text
 
 
-def convert(source, target=None, timbre=TIMBRE):
+def pendencias(text):
+    """Campos em branco que sobraram, como (linha, marcador), para o analista preencher no Word."""
+    return [(number, found[0]) for number, line in enumerate(text.split('\n'), 1) for found in PENDENTE.finditer(line)]
+
+
+def convert(source, target=None, timbre=TIMBRE, dados=None, when=None):
     source = Path(source)
     text = unicodedata.normalize('NFC', source.read_text(encoding='utf-8'))
+    text = preencher(text, load_dados(dados or DADOS), when)
     check_clean(text, source.name)
     text = FRONT.sub('', text, count=1)
     if not Path(timbre).is_file():
@@ -240,16 +301,21 @@ def convert(source, target=None, timbre=TIMBRE):
     build(doc, text)
     target = Path(target) if target else source.with_suffix('.docx')
     doc.save(str(target))
-    return target
+    return Resultado(target, pendencias(text))
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('entrada', type=Path, help='impugnação em Markdown')
     parser.add_argument('--saida', type=Path, help='destino (padrão: mesmo nome, .docx)')
+    parser.add_argument('--data', help='data da peça, AAAA-MM-DD, para o campo "[Data do Protocolo]"')
     args = parser.parse_args(argv)
     try:
-        target = convert(args.entrada, args.saida)
+        try:
+            when = date.fromisoformat(args.data) if args.data else None
+        except ValueError:
+            raise Refusal(f'data inválida: {args.data} (use AAAA-MM-DD).') from None
+        result = convert(args.entrada, args.saida, when=when)
     except Refusal as exc:
         print(f'erro: {exc}', file=sys.stderr)
         return 1
@@ -257,7 +323,11 @@ def main(argv=None):
         print(f'erro: não foi possível ler ou gravar {exc.filename or "um arquivo da minuta"}: {exc.strerror or exc}.',
               file=sys.stderr)
         return 1
-    print(target)
+    print(result.docx)
+    if result.pendentes:
+        print(f'{len(result.pendentes)} campo(s) em branco, em destaque amarelo no .docx, para preencher à mão:')
+        for number, marker in result.pendentes:
+            print(f'  linha {number} do .md: {marker}')
     return 0
 
 

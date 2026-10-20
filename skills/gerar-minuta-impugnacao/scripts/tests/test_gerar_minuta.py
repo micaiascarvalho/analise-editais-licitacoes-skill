@@ -1,13 +1,17 @@
 import io
 import sys
 import tempfile
+import json
 import unittest
+from datetime import date
+from unittest import mock
 from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from docx import Document
+from docx.enum.text import WD_COLOR_INDEX
 from docx.oxml.ns import qn
 
 import gerar_minuta
@@ -53,13 +57,21 @@ Sócio Administrador
 '''
 
 
-class GerarMinutaTests(unittest.TestCase):
+class SemDadosReais:
+    """Os testes não leem o assets/dados-servfaz.json de verdade (tem dado de pessoa física)."""
+    def setUp(self):
+        patcher = mock.patch.object(gerar_minuta, 'DADOS', Path('/nao/existe/dados.json'))
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
+
+class GerarMinutaTests(SemDadosReais, unittest.TestCase):
     def convert(self, text, name='minuta.md'):
         self.tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)
         source = Path(self.tmp.name) / name
         source.write_text(text, encoding='utf-8')
-        return source, Document(str(gerar_minuta.convert(source)))
+        return source, Document(str(gerar_minuta.convert(source).docx))
 
     def test_conventions(self):
         source, doc = self.convert(MINUTA)
@@ -90,8 +102,8 @@ class GerarMinutaTests(unittest.TestCase):
         name = next(p for p in doc.paragraphs if p.text == 'Fulano de Tal')
         self.assertEqual(name.paragraph_format.space_after.pt, 0)
 
-    def test_refuses_unfilled_or_internal(self):
-        for text in ('Texto {{CAMPO}}.\n', 'Fonte [EXT-LEI14133-ART5 · conferido].\n', 'Ver catálogo de fontes.\n'):
+    def test_refuses_internal_references(self):
+        for text in ('Fonte [EXT-LEI14133-ART5 · conferido].\n', 'Ver catálogo de fontes.\n'):
             with tempfile.TemporaryDirectory() as tmp:
                 path = Path(tmp) / 'minuta.md'
                 path.write_text(text, encoding='utf-8')
@@ -110,7 +122,7 @@ class GerarMinutaTests(unittest.TestCase):
             with redirect_stdout(io.StringIO()):
                 self.assertEqual(gerar_minuta.main([str(source), '--saida', str(target)]), 0)
             self.assertTrue(target.is_file())
-            source.write_text('{{CAMPO}}\n', encoding='utf-8')
+            source.write_text('Ver catálogo de fontes.\n', encoding='utf-8')
             with redirect_stderr(io.StringIO()) as err:
                 self.assertEqual(gerar_minuta.main([str(source)]), 1)
             self.assertIn('linha 1', err.getvalue())
@@ -150,7 +162,7 @@ Verifica-se que:
 '''
 
 
-class MarkdownComumTests(unittest.TestCase):
+class MarkdownComumTests(SemDadosReais, unittest.TestCase):
     convert = GerarMinutaTests.convert
 
     def test_common_markdown(self):
@@ -184,9 +196,8 @@ class MarkdownComumTests(unittest.TestCase):
         self.assertTrue(all(p._p.pPr.find(qn('w:numPr')) is not None for p in loose))
         self.assertTrue(loose[-1].text.endswith('.'))
 
-    def test_refuses_blank_fields_citations_and_unsupported_markup(self):
-        cases = {'CNPJ [Inserir CNPJ].': 'Inserir CNPJ', 'Protocolo em [Data do Protocolo].': 'Data do Protocolo',
-                 'Conforme o edital [1].': '[1]', 'Ver [2, 3].': '[2, 3]', '```\ncódigo\n```': '```',
+    def test_refuses_unsupported_markup(self):
+        cases = {'```\ncódigo\n```': '```',
                  '![logo](a.png)': '![logo]', 'Veja [o edital](http://x.br).': 'o edital', 'Linha<br>quebra': '<br>',
                  '##### Subtítulo fundo': '#####', 'Texto ~~riscado~~.': '~~'}
         for text, found in cases.items():
@@ -197,8 +208,91 @@ class MarkdownComumTests(unittest.TestCase):
                     gerar_minuta.convert(path)
                 self.assertFalse(path.with_suffix('.docx').exists(), text)
 
+    def test_numeric_references_pass_through(self):
+        _, doc = self.convert('Conforme o edital [1] e o TR [2, 3].\n')
+        self.assertEqual(doc.paragraphs[-1].text, 'Conforme o edital [1] e o TR [2, 3].')
+
     def test_legal_text_with_brackets_and_comparisons_is_allowed(self):
         self.convert('Índice [sic] inferior a 1,0 e valor < 10 ou > 5; art. 67, § 2º.\n')
+
+
+DADOS_TESTE = {'cnpj': '00.000.000/0001-00', 'endereco': 'Rua Exemplo, n.º 1, Exemplópolis – UF', 'nome': 'Fulana de Tal',
+               'rg': '0.000.000-SSP/UF', 'cpf': '000.000.000-00'}
+TEXTO_CAMPOS = ('Inscrita no CNPJ nº [Inserir CNPJ], com sede em [Inserir Endereço Completo].\n\n'
+                'Representante: [Inserir Nome], RG [Inserir RG], CPF: [Inserir CPF].\n\n'
+                'Teresina/PI, [Data do Protocolo].\n')
+
+
+class DadosPadraoTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.dir = Path(self.tmp.name)
+        self.source = self.dir / 'minuta.md'
+        self.dados = self.dir / 'dados.json'
+        self.dados.write_text(json.dumps(DADOS_TESTE), encoding='utf-8')
+
+    def texts(self, text, **kwargs):
+        self.source.write_text(text, encoding='utf-8')
+        result = gerar_minuta.convert(self.source, dados=self.dados, **kwargs)
+        self.result = result
+        return [p.text for p in Document(str(result.docx)).paragraphs if p.text]
+
+    def test_fields_filled_from_data_and_date(self):
+        texts = self.texts(TEXTO_CAMPOS, when=date(2026, 3, 9))
+        self.assertEqual(texts, ['Inscrita no CNPJ nº 00.000.000/0001-00, com sede em Rua Exemplo, n.º 1, Exemplópolis – UF.',
+                                 'Representante: Fulana de Tal, RG 0.000.000-SSP/UF, CPF: 000.000.000-00.',
+                                 'Teresina/PI, 9 de março de 2026.'])
+
+    def test_missing_fields_do_not_block_and_are_highlighted(self):
+        texts = self.texts(TEXTO_CAMPOS)  # sem data
+        self.assertEqual(texts[-1], 'Teresina/PI, [Data do Protocolo].')
+        self.assertEqual(self.result.pendentes, [(5, '[Data do Protocolo]')])
+        doc = Document(str(self.result.docx))
+        marked = [r.text for p in doc.paragraphs for r in p.runs if r.font.highlight_color == WD_COLOR_INDEX.YELLOW]
+        self.assertEqual(marked, ['[Data do Protocolo]'])
+
+    def test_unknown_field_and_template_marker_are_pending(self):
+        self.texts('Telefone [Inserir Telefone] e {{CAMPO}}.\n')
+        self.assertEqual([m for _, m in self.result.pendentes], ['[Inserir Telefone]', '{{CAMPO}}'])
+
+    def test_missing_data_file_leaves_everything_pending(self):
+        self.source.write_text('CNPJ [Inserir CNPJ].\n', encoding='utf-8')
+        result = gerar_minuta.convert(self.source, dados=self.dir / 'nao-existe.json')
+        self.assertEqual(result.pendentes, [(1, '[Inserir CNPJ]')])
+
+    def test_cli_lists_pending(self):
+        self.source.write_text('Teresina/PI, [Data do Protocolo].\n', encoding='utf-8')
+        with redirect_stdout(io.StringIO()) as out:
+            self.assertEqual(gerar_minuta.main([str(self.source)]), 0)
+        self.assertIn('1 campo(s) em branco', out.getvalue())
+        self.assertIn('linha 1 do .md: [Data do Protocolo]', out.getvalue())
+
+    def test_invalid_data_file(self):
+        self.dados.write_text('{"cnpj": 1}', encoding='utf-8')
+        with self.assertRaisesRegex(Refusal, 'valores em texto'):
+            self.texts('Texto.\n')
+
+    def test_example_file_has_every_field(self):
+        example = json.loads((Path(gerar_minuta.__file__).resolve().parents[1] / 'assets' /
+                              'dados-servfaz.exemplo.json').read_text(encoding='utf-8'))
+        self.assertTrue(set(DADOS_TESTE) <= set(example))
+
+    def test_cli_date(self):
+        self.source.write_text('Teresina/PI, [Data do Protocolo].\n', encoding='utf-8')
+        with redirect_stderr(io.StringIO()) as err:
+            self.assertEqual(gerar_minuta.main([str(self.source), '--data', '2026-13-01']), 1)
+        self.assertIn('data inválida', err.getvalue())
+
+
+class TimbreTests(unittest.TestCase):
+    def test_footer_line_is_above_the_text(self):
+        """A linha laranja do rodapé não pode cruzar o texto "servfazpi | www.servfaz.com.br"."""
+        footer = Document(str(gerar_minuta.TIMBRE)).sections[0].footer._element
+        offset = lambda name: int(footer.xpath(f'.//wp:anchor[wp:docPr/@name="{name}"]/wp:positionV/wp:posOffset')[0].text)
+        line_bottom = offset('Conector reto 9') + int(footer.xpath('.//wp:anchor[wp:docPr/@name="Conector reto 9"]/wp:extent')[0].get('cy'))
+        text_top = offset('Caixa de Texto 2') + 45720  # recuo interno superior da caixa
+        self.assertLess(line_bottom, text_top)
 
 
 if __name__ == '__main__':

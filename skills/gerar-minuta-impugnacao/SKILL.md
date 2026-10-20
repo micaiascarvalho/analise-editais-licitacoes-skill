@@ -15,11 +15,11 @@ Esta skill só converte. Entra uma impugnação em Markdown já pronta; sai o `.
 2. Rode:
 
    ```bash
-   <python> <skill>/scripts/gerar_minuta.py ENTRADA.md [--saida MINUTA.docx]
+   <python> <skill>/scripts/gerar_minuta.py ENTRADA.md [--saida MINUTA.docx] [--data AAAA-MM-DD]
    ```
 
    Sem `--saida`, o `.docx` fica ao lado do `.md`, com o mesmo nome. O script imprime o caminho gravado.
-3. Informe o caminho ao analista e lembre que a revisão, a assinatura e o protocolo são dele. Não diga que a peça foi assinada, protocolada ou enviada.
+3. Informe o caminho ao analista. Se o script listou campos em branco, repita a lista (linha do `.md` e marcador) e diga que eles estão em destaque amarelo no `.docx`, para o analista preencher à mão no Word e tirar o destaque. Não invente o dado nem edite o `.docx` por conta própria. Lembre que a revisão, a assinatura e o protocolo são dele, e não diga que a peça foi assinada, protocolada ou enviada.
 
 Precisa de Python 3.10+ e `python-docx` (`scripts/requirements.txt`). Se o script recusar, leia a mensagem ao analista em palavras simples: ela aponta a linha e o que corrigir no Markdown.
 
@@ -46,16 +46,35 @@ O conversor entende o Markdown comum abaixo. O que não está na tabela ou não 
 
 O timbre (`assets/timbre-servfaz.docx`) traz o cabeçalho e o rodapé com as imagens e a marca d'água, as margens A4, os estilos `Peca ...` e as numerações. Não traz texto de peça.
 
+## Dados padrão da Servfaz e de quem assina
+
+O script preenche sozinho estes campos do Markdown, com os valores de `assets/dados-servfaz.json`:
+
+| No Markdown | Chave do JSON |
+| :-- | :-- |
+| `[Inserir CNPJ]` | `cnpj` |
+| `[Inserir Endereço Completo]` (ou `[Inserir Endereço]`) | `endereco` |
+| `[Inserir Nome]` (ou `[Inserir Representante]`) | `nome` |
+| `[Inserir RG]` | `rg` |
+| `[Inserir CPF]` | `cpf` |
+| `[Data do Protocolo]` | não vem do JSON: se o analista informar a data, use `--data AAAA-MM-DD` (sai "20 de outubro de 2026") |
+
+O arquivo tem dado de pessoa física (nome, RG e CPF de quem assina), por isso **não vai para o git**: está no `.gitignore`. O modelo, com valores fictícios, é `assets/dados-servfaz.exemplo.json`. Ao copiar a skill para outra conta ou máquina, copie o `dados-servfaz.json` junto; sem ele, nada é preenchido e todos os campos saem em branco no `.docx`. Não repita CPF, RG nem outro dado do arquivo na conversa. A skill só preenche o que o Markdown marca com `[Inserir ...]`; não acrescenta nome nem dado em lugar nenhum do texto. A data da peça é do analista: não escolha uma. Sem `--data`, o campo da data fica em branco no `.docx`, para o analista preencher.
+
+## Campos em branco: preenchimento manual no .docx
+
+Dado que falta **não barra a geração**. O que os dados padrão e o `--data` não cobrem (por exemplo `[Inserir Telefone]`, `[Data do Protocolo]` sem `--data`, ou `{{CAMPO}}`) vai ao `.docx` exatamente como está no texto, **em destaque amarelo**, e o script lista no fim da saída cada pendência com a linha do `.md`. O analista preenche à mão no Word e remove o destaque. Colchete de preenchimento é o que começa com inserir, preencher, informar, data, nome, cnpj, cpf ou endereço.
+
 ## Recusas
 
 O script não grava o `.docx` e informa a linha de cada achado se o Markdown tiver:
 
-- campo em branco: `{{CAMPO}}`, ou colchete de preenchimento como `[Inserir CNPJ]` e `[Data do Protocolo]` (começa com inserir, preencher, informar, data, nome, cnpj, cpf ou endereço);
-- remissão numérica como `[1]` ou `[2, 3]`, que vem de quem gerou o texto e não vai à Administração;
 - referência interna da triagem: ID de fonte (`EXT-`, `INT-`, `NOVA-`), marcador `[ID · status]` ou menção a "catálogo de fontes" ou aos arquivos do estudo. "Catálogo" sozinho não conta, porque um edital pode citar o Catálogo de Serviços;
 - marcação que o conversor não trata: bloco de código, imagem, link `[texto](url)`, tag HTML, `~~riscado~~` e título de nível 5 ou 6.
 
-A correção vai no Markdown de origem, nunca no `.docx`. Campo em branco, remissão e dado do certame não se completam por conta própria: diga ao analista o que foi achado e peça o dado. Ajuste só de marcação (por exemplo, trocar `- a)` por lista) só com o pedido do analista, sem mudar nenhuma palavra do texto.
+Remissões numéricas como `[1]` não são recusadas: vão ao `.docx` exatamente como estão no texto. Se o analista não as quer na peça, ele pede para tirá-las e só então elas saem.
+
+A correção vai no Markdown de origem, nunca no `.docx`. Dado do certame que falta não se completa por conta própria: deixe em branco no `.docx` e liste para o analista. Ajuste só de marcação (por exemplo, trocar `- a)` por lista) só com o pedido do analista, sem mudar nenhuma palavra do texto.
 
 ## Para quem mantém a skill
 

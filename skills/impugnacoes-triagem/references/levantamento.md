@@ -492,7 +492,7 @@ A mensagem ao analista traz, nesta ordem:
 - a tabela "Itens para seleção" (ID, classe, título, efeito, prova, localizador);
 - o número de descartados e de riscos, com o caminho do `levantamento.md`;
 - os temas da cobertura que ficaram "não localizado" e as pendências que pesam na decisão;
-- o pedido de seleção numa frase de formato fixo, que o analista digita: cláusulas "incluo <IDs>", "descarto <IDs>" e "deixo para depois <IDs>", separadas por ";", com "os demais" no lugar dos IDs para os pendentes que a frase não cita. Dê um exemplo com os IDs desta triagem, como "incluo IMP-01 e ESC-01; descarto IMP-02; deixo para depois os demais". Diga também que o item não citado continua pendente e não ganha minuta.
+- o pedido de seleção numa frase de formato fixo, que o analista digita: cláusulas "incluo <IDs>", "descarto <IDs>" e "deixo para depois <IDs>", separadas por ";", com "os demais" (ou "todos") no lugar dos IDs para os pendentes que a frase não cita. Dê um exemplo com os IDs desta triagem, como "incluo IMP-01 e ESC-01; descarto IMP-02; deixo para depois os demais". Diga também que o item não citado continua pendente e não ganha minuta.
 
 **Depois disso, pare.** Não abra minuta nem antecipe redação de peça. A seleção é a decisão jurídica do analista. Minuta escrita antes dela gasta o tempo dele e empurra para uma aprovação por inércia. O registro da seleção (`estado.py decidir`) é a fase seguinte, descrita no `SKILL.md`.
 

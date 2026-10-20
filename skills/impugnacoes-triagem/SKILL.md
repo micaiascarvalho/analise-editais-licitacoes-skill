@@ -52,7 +52,7 @@ A `--evidencia` é a prova de que o analista, e não a skill, decidiu. Por isso 
 | Comando | Frase do analista | Exemplo |
 | :-- | :-- | :-- |
 | `prosseguir` | `prossigo sem <códigos>`, com exatamente as faltas registradas | prossigo sem ETP e PESQUISA |
-| `decidir` | `incluo <IDs>`, `descarto <IDs>`, `deixo para depois <IDs>`, separadas por `;`; "os demais" são os pendentes que a frase não cita | incluo IMP-01, IMP-03 e ESC-02; descarto os demais |
+| `decidir` | `incluo <IDs>`, `descarto <IDs>`, `deixo para depois <IDs>`, separadas por `;`; "os demais" (ou "todos") são os pendentes que a frase não cita | incluo IMP-01, IMP-03 e ESC-02; descarto os demais |
 | `minuta` | `aprovo <ID>`, `descarto <ID>` ou `ajuste <ID>: <o que mudar>`, com o ID da minuta em revisão | ajuste IMP-01: troque o pedido subsidiário pela suspensão do certame |
 | `reabrir` | `reabro <IDs>: <motivo>` | reabro IMP-01: o patrimônio líquido exigido está dentro do limite legal |
 | `peca --acao confirmar` | `confirmo a peça de impugnação\|esclarecimento em formato único\|por ponto` | confirmo a peça de impugnação em formato único |
@@ -157,14 +157,14 @@ Leia `references/levantamento.md` antes de começar. Ele traz o método de cruza
 
 ## Fase 3 — seleção
 
-Para cada ID, o analista decide entre incluir, descartar ou deixar para depois, numa frase só, com cláusulas separadas por ";": "incluo <IDs>", "descarto <IDs>", "deixo para depois <IDs>". No lugar dos IDs, "os demais" são os pendentes que a frase não cita. Uma chamada registra a frase inteira:
+Para cada ID, o analista decide entre incluir, descartar ou deixar para depois, numa frase só, com cláusulas separadas por ";": "incluo <IDs>", "descarto <IDs>", "deixo para depois <IDs>". No lugar dos IDs, "os demais" (ou "todos") são os pendentes que a frase não cita. Uma chamada registra a frase inteira:
 
 ```bash
 estado.py decidir --pasta <pasta> --evidencia 'incluo IMP-01, IMP-03 e ESC-02; descarto os demais'
 ```
 
 - Só vale frase dada depois que a tabela "Itens para seleção" foi apresentada. Um pedido inicial como "levanta e já inclui tudo que achar" não decide itens que ele não viu: apresente a tabela e peça a frase.
-- Resposta livre ("inclui a 1 e a 3, o resto descarta", "pode incluir tudo") não se registra. Mostre a frase no formato, com os IDs que ele citou ("incluo IMP-01 e IMP-03; descarto os demais"), e espere que ele a digite. Para incluir todos os pendentes, a frase é "incluo os demais".
+- Resposta livre ("inclui a 1 e a 3, o resto descarta", "pode incluir tudo") não se registra. Mostre a frase no formato, com os IDs que ele citou ("incluo IMP-01 e IMP-03; descarto os demais"), e espere que ele a digite. Para incluir todos os pendentes, a frase é "incluo todos" (ou "incluo os demais").
 - O item que a frase não cita continua pendente, e a fase não avança. A mensagem do script lista os que restam: peça uma nova frase só sobre eles.
 - "Deixo para depois" não gera minuta. Esses itens voltam ao analista no início da Fase 5, com o prazo.
 - Se ele mudar de ideia sobre um item que ainda não tem minuta, basta uma nova frase de `decidir` com ele. Se o item já tem minuta, aberta ou decidida, o `decidir` recusa: a frase é "reabro <ID>: <motivo>" (ver `references/estado-e-retomada.md`, seção 9).

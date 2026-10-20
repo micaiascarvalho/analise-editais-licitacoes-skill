@@ -5,7 +5,7 @@ e a pontuação final ("." ou "!"). Em listas, vírgula e "e" separam os itens; 
 IDs: IMP-NN ou ESC-NN ("IMP-1" vale IMP-01). Códigos: EDITAL, TR, ETP, PLANILHA, PESQUISA, MINUTA.
 
   prosseguir      prossigo sem <códigos>                    (exatamente as faltas registradas)
-  decidir         incluo <IDs>; descarto <IDs>; deixo para depois <IDs>   ("os demais": pendentes não citados)
+  decidir         incluo <IDs>; descarto <IDs>; deixo para depois <IDs>   ("os demais" ou "todos": pendentes não citados)
   minuta          aprovo <ID> | descarto <ID> | ajuste <ID>: <o que mudar>   (ID da minuta em revisão)
   reabrir         reabro <IDs>: <motivo>
   peca            confirmo a peça de impugnação|esclarecimento em formato único|por ponto
@@ -22,7 +22,7 @@ ARTICLE = re.compile(r'^(?:a|o|os|as) ')
 ID_TOKEN = re.compile(r'(imp|esc)-(\d+)')
 PROCEED = re.compile(r'prossigo sem (.+)')
 CLAUSE = re.compile(r'(incluo|descarto|deixo para depois) (.+)')
-REST = re.compile(r'(?:(?:os|as) )?demais')
+REST = re.compile(r'(?:(?:os|as) )?demais|todos|todas')  # "todos" = os pendentes não citados
 DRAFT = re.compile(r'(aprovo|descarto) (.+)|ajuste ([^:]+): ?(.*)')
 REOPEN = re.compile(r'reabro ([^:]+): (.*)')
 PIECE = re.compile(r'confirmo (?:a )?peca de (impugnacao|esclarecimento) em formato (unico|por ponto)')
@@ -34,7 +34,7 @@ PIECE_FORMATS = {'unico': 'único', 'por_ponto': 'por ponto'}
 
 PROCEED_FORMAT = f'"prossigo sem <códigos>", com exatamente os documentos que faltam ({", ".join(DOC_CODES)})'
 DECIDE_FORMAT = ('uma ou mais cláusulas separadas por ";": "incluo <IDs>", "descarto <IDs>", "deixo para depois '
-                 '<IDs>"; no lugar dos IDs, "os demais" são os pendentes não citados na frase')
+                 '<IDs>"; no lugar dos IDs, "os demais" (ou "todos") são os pendentes não citados na frase')
 DRAFT_FORMAT = ('"aprovo <ID>", "descarto <ID>" ou "ajuste <ID>: <o que mudar, com pelo menos 10 caracteres>", com o '
                 'ID da minuta em revisão')
 REOPEN_FORMAT = '"reabro <IDs>: <motivo, com pelo menos 10 caracteres>"'

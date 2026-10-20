@@ -135,7 +135,7 @@ A `--evidencia` é o registro de que o analista, e não a skill, tomou a decisã
 **Por comando:**
 
 - **prosseguir:** exatamente as faltas registradas, nem mais nem menos. Se o analista envia parte do que falta, registre `documentos` de novo e peça a frase só com o que resta.
-- **decidir:** uma chamada aplica a frase inteira. No lugar dos IDs, "os demais" são os pendentes que a frase não cita; vale numa cláusula só. Para incluir todos os pendentes, a frase é "incluo os demais". Cada ID aparece uma vez. O item que a frase não cita continua pendente. Item com minuta é recusado: use `reabrir` (seção 9).
+- **decidir:** uma chamada aplica a frase inteira. No lugar dos IDs, "os demais" (ou "todos", "todas") são os pendentes que a frase não cita; vale numa cláusula só. Para incluir todos os pendentes, a frase é "incluo todos" (ou "incluo os demais"). Cada ID aparece uma vez. O item que a frase não cita continua pendente. Item com minuta é recusado: use `reabrir` (seção 9).
 - **minuta:** um ID só, o da minuta em revisão. A mesma frase com outro ID serve à outra minuta, quando ela for apresentada.
 - **reabrir:** um ou mais IDs, dois-pontos e o motivo nas palavras do analista.
 - **peca:** uma frase e uma chamada por tipo; o tipo e o formato saem da frase.

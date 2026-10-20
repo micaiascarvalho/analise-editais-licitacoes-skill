@@ -68,6 +68,8 @@ class DecidirTests(FormatTestCase):
                                                    ('incluir', ['IMP-20'])]),
             ('deixo para depois demais', [('avaliar_depois', list(IDS[:3]) + ['ESC-01', 'ESC-02'])]),
             ('INCLUO IMP-01; INCLUO IMP-03', [('incluir', ['IMP-01']), ('incluir', ['IMP-03'])]),
+            ('incluo todos', [('incluir', list(IDS[:3]) + ['ESC-01', 'ESC-02'])]),
+            ('descarto IMP-01; incluo todas', [('descartar', ['IMP-01']), ('incluir', ['IMP-03', 'IMP-20', 'ESC-01', 'ESC-02'])]),
         ]
         for phrase, expected in cases:
             with self.subTest(phrase=phrase):

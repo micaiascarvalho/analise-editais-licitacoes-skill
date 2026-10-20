@@ -68,6 +68,8 @@ Mapeamento_Analise/
 | `Minuta Contratual/` | Minuta de contrato / ata de registro de preços | **Estrutura:** as 9 cláusulas principais e seus artigos. **Análise:** pontos impugnáveis em reajuste, pagamento, garantia, multas, retenções, riscos e rescisão. **Fontes:** as 9 cláusulas. |
 | `Retificações, Esclarecimentos e Respostas/` | Atos publicados após o edital (RERI) | **Estrutura:** natureza jurídica dos três tipos de ato. **Análise:** o ciclo de triagem aplicado a cada nova publicação. **Fontes:** os três atos, os 5 checkpoints e o modelo de tabela de controle. |
 
+**RERI como processo à parte.** Os atos da RERI só existem dias depois do lançamento do edital. Por isso, a pasta `Retificações, Esclarecimentos e Respostas/` é a base de um processo à parte e não entra na skill de triagem (`skills/impugnacoes-triagem/`). A cópia do estudo usada pela skill deixa de fora essa pasta, as linhas dos mapas cujo assunto é um ato da RERI e as menções a `INT-RERI`; o que sai de cada mapa fica registrado no `MANIFEST.json` da cópia. Os arquivos desta pasta e as menções a `INT-RERI` nos outros mapas continuam valendo para o processo da RERI.
+
 ## 4. Arquivos na raiz
 
 | Arquivo | Conteúdo |

@@ -5,3 +5,8 @@ Outputs
 files
 # macOS
 .DS_Store
+# Ambiente Python e bytecode
+.venv/
+__pycache__/
+# Saídas de avaliação da skill impugnacoes-triagem (contêm trechos de editais reais)
+skills/impugnacoes-triagem-workspace/

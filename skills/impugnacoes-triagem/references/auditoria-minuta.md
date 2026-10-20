@@ -37,7 +37,7 @@ Copie a tabela, troque `<ID>` e `<N>` e preencha a última coluna.
 | 13. RERI | Nenhum fato ou fundamento vem de errata, aviso, retificação ou resposta, nem de páginas de ato da RERI dentro de outro arquivo | Atos da RERI listados em `<pasta>/documentos.md` | |
 | 14. Dado pessoal | Sem nome de servidor, CPF, e-mail ou telefone pessoal; pessoas só pelo cargo | Minuta inteira | |
 | 15. Impugnante | Sem dados da impugnante, endereçamento, fecho ou assinatura | Minuta inteira | |
-| 16. Versão | O arquivo apresentado é o registrado: `minuta_em_revisao` com `registrada: true` e `versao` igual à do cabeçalho; nenhum alerta "minuta <ID> alterada depois do registro" em `alertas`; `proxima_acao` pedindo para apresentar a minuta. O status não mostra o sha256 da minuta em revisão; se quiser comparar, os 12 primeiros caracteres de `sha256sum minutas/<ID>.md` aparecem no evento `minuta_registrar` do `registro.md` | `estado.py status`; `registro.md` | |
+| 16. Versão | O arquivo apresentado é o registrado: `minuta_em_revisao` com `registrada: true`, `versao` igual à do cabeçalho e `sha256` igual ao de `sha256sum minutas/<ID>.md`; nenhum alerta "minuta <ID> alterada depois do registro" em `alertas`; `proxima_acao` pedindo para apresentar a minuta | `estado.py status`; `sha256sum` do arquivo | |
 
 ## Como apresentar
 
@@ -48,27 +48,19 @@ Na mesma resposta, nesta ordem:
 3. a minuta inteira, como está no arquivo;
 4. a tabela preenchida, com a coluna "Onde conferir" em termos do analista;
 5. as pendências que dependem do analista, se houver;
-6. a pergunta, exatamente assim:
+6. a pergunta, exatamente assim, com o ID da minuta:
 
-> Decida sobre a <ID> v<N>: aprovo / ajuste: <o que mudar> / descarto.
+> Decida sobre a <ID> v<N> digitando uma destas frases: "aprovo <ID>" / "ajuste <ID>: <o que mudar>" / "descarto <ID>".
 
-Lembre o analista, em uma linha, de que "ok", "segue", "pode seguir" ou "aprova todas" não valem como decisão: cada minuta precisa de "aprovo", "ajuste: ..." ou "descarto" sobre ela. Isso existe porque a aprovação é a autorização para a minuta entrar na peça, e uma resposta genérica não mostra que esta versão foi lida.
+Lembre o analista, em uma linha, de que só essas frases registram a decisão. Isso existe porque a aprovação é a autorização para a minuta entrar na peça, e a frase com o ID, digitada por ele depois de ler esta versão, mostra que a decisão é dele e sobre este texto.
 
 ## Da resposta ao comando
 
-Passe em `--evidencia` a frase literal do analista, inteira, sem tirar palavras, entre aspas simples (`estado-e-retomada.md`, seção 5). O script aceita algumas frases que não decidem a minuta; a coluna "Comando" vale mesmo quando o script aceitaria outro.
+Registre só a frase no formato, sobre a minuta em revisão, dada depois de ele ver a versão atual: `minuta --pasta <pasta> --evidencia '<frase do analista>'`, com a frase copiada sem mudança, entre aspas simples (`estado-e-retomada.md`, seção 5). Se ele a copiou com as aspas da pergunta, ou como sentença à parte junto com outro texto, registre só a frase, sem as aspas que a cercam. A ação vem da frase, e o que acontece depois de cada uma está em `minuta-por-ponto.md`, seção 1.
 
-| Resposta do analista | Comando | O que acontece |
-| :-- | :-- | :-- |
-| "aprovo" (sobre esta minuta, sem pedir mudança) | `minuta --id <ID> --acao aprovar` | A versão fica aprovada; siga a `proxima_acao` |
-| "ajuste: ..." | `minuta --id <ID> --acao ajustar` | A versão vai para `minutas/historico/<ID>.v<N>.md`. Escreva a v<N+1> a partir dela, registre e apresente com "O que mudou" e a tabela inteira de novo |
-| Aprovação que também pede mudança, com ou sem "mas" ("aprovo, mas troque…", "aprovo, só troca…", "aprovo; ajusta o parágrafo 2", "aprovo com a troca de…") | `minuta --id <ID> --acao ajustar`, se a frase diz o que mudar; nenhum, se não diz | Aprovação com ressalva é ajuste. Se a frase diz o que mudar, registre-a como ajuste e avise o analista de que a minuta volta como nova versão; se não diz, pergunte o que mudar. Nunca registre como aprovação, mesmo que o script aceite |
-| "descarto" (ou excluir, retirar, remover, não usar) | `minuta --id <ID> --acao descartar` | O arquivo vai para o histórico e o item sai da fila |
-| "ok", "segue", "aprova todas" | nenhum | Repita a pergunta sobre a minuta em revisão |
-| Frase que decide também outra minuta ("aprovo esta e a próxima", "aprovo, e a seguinte também") | nenhum | É aprovação em lote, mesmo que o script aceite. Diga que a próxima será decidida quando for apresentada e repita a pergunta só sobre a em revisão |
-| Pergunta, dúvida ou pedido de explicação | nenhum | Responda e repita a pergunta de decisão |
+Qualquer outra resposta não decide: não a converta numa das frases, porque a frase montada por você seria a sua decisão. Mostre a frase exata com o ID da minuta em revisão e espere que ele a digite; a próxima minuta é decidida quando for apresentada. Aprovação que pede mudança é ajuste: mostre "ajuste <ID>: <o que mudar>" e espere que ele a digite com a instrução dele; se a ressalva não diz o que mudar, pergunte. Pergunta ou dúvida: responda e repita a pergunta de decisão.
 
-Se o script recusar a frase, não a reescreva para ela passar. Mostre o motivo da recusa e repita a pergunta. Nunca use para esta minuta uma frase já registrada para outra.
+Se o script recusar a frase, a mensagem traz o motivo, o formato e um exemplo com os dados da triagem. Mostre ao analista o motivo e as três frases com o ID da minuta em revisão, com `<o que mudar>` em branco no ajuste (a instrução do exemplo do script é ilustrativa), e espere a frase nova; não a reescreva para ela passar.
 
 ## Exemplo preenchido
 
@@ -91,8 +83,8 @@ Para a minuta IMP-03 v1 do exemplo de `minuta-por-ponto.md` (certame fictício),
 | 13. RERI | Nada de ato da RERI | Relação de documentos | ✓ nenhum ato da RERI no material |
 | 14. Dado pessoal | Nenhum | Minuta | ✓ |
 | 15. Impugnante | Nenhum dado | Minuta | ✓ |
-| 16. Versão | Registrada e sem edição | Estado da triagem | ✓ registrada, v1, sem alerta de alteração |
+| 16. Versão | Registrada e sem edição | Estado da triagem | ✓ registrada, v1, sha256 igual ao do arquivo, sem alerta de alteração |
 
 Pendências para o analista: transcrever ou não o art. 69, § 4º, e a Súmula 275; preferência entre patrimônio líquido e capital social na redação sugerida.
 
-> Decida sobre a IMP-03 v1: aprovo / ajuste: <o que mudar> / descarto.
+> Decida sobre a IMP-03 v1 digitando uma destas frases: "aprovo IMP-03" / "ajuste IMP-03: <o que mudar>" / "descarto IMP-03".

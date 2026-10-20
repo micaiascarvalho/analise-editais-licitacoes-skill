@@ -1,13 +1,14 @@
-"""Comandos da triagem: slug, iniciar, status, documentos, prosseguir, prazo, itens, decidir e reabrir."""
+"""Comandos da triagem: slug, iniciar, status, documentos, prosseguir, prazo, itens, decidir e reabrir (as frases
+seguem o formato fixo de formatos.py)."""
 import sys
 
 from .arquivos import archive
 from .comum import (DOC_CODES, FORMAT_VERSION, ID_RE, KINDS, MAX_SLUG, SLUG_RE, Refusal, check_year, id_number, log,
-                    make_slug, ordered, parse_date, plain, split_list, stamp, study_hash)
-from .evidencia import check_evidence
-from .fases import require_gate, status
+                    make_slug, parse_date, plain, split_list, stamp)
+from .fases import current_study, ids_with, require_gate, status
+from .formatos import parse_decide, parse_proceed, parse_reopen, reopen_example
 from .peca import invalidate_piece
-from .persistencia import STATE_FILE, leftovers, load, located, locked, read_json, save
+from .persistencia import STATE_FILE, leftovers, located, locked, read_json, save, snapshot
 
 
 def blank_draft(version=0, history=None):
@@ -18,17 +19,6 @@ def blank_draft(version=0, history=None):
 def new_item(item_id, kind, title):
     return {'id': item_id, 'classe': kind, 'titulo': title, 'decisao': 'pendente', 'evidencia': None,
             'decidido_em': None, 'minuta': blank_draft()}
-
-
-def pick(state, text):
-    ids = list(dict.fromkeys(part.upper() for part in split_list(text)))
-    if not ids:
-        raise Refusal('informe os IDs separados por vírgula.')
-    known = {item['id']: item for item in state['itens']}
-    unknown = [item_id for item_id in ids if item_id not in known]
-    if unknown:
-        raise Refusal(f'IDs não registrados: {", ".join(unknown)}.')
-    return [known[item_id] for item_id in ids]
 
 
 def parse_codes(text):
@@ -74,7 +64,7 @@ def cmd_proceed(state, folder, args):
         raise Refusal('o portão documental ainda não foi registrado: rode "documentos" primeiro.')
     if not docs['faltas']:
         raise Refusal('não há faltas no portão documental: não é preciso prosseguir.')
-    evidence = check_evidence(args.evidencia, 'prosseguir')
+    evidence = parse_proceed(args.evidencia, docs['faltas'])
     docs['prosseguir'] = {'evidencia': evidence, 'quando': stamp(), 'faltas': list(docs['faltas'])}
     log(state, 'prosseguir', f'sem {", ".join(docs["faltas"])}: "{evidence}"')
     return 'Decisão de prosseguir registrada: o portão está resolvido; siga para o levantamento.'
@@ -136,34 +126,34 @@ def cmd_items(state, folder, args):
 
 
 def cmd_decide(state, folder, args):
+    """Aplica todas as cláusulas da frase numa chamada; o item não citado continua pendente."""
     require_gate(state)
     if not state['itens']:
         raise Refusal('nenhum item registrado: registre o levantamento com "itens" antes de decidir.')
-    evidence = check_evidence(args.evidencia, 'decidir', decision=args.decisao)
-    if args.ids.strip().upper() == 'PENDENTES':
-        targets = [item for item in ordered(state['itens']) if item['decisao'] == 'pendente']
-        if not targets:
-            raise Refusal('não há itens pendentes.')
-    else:
-        targets = pick(state, args.ids)
-    blocked = [item['id'] for item in targets if item['minuta']['status']]
+    evidence, plan = parse_decide(args.evidencia, state['itens'])
+    blocked = [item['id'] for _, targets in plan for item in targets if item['minuta']['status']]
     if blocked:
-        raise Refusal(f'{", ".join(blocked)} já tem minuta aberta ou decidida: para mudar a decisão use "reabrir" '
-                      'com o motivo.')
-    for item in targets:
-        if args.decisao == 'incluir' and item['decisao'] != 'incluir':
-            invalidate_piece(state, item['classe'], f'{item["id"]} incluído')
-        item.update(decisao=args.decisao, evidencia=evidence, decidido_em=stamp())
-    ids = ', '.join(item['id'] for item in targets)
-    log(state, 'decidir', f'{ids} → {args.decisao}: "{evidence}"')
-    return f'Decisão registrada para {ids}: {args.decisao.replace("_", " ")}.'
+        raise Refusal(f'{", ".join(blocked)} já tem minuta aberta ou decidida: a decisão não muda pelo "decidir". Se '
+                      'o analista quer mudá-la, peça a frase do reabrir (por exemplo: '
+                      f'"{reopen_example(blocked)}"), rode "reabrir" e depois decida de novo.')
+    done = []
+    for decision, targets in plan:
+        for item in targets:
+            if decision == 'incluir' and item['decisao'] != 'incluir':
+                invalidate_piece(state, item['classe'], f'{item["id"]} incluído')
+            item.update(decisao=decision, evidencia=evidence, decidido_em=stamp())
+        ids = ', '.join(item['id'] for item in targets)
+        log(state, 'decidir', f'{ids} → {decision}: "{evidence}"')
+        done.append(f'{ids}: {decision.replace("_", " ")}')
+    pending = ids_with(state, 'pendente')
+    rest = f' Continuam pendentes: {", ".join(pending)}.' if pending else ''
+    return f'Decisão registrada ({"; ".join(done)}).{rest}'
 
 
 def cmd_reopen(state, folder, args):
     if not state['itens']:
         raise Refusal('nenhum item registrado.')
-    motive = check_evidence(args.motivo, 'reabrir')
-    targets = pick(state, args.ids)
+    targets, motive = parse_reopen(args.evidencia, state['itens'])
     idle = [item['id'] for item in targets if item['decisao'] == 'pendente' and not item['minuta']['status']]
     if idle:
         raise Refusal(f'{", ".join(idle)} já está pendente: não há o que reabrir.')
@@ -203,7 +193,7 @@ def cmd_init(args):
         raise Refusal(f'o slug ficou com {len(slug)} caracteres (máximo {MAX_SLUG}): passe um --slug mais curto.')
     folder = (located(args.raiz) / slug).resolve()
     check_new_folder(folder)
-    study = study_hash(args.manifesto)
+    study = current_study()
     folder.mkdir(parents=True, exist_ok=True)
     with locked(folder):
         check_new_folder(folder)  # outro "iniciar" pode ter gravado enquanto este esperava a trava
@@ -217,11 +207,12 @@ def cmd_init(args):
         log(state, 'iniciar', f'pasta criada para {slug}')
         save(folder, state)
     if study is None:
-        print(f'aviso: MANIFEST.json do estudo não encontrado em {args.manifesto}; estudo_sha256 fica null.',
+        print('aviso: MANIFEST.json do estudo não encontrado em references/estudo/ da skill; estudo_sha256 fica null.',
               file=sys.stderr)
-    return {'mensagem': f'Pasta do edital criada em {folder}.', **status(state, folder, args.manifesto)}
+    return {'mensagem': f'Pasta do edital criada em {folder}.', **status(state, folder)}
 
 
 def cmd_status(args):
     folder = located(args.pasta)
-    return status(load(folder), folder, args.manifesto)
+    state, integrity = snapshot(folder)
+    return status(state, folder, integrity)

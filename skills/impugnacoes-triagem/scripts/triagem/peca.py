@@ -1,11 +1,12 @@
-"""Peça final: verificação, confirmação e invalidação da confirmação (este script não gera PDF)."""
+"""Peça final: verificação, confirmação (tipo e formato vêm da frase do analista, no formato fixo de formatos.py) e
+invalidação da confirmação (este script não gera PDF)."""
 from pathlib import Path
 
 from .arquivos import matches
 from .comum import KIND_LABEL, KINDS, Refusal, log, stamp
-from .evidencia import check_evidence
-from .fases import approval, approved, gate_open, ids_with, queue
-from .persistencia import changing, load, located
+from .fases import TAMPERED, approval, approved, find_model, gate_open, ids_with, queue
+from .formatos import PIECE_FORMATS, parse_piece
+from .persistencia import changing, located, snapshot
 
 
 def invalidate_piece(state, kind, reason):
@@ -14,13 +15,9 @@ def invalidate_piece(state, kind, reason):
         log(state, 'peca_invalidada', f'confirmação da peça de {KIND_LABEL[kind]} desfeita: {reason}')
 
 
-def find_model(assets, kind):
-    found = sorted(path for path in Path(assets).glob(f'modelo-{kind}.*') if path.is_file())
-    return str(found[0]) if found else None
-
-
-def piece_check(state, folder, assets):
-    pending = []
+def piece_check(state, folder, integrity='ok'):
+    """Pendências, aprovadas por tipo e modelos; integrity é a situação do .estado.sha256 lida com o estado."""
+    pending = [TAMPERED[integrity]] if integrity in TAMPERED else []
     if not gate_open(state):
         pending.append('portão documental não resolvido')
     elif state['itens_registrados_em'] is None:
@@ -37,33 +34,43 @@ def piece_check(state, folder, assets):
     if not any(by_kind.values()):
         pending.append('nenhuma minuta aprovada')
     return {'pronto': not pending, 'pendencias': pending, 'aprovadas_por_tipo': by_kind,
-            'modelos': {kind: find_model(assets, kind) for kind in KINDS.values()}, 'confirmadas': state['peca']}
+            'modelos': {kind: find_model(kind) for kind in KINDS.values()}, 'confirmadas': state['peca']}
 
 
 def confirm_piece(state, folder, args):
-    if not args.tipo or not args.formato:
-        raise Refusal('informe --tipo impugnacao|esclarecimento e --formato unico|por_ponto.')
-    label, check = KIND_LABEL[args.tipo], piece_check(state, folder, args.assets)
+    if not args.evidencia:
+        raise Refusal('informe --evidencia com a frase do analista que confirma a peça.')
+    check = piece_check(state, folder)
     if not check['pronto']:
         raise Refusal('a peça ainda não pode ser confirmada; pendências: ' + '; '.join(check['pendencias']) + '.')
-    approvals = check['aprovadas_por_tipo'][args.tipo]
+    kinds = [kind for kind, approvals in check['aprovadas_por_tipo'].items() if approvals]
+    if not any(check['modelos'][kind] for kind in kinds):
+        raise no_model(kinds)
+    kind, formato, evidence = parse_piece(args.evidencia, kinds)
+    label, approvals = KIND_LABEL[kind], check['aprovadas_por_tipo'][kind]
     if not approvals:
         raise Refusal(f'não há minuta de {label} aprovada: não há peça de {label} a confirmar.')
-    model = check['modelos'][args.tipo]
+    model = check['modelos'][kind]
     if not model:
-        raise Refusal(f'não há modelo de {label} em {args.assets} (modelo-{args.tipo}.*): a peça final só sai quando '
-                      'o modelo existir (fase futura). Informe o analista e pare aqui; não gere a peça por outro meio.')
-    evidence = check_evidence(args.evidencia, 'confirmar')
-    state['peca'][args.tipo] = {'formato': args.formato, 'evidencia': evidence, 'quando': stamp(),
-                                'modelo': Path(model).name, 'aprovadas': approvals}
+        raise no_model([kind])
+    state['peca'][kind] = {'formato': formato, 'evidencia': evidence, 'quando': stamp(), 'modelo': Path(model).name,
+                           'aprovadas': approvals}
     ids = ', '.join(entry['id'] for entry in approvals)
-    log(state, 'peca_confirmar', f'{label} ({args.formato}) com {ids}: "{evidence}"')
-    return (f'Peça de {label} confirmada ({args.formato}) com {ids}. Este script não gera o PDF; '
+    log(state, 'peca_confirmar', f'{label} ({formato}) com {ids}: "{evidence}"')
+    return (f'Peça de {label} confirmada (formato {PIECE_FORMATS[formato]}) com {ids}. Este script não gera o PDF; '
             'não assine, não protocole, não envie.')
+
+
+def no_model(kinds):
+    labels = ' nem de '.join(KIND_LABEL[kind] for kind in kinds)
+    pattern = ', '.join(f'modelo-{kind}.*' for kind in kinds)
+    return Refusal(f'não há modelo de {labels} em assets/ da skill ({pattern}): a peça final só sai quando o modelo '
+                   'existir (fase futura). Informe o analista e pare aqui; não gere a peça por outro meio.')
 
 
 def cmd_piece(args):
     if args.acao == 'confirmar':
         return changing(confirm_piece)(args)
     folder = located(args.pasta)
-    return piece_check(load(folder), folder, args.assets)
+    state, integrity = snapshot(folder)
+    return piece_check(state, folder, integrity)

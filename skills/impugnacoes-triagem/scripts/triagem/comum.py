@@ -6,7 +6,10 @@ import unicodedata
 from datetime import datetime
 from pathlib import Path
 
-FORMAT_VERSION = 1
+# 2: pasta com controle de integridade desde o início e frases do analista no formato fixo (formatos.py), que o
+# "validar" confere de novo, com o evento de cada decisão. Pastas com 1 (frase livre, anteriores ao controle)
+# continuam válidas: o "validar" só exige que a frase exista.
+FORMAT_VERSION = 2
 MAX_SLUG = 200
 
 DOC_CODES = ('EDITAL', 'TR', 'ETP', 'PLANILHA', 'PESQUISA', 'MINUTA')
@@ -46,10 +49,8 @@ def nfc(text):
     return unicodedata.normalize('NFC', text)
 
 
-def clauses(text):
-    """Orações da frase em plain(), cada uma com a pontuação que a fecha ("aprovo? não" vira pergunta e negativa)."""
-    parts = re.split(r'([.,;:!?\n]+)', text or '')
-    return [(plain(part), end) for part, end in zip(parts[::2], parts[1::2] + [''])]
+def join_ids(ids):
+    return ids[0] if len(ids) == 1 else f'{", ".join(ids[:-1])} e {ids[-1]}'
 
 
 def split_list(text):

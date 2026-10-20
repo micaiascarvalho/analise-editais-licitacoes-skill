@@ -15,9 +15,13 @@ from prazo import closed_days, deadline, easter, load_calendar
 
 CALENDAR = load_calendar()
 KEYS = {'abertura', 'dias_uteis', 'data_limite', 'data_limite_com_pontos_facultativos', 'dias_desconsiderados',
-        'metodo', 'fundamento', 'hoje', 'situacao', 'dias_uteis_restantes', 'alertas'}
+        'metodo', 'fundamento', 'hoje', 'situacao', 'dias_uteis_restantes', 'feriados_locais_confirmados', 'ato_reri',
+        'alertas'}
 # Semana sem feriados nem pontos facultativos: abertura numa segunda, data-limite na quarta anterior.
 PLAIN_OPENING, PLAIN_LIMIT = date(2026, 3, 9), '2026-03-04'
+LOCAL_UNKNOWN = 'feriados locais não informados: conferir o calendário do órgão (art. 183, III)'
+LOCAL_NONE = 'analista confirmou que não há feriado local no período'
+RERI_ALERT = 'a data de abertura pode ter mudado: conferir no processo da RERI'
 
 
 def run(*args):
@@ -92,6 +96,8 @@ class DeadlineTests(unittest.TestCase):
         self.assertIsNone(result['hoje'])
         self.assertIsNone(result['situacao'])
         self.assertIsNone(result['dias_uteis_restantes'])
+        self.assertIs(result['feriados_locais_confirmados'], False)
+        self.assertIs(result['ato_reri'], False)
         json.dumps(result)
 
     def test_mandatory_alerts(self):
@@ -202,6 +208,8 @@ class CliTests(unittest.TestCase):
         self.assertIn('Data-limite se houver expediente nos pontos facultativos: 16/02/2026 (segunda-feira)', out)
         self.assertIn('12/02/2026 (quinta-feira): feriado local (feriado local)', out)
         self.assertIn('Situação não calculada', out)
+        self.assertIn('Analista confirmou que não há feriado local no período: não', out)
+        self.assertIn('Ato da RERI no material: não', out)
         self.assertIn('Alertas:', out)
 
     def test_invalid_dates_exit_with_1(self):
@@ -379,6 +387,87 @@ class ReviewFixTests(unittest.TestCase):
         self.assertTrue(unicodedata.is_normalized('NFC', result['dias_desconsiderados'][0]['nome']))
         days = closed_days(2026, CALENDAR, [(date(2026, 3, 6), 'A'), (date(2026, 3, 6), 'A'), (date(2026, 3, 6), 'B')])
         self.assertEqual(days[date(2026, 3, 6)]['nome'], 'A / B')
+
+
+class ConfirmationOptionTests(unittest.TestCase):
+    def test_no_local_holiday_replaces_the_local_alert(self):
+        result = deadline(PLAIN_OPENING, calendar=CALENDAR, no_local_holidays=True)
+        self.assertEqual(result['data_limite'], PLAIN_LIMIT)
+        self.assertIs(result['feriados_locais_confirmados'], True)
+        self.assertIs(result['ato_reri'], False)
+        self.assertIn(LOCAL_NONE, result['alertas'])
+        self.assertNotIn(LOCAL_UNKNOWN, result['alertas'])
+        self.assertNotIn(RERI_ALERT, result['alertas'])
+
+    def test_no_local_holiday_option_in_json_and_summary(self):
+        code, out, err = run('--abertura', PLAIN_OPENING, '--sem-feriado-local', '--json')
+        self.assertEqual(code, 0, err)
+        result = json.loads(out)
+        self.assertEqual(set(result), KEYS)
+        self.assertIs(result['feriados_locais_confirmados'], True)
+        self.assertIs(result['ato_reri'], False)
+        self.assertEqual(result['alertas'][1:], [LOCAL_NONE])
+        code, out, err = run('--abertura', PLAIN_OPENING, '--sem-feriado-local')
+        self.assertEqual(code, 0, err)
+        self.assertIn('Analista confirmou que não há feriado local no período: sim', out)
+        self.assertIn('Ato da RERI no material: não', out)
+        self.assertIn(f'  - {LOCAL_NONE}', out)
+        self.assertNotIn('feriados locais não informados', out)
+
+    def test_reri_act_adds_its_alert_and_keeps_the_local_one(self):
+        result = deadline(PLAIN_OPENING, calendar=CALENDAR, reri_act=True)
+        self.assertEqual(result['data_limite'], PLAIN_LIMIT)
+        self.assertIs(result['ato_reri'], True)
+        self.assertIs(result['feriados_locais_confirmados'], False)
+        self.assertEqual(result['alertas'].count(RERI_ALERT), 1)
+        self.assertIn(LOCAL_UNKNOWN, result['alertas'])
+        self.assertNotIn(LOCAL_NONE, result['alertas'])
+
+    def test_reri_act_option_in_json_and_summary(self):
+        code, out, err = run('--abertura', PLAIN_OPENING, '--feriado-local', '2026-03-06:Feriado fictício',
+                             '--ato-reri', '--json')
+        self.assertEqual(code, 0, err)
+        result = json.loads(out)
+        self.assertIs(result['ato_reri'], True)
+        self.assertIs(result['feriados_locais_confirmados'], False)
+        self.assertEqual(result['data_limite'], '2026-03-03')
+        self.assertIn(RERI_ALERT, result['alertas'])
+        self.assertFalse(any('feriados locais' in a or 'feriado local' in a for a in result['alertas']))
+        code, out, err = run('--abertura', PLAIN_OPENING, '--ato-reri')
+        self.assertEqual(code, 0, err)
+        self.assertIn('Ato da RERI no material: sim', out)
+        self.assertIn('Analista confirmou que não há feriado local no período: não', out)
+        self.assertIn(f'  - {RERI_ALERT}', out)
+
+    def test_both_options_together_keep_urgency_last(self):
+        code, out, err = run('--abertura', PLAIN_OPENING, '--hoje', '2026-03-03', '--sem-feriado-local', '--ato-reri',
+                             '--json')
+        self.assertEqual(code, 0, err)
+        result = json.loads(out)
+        self.assertIs(result['feriados_locais_confirmados'], True)
+        self.assertIs(result['ato_reri'], True)
+        alerts = result['alertas']
+        self.assertEqual(alerts[1:3], [LOCAL_NONE, RERI_ALERT])
+        self.assertNotIn(LOCAL_UNKNOWN, alerts)
+        self.assertEqual(len(alerts), 4)
+        self.assertTrue(alerts[-1].startswith('ATENÇÃO'), alerts)
+        code, out, err = run('--abertura', PLAIN_OPENING, '--sem-feriado-local', '--ato-reri')
+        self.assertEqual(code, 0, err)
+        self.assertIn('Analista confirmou que não há feriado local no período: sim', out)
+        self.assertIn('Ato da RERI no material: sim', out)
+
+    def test_no_local_holiday_conflicts_with_informed_local_holiday(self):
+        for holiday in ('2026-03-06:Feriado fictício', '2025-03-06:Feriado de outro ano'):
+            with self.subTest(holiday=holiday):
+                code, out, err = run('--abertura', PLAIN_OPENING, '--sem-feriado-local', '--feriado-local', holiday,
+                                     '--json')
+                self.assertEqual(code, 1)
+                self.assertEqual(out, '')
+                self.assertTrue(err.startswith('erro: --feriado-local e --sem-feriado-local se excluem'), err)
+                self.assertIn('só --sem-feriado-local se o analista confirmou', err)
+        with self.assertRaisesRegex(ValueError, 'se excluem'):
+            deadline(PLAIN_OPENING, local_holidays=[(date(2026, 3, 6), 'X')], calendar=CALENDAR,
+                     no_local_holidays=True)
 
 
 if __name__ == '__main__':

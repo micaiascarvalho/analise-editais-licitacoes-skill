@@ -8,6 +8,11 @@ Uso:
   prazo.py --abertura 2026-04-06                            resumo legível
   prazo.py --abertura 2026-04-06 --hoje 2026-03-30 --json   resultado em JSON (para "estado.py prazo --dados -")
   prazo.py --abertura 2026-04-06 --feriado-local 2026-04-02:Aniversário da cidade
+  prazo.py --abertura 2026-04-06 --sem-feriado-local        o analista confirmou que não há feriado local no período
+  prazo.py --abertura 2026-04-06 --ato-reri                 há ato da RERI no material: a abertura pode ter mudado
+
+--feriado-local (repetido para cada feriado) e --sem-feriado-local se excluem. Num recálculo, repita todas as
+opções: o registro novo substitui o anterior no estado.
 """
 import argparse
 import json
@@ -29,6 +34,12 @@ KINDS = {'nacional': 'feriado nacional', 'local': 'feriado local', 'ponto_facult
 SITUATIONS = {'no_prazo': 'no prazo', 'ultimo_dia': 'último dia', 'vencido': 'vencido'}
 WEEKDAYS = ('segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado', 'domingo')
 ISO_DATE = re.compile(r'\d{4}-\d{2}-\d{2}')
+LOCAL_UNKNOWN = 'feriados locais não informados: conferir o calendário do órgão (art. 183, III)'
+LOCAL_NONE = 'analista confirmou que não há feriado local no período'
+RERI_ALERT = 'a data de abertura pode ter mudado: conferir no processo da RERI'
+LOCAL_CONFLICT = ('--feriado-local e --sem-feriado-local se excluem: use --feriado-local AAAA-MM-DD:nome para cada '
+                  'feriado local informado, ou só --sem-feriado-local se o analista confirmou que não há nenhum no '
+                  'período')
 
 
 def easter(year):
@@ -241,10 +252,15 @@ def urgency(result):
     return []
 
 
+def local_alerts(result, has_local):
+    if result['feriados_locais_confirmados']:
+        return [LOCAL_NONE]
+    return [] if has_local else [LOCAL_UNKNOWN]
+
+
 def alerts(result, opening_closed, has_local, other_year):
     items = ['conferir o horário-limite no edital: ele pode fixar hora para o protocolo no último dia']
-    if not has_local:
-        items.append('feriados locais não informados: conferir o calendário do órgão (art. 183, III)')
+    items += local_alerts(result, has_local)
     if other_year:
         first, last = result['data_limite'][:4], result['abertura'][:4]
         span = first if first == last else f'{first} e {last}'
@@ -261,14 +277,20 @@ def alerts(result, opening_closed, has_local, other_year):
     if opening_closed:
         items.append(f"a abertura ({br(result['abertura'])}) cai em dia sem expediente ({opening_closed}): "
                      'conferir a data no edital e se houve retificação')
+    if result['ato_reri']:
+        items.append(RERI_ALERT)
     return items + urgency(result)
 
 
-def deadline(opening, business_days=3, local_holidays=(), today=None, calendar=None):
+def deadline(opening, business_days=3, local_holidays=(), today=None, calendar=None, *, no_local_holidays=False,
+             reri_act=False):
+    """no_local_holidays: o analista confirmou que não há feriado local no período; reri_act: há ato da RERI."""
     if business_days < 1:
         raise ValueError(f'o número de dias úteis deve ser pelo menos 1 (recebido: {business_days})')
     # Sem repetição e em NFC: num recálculo a lista pode voltar inteira, e o nome pode vir colado em NFD.
     local_holidays = tuple(dict.fromkeys((day, unicodedata.normalize('NFC', name)) for day, name in local_holidays))
+    if no_local_holidays and local_holidays:
+        raise ValueError(LOCAL_CONFLICT)
     lookup = closed_lookup(load_calendar() if calendar is None else calendar, local_holidays)
     strict = partial(is_open, lookup=lookup)
     try:
@@ -290,12 +312,18 @@ def deadline(opening, business_days=3, local_holidays=(), today=None, calendar=N
         'hoje': today.isoformat() if today is not None else None,
         'situacao': situation(today, limit),
         'dias_uteis_restantes': count_open(today, limit, strict) if today is not None else None,
+        'feriados_locais_confirmados': bool(no_local_holidays),
+        'ato_reri': bool(reri_act),
     }
     years = range(limit.year, opening.year + 1)
     other_year = [(day, name) for day, name in local_holidays if day.year not in years]
     has_local = len(other_year) < len(local_holidays)
     result['alertas'] = alerts(result, closed_reason(opening, lookup), has_local, other_year)
     return result
+
+
+def yes_no(value):
+    return 'sim' if value else 'não'
 
 
 def summary(result):
@@ -314,6 +342,9 @@ def summary(result):
                      f"dias úteis restantes: {result['dias_uteis_restantes']}")
     else:
         lines.append('Situação não calculada: informe --hoje AAAA-MM-DD.')
+    lines.append('Analista confirmou que não há feriado local no período: '
+                 f"{yes_no(result['feriados_locais_confirmados'])}")
+    lines.append(f"Ato da RERI no material: {yes_no(result['ato_reri'])}")
     lines.append(f"Método: {result['metodo']}")
     lines.append('Alertas:')
     lines += [f'  - {alert}' for alert in result['alertas']]
@@ -340,6 +371,10 @@ def main(argv=None):
     parser.add_argument('--abertura', required=True, metavar='AAAA-MM-DD', help='data de abertura do certame')
     parser.add_argument('--feriado-local', action='append', default=[], metavar='AAAA-MM-DD[:nome]',
                         help='feriado estadual ou municipal do órgão; repita a opção para cada um')
+    parser.add_argument('--sem-feriado-local', action='store_true',
+                        help='o analista confirmou que não há feriado local no período (exclui --feriado-local)')
+    parser.add_argument('--ato-reri', action='store_true',
+                        help='há ato da RERI no material: alerta que a data de abertura pode ter mudado')
     parser.add_argument('--hoje', metavar='AAAA-MM-DD', help='data de referência para a situação do prazo')
     parser.add_argument('--calendario', type=Path, metavar='ARQUIVO.json',
                         help='JSON de feriados (padrão: feriados.json ao lado do script)')
@@ -351,7 +386,8 @@ def main(argv=None):
         opening = parse_date(args.abertura, '--abertura')
         today = parse_date(args.hoje, '--hoje') if args.hoje is not None else None
         local_holidays = [parse_local(item) for item in args.feriado_local]
-        result = deadline(opening, args.dias, local_holidays, today, load_calendar(args.calendario))
+        result = deadline(opening, args.dias, local_holidays, today, load_calendar(args.calendario),
+                          no_local_holidays=args.sem_feriado_local, reri_act=args.ato_reri)
     except (OSError, ValueError, TypeError) as exc:
         print(f'erro: {exc}', file=sys.stderr)
         return 1

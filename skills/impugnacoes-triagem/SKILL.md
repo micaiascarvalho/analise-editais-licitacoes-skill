@@ -14,8 +14,8 @@ Quem faz a análise jurídica e responde pelo que for protocolado é o analista.
 Faça isto no começo de todo turno, mesmo quando o próximo passo parecer óbvio:
 
 1. Localize a pasta do edital (Fase 0). Se ela já existe, rode `estado.py status --pasta <pasta>`. Se ainda não existe, você está na abertura.
-2. Leia `fase`, `proxima_acao` e `alertas`. Prazo vencido, último dia e minuta alterada vão para o início da resposta, numa linha cada. O alerta de prazo não para a fase: decidir se ainda vale protocolar é do analista.
-3. Faça só a ação que a fase permite e pare onde a fase manda esperar o analista. Se a `proxima_acao` e este arquivo divergirem, siga este arquivo: a `proxima_acao` é um resumo e, na peça final, descreve também etapas que dependem do modelo (Fase 5).
+2. Leia `fase`, `proxima_acao` e `alertas`. Prazo vencido, último dia, minuta alterada e `estado.json` alterado fora do `estado.py` vão para o início da resposta, numa linha cada. O alerta de prazo não para a fase: decidir se ainda vale protocolar é do analista.
+3. Faça só a ação que a fase permite e pare onde a fase manda esperar o analista. Se a `proxima_acao` e este arquivo divergirem, siga este arquivo: a `proxima_acao` é um resumo.
 4. Diga ao analista em que etapa a triagem está, com o nome da última coluna da tabela abaixo, e o que você precisa dele.
 5. Se gravou algo no turno, rode `estado.py validar --pasta <pasta>` antes de encerrar.
 
@@ -34,11 +34,11 @@ O `estado.json` é a fonte de verdade, não a memória da conversa. Se o analist
 
 - **Python:** use `<raiz>/.venv/bin/python`, em que `<raiz>` é a raiz do repositório (`git rev-parse --show-toplevel`; fora de um repositório, a pasta de trabalho). Se a `.venv` não existir, crie com `python3 -m venv <raiz>/.venv` e instale com `<raiz>/.venv/bin/pip install -r <skill>/scripts/requirements.txt`. Use os caminhos absolutos: rodado de outra pasta, um caminho relativo cria a `.venv` no lugar errado. O pip do sistema pode estar bloqueado, então use sempre o da `.venv`.
 - **Scripts** em `<skill>/scripts/`: `estado.py` (máquina de estados e portões), `prazo.py` (data-limite para impugnar) e `extrair_texto.py` (texto com marcadores de página). Abaixo, `estado.py` abrevia `<python> <skill>/scripts/estado.py`. O `sync_estudo.py` é só de quem mantém o estudo: a skill nunca edita `references/estudo/`.
-- **Opções que a skill não usa:** `--assets` e `--manifesto` do `estado.py` existem para os testes dos scripts. O modelo da peça vale só em `<skill>/assets/` e o estudo só em `references/estudo/MANIFEST.json`. Apontar para outra pasta abriria o portão da peça com um modelo que ninguém revisou ou esconderia o alerta de estudo alterado.
+- **Caminhos fixos:** o `estado.py` não tem opção para apontar outra pasta. O modelo da peça vale só em `<skill>/assets/` e o estudo só em `references/estudo/MANIFEST.json`. Não crie nem altere arquivos em `<skill>/assets/`: um modelo que ninguém revisou abriria o portão da peça. No `prazo.py`, não use `--calendario` nem `--dias`: o calendário é o `feriados.json` da skill e o prazo é o do art. 164.
 
 ## Por que existem os portões
 
-São quatro. O `estado.py` impõe a ordem entre eles e recusa as respostas vagas mais comuns, mas a lista dele é o mínimo: a decisão explícita depende de você registrar só a frase que a contém (veja "Antes de registrar uma decisão", logo abaixo).
+São quatro. O `estado.py` impõe a ordem entre eles e só aceita a decisão numa frase de formato fixo; garantir que foi o analista quem a digitou, depois de ver o que ela decide, é com você (veja "Antes de registrar uma decisão", logo abaixo).
 
 - **Portão documental:** sem os documentos, o cruzamento fica cego. O analista precisa saber o que deixa de ser examinado antes de decidir se envia o que falta ou prossegue.
 - **Seleção:** cada ponto que vira minuta foi escolhido pelo analista, item a item, depois de ver a lista. Silêncio ou escolha parcial não incluem nada.
@@ -47,14 +47,24 @@ São quatro. O `estado.py` impõe a ordem entre eles e recusa as respostas vagas
 
 ### Antes de registrar uma decisão
 
-O registro da `--evidencia` é a prova de que o analista, e não a skill, decidiu. O script recusa "ok", "segue", "aprova todas" e parecidas, mas aceita muitas respostas que não decidem nada. Por isso, antes de cada `prosseguir`, `decidir`, `minuta --acao aprovar|ajustar|descartar`, `reabrir` ou `peca --acao confirmar`, confira você mesmo:
+A `--evidencia` é a prova de que o analista, e não a skill, decidiu. Por isso cada decisão tem uma frase de formato fixo, que o analista digita:
 
-- **O analista viu o objeto.** A frase vale se veio depois de apresentado o que ela decide: o relatório do portão, a tabela de itens ou a minuta na versão atual. A única exceção é o `prosseguir` (Fase 1).
-- **A frase diz a decisão.** Prosseguir: que ele segue sem os documentos, nomeando cada falta, ou "eles" e "todos" quando responde ao relatório que as listou. Seleção: os IDs, ou "todos", "o resto" e "os demais", com um verbo que corresponda a `--decisao`. Minuta: "aprovo", "ajuste: …" ou "descarto" sobre a minuta em revisão, e só sobre ela. Reabrir: o pedido dele, com o motivo nas palavras dele.
-- **Resposta vaga não registra nada**, mesmo que o script aceite: "isso", "pode", "tá", "fechado", "bora", "sim, pode", "faz aí". Repita a pergunta num formato em que a resposta seja a decisão.
-- **A frase vai inteira.** Copie o trecho em que ele decide sem trocar, acrescentar nem tirar palavras: tirar "todas" ou "mas troque o pedido" para a frase passar é inventar uma decisão.
+| Comando | Frase do analista | Exemplo |
+| :-- | :-- | :-- |
+| `prosseguir` | `prossigo sem <códigos>`, com exatamente as faltas registradas | prossigo sem ETP e PESQUISA |
+| `decidir` | `incluo <IDs>`, `descarto <IDs>`, `deixo para depois <IDs>`, separadas por `;`; "os demais" são os pendentes que a frase não cita | incluo IMP-01, IMP-03 e ESC-02; descarto os demais |
+| `minuta` | `aprovo <ID>`, `descarto <ID>` ou `ajuste <ID>: <o que mudar>`, com o ID da minuta em revisão | ajuste IMP-01: troque o pedido subsidiário pela suspensão do certame |
+| `reabrir` | `reabro <IDs>: <motivo>` | reabro IMP-01: o patrimônio líquido exigido está dentro do limite legal |
+| `peca --acao confirmar` | `confirmo a peça de impugnação\|esclarecimento em formato único\|por ponto` | confirmo a peça de impugnação em formato único |
+| `aceitar-edicao` | `aceito a edição do estado: <motivo>` | aceito a edição do estado: corrigi o título do ESC-02 à mão |
 
-Os detalhes e os exemplos estão em `references/estado-e-retomada.md`, seção 5.
+O script confere só o formato. Maiúsculas, acentos, espaços repetidos, artigo antes de ID ("a IMP-01") e o ponto final ou a exclamação no fim não importam; vírgula e "e" separam os itens. A instrução do ajuste e os motivos têm pelo menos 10 caracteres. Toda recusa de frase traz o formato e um exemplo preenchido com os dados da triagem.
+
+- **Não converta.** Se o analista responde em texto livre ("pode aprovar essa", "aprovo, mas troca o pedido"), não monte a frase por ele. Mostre a frase exata, preenchida com os dados ("responda: aprovo IMP-01"), e espere que ele a digite. Aprovação que pede mudança é ajuste: mostre "ajuste IMP-01: <o que mudar>". A frase é dele, e é isso que o registro prova.
+- **Copie sem mudar.** A `--evidencia` é a frase que ele escreveu, entre aspas simples. Se ela veio como sentença à parte numa mensagem maior, ou entre aspas copiadas da sua pergunta, registre só a sentença, sem mudar nada nela e sem as aspas que a cercam; se o resto da mensagem a condiciona ou pede mudança ("aprovo IMP-01. Mas troque o pedido"), ela não decide: mostre a frase certa e espere.
+- **Depois de ver o objeto.** A frase vale se veio depois de apresentado o que ela decide: o relatório do portão, a tabela de itens ou a minuta na versão atual. A única exceção é o `prosseguir` (Fase 1). A decisão de uma minuta é sobre a minuta em revisão.
+
+Os detalhes estão em `references/estado-e-retomada.md`, seção 5.
 
 ## Fase 0 — abertura ou retomada
 
@@ -74,10 +84,10 @@ Os detalhes e os exemplos estão em `references/estado-e-retomada.md`, seção 5
      | estado.py prazo --pasta <pasta> --dados -
    ```
 
-   Passe `--feriado-local AAAA-MM-DD:nome` para cada feriado local que o analista ou o edital informar. O prazo segue `EXT-LEI14133-ART164`, contado por `EXT-LEI14133-ART183`, e só alerta: nunca bloqueia. Se houver ato da RERI no material, use a variante com o alerta "a data de abertura pode ter mudado: conferir no processo da RERI" (`references/estado-e-retomada.md`, seção 4), agora e em todo recálculo. Recalcule só se a data, os feriados locais ou o dia mudarem.
+   Acrescente `--feriado-local AAAA-MM-DD:nome` para cada feriado local que o analista ou o edital informar, ou `--sem-feriado-local` se o analista confirmou que não há feriado local no período (as duas se excluem; a segunda registra a confirmação e troca o alerta "feriados locais não informados" por "analista confirmou que não há feriado local no período"), e anote o que passou na linha "Feriados locais" do `documentos.md`. Se houver ato da RERI no material, acrescente `--ato-reri`: ele inclui o alerta "a data de abertura pode ter mudado: conferir no processo da RERI". O prazo segue `EXT-LEI14133-ART164`, contado por `EXT-LEI14133-ART183`, e só alerta: nunca bloqueia. Recalcule só se a data, os feriados locais, o ato da RERI ou o dia mudarem, e repita todas as opções: o registro novo substitui o anterior (`references/estado-e-retomada.md`, seção 4).
 8. **Regime.** Confira no preâmbulo do edital se o certame é regido pela Lei 14.133/2021 (`EXT-LEI14133-GERAL`). O estudo, os mapas e a regra do prazo foram feitos para ela. Em outro regime, avise que a skill não se aplica integralmente, registre isso em `documentos.md` e espere o analista dizer se segue assim mesmo.
 9. **Esfera do ente.** Federal, estadual, distrital ou municipal: ela decide se uma norma `federal (União)` cede ao regulamento do ente. Informe no `iniciar` ou depois, com `--esfera` no comando `documentos`. Se o edital não deixar claro, pergunte ao analista junto com o relatório do portão e, até a resposta, trate toda fonte `federal (União)` como "conferir no regulamento do ente".
-10. **`documentos.md`.** Identifique os 6 documentos pelo conteúdo, não pelo nome do arquivo: um PDF pode trazer edital, TR e minuta juntos. Procure os títulos no texto extraído (`grep -n` com o marcador de página mais próximo) e monte o arquivo a partir do `inventario.json`. Na mesma busca, procure títulos de atos da RERI dentro dos arquivos ("errata", "aviso de retificação", "aviso de alteração", "resposta ao pedido de esclarecimento", "resposta à impugnação"): um PDF exportado do processo pode juntar o edital a um ato posterior. A cláusula do edital que regula impugnações e esclarecimentos não é ato da RERI. Achando um ato dentro de um arquivo, não leia além do título: registre o arquivo e as páginas PDF em `documentos.md`, deixe essas páginas fora do `mapa-secoes.md` e do levantamento e registre o prazo de novo com o alerta da RERI.
+10. **`documentos.md`.** Identifique os 6 documentos pelo conteúdo, não pelo nome do arquivo: um PDF pode trazer edital, TR e minuta juntos. Procure os títulos no texto extraído (`grep -n` com o marcador de página mais próximo) e monte o arquivo a partir do `inventario.json`. Na mesma busca, procure títulos de atos da RERI dentro dos arquivos ("errata", "aviso de retificação", "aviso de alteração", "resposta ao pedido de esclarecimento", "resposta à impugnação"): um PDF exportado do processo pode juntar o edital a um ato posterior. A cláusula do edital que regula impugnações e esclarecimentos não é ato da RERI. Achando um ato dentro de um arquivo, não leia além do título: registre o arquivo e as páginas PDF em `documentos.md`, deixe essas páginas fora do `mapa-secoes.md` e do levantamento e registre o prazo de novo com `--ato-reri`.
 
 ```markdown
 # Documentos — Órgão Exemplo, PE 1/2026
@@ -85,6 +95,7 @@ Os detalhes e os exemplos estão em `references/estado-e-retomada.md`, seção 5
 - Regime: Lei 14.133/2021 (preâmbulo do edital, p. PDF 1)
 - Esfera do ente: municipal
 - Processo administrativo: 0001/2026 (preâmbulo do edital, p. PDF 1)
+- Feriados locais: não informados
 
 | Código | Status | Arquivo | Páginas ou seção | sha256 (inventário) |
 | :-- | :-- | :-- | :-- | :-- |
@@ -100,7 +111,7 @@ Os detalhes e os exemplos estão em `references/estado-e-retomada.md`, seção 5
 - Arquivos não extraídos: nenhum.
 ```
 
-"Referido e não fornecido" é o anexo que o edital cita mas que não veio no material. Para o `estado.py`, ele é uma falta como o ausente, mas o relatório distingue os dois, porque o primeiro talvez esteja publicado em outro lugar. Se o edital não informar o processo administrativo, escreva "não informado".
+"Referido e não fornecido" é o anexo que o edital cita mas que não veio no material. Para o `estado.py`, ele é uma falta como o ausente, mas o relatório distingue os dois, porque o primeiro talvez esteja publicado em outro lugar. Se o edital não informar o processo administrativo, escreva "não informado". Em "Feriados locais", anote o que foi passado ao `prazo.py`: "não informados", "nenhum, confirmado pelo analista em AAAA-MM-DD" (`--sem-feriado-local`) ou cada `AAAA-MM-DD:nome` de `--feriado-local`. O prazo registrado não guarda essa lista, e todo recálculo precisa repeti-la.
 
 ## Fase 1 — portão documental
 
@@ -111,11 +122,11 @@ Os detalhes e os exemplos estão em `references/estado-e-retomada.md`, seção 5
 | :-- | :-- |
 | Sem faltas | O portão abre. Diga ao analista, numa linha cada e sem esperar resposta, o prazo, os atos da RERI encaminhados, as páginas que pedem OCR e os arquivos não extraídos, se houver; se a esfera não estiver clara, pergunte junto, sem parar. Siga para a Fase 2 no mesmo turno, salvo se o regime não for a Lei 14.133 (Fase 0, passo 8): aí espere a resposta. |
 | Com faltas, sem frase anterior do analista sobre elas | Responda só com o relatório do portão e pare. Não faça levantamento parcial enquanto espera: o analista decide sabendo o que fica de fora. |
-| Com faltas, e o analista já disse antes que segue sem cada uma delas, pelo nome ("não tenho ETP nem pesquisa, pode seguir") | Registre `prosseguir` com essa frase. Abra a resposta com o resumo do portão (cada falta e o que deixa de ser examinado, o prazo, os atos da RERI) e siga para a Fase 2 no mesmo turno. |
-| Com faltas, e a frase anterior cobre só parte delas ou não nomeia nenhuma ("segue com o que tiver") | Não registre. Apresente o relatório e pergunte sobre as faltas que a frase não nomeia. |
-| Falta o EDITAL (vale sobre as linhas acima) | Peça o edital, sem oferecer o prosseguir: sem ele não há ato a impugnar nem data de abertura para o prazo. Registre `prosseguir` só se o analista, depois de saber disso, disser que segue sem o edital, com essas palavras. |
+| Com faltas, e o analista já escreveu antes a frase do formato com exatamente essas faltas ("prossigo sem ETP e PESQUISA") | Registre `prosseguir` com essa frase (só ela, sem o resto da mensagem). Abra a resposta com o resumo do portão (cada falta e o que deixa de ser examinado, o prazo, os atos da RERI) e siga para a Fase 2 no mesmo turno. |
+| Com faltas, e a frase anterior está fora do formato ou não cita exatamente as faltas ("não tenho ETP nem pesquisa, pode seguir", "segue com o que tiver") | Não registre nem converta. Apresente o relatório e peça a frase pronta. |
+| Falta o EDITAL (vale sobre as linhas acima) | Peça o edital, sem oferecer o prosseguir: sem ele não há ato a impugnar nem data de abertura para o prazo. Registre `prosseguir` só se o analista, depois de saber disso, digitar a frase com o EDITAL entre as faltas. |
 
-O relatório do portão traz, nesta ordem: o prazo (data-limite, situação e alertas); o que falta, separando o ausente do referido e não fornecido, com o efeito de cada falta; os atos da RERI encaminhados; as páginas que pedem OCR e os arquivos não extraídos; a esfera, se não estiver clara; e a pergunta, com as faltas nomeadas: "Envia os documentos ou prossegue sem eles (ETP e pesquisa de preços)?".
+O relatório do portão traz, nesta ordem: o prazo (data-limite, situação e alertas); o que falta, separando o ausente do referido e não fornecido, com o efeito de cada falta; os atos da RERI encaminhados; as páginas que pedem OCR e os arquivos não extraídos; a esfera, se não estiver clara; e a pergunta, com as faltas nomeadas e a frase pronta: "Envia os documentos (ETP e pesquisa de preços) ou prossegue sem eles? Para prosseguir, responda: prossigo sem ETP e PESQUISA".
 
 Efeito de cada falta, para o relatório. As referências aos mapas são para você conferir; ao analista, diga o efeito em linguagem comum:
 
@@ -128,7 +139,7 @@ Efeito de cada falta, para o relatório. As referências aos mapas são para voc
 | PESQUISA | O valor estimado, as fontes de preço e a data das cotações. |
 | MINUTA | Pagamento, repactuação e reajuste, garantia de execução, conta vinculada e as divergências entre minuta, edital e TR. |
 
-3. **Resposta do analista.** Se ele envia o que faltava, trate cada arquivo novo como na Fase 0 (título antes de extrair, para separar ato da RERI; extração; erros), atualize `documentos.md` e rode `documentos` de novo. Se ele decide prosseguir, confira que a frase nomeia cada falta, ou diz "eles" ou "todos" em resposta ao relatório, e registre: `estado.py prosseguir --pasta <pasta> --evidencia 'prossiga sem o ETP e sem a pesquisa'`. O script não confere essa cobertura: ele marca como autorizadas todas as faltas do portão, inclusive a que a frase esqueceu. Se faltar alguma, pergunte só sobre ela.
+3. **Resposta do analista.** Se ele envia o que faltava, trate cada arquivo novo como na Fase 0 (título antes de extrair, para separar ato da RERI; extração; erros), atualize `documentos.md` e rode `documentos` de novo; se ainda faltar algo, peça a frase só com o que resta. Se ele decide prosseguir, registre a frase dele: `estado.py prosseguir --pasta <pasta> --evidencia 'prossigo sem ETP e PESQUISA'`. O script recusa a frase que esquece uma falta registrada ou cita um documento que não falta. Se ele responde de outro jeito ("pode seguir sem eles"), não registre: mostre a frase pronta e espere que ele a digite.
 
 ## Fase 2 — levantamento
 
@@ -138,27 +149,25 @@ Leia `references/levantamento.md` antes de começar. Ele traz o método de cruza
 2. **Um documento por vez.** Abra `references/estudo/<documento>/fontes.md` e leia o texto extraído só nas faixas de página que o `mapa-secoes.md` indicar. Percorra as tabelas seção por seção, não a matriz resumo do fim, e aplique "Gera impugnação se…" e "Descarta se…" a cada linha. Isso mantém o contexto pequeno e garante que nenhuma linha do mapa fique sem exame.
 3. **CCT.** Quando um item depende de piso, adicional, benefício, jornada ou data-base, leia `references/consulta-cct.md` e siga os provedores na ordem dele. Registre no item qual provedor respondeu, ou "conferir na CCT".
 4. **Fontes.** Siga as regras de fontes abaixo. Fonte oficial consultada que não está no catálogo vai para `<pasta>/fontes-novas.md`.
-5. **Prazo.** O prazo já foi registrado na Fase 0. Se a data de abertura não estava à vista, registre-o assim que achá-la. Recalcule (comando da Fase 0) se a data, os feriados locais ou o dia mudaram.
+5. **Prazo.** O prazo já foi registrado na Fase 0. Se a data de abertura não estava à vista, registre-o assim que achá-la. Recalcule (comando da Fase 0, repetindo todas as opções) se a data, os feriados locais, o ato da RERI ou o dia mudaram.
 6. **Gravar.** Escreva `<pasta>/levantamento.md`, gere `<pasta>/itens.json` a partir da matriz (lista de `{"id", "classe", "titulo"}`) e registre com `estado.py itens --pasta <pasta> --arquivo <pasta>/itens.json`.
-7. **Parar.** Apresente o resultado como em `references/levantamento.md`, seção 13: o prazo, os documentos analisados e os não fornecidos, os atos da RERI encaminhados, a tabela "Itens para seleção" (ID, classe, título, efeito, prova, localizador), o número de descartados e de riscos e as pendências. Peça a decisão sobre cada item. Não escreva minuta nesta fase, nem se o analista pedir "já faz as minutas": ele precisa ver os itens antes de escolher.
+7. **Parar.** Apresente o resultado como em `references/levantamento.md`, seção 13: o prazo, os documentos analisados e os não fornecidos, os atos da RERI encaminhados, a tabela "Itens para seleção" (ID, classe, título, efeito, prova, localizador), o número de descartados e de riscos e as pendências. Peça a decisão sobre os itens na frase da Fase 3. Não escreva minuta nesta fase, nem se o analista pedir "já faz as minutas": ele precisa ver os itens antes de escolher.
 
 **Subagentes** só podem ser usados aqui, por exemplo um por documento, como descreve `references/levantamento.md`, seção 14 (o que cada um recebe e devolve). Quem conversa com o analista consolida, numera os IDs e as fontes novas, confere cada trecho literal no texto extraído e grava os arquivos. Nas minutas não se usa subagente: a minuta é escrita e apresentada por quem conversa com o analista.
 
 ## Fase 3 — seleção
 
-Para cada ID, o analista decide entre incluir, descartar ou avaliar depois. Registre a frase literal dele (entre aspas simples, como em `references/estado-e-retomada.md`, seção 5), uma chamada por decisão:
+Para cada ID, o analista decide entre incluir, descartar ou deixar para depois, numa frase só, com cláusulas separadas por ";": "incluo <IDs>", "descarto <IDs>", "deixo para depois <IDs>". No lugar dos IDs, "os demais" são os pendentes que a frase não cita. Uma chamada registra a frase inteira:
 
 ```bash
-estado.py decidir --pasta <pasta> --ids IMP-01,IMP-03,ESC-02 --decisao incluir --evidencia 'inclui IMP-01, IMP-03 e ESC-02, descarta o resto'
-estado.py decidir --pasta <pasta> --ids PENDENTES --decisao descartar --evidencia 'inclui IMP-01, IMP-03 e ESC-02, descarta o resto'
+estado.py decidir --pasta <pasta> --evidencia 'incluo IMP-01, IMP-03 e ESC-02; descarto os demais'
 ```
 
-- Só vale frase dada depois que a tabela "Itens para seleção" foi apresentada. Um pedido inicial como "levanta e já inclui tudo que achar" não decide itens que ele não viu: apresente a tabela e peça a decisão.
-- Confira, em cada chamada, que a frase traz os IDs (ou "todos", "o resto", "os demais") e um verbo que corresponda a `--decisao`. "Descarta a IMP-01" não registra um `incluir`, mesmo que o script aceite.
-- Registre primeiro os IDs que ele nomeou e só depois `PENDENTES`. Na ordem inversa, "descarta o resto" descartaria também os que ele quis incluir.
-- Use `PENDENTES` só quando ele disser algo como "todos", "o resto" ou "os demais". O que ele não mencionou continua pendente, e a fase não avança: pergunte de novo só sobre esses itens.
-- "Avaliar depois" não gera minuta. Esses itens voltam ao analista no início da Fase 5, com o prazo.
-- Se ele mudar de ideia sobre um item que ainda não tem minuta, basta `decidir` de novo. Se o item já tem minuta, aberta ou decidida, use `reabrir` (ver `references/estado-e-retomada.md`, seção 9).
+- Só vale frase dada depois que a tabela "Itens para seleção" foi apresentada. Um pedido inicial como "levanta e já inclui tudo que achar" não decide itens que ele não viu: apresente a tabela e peça a frase.
+- Resposta livre ("inclui a 1 e a 3, o resto descarta", "pode incluir tudo") não se registra. Mostre a frase no formato, com os IDs que ele citou ("incluo IMP-01 e IMP-03; descarto os demais"), e espere que ele a digite. Para incluir todos os pendentes, a frase é "incluo os demais".
+- O item que a frase não cita continua pendente, e a fase não avança. A mensagem do script lista os que restam: peça uma nova frase só sobre eles.
+- "Deixo para depois" não gera minuta. Esses itens voltam ao analista no início da Fase 5, com o prazo.
+- Se ele mudar de ideia sobre um item que ainda não tem minuta, basta uma nova frase de `decidir` com ele. Se o item já tem minuta, aberta ou decidida, o `decidir` recusa: a frase é "reabro <ID>: <motivo>" (ver `references/estado-e-retomada.md`, seção 9).
 
 ## Fase 4 — minutas, uma por vez
 
@@ -167,13 +176,12 @@ Leia `references/minuta-por-ponto.md` antes de escrever a primeira minuta da ses
 1. `estado.py minuta --pasta <pasta> --acao abrir` abre a próxima da fila.
 2. Escreva só `<pasta>/minutas/<ID>.md`, a partir do item do `levantamento.md`, no formato de `minuta-por-ponto.md`. Antes de citar uma fonte, abra a linha completa dela em `references/estudo/catalogo-fontes.md`. Transcreva um dispositivo só se abriu o texto na fonte oficial nesta sessão ou se o catálogo o traz entre aspas como conferido; nos outros casos, parafraseie e cite o ID.
 3. `estado.py minuta --pasta <pasta> --id <ID> --acao registrar` guarda o sha256 da versão.
-4. Apresente a minuta inteira com o checklist de `auditoria-minuta.md` e peça a decisão sobre ela: **aprovo / ajuste: … / descarto**. Pare e espere.
-5. Registre a resposta com a frase literal, sempre com `--evidencia` (o detalhe de cada caso está em `minuta-por-ponto.md`, seção 1, passo 6):
-   - "aprovo" sobre esta minuta: `--acao aprovar`.
-   - Mensagem que aprova e também pede qualquer mudança no texto, com ou sem "mas" ("aprovo, só troca o subsidiário", "aprovo; ajusta o parágrafo 2", "aprovo com a troca do pedido"): é ajuste. Registre com `--acao ajustar` e a frase inteira e avise o analista; nunca como aprovação, mesmo que o script aceite. Se a ressalva não diz o que mudar, pergunte.
-   - "ajuste: …": `--acao ajustar`. O script move a versão para `minutas/historico/<ID>.v<N>.md` e aumenta a versão. Parta da versão do histórico, aplique o ajuste pedido e as correções que ele arrastar, registre e apresente de novo com a lista "O que mudou desde a v<N>".
-   - "descarto" (ou excluir, retirar, remover, não usar): `--acao descartar`.
-6. Não decidem a minuta em revisão: "ok", "segue", "aprova todas", "aprova tudo e gera o PDF" e qualquer frase que aprove também outra minuta ("aprovo esta e a próxima", "aprovo, e a seguinte também"). A última é aprovação em lote, mesmo que o script aceite. Explique que cada minuta precisa da decisão dele depois de lida e repita a pergunta só sobre a em revisão; a próxima será decidida quando for apresentada. Nunca use para uma minuta a frase registrada para outra (confira no `registro.md`).
+4. Apresente a minuta inteira com o checklist de `auditoria-minuta.md` e peça a decisão numa destas frases, com o ID dela: **aprovo IMP-01 / ajuste IMP-01: <o que mudar> / descarto IMP-01**. Pare e espere.
+5. Registre a frase do analista: `estado.py minuta --pasta <pasta> --evidencia 'aprovo IMP-01'`. A ação vem da frase; `--id` é opcional e, se usado, precisa ser o da minuta em revisão (o detalhe de cada caso está em `minuta-por-ponto.md`, seção 1, tabela "Respostas e o que registrar").
+   - "aprovo <ID>": a versão fica aprovada.
+   - "ajuste <ID>: …": o script move a versão para `minutas/historico/<ID>.v<N>.md` e aumenta a versão. Parta da versão do histórico, aplique o ajuste pedido e as correções que ele arrastar, registre e apresente de novo com a lista "O que mudou desde a v<N>".
+   - "descarto <ID>": o arquivo vai para o histórico e o item sai da fila. Ele passa a constar em `minutas_descartadas` no status e não entra na peça.
+6. Qualquer outra resposta não decide (veja "Antes de registrar uma decisão"): mostre a frase exata com o ID da minuta em revisão e espere. A próxima minuta é decidida quando for apresentada.
 7. Depois da decisão, rode `status`. Se a próxima ação for abrir outra minuta, você pode abrir, escrever, registrar e apresentar a próxima no mesmo turno, e para de novo à espera da decisão sobre ela.
 
 Se o arquivo da minuta mudar depois do registro, registre de novo e apresente a versão atual antes de pedir a decisão: o analista decide sobre o texto que viu.
@@ -182,11 +190,11 @@ Se o arquivo da minuta mudar depois do registro, registre de novo e apresente a 
 
 Leia `assets/LEIA-ME.md` (o contrato dos modelos da peça) ao chegar aqui.
 
-1. Rode `estado.py peca --pasta <pasta> --acao verificar` antes de qualquer pergunta. Ele lista as pendências, as versões aprovadas por tipo e os modelos encontrados. `pronto: true` só quer dizer que não há pendências, não que há modelo. Com `modelos` nulo, não pergunte o formato, mesmo que a `proxima_acao` sugira: sem modelo, a resposta não leva a nada.
-2. **Itens em "avaliar depois"** (`itens.avaliar_depois` no status): liste-os com o prazo e pergunte se o analista quer decidir algum agora, com `decidir`. São possíveis impugnações com o prazo correndo, e parar sem lembrá-los deixaria que se perdessem. Se ele incluir algum, a triagem volta à Fase 4.
-3. Se há pendências, resolva-as na fase certa antes de qualquer outra coisa.
-4. **Sem modelo** (`modelos` nulo para o tipo; é o caso hoje): diga ao analista que as minutas aprovadas estão em `<pasta>/minutas/`, liste ID e versão de cada uma e informe que a peça final só sai quando o modelo existir. Pare aqui. Não monte a peça por outro meio, nem em Markdown, DOCX ou PDF. Não crie nem altere arquivos em `<skill>/assets/` e não passe `--assets` ao `estado.py`, mesmo que o analista peça: o modelo é escrito e revisado fora da triagem (fase futura), e criar um para destravar a peça é contornar o portão.
-5. **Com modelo** (fase futura): pergunte o formato, único ou por ponto, separadamente para a peça de impugnação e para a de esclarecimento, a cada uso, sem reaproveitar a escolha de outra triagem. Liste as versões aprovadas e peça a confirmação explícita. Registre com `estado.py peca --pasta <pasta> --acao confirmar --tipo impugnacao|esclarecimento --formato unico|por_ponto --evidencia '...'`.
+1. Rode `estado.py peca --pasta <pasta> --acao verificar` antes de qualquer pergunta. Ele lista as pendências, as versões aprovadas por tipo e os modelos encontrados. `pronto: true` só quer dizer que não há pendências, não que há modelo. Com `modelos.<tipo>` nulo para o tipo da minuta aprovada, não pergunte o formato: sem modelo, a resposta não leva a nada.
+2. **Itens em "avaliar depois"** (`itens.avaliar_depois` no status): liste-os com o prazo e pergunte se o analista quer decidir algum agora, com a frase do `decidir` (por exemplo, "incluo ESC-03"). São possíveis impugnações com o prazo correndo, e parar sem lembrá-los deixaria que se perdessem. Se ele incluir algum, a triagem volta à Fase 4.
+3. Se há pendências, resolva-as na fase certa antes de qualquer outra coisa. A pendência "nenhuma minuta aprovada" (todas descartadas, ou nenhum item incluído) não se resolve: não há peça a gerar. Diga isso ao analista, lembre os itens do passo 2 com o prazo, rode `validar` e encerre.
+4. **Sem modelo** (`modelos` nulo para o tipo; é o caso hoje): diga ao analista que as minutas aprovadas estão em `<pasta>/minutas/`, liste ID e versão de cada uma (`aprovadas` no status; as de `minutas_descartadas` não entram na peça) e informe que a peça final só sai quando o modelo existir. Pare aqui, sem pedir a frase de confirmação: o `peca --acao confirmar` recusa a falta de modelo antes de conferir a frase. Não monte a peça por outro meio, nem em Markdown, DOCX ou PDF. Não crie nem altere arquivos em `<skill>/assets/`, mesmo que o analista peça: o modelo é escrito e revisado fora da triagem (fase futura), e criar um para destravar a peça é contornar o portão.
+5. **Com modelo** (fase futura): pergunte o formato, único ou por ponto, separadamente para a peça de impugnação e para a de esclarecimento, a cada uso, sem reaproveitar a escolha de outra triagem. Liste as versões aprovadas e peça a frase de cada tipo: "confirmo a peça de impugnação em formato único" ou "confirmo a peça de esclarecimento em formato por ponto". O tipo e o formato saem da frase; registre uma chamada por tipo: `estado.py peca --pasta <pasta> --acao confirmar --evidencia 'confirmo a peça de impugnação em formato único'`.
 6. Ao concluir, rode `validar`. A triagem não assina, não protocola e não envia nada.
 
 ## Regras transversais
@@ -203,10 +211,12 @@ Leia `assets/LEIA-ME.md` (o contrato dos modelos da peça) ao chegar aqui.
 
 ## Quando o script recusa
 
-O `estado.py` sai com código 1 e escreve `erro: …` explicando o que falta. A recusa é o portão funcionando, não um obstáculo a contornar. Código 2 com `usage: … error: …` é outra coisa: opção ou valor digitado errado no comando (por exemplo, `--decisao incluido`). Corrija o comando e rode de novo; não há nada a perguntar ao analista.
+O `estado.py` sai com código 1 e escreve `erro: …` explicando o que falta. A recusa é o portão funcionando, não um obstáculo a contornar. Código 2 com `usage: … error: …` é outra coisa: opção ou valor digitado errado no comando (por exemplo, `minuta --acao aprovar`, que não existe: a decisão vai em `--evidencia`). Corrija o comando e rode de novo; não há nada a perguntar ao analista.
 
 1. Leia a mensagem e explique ao analista, em palavras simples, o que ela significa para a triagem.
-2. Peça a decisão que falta, do jeito que o script indica (por exemplo, "aprovo / ajuste: … / descarto" sobre a minuta em revisão).
+2. Se a recusa é da frase, a mensagem traz o formato esperado e um exemplo preenchido com os dados da triagem. Mostre ao analista a frase pronta para o que ele quer decidir e espere que ele a digite. O exemplo do script é ilustrativo: a frase que você mostra leva os IDs que ele indicou e, no ajuste, `<o que mudar>` em branco, nunca a instrução do exemplo; sem item pendente, não use "os demais".
 3. Registre só quando vier a frase dele.
 
-Não reescreva a frase do analista para ela passar, não edite `estado.json` nem `registro.md` à mão (nem se a mensagem disser "corrija"), não crie arquivos em `minutas/` fora do fluxo, não crie nem altere modelos em `<skill>/assets/`, não passe `--assets` nem `--manifesto` e não gere a peça por outro caminho. Se uma frase claramente explícita for recusada, mostre a mensagem ao analista e peça que ele mesmo a reformule. O contrário também vale: o script aceitar uma frase não a torna decisão. Confira-a como em "Antes de registrar uma decisão". O significado de cada recusa está em `references/estado-e-retomada.md`, seção 6.
+**Alteração fora do `estado.py`.** Cada gravação deixa `<pasta>/.estado.sha256` e uma cópia do estado, `<pasta>/.estado.gravado.json`. Se o `estado.json` mudar por outro caminho, o status alerta, o `validar` sai com 1 e os comandos que gravam recusam. Mostre a alteração ao analista (`diff <pasta>/.estado.gravado.json <pasta>/estado.json` só lê). Se ele a mantém e ela mexe só no título de item ou nos dados do certame (órgão, modalidade, número, ano, esfera; o slug não), peça a frase "aceito a edição do estado: <motivo>" e registre com `estado.py aceitar-edicao --pasta <pasta> --evidencia '...'`. Outra alteração (decisão, minuta, prazo, evento) o script não aceita: o analista desfaz a edição e a mudança que ele quer vai pelo comando dela (`decidir`, `reabrir`, `prazo`). Detalhes em `references/estado-e-retomada.md`, seção 7.
+
+Não reescreva a frase do analista para ela passar, não edite `estado.json`, `registro.md`, `.estado.sha256` nem `.estado.gravado.json` à mão (nem se a mensagem disser "corrija" ou "desfaça"; regravar os dois últimos apagaria o alerta sem a decisão do analista), não crie arquivos em `minutas/` fora do fluxo, não crie nem altere modelos em `<skill>/assets/` e não gere a peça por outro caminho. O script aceitar a frase só confirma o formato: ela vale porque o analista a digitou depois de ver o que ela decide. O significado de cada recusa está em `references/estado-e-retomada.md`, seção 6.

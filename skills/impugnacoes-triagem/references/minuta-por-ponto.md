@@ -25,18 +25,28 @@ Uma minuta por vez, escrita por você nesta conversa, sem subagente: o analista 
    - Se `minuta_em_revisao` já tiver uma minuta (retomada), não abra outra. Se o arquivo existe e foi registrado, refaça o checklist e apresente de novo. Se ainda não foi registrado, termine-o e registre.
 2. **Abra.** Rode `<python> <skill>/scripts/estado.py minuta --pasta <pasta> --acao abrir`. O script escolhe a próxima da fila (todos os IMP por número, depois os ESC) e informa o ID, a versão e o caminho `minutas/<ID>.md`. Não escolha outra ordem.
 3. **Escreva** `minutas/<ID>.md` com a estrutura da seção 3 (IMP) ou 4 (ESC). A versão do cabeçalho é a que o script informou.
-4. **Registre.** Rode `<python> <skill>/scripts/estado.py minuta --pasta <pasta> --id <ID> --acao registrar`. O script guarda o sha256 do arquivo.
+4. **Registre.** Rode `<python> <skill>/scripts/estado.py minuta --pasta <pasta> --id <ID> --acao registrar`. O script guarda o sha256 do arquivo, que o status mostra em `minuta_em_revisao.sha256`.
    - Qualquer edição posterior exige registrar de novo. O script recusa decidir sobre um arquivo que mudou depois do registro, porque o analista aprovaria um texto que não viu.
-5. **Apresente com o checklist.** Preencha a tabela de `auditoria-minuta.md`. Se aparecer um ✗ que você mesmo pode corrigir (trecho, localizador, status de fonte), corrija o arquivo, registre de novo e refaça a tabela. Mostre ao analista a minuta inteira, a tabela e a pergunta de decisão.
-6. **Registre a decisão** com a frase literal do analista, inteira, sem resumir, corrigir nem cortar palavras. Use aspas simples, com cada `'` da frase trocada por `'\''` (`estado-e-retomada.md`, seção 5): dentro de aspas duplas, o shell troca `$4` por vazio, e "R$4.800,00" seria gravado como "R.800,00".
-   - "aprovo" sobre esta minuta: `... minuta --pasta <pasta> --id <ID> --acao aprovar --evidencia '<frase do analista>'`.
-   - Aprovação que também pede mudança no texto, com ou sem "mas" ("aprovo, só troca o subsidiário pela suspensão", "aprovo; ajusta o parágrafo 2 dos fatos"): é ajuste. Registre como no item seguinte, com a frase inteira, e avise o analista de que a minuta volta como nova versão. O script só detecta algumas ressalvas ("mas", "porém", "se", "quando" e parecidas); as outras passariam como aprovação de um texto que ele pediu para mudar. Se a ressalva não diz o que mudar, pergunte antes de registrar.
-   - "ajuste: …": `... --acao ajustar --evidencia '<frase do analista>'`. A versão atual vai para `minutas/historico/<ID>.v<N>.md`, o arquivo some de `minutas/` e a versão sobe. Copie `minutas/historico/<ID>.v<N>.md` para `minutas/<ID>.md`, aplique o ajuste pedido e as correções que ele arrastar (um pedido trocado muda a redação retificadora, por exemplo), atualize a versão no cabeçalho, registre e volte ao passo 5. Não é preciso abrir de novo. Ao apresentar, inclua a lista "O que mudou desde a v<N>", com o ajuste pedido e cada correção feita por você, inclusive as do checklist: o analista confere o que pediu e o que não pediu.
-   - "descarto" (ou excluir, retirar, remover, não usar): `... --acao descartar --evidencia '<frase do analista>'`. O arquivo vai para o histórico e o item sai da fila.
-   - Frase que decide também outra minuta ("aprovo esta e a próxima", "aprovo, e a seguinte também") é aprovação em lote, mesmo que o script aceite: não registre nada e peça a decisão só sobre a em revisão. A frase registrada para uma minuta nunca serve para outra.
+5. **Apresente com o checklist.** Preencha a tabela de `auditoria-minuta.md`. Se aparecer um ✗ que você mesmo pode corrigir (trecho, localizador, status de fonte), corrija o arquivo, registre de novo e refaça a tabela. Mostre ao analista a minuta inteira, a tabela e a pergunta de decisão com as três frases (`auditoria-minuta.md`, "Como apresentar").
+6. **Registre a decisão** quando o analista digitar uma das três frases sobre a minuta em revisão: `aprovo <ID>`, `ajuste <ID>: <o que mudar>` ou `descarto <ID>`. O comando é um só, e a ação vem da frase:
+
+   ```bash
+   <python> <skill>/scripts/estado.py minuta --pasta <pasta> --evidencia 'aprovo IMP-01'
+   ```
+
+   Passe a frase como ele a escreveu, sem mudar nada, entre aspas simples, com cada `'` da frase trocada por `'\''` (`estado-e-retomada.md`, seção 5): dentro de aspas duplas, o shell troca `$4` por vazio, e "R$4.800,00" seria gravado como "R.800,00". O `--id` é opcional; se você o passar, tem de ser o da minuta em revisão. O que cada resposta registra está na tabela abaixo.
 7. **Siga.** Rode `status` e faça a `proxima_acao`. Se for a próxima minuta, recomece no passo 2. Cada resposta apresenta no máximo uma minuta à espera de decisão.
 
-Quando o script recusa a evidência ("ok", aprovação em lote, aprovação com ressalva, descarte sem verbo de descarte, ajuste curto demais), não reescreva a frase do analista para ela passar. Mostre o motivo e repita a pergunta de decisão. Se o analista mudar de ideia sobre um item que já tem minuta, use, a pedido dele e com o motivo nas palavras dele, `estado.py reabrir --pasta <pasta> --ids <ID> --motivo '<motivo do analista>'`, que devolve o item à seleção.
+**Respostas e o que registrar.** O script confere só o formato: maiúsculas, acentos, o artigo antes do ID ("aprovo a IMP-01") e o ponto final não importam. Ele não interpreta texto livre, e você também não converte: a frase registrada é a prova de que o analista decidiu sobre esta versão, e uma frase montada por você seria a sua decisão, não a dele.
+
+| Resposta do analista | O que registrar | O que acontece |
+| :-- | :-- | :-- |
+| `aprovo IMP-01` | A frase, com `minuta --evidencia` | A versão fica aprovada e entra na peça; siga a `proxima_acao` |
+| `ajuste IMP-01: troque o pedido subsidiário pela suspensão do certame` (pelo menos 10 caracteres depois dos dois-pontos) | A frase, com `minuta --evidencia` | A versão atual vai para `minutas/historico/<ID>.v<N>.md`, o arquivo some de `minutas/` e a versão sobe. Copie `minutas/historico/<ID>.v<N>.md` para `minutas/<ID>.md`, aplique o ajuste pedido e as correções que ele arrastar (um pedido trocado muda a redação retificadora, por exemplo), atualize a versão no cabeçalho, registre e volte ao passo 5. Não é preciso abrir de novo. Ao apresentar, inclua a lista "O que mudou desde a v<N>", com o ajuste pedido e cada correção feita por você, inclusive as do checklist: o analista confere o que pediu e o que não pediu |
+| `descarto IMP-01` | A frase, com `minuta --evidencia` | O arquivo vai para o histórico e o item sai da fila. Ele continua incluído na seleção, mas não entra na peça: o status o lista em `minutas_descartadas` |
+| Qualquer outra resposta | Nada | Mostre a frase exata da decisão que ele indicou, com o ID da minuta em revisão ("responda: aprovo IMP-01"), ou as três, se ele não indicou nenhuma, e espere que ele a digite. Aprovação que pede mudança é ajuste: "responda: ajuste IMP-01: <o que mudar>". A próxima minuta é decidida quando for apresentada |
+
+O detalhe de cada resposta que não decide está em `auditoria-minuta.md`, "Da resposta ao comando". Quando o script recusa a frase, a mensagem traz o motivo, o formato e um exemplo com os dados da triagem: mostre ao analista o motivo e a frase no formato, com `<o que mudar>` em branco no ajuste (a instrução do exemplo do script é ilustrativa), e espere que ele digite a frase de novo; não a reescreva nem a complete por ele. Se o analista mudar de ideia sobre um item que já tem minuta, peça a frase `reabro <ID>: <motivo>`, com o motivo nas palavras dele e pelo menos 10 caracteres, e registre com `estado.py reabrir --pasta <pasta> --evidencia '<frase do analista>'`, que devolve o item à seleção.
 
 ---
 
@@ -57,7 +67,7 @@ Se faltar uma fonte que o item do levantamento não listava, procure primeiro no
 
 ## 3. Estrutura da minuta de impugnação (IMP)
 
-Use exatamente estes títulos, nesta ordem: a montagem da peça (fase futura) localiza as partes por eles. Numere os parágrafos de cada seção (1, 2, 3...) para o analista apontar o ajuste ("ajuste: no parágrafo 2 dos fatos..."); a montagem renumera.
+Use exatamente estes títulos, nesta ordem: a montagem da peça (fase futura) localiza as partes por eles. Numere os parágrafos de cada seção (1, 2, 3...) para o analista apontar o ajuste ("ajuste IMP-01: no parágrafo 2 dos fatos, cite a página impressa"); a montagem renumera.
 
 ```markdown
 # <ID> — <título curto>

@@ -1,14 +1,17 @@
-"""Gravação e trava: leitura de entrada e JSON, gravação atômica, trava da pasta e forma do estado.json."""
+"""Gravação e trava: leitura de entrada e JSON, gravação atômica, trava da pasta, forma do estado.json e
+integridade dele (.estado.sha256)."""
+import hashlib
 import json
 import os
+import re
 import sys
 import tempfile
 from contextlib import contextmanager
 from pathlib import Path
 
 from .arquivos import restore
-from .comum import DECISIONS, DOC_CODES, DONE, SLUG_RE, SPHERES, Refusal, nfc
-from .fases import status
+from .comum import DECISIONS, DOC_CODES, DONE, SLUG_RE, SPHERES, Refusal, log, nfc, sha256_file
+from .fases import TAMPERED, status, tampered_help
 from .registro import render_log
 
 try:
@@ -19,8 +22,17 @@ except ImportError:  # Windows: sem fcntl, os comandos rodam sem trava
 STATE_FILE = 'estado.json'
 LOG_FILE = 'registro.md'
 LOCK_FILE = '.estado.lock'
+# sha256 dos bytes do estado.json na última gravação do estado.py: o que diverge foi editado fora dele.
+INTEGRITY_FILE = '.estado.sha256'
+# Marca no estado.json de que a pasta já tem o controle: sem ela e sem o arquivo, a pasta é anterior a ele.
+INTEGRITY_KEY = 'integridade'
+# Eventos que só existem em pasta com o controle: sem o arquivo, a pasta não volta a ser "anterior" a ele.
+CONTROL_EVENTS = {'integridade', 'aceitar_edicao'}
+# Cópia do estado.json da última gravação do estado.py: o aceitar-edicao compara com ela para saber o que mudou.
+SAVED_FILE = '.estado.gravado.json'
+HASH_RE = re.compile(r'[0-9a-f]{64}')
 # O que o "iniciar" aceita numa pasta sem estado.json (texto/ do extrair_texto.py, iniciar interrompido).
-REUSABLE = {'minutas', 'texto', LOCK_FILE}
+REUSABLE = {'minutas', 'texto', LOCK_FILE, INTEGRITY_FILE, SAVED_FILE}
 
 NONE = type(None)
 SHAPE = {'certame': dict, 'estudo_sha256': (str, NONE), 'documentos': (dict, NONE), 'prazo': (dict, NONE),
@@ -66,10 +78,11 @@ def read_json(source, label):
 
 
 def write_atomic(path, text):
+    """Grava os bytes UTF-8 de text, sem tradução de fim de linha: o sha256 do estado.json é o do texto gravado."""
     fd, tmp = tempfile.mkstemp(dir=path.parent, prefix=f'.{path.name}.', suffix='.tmp')
     try:
-        with os.fdopen(fd, 'w', encoding='utf-8') as handle:
-            handle.write(text)
+        with os.fdopen(fd, 'wb') as handle:
+            handle.write(text.encode('utf-8'))
         mask = os.umask(0)
         os.umask(mask)
         os.chmod(tmp, 0o666 & ~mask)  # o mkstemp cria com 0600; o resto da pasta segue o umask
@@ -192,28 +205,113 @@ def load(folder):
 
 
 @contextmanager
-def locked(folder):
-    """Trava exclusiva da pasta: quem grava espera o outro terminar, em vez de sobrescrever o que ele gravou."""
-    with open(folder / LOCK_FILE, 'a', encoding='utf-8') as handle:
-        if fcntl:
-            fcntl.flock(handle, fcntl.LOCK_EX)
+def locked(folder, shared=False):
+    """Trava da pasta. Exclusiva para gravar: quem grava espera o outro terminar, em vez de sobrescrever o que ele
+    gravou. Compartilhada para ler estado.json e .estado.sha256 juntos, sem pegar uma gravação pela metade; se a
+    pasta não deixa criar a trava, a leitura segue sem ela."""
+    try:
+        handle = open(folder / LOCK_FILE, 'a', encoding='utf-8')
+    except OSError:
+        if not shared:
+            raise
+        handle = None
+    try:
+        if handle and fcntl:
+            fcntl.flock(handle, fcntl.LOCK_SH if shared else fcntl.LOCK_EX)
         yield
+    finally:
+        if handle:
+            handle.close()
+
+
+def recorded_hashes(folder):
+    """sha256 aceitos pelo .estado.sha256 (None se ele não existe; vazio se ilegível). Durante uma gravação ele traz
+    também o hash anterior, para que uma gravação interrompida não pareça edição à mão."""
+    try:
+        text = (folder / INTEGRITY_FILE).read_text(encoding='utf-8')
+    except FileNotFoundError:
+        return None
+    except (OSError, UnicodeDecodeError):
+        return set()
+    return {line.split()[0] for line in text.splitlines() if line.split() and HASH_RE.fullmatch(line.split()[0])}
+
+
+def controlled(state):
+    """O estado é de pasta que já tem o controle de integridade: a marca, o formato 2 ou um evento do controle. Tirar
+    a marca e o .estado.sha256 não faz a pasta voltar a ser "anterior" ao controle."""
+    if not isinstance(state, dict):
+        return False
+    version, events = state.get('formato'), state.get('eventos')
+    return bool(state.get(INTEGRITY_KEY)) or (type(version) is int and version >= 2) or (
+        isinstance(events, list) and any(isinstance(event, dict) and event.get('acao') in CONTROL_EVENTS
+                                         for event in events))
+
+
+def integrity(folder, state):
+    """'ok'; 'antiga' (pasta anterior ao controle: a próxima gravação cria o arquivo); 'removido' (o estado é de pasta
+    com o controle, mas o arquivo falta); ou 'alterado' (o sha256 do estado.json não confere)."""
+    accepted = recorded_hashes(folder)
+    if accepted is None:
+        return 'removido' if controlled(state) else 'antiga'
+    try:
+        return 'ok' if sha256_file(folder / STATE_FILE) in accepted else 'alterado'
+    except OSError:
+        return 'alterado'
+
+
+def snapshot(folder):
+    """Estado e situação da integridade, lidos juntos sob a trava compartilhada (status e peça a verificar)."""
+    state_file(folder)
+    with locked(folder, shared=True):
+        state = load(folder)
+        return state, integrity(folder, state)
+
+
+def require_intact(folder, state):
+    """Recusa gravar sobre um estado.json alterado fora do estado.py; numa pasta antiga, anota que o controle começa."""
+    check = integrity(folder, state)
+    if check in TAMPERED:
+        raise Refusal(f'{TAMPERED[check]}: nada foi gravado. {tampered_help(folder)}')
+    if check == 'antiga':
+        log(state, 'integridade', f'{INTEGRITY_FILE} criado: a pasta é anterior ao controle de integridade do '
+                                  f'{STATE_FILE}, e uma edição à mão anterior a esta gravação não seria detectada')
 
 
 def save(folder, state):
-    write_atomic(folder / STATE_FILE, json.dumps(state, ensure_ascii=False, indent=2) + '\n')
+    """Grava estado.json, a cópia dele (.estado.gravado.json), .estado.sha256 e registro.md; só dentro da trava
+    exclusiva da pasta. Enquanto o estado.json é trocado, o .estado.sha256 aceita o hash do arquivo que está no disco
+    e o do novo; depois, só o do novo."""
+    state[INTEGRITY_KEY] = INTEGRITY_FILE
+    path, text = folder / STATE_FILE, json.dumps(state, ensure_ascii=False, indent=2) + '\n'
+    digest = hashlib.sha256(text.encode('utf-8')).hexdigest()
+    current = [sha256_file(path)] if path.is_file() else []
+    write_atomic(folder / INTEGRITY_FILE, ''.join(f'{value}  {STATE_FILE}\n' for value in [digest] + current))
+    write_atomic(path, text)
+    write_atomic(folder / SAVED_FILE, text)
+    write_atomic(folder / INTEGRITY_FILE, f'{digest}  {STATE_FILE}\n')
     write_atomic(folder / LOG_FILE, render_log(state))
 
 
-def changing(change):
-    """Carrega o estado sob a trava da pasta, aplica a mudança, grava estado.json e registro.md e devolve o status."""
+def saved_state(folder):
+    """O estado da última gravação do estado.py (.estado.gravado.json), ou None se a cópia falta ou não se lê."""
+    try:
+        return json.loads(decode((folder / SAVED_FILE).read_bytes(), SAVED_FILE))
+    except (OSError, ValueError, Refusal):
+        return None
+
+
+def changing(change, intact=True):
+    """Carrega o estado sob a trava da pasta, aplica a mudança, grava e devolve o status. Com intact (todos os
+    comandos, menos o aceitar-edicao), recusa o estado.json alterado fora do estado.py antes de mexer em arquivo."""
     def handler(args):
         folder = located(args.pasta)
         state_file(folder)
         with locked(folder):
             state = load(folder)
-            restore(folder, state)
+            if intact:
+                require_intact(folder, state)
+                restore(folder, state)
             message = change(state, folder, args)
             save(folder, state)
-        return {'mensagem': message, **status(state, folder, args.manifesto)}
+        return {'mensagem': message, **status(state, folder)}
     return handler

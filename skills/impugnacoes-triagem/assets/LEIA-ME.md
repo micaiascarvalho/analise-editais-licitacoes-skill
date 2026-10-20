@@ -13,7 +13,7 @@ Quando todas as minutas selecionadas estiverem aprovadas ou descartadas, a skill
 3. informa o analista de que não há modelo em `assets/` e de que a peça final será montada quando ele existir;
 4. para aí, sem perguntar o formato da peça, que só faz sentido com modelo.
 
-O `estado.py peca --acao confirmar` recusa a confirmação enquanto não houver modelo. A skill não contorna a recusa: não gera PDF, DOCX nem uma "peça consolidada" improvisada, não cria nem altera arquivos nesta pasta e não passa `--assets` ao `estado.py` para apontar outra pasta. Uma peça montada sem o modelo revisado sairia sem a qualificação, o endereçamento e o fecho conferidos, e poderia ser protocolada assim por engano. As minutas aprovadas em `minutas/` são a entrega desta etapa.
+O `estado.py peca --acao confirmar` recusa a confirmação enquanto não houver modelo, antes mesmo de conferir a frase do analista. Ele procura o modelo só nesta pasta, sem opção para apontar outra. A skill não contorna a recusa: não gera PDF, DOCX nem uma "peça consolidada" improvisada e não cria nem altera arquivos nesta pasta. Uma peça montada sem o modelo revisado sairia sem a qualificação, o endereçamento e o fecho conferidos, e poderia ser protocolada assim por engano. As minutas aprovadas em `minutas/` são a entrega desta etapa.
 
 ## Nomes dos arquivos
 
@@ -22,7 +22,7 @@ O `estado.py peca --acao confirmar` recusa a confirmação enquanto não houver 
 | `modelo-impugnacao.<ext>` | Peça de impugnação |
 | `modelo-esclarecimento.<ext>` | Peça de pedido de esclarecimento |
 
-O `estado.py peca` procura `modelo-impugnacao.*` e `modelo-esclarecimento.*` nesta pasta. A extensão se decide na fase futura, junto com o formato de montagem. Mantenha um arquivo por tipo: se houver mais de um, o script usa o primeiro em ordem alfabética.
+O `estado.py peca` só reconhece, nesta pasta, o nome exato `modelo-<tipo>.<extensão>`, com uma extensão só e arquivo não vazio. Cópia de editor (`modelo-impugnacao.md~`, `.bak`, `.swp`), arquivo oculto ou com sufixo a mais não conta como modelo: não é o arquivo revisado. A extensão se decide na fase futura, junto com o formato de montagem. Mantenha um arquivo por tipo: se houver mais de um, o script usa o primeiro em ordem alfabética.
 
 ## O que o modelo traz
 
@@ -64,7 +64,7 @@ Ficam de fora o cabeçalho e as "Pendências de conferência". Os marcadores de 
 
 ## Os dois formatos
 
-O analista escolhe o formato separadamente para impugnação e para esclarecimento. A escolha é registrada com `estado.py peca --acao confirmar --tipo impugnacao|esclarecimento --formato unico|por_ponto`.
+O analista escolhe o formato separadamente para impugnação e para esclarecimento, digitando uma frase que traz o tipo e o formato: "confirmo a peça de impugnação em formato único" (ou "de esclarecimento", "em formato por ponto"). A skill registra a frase como veio, com `estado.py peca --pasta <pasta> --acao confirmar --evidencia '<frase do analista>'`, e o script tira dela o tipo e o formato (`unico` ou `por_ponto` no `estado.json`). Resposta fora do formato não confirma nada: a skill mostra a frase exata e espera que ele a digite.
 
 - **Peça única (`unico`):** uma peça por tipo, com todos os pontos aprovados daquele tipo na ordem dos IDs e os pedidos consolidados e numerados no fim.
 - **Uma peça por ponto (`por_ponto`):** uma peça para cada minuta aprovada, cada uma com o seu pedido.
@@ -84,7 +84,7 @@ A separação permite trocar o visual ou o backend sem mexer na regra de quais m
 
 Esta seção é para quem mantém a skill, fora de uma triagem. A skill em execução não cria nem altera modelo, mesmo que o analista peça: um modelo improvisado para destravar a peça contornaria a revisão que o portão exige.
 
-1. Nomeie o arquivo como na tabela de nomes, um por tipo.
+1. Nomeie o arquivo exatamente como na tabela de nomes (`modelo-<tipo>.<extensão>`), um por tipo e não vazio.
 2. Use os marcadores da tabela de campos; não escreva no modelo texto que dependa do certame.
 3. Deixe de fora qualquer dado de pessoa física.
 4. Rode `estado.py peca --pasta <pasta> --acao verificar` numa triagem de teste e confira que o campo `modelos` mostra o arquivo.

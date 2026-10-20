@@ -4,7 +4,7 @@
 
 Este mapa diz, para cada parte de `pesquisa/estrutura.md` e para cada vício de `pesquisa/analise.md`, **onde buscar a prova e o fundamento** antes de decidir se a pesquisa de preços (mapa comparativo de cotações) é impugnável. Cada linha cruza a pesquisa com outro documento do processo (fontes `INT-*`, com a seção a abrir), aponta as fontes externas pelo ID do `catalogo-fontes.md` (o texto, a esfera e o status ficam lá) e fecha com o critério de decisão. As seções 1 a 5 são os 5 parâmetros de `EXT-LEI14133-ART23` (§ 1º, I a V); as seções 6 e 7 são os requisitos de validade e o tratamento matemático (itens 2 e 3 da Estrutura), e a seção 8 reúne os cruzamentos da pesquisa com o resto do processo, que voltam dos mapas do Edital, do TR e do ETP. As seções 1 a 8 vêm só da Estrutura e estão marcadas **[derivada da Estrutura]**; as seções 9 a 13 são os 5 vícios da Análise e o checklist final. Duas seções complementares, sem número, ficam entre a 8 e a 9 e seguem os blocos da Estrutura acrescentados na auditoria de 2026-10-16: "Conteúdo mínimo do documento" e "Serviços com dedicação exclusiva de mão de obra". Antes de citar uma fonte `a conferir` em peça, confira-a no catálogo; `EXT-IN5-2014` é só histórica.
 
-**Como usar:** leia a pergunta-chave, abra o mapa de preços no item indicado e as fontes internas na seção indicada, e extraia o que a coluna "Prova" pede. Para bens e serviços em geral **não há ordem obrigatória** de parâmetros (`EXT-LEI14133-ART23`, § 1º: "combinada ou não"); a prioridade aos parâmetros I e II, os métodos estatísticos e o descarte de valores vêm do regulamento (`EXT-IN65-ART5` e `EXT-IN65-ART6`, só na União), e estados e municípios podem ter regulamento próprio (`EXT-REG-ENTE`) ou aplicar o da União (`EXT-LEI14133-ART187`); a IN 65 é obrigatória para o ente que executa transferência voluntária da União (`EXT-IN65-GERAL`). O DF tem regime próprio (`EXT-DF-DEC44330-PP`): parâmetros obrigatórios, prazos de vigência, descarte por 50% da mediana e valor pelo menor entre média e mediana. São Luís e Teresina têm decretos ainda não conferidos (`EXT-REG-SLZ-60155`, `EXT-REG-THE-24748`). O modelo oficial do documento e a lista de verificação estão em `EXT-SEGES-CADERNO-PP-2024`. Nos serviços com dedicação exclusiva de mão de obra, o valor vem da planilha de custos (`EXT-IN65-ART9`, `EXT-IN5-2017`; ver a seção complementar). Obras e serviços de engenharia seguem `EXT-LEI14133-ART23` (§ 2º), com `EXT-BASE-SINAPI` e `EXT-BASE-SICRO` (seção 1). O Painel de Preços deixou de ser atualizado e saiu do catálogo: a base oficial é `EXT-BASE-PESQPRECOS`, ao lado do `EXT-BASE-PNCP`. A pesquisa costuma ser documento da fase preparatória; se não foi publicada, peça esclarecimento ou acesso (`EXT-LEI14133-ART54`, `EXT-LEI12527-GERAL`) dentro do prazo de impugnação (`EXT-LEI14133-ART164`, `EXT-LEI14133-ART183`; ver `edital/fontes.md`, seção 9). Erro na pesquisa pede **retificação do valor estimado e reabertura do prazo** (`EXT-LEI14133-ART55`, § 1º). Para toda seção, confira também `INT-RERI`.
+**Como usar:** leia a pergunta-chave, abra o mapa de preços no item indicado e as fontes internas na seção indicada, e extraia o que a coluna "Prova" pede. Para bens e serviços em geral **não há ordem obrigatória** de parâmetros (`EXT-LEI14133-ART23`, § 1º: "combinada ou não"); a prioridade aos parâmetros I e II, os métodos estatísticos e o descarte de valores vêm do regulamento (`EXT-IN65-ART5` e `EXT-IN65-ART6`, só na União), e estados e municípios podem ter regulamento próprio (`EXT-REG-ENTE`) ou aplicar o da União (`EXT-LEI14133-ART187`); a IN 65 é obrigatória para o ente que executa transferência voluntária da União (`EXT-IN65-GERAL`). O DF tem regime próprio (`EXT-DF-DEC44330-PP`): parâmetros obrigatórios, prazos de vigência, descarte por 50% da mediana e valor pelo menor entre média e mediana. São Luís e Teresina têm decretos ainda não conferidos (`EXT-REG-SLZ-60155`, `EXT-REG-THE-24748`). O modelo oficial do documento e a lista de verificação estão em `EXT-SEGES-CADERNO-PP-2024`. Nos serviços com dedicação exclusiva de mão de obra, o valor vem da planilha de custos (`EXT-IN65-ART9`, `EXT-IN5-2017`; ver a seção complementar). Obras e serviços de engenharia seguem `EXT-LEI14133-ART23` (§ 2º), com `EXT-BASE-SINAPI` e `EXT-BASE-SICRO` (seção 1). O Painel de Preços deixou de ser atualizado e saiu do catálogo: a base oficial é `EXT-BASE-PESQPRECOS`, ao lado do `EXT-BASE-PNCP`. A pesquisa costuma ser documento da fase preparatória; se não foi publicada, peça esclarecimento ou acesso (`EXT-LEI14133-ART54`, `EXT-LEI12527-GERAL`) dentro do prazo de impugnação (`EXT-LEI14133-ART164`, `EXT-LEI14133-ART183`; ver `edital/fontes.md`, seção 9). Erro na pesquisa pede **retificação do valor estimado e reabertura do prazo** (`EXT-LEI14133-ART55`, § 1º).
 
 ---
 
@@ -232,22 +232,22 @@ Pergunta-chave: "O órgão consultou as bases públicas ou foi direto a cotaçõ
 
 ## Matriz resumo
 
-✓ = cruzamento usado na seção. Na coluna `INT-EDITAL`, o número indica a seção do edital (numeração de `edital/estrutura.md`); na coluna `INT-TR`, a seção do TR; na coluna `INT-ETP`, o inciso do ETP; na coluna `INT-PLANILHA`, o módulo; na coluna `INT-PESQUISA`, o item da própria Estrutura (1: parâmetros; 2: validade; 3: tratamento e mapa; CM: conteúdo mínimo; DE: dedicação exclusiva; PR: a pesquisa no processo); no `INT-PLANILHA`, QF são os quadros finais; na coluna `INT-MINUTA`, a cláusula. `INT-RERI` vale para todas as seções (ver "Como usar").
+✓ = cruzamento usado na seção. Na coluna `INT-EDITAL`, o número indica a seção do edital (numeração de `edital/estrutura.md`); na coluna `INT-TR`, a seção do TR; na coluna `INT-ETP`, o inciso do ETP; na coluna `INT-PLANILHA`, o módulo; na coluna `INT-PESQUISA`, o item da própria Estrutura (1: parâmetros; 2: validade; 3: tratamento e mapa; CM: conteúdo mínimo; DE: dedicação exclusiva; PR: a pesquisa no processo); no `INT-PLANILHA`, QF são os quadros finais; na coluna `INT-MINUTA`, a cláusula.
 
-| Seção | INT-EDITAL | INT-TR | INT-ETP | INT-PLANILHA | INT-PESQUISA | INT-MINUTA | INT-RERI | Externas principais |
-| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
-| 1. Parâmetro I | 7 | III | — | ✓ | 1, 3 | — | — | EXT-BASE-PESQPRECOS, EXT-IN65-ART6, EXT-BASE-SINAPI, EXT-IN65-GERAL |
-| 2. Parâmetro II | — | I, IV | VI | — | 1, 2 | — | — | EXT-LEI14133-ART23, EXT-BASE-PNCP, EXT-IN65-ART5, EXT-DF-DEC44330-PP |
-| 3. Parâmetro III | — | — | — | — | 1 | — | — | EXT-MERC-SITES, EXT-BASE-FIPE, EXT-BASE-ANP, EXT-IN65-ART5 |
-| 4. Parâmetro IV | 1 | — | — | — | 1, 2, CM | — | — | EXT-LEI14133-ART23, EXT-IN65-ART5, EXT-DF-DEC44330-PP, EXT-MERC-COTACOES |
-| 5. Parâmetro V | — | — | — | — | 1 | — | — | EXT-BASE-NFE, EXT-IN65-ART5, EXT-DF-DEC44330-PP |
-| 6. Requisitos de validade | 1 | I, III | VI | — | 2, PR | — | — | EXT-LEI14133-ART23, EXT-IN65-ART4, EXT-DF-DEC44330-PP, EXT-TCU-SUM177 |
-| 7. Tratamento matemático | — | — | — | — | 3 | — | — | EXT-IN65-ART6, EXT-DF-DEC44330-PP, EXT-REG-ENTE |
-| 8. Pesquisa no processo | 3, 4, 7, 13 | IX | VI, VIII | 1 a 6 | 1, 3, DE, PR | 3 | — | EXT-LEI14133-ART23, EXT-LEI14133-ART24, EXT-LC123-ART48, EXT-SEGES-CADERNO-PP-2024 |
-| Conteúdo mínimo [complementar] | — | IX | — | — | CM, 1, 3 | — | — | EXT-IN65-ART3, EXT-SEGES-CADERNO-PP-2024, EXT-DF-DEC44330-PP |
-| Dedicação exclusiva [complementar] | — | I, IX | — | 1 a 6, QF | DE, 1, 2 | — | — | EXT-IN65-ART9, EXT-IN5-2017, EXT-DF-DEC44330-PP |
-| 9. Cotações de cobertura | — | I | — | — | 1, 3 | — | — | EXT-BASE-CNPJ, EXT-TCU-AC1798-2024, EXT-TCU-AC1616-2023 |
-| 10. Economia de escala | — | I | — | — | 1 | — | — | EXT-BASE-PESQPRECOS, EXT-TCU-AC2637-2015 |
-| 11. Expurgo de discrepantes | — | — | — | — | 3 | — | — | EXT-IN65-ART6 |
-| 12. Teto defasado | 7 | — | — | — | 2, 3 | — | — | EXT-BASE-IBGE, EXT-MERC-DECLARACOES |
-| 13. Fuga das bases públicas | — | — | — | — | 1 | — | — | EXT-IN65-ART5, EXT-TCU-AC1445-2015, EXT-BASE-PESQPRECOS, EXT-DF-DEC44330-PP |
+| Seção | INT-EDITAL | INT-TR | INT-ETP | INT-PLANILHA | INT-PESQUISA | INT-MINUTA | Externas principais |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| 1. Parâmetro I | 7 | III | — | ✓ | 1, 3 | — | EXT-BASE-PESQPRECOS, EXT-IN65-ART6, EXT-BASE-SINAPI, EXT-IN65-GERAL |
+| 2. Parâmetro II | — | I, IV | VI | — | 1, 2 | — | EXT-LEI14133-ART23, EXT-BASE-PNCP, EXT-IN65-ART5, EXT-DF-DEC44330-PP |
+| 3. Parâmetro III | — | — | — | — | 1 | — | EXT-MERC-SITES, EXT-BASE-FIPE, EXT-BASE-ANP, EXT-IN65-ART5 |
+| 4. Parâmetro IV | 1 | — | — | — | 1, 2, CM | — | EXT-LEI14133-ART23, EXT-IN65-ART5, EXT-DF-DEC44330-PP, EXT-MERC-COTACOES |
+| 5. Parâmetro V | — | — | — | — | 1 | — | EXT-BASE-NFE, EXT-IN65-ART5, EXT-DF-DEC44330-PP |
+| 6. Requisitos de validade | 1 | I, III | VI | — | 2, PR | — | EXT-LEI14133-ART23, EXT-IN65-ART4, EXT-DF-DEC44330-PP, EXT-TCU-SUM177 |
+| 7. Tratamento matemático | — | — | — | — | 3 | — | EXT-IN65-ART6, EXT-DF-DEC44330-PP, EXT-REG-ENTE |
+| 8. Pesquisa no processo | 3, 4, 7, 13 | IX | VI, VIII | 1 a 6 | 1, 3, DE, PR | 3 | EXT-LEI14133-ART23, EXT-LEI14133-ART24, EXT-LC123-ART48, EXT-SEGES-CADERNO-PP-2024 |
+| Conteúdo mínimo [complementar] | — | IX | — | — | CM, 1, 3 | — | EXT-IN65-ART3, EXT-SEGES-CADERNO-PP-2024, EXT-DF-DEC44330-PP |
+| Dedicação exclusiva [complementar] | — | I, IX | — | 1 a 6, QF | DE, 1, 2 | — | EXT-IN65-ART9, EXT-IN5-2017, EXT-DF-DEC44330-PP |
+| 9. Cotações de cobertura | — | I | — | — | 1, 3 | — | EXT-BASE-CNPJ, EXT-TCU-AC1798-2024, EXT-TCU-AC1616-2023 |
+| 10. Economia de escala | — | I | — | — | 1 | — | EXT-BASE-PESQPRECOS, EXT-TCU-AC2637-2015 |
+| 11. Expurgo de discrepantes | — | — | — | — | 3 | — | EXT-IN65-ART6 |
+| 12. Teto defasado | 7 | — | — | — | 2, 3 | — | EXT-BASE-IBGE, EXT-MERC-DECLARACOES |
+| 13. Fuga das bases públicas | — | — | — | — | 1 | — | EXT-IN65-ART5, EXT-TCU-AC1445-2015, EXT-BASE-PESQPRECOS, EXT-DF-DEC44330-PP |

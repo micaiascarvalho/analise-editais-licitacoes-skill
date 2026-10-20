@@ -45,11 +45,28 @@ DOCUMENTS = [
         ('Estrutura - Minuta Contratual.md', 'estrutura.md'),
         ('Analise - Minuta Contratual.md', 'analise.md'),
         ('Fontes - Minuta Contratual.md', 'fontes.md')]),
-    ('Retificações, Esclarecimentos e Respostas', 'reri', 'Retificações, Esclarecimentos e Respostas (RERI)', [
-        ('Estrutura - RERI.md', 'estrutura.md'),
-        ('Analise - RERI.md', 'analise.md'),
-        ('Fontes - RERI.md', 'fontes.md')]),
 ]
+# A RERI é um processo à parte (só existe dias depois do lançamento do edital): fica fora da cópia,
+# e as citações aos seus arquivos viram uma menção sem caminho.
+OUT_OF_SCOPE_FOLDER = 'Retificações, Esclarecimentos e Respostas'
+OUT_OF_SCOPE = [
+    ('Estrutura - RERI.md', 'a Estrutura da RERI (processo à parte)'),
+    ('Analise - RERI.md', 'a Análise da RERI (processo à parte)'),
+    ('Fontes - RERI.md', 'o mapa da RERI (processo à parte)'),
+]
+# Escopo da triagem nos mapas copiados: saem as linhas cujo assunto é um ato da RERI, a instrução geral
+# "confira também INT-RERI", a legenda e a coluna INT-RERI das matrizes e o INT-RERI das fontes internas.
+OMITTED_ROWS = [
+    ('edital/fontes.md', 'Prazo e divulgação da resposta'),
+    ('edital/fontes.md', 'Resposta depois do prazo de impugnar'),
+    ('planilha/fontes.md', 'Resposta que muda a CCT de referência'),
+    ('minuta/fontes.md', 'Repactuação logo após a assinatura'),
+]
+RERI_ID = 'INT-RERI'
+# O fim da frase é o ponto seguido de espaço ou fim de linha: "fontes.md" tem ponto no meio.
+RERI_SENTENCE = re.compile(r' ?(?:Para tod[ao] \w+, confira também `INT-RERI`|`INT-RERI` vale para todas as seções)'
+                           r'.*?\.(?=\s|$)', re.M)
+TOP_LEVEL_SEMICOLON = re.compile(r';\s*(?![^()]*\))')
 
 # Trechos que apontam para arquivos que não entram na cópia (anotações, planos, auditorias).
 FIXED_REWRITES = [
@@ -62,7 +79,7 @@ FIXED_REWRITES = [
 ]
 # Depois da reescrita, nada disto pode sobrar na cópia.
 FORBIDDEN = re.compile(r'Minhas observacoes|0[0-3] - [^`\n|]*\.md|Auditoria_Estrutura|Contexto_Sessao'
-                       r'|(?:Estrutura|Analise|Fontes) - [A-Z][^`\n]*\.md')
+                       r'|(?:Estrutura|Analise|Fontes) - [A-Z][^`\n]*\.md|\breri/')
 ID_TOKEN = re.compile(r'\b((?:INT|EXT)-[A-Z0-9]+(?:-[A-Z0-9]+)*)\b')
 ROW = re.compile(r'^\| ((?:INT|EXT)-[A-Z0-9-]+) \|')
 
@@ -88,19 +105,64 @@ def rewrites():
              for folder, dst_folder, _, files in DOCUMENTS for src, dst in files]
     pairs += [(src, f'{dst_folder}/{dst}') for _, dst_folder, _, files in DOCUMENTS for src, dst in files]
     pairs.append((CATALOG[0], CATALOG[1]))
+    pairs += [(f'`{OUT_OF_SCOPE_FOLDER}/{src}`', note) for src, note in OUT_OF_SCOPE]
+    pairs += [(f'`{src}`', note) for src, note in OUT_OF_SCOPE]
+    pairs += [(f'{OUT_OF_SCOPE_FOLDER}/{src}', note) for src, note in OUT_OF_SCOPE]
+    pairs += [(src, note) for src, note in OUT_OF_SCOPE]
     # Caminho com pasta antes do nome solto, e nomes mais longos antes dos mais curtos.
     return sorted(pairs, key=lambda p: (p[0].count('/') == 0, -len(p[0])))
 
 
-def transform(text, source_name):
+def cells(line):
+    return [c.strip() for c in line.strip().strip('|').split('|')]
+
+
+def table_line(values):
+    return '| ' + ' | '.join(values) + ' |'
+
+
+def scope(text, target_name):
+    """Ajusta um mapa ao escopo da triagem. Devolve o texto, o que mudou e as linhas a omitir não achadas."""
+    omit = {point for name, point in OMITTED_ROWS if name == target_name}
+    text, sentences = RERI_SENTENCE.subn('', text)
+    changes = {'frases_retiradas': sentences, 'colunas_retiradas': 0, 'celulas_limpas': 0, 'linhas_omitidas': []}
+    lines, drop = [], None  # drop: posição da coluna INT-RERI na tabela atual
+    for line in text.split('\n'):
+        if not line.startswith('|'):
+            drop = None
+            lines.append(line)
+            continue
+        row = cells(line)
+        if row[0] == 'Seção' and RERI_ID in row:
+            drop = row.index(RERI_ID)
+            changes['colunas_retiradas'] += 1
+        if drop is not None:
+            lines.append(table_line(row[:drop] + row[drop + 1:]))
+        elif row[0] in omit:
+            changes['linhas_omitidas'].append(row[0])
+        elif len(row) > 1 and RERI_ID in row[1]:
+            parts = [part for part in TOP_LEVEL_SEMICOLON.split(row[1]) if not part.startswith(RERI_ID)]
+            row[1] = '; '.join(parts) or '—'
+            changes['celulas_limpas'] += 1
+            lines.append(table_line(row))
+        else:
+            lines.append(line)
+    return '\n'.join(lines), changes, sorted(omit - set(changes['linhas_omitidas']))
+
+
+def transform(text, source_name, target_name):
+    """Devolve a cópia do arquivo, os ajustes de escopo feitos e as linhas a omitir não achadas."""
     text = nfc(text)
+    changes, missing = None, []
+    if target_name != CATALOG[1]:
+        text, changes, missing = scope(text, target_name)
     for pattern, replacement in FIXED_REWRITES:
         text = pattern.sub(replacement, text)
     for old, new in rewrites():
         text = text.replace(old, new)
     header = (f'<!-- Cópia gerada por scripts/sync_estudo.py a partir de {SOURCE_LABEL}/{source_name}. '
               'Não edite aqui: corrija a origem e rode o sync. -->\n\n')
-    return header + text
+    return header + text, changes, missing
 
 
 def catalog_rows(text):
@@ -181,12 +243,13 @@ Regras de uso:
 - Fontes externas são citadas pelo ID. Antes de citar em minuta, confira a linha completa no catálogo.
 - `a conferir` nunca aparece como certo. `EXT-PEND-*` e as fontes marcadas "não usar" não são citados.
 - Esfera `federal (União)`: o ente do edital pode ter regulamento próprio (`EXT-REG-ENTE`).
+- A RERI (retificações, esclarecimentos e respostas) é um processo à parte, depois do lançamento do edital, e fica fora desta cópia. Para a triagem, os mapas foram ajustados: saíram a instrução "confira também `INT-RERI`", a coluna e a legenda `INT-RERI` das matrizes, o `INT-RERI` das fontes internas e as linhas cujo assunto é um ato da RERI. O que saiu de cada mapa está em `MANIFEST.json` (`escopo_triagem`). O catálogo continua inteiro.
 '''
 
 
 def build(source):
-    """Monta em memória todos os arquivos da cópia: {caminho relativo: bytes}."""
-    outputs, manifest = {}, []
+    """Monta em memória a cópia ({caminho relativo: bytes}), as fontes do catálogo e os problemas de escopo."""
+    outputs, manifest, adjusted, problems = {}, [], {}, []
     catalog_file = find(source, CATALOG[0])
     entries = [(catalog_file, CATALOG[0], CATALOG[1])]
     for folder, dst_folder, _, files in DOCUMENTS:
@@ -194,8 +257,13 @@ def build(source):
         entries += [(find(origin, src), f'{folder}/{src}', f'{dst_folder}/{dst}') for src, dst in files]
     for path, source_name, target_name in entries:
         raw = path.read_bytes()
-        data = transform(raw.decode('utf-8'), source_name).encode('utf-8')
+        text, changes, missing = transform(raw.decode('utf-8'), source_name, target_name)
+        data = text.encode('utf-8')
         outputs[target_name] = data
+        if changes and any(changes.values()):
+            adjusted[target_name] = changes
+        problems += [f'{target_name}: linha a omitir não encontrada na origem: "{point}" '
+                     '(o estudo mudou: revise OMITTED_ROWS)' for point in missing]
         manifest.append({'origem': source_name, 'destino': target_name,
                          'sha256_origem': sha256(raw), 'sha256_destino': sha256(data)})
     rows = catalog_rows(nfc(catalog_file.read_text(encoding='utf-8')))
@@ -205,14 +273,18 @@ def build(source):
     outputs['MANIFEST.json'] = (json.dumps({
         'gerado_por': 'scripts/sync_estudo.py', 'origem': SOURCE_LABEL, 'estudo_sha256': study,
         'arquivos': manifest,
+        'escopo_triagem': {
+            'fora_da_copia': f'{OUT_OF_SCOPE_FOLDER}/ (RERI: processo à parte)',
+            'ajustes_por_arquivo': adjusted,
+        },
         'gerados': [{'destino': n, 'sha256': sha256(outputs[n])} for n in ('indice-fontes.md', 'LEIA-ME.md')],
     }, ensure_ascii=False, indent=2) + '\n').encode('utf-8')
-    return outputs, rows
+    return outputs, rows, problems
 
 
-def validate(outputs, rows):
+def validate(outputs, rows, problems=()):
     """Erros impedem gravar a cópia; avisos só são relatados."""
-    errors, warnings = [], []
+    errors, warnings = list(problems), []
     known = {r['id']: r for r in rows}
     for name, data in sorted(outputs.items()):
         if not name.endswith('.md') or name in ('indice-fontes.md', 'LEIA-ME.md'):
@@ -223,6 +295,8 @@ def validate(outputs, rows):
             errors.append(f'{name}: referência a arquivo fora da cópia: "{match.group(0)}"')
         if name == CATALOG[1]:
             continue
+        if RERI_ID in body:
+            errors.append(f'{name}: {RERI_ID} sobrou na cópia (a RERI é processo à parte; revise o ajuste de escopo)')
         for match in ID_TOKEN.finditer(text):
             token = match.group(1)
             if text[match.end():match.end() + 1] in ('*', '-'):
@@ -270,11 +344,11 @@ def main(argv=None):
     parser.add_argument('--check', action='store_true', help='só confere, sem gravar')
     args = parser.parse_args(argv)
     try:
-        outputs, rows = build(args.origem)
+        outputs, rows, problems = build(args.origem)
     except (FileNotFoundError, UnicodeDecodeError) as exc:
         print(f'erro: {exc}', file=sys.stderr)
         return 1
-    errors, warnings = validate(outputs, rows)
+    errors, warnings = validate(outputs, rows, problems)
     for warning in warnings:
         print(f'aviso: {warning}')
     if errors:

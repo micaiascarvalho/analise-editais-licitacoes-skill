@@ -7,7 +7,7 @@ from contextlib import contextmanager
 from pathlib import Path
 
 from .arquivos import restore
-from .comum import DECISIONS, DOC_CODES, DONE, RERI_VALUES, SLUG_RE, SPHERES, Refusal, nfc
+from .comum import DECISIONS, DOC_CODES, DONE, SLUG_RE, SPHERES, Refusal, nfc
 from .fases import status
 from .registro import render_log
 
@@ -26,7 +26,7 @@ NONE = type(None)
 SHAPE = {'certame': dict, 'estudo_sha256': (str, NONE), 'documentos': (dict, NONE), 'prazo': (dict, NONE),
          'itens_registrados_em': (str, NONE), 'itens': list, 'peca': dict, 'eventos': list}
 CERTAME_FIELDS = {'slug': str, 'orgao': str, 'modalidade': str, 'numero': str, 'ano': str}
-DOCS_FIELDS = {'presentes': list, 'faltas': list, 'reri': str}
+DOCS_FIELDS = {'presentes': list, 'faltas': list}
 PROCEED_FIELDS = {'evidencia': str, 'faltas': list}
 DEADLINE_FIELDS = {'abertura': object, 'data_limite': object, 'alertas': list}
 EVENT_FIELDS = {'quando': str, 'acao': str, 'detalhe': str}
@@ -95,8 +95,6 @@ def docs_problems(docs):
         return found
     if not all(code in DOC_CODES for code in docs['presentes'] + docs['faltas']):
         found.append('documentos.presentes/faltas (código desconhecido)')
-    if docs['reri'] not in RERI_VALUES:
-        found.append('documentos.reri')
     proceed = docs.get('prosseguir')
     if proceed is not None:
         found += wrong_fields(proceed, PROCEED_FIELDS, 'documentos.prosseguir')

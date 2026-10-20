@@ -10,7 +10,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import sync_estudo
-from sync_estudo import CATALOG, DOCUMENTS, sha256
+from sync_estudo import CATALOG, DOCUMENTS, OMITTED_ROWS, sha256
 
 CATALOG_TEXT = '''# 01 - Catálogo de Fontes
 
@@ -44,14 +44,28 @@ Detalhes em `briefing/Auditoria_Estrutura/01 - Edital.md`. A divergência está 
 '''
 
 
-def make_source(root, extra=None):
+HEADER = ('| Ponto a verificar | Fontes internas (ID + seção) | Fontes externas (IDs) | Prova | Gera impugnação se… '
+          '| Descarta se… |\n| :-- | :-- | :-- | :-- | :-- | :-- |\n')
+
+
+def omitted_rows(target, skip=()):
+    """Tabela com as linhas sobre ato da RERI que o sync precisa achar e omitir."""
+    points = [point for name, point in OMITTED_ROWS if name == target and point not in skip]
+    if not points:
+        return ''
+    return '\n' + HEADER + ''.join(f'| {point} | INT-RERI (resposta) | EXT-LEI14133-ART164 | p | g | d |\n'
+                                   for point in points)
+
+
+def make_source(root, extra=None, skip=()):
     """Árvore mínima do estudo; a pasta do TR fica em NFD, como nos arquivos copiados de outro sistema."""
     (root / CATALOG[0]).write_text(CATALOG_TEXT, encoding='utf-8')
-    for folder, _, _, files in DOCUMENTS:
+    for folder, dst_folder, _, files in DOCUMENTS:
         name = unicodedata.normalize('NFD', folder) if folder.startswith('Termo') else folder
         (root / name).mkdir()
-        for src, _ in files:
+        for src, dst in files:
             body = f'# {src}\n\nVer `Fontes - Edital.md` e `Edital/Estrutura - Edital.md`. Fonte: `EXT-LEI14133-ART164`.\n'
+            body += omitted_rows(f'{dst_folder}/{dst}', skip)
             (root / name / src).write_text(body + (extra or {}).get(src, ''), encoding='utf-8')
     return root
 
@@ -99,7 +113,7 @@ class SyncEstudoTests(unittest.TestCase):
         names = [p.relative_to(self.target).as_posix() for p in self.target.rglob('*') if p.is_file()]
         self.assertIn('tr/fontes.md', names)
         self.assertTrue(all(n.isascii() for n in names))
-        self.assertEqual(len(names), 25)
+        self.assertEqual(len(names), 22)
 
     def test_check_detects_missing_outdated_and_extra_files(self):
         make_source(self.source)
@@ -132,10 +146,65 @@ class SyncEstudoTests(unittest.TestCase):
         self.assertFalse(self.target.exists())
 
     def test_reference_to_excluded_file_blocks_copy(self):
-        make_source(self.source, {'Analise - RERI.md': 'Ver `Minhas observacoes.md`.\n'})
+        make_source(self.source, {'Analise - Minuta Contratual.md': 'Ver `Minhas observacoes.md`.\n'})
         code, _, err = self.sync()
         self.assertEqual(code, 1)
-        self.assertIn('reri/analise.md: referência a arquivo fora da cópia', err)
+        self.assertIn('minuta/analise.md: referência a arquivo fora da cópia', err)
+
+    def test_reri_is_left_out_and_its_citations_lose_the_path(self):
+        make_source(self.source, {'Fontes - Edital.md': 'Ver `Fontes - RERI.md`, seção 1, e '
+                                  '`Retificações, Esclarecimentos e Respostas/Estrutura - RERI.md`.\n'})
+        reri = self.source / 'Retificações, Esclarecimentos e Respostas'
+        reri.mkdir()
+        (reri / 'Fontes - RERI.md').write_text('# Fontes - RERI\n', encoding='utf-8')
+        code, _, err = self.sync()
+        self.assertEqual(code, 0, err)
+        self.assertFalse((self.target / 'reri').exists())
+        text = (self.target / 'edital' / 'fontes.md').read_text(encoding='utf-8')
+        self.assertIn('Ver o mapa da RERI (processo à parte), seção 1, e a Estrutura da RERI (processo à parte).', text)
+        self.assertNotIn('RERI.md', text)
+
+    def test_scope_removes_reri_sentences_column_and_cells(self):
+        make_source(self.source, {'Fontes - Edital.md': (
+            '\n**Como usar:** leia a pergunta. Para toda seção, confira também `INT-RERI` (retificações): uma errata '
+            'pode ter alterado a cláusula (ver `Fontes - RERI.md`, seção 1). Normas federais valem só para a União.\n\n'
+            + HEADER +
+            '| Data da sessão | INT-EDITAL (seção 1); INT-RERI (avisos); INT-EDITAL (seções 5; 9) | EXT-LEI14133-ART164 '
+            '| p | g | d |\n'
+            '| Só a RERI | INT-RERI | EXT-LEI14133-ART164 | p | g | d |\n\n'
+            'Legenda. `INT-RERI` vale para todas as seções (ver "Como usar"); o ✓ marca a fonte direta. Fim.\n\n'
+            '| Seção | INT-EDITAL | INT-RERI | Externas principais |\n| :-- | :-- | :-- | :-- |\n'
+            '| 1. Preâmbulo | 6 | ✓ | EXT-LEI14133-ART164 |\n')})
+        code, _, err = self.sync()
+        self.assertEqual(code, 0, err)
+        text = (self.target / 'edital' / 'fontes.md').read_text(encoding='utf-8')
+        self.assertIn('leia a pergunta. Normas federais valem só para a União.', text)
+        self.assertIn('Legenda. Fim.', text)
+        self.assertIn('| Data da sessão | INT-EDITAL (seção 1); INT-EDITAL (seções 5; 9) |', text)
+        self.assertIn('| Só a RERI | — |', text)
+        self.assertIn('| Seção | INT-EDITAL | Externas principais |\n| :-- | :-- | :-- |\n| 1. Preâmbulo | 6 | EXT-', text)
+        self.assertNotIn('INT-RERI', text)
+        for _, point in OMITTED_ROWS:
+            self.assertNotIn(point, text)
+        manifest = json.loads((self.target / 'MANIFEST.json').read_text(encoding='utf-8'))
+        changes = manifest['escopo_triagem']['ajustes_por_arquivo']['edital/fontes.md']
+        self.assertEqual((changes['frases_retiradas'], changes['colunas_retiradas'], changes['celulas_limpas']), (2, 1, 2))
+        self.assertEqual(changes['linhas_omitidas'], [p for n, p in OMITTED_ROWS if n == 'edital/fontes.md'])
+        self.assertIn('linhas_omitidas', manifest['escopo_triagem']['ajustes_por_arquivo']['minuta/fontes.md'])
+
+    def test_missing_row_to_omit_blocks_copy(self):
+        point = next(p for n, p in OMITTED_ROWS if n == 'planilha/fontes.md')
+        make_source(self.source, skip={point})
+        code, _, err = self.sync()
+        self.assertEqual(code, 1)
+        self.assertIn(f'planilha/fontes.md: linha a omitir não encontrada na origem: "{point}"', err)
+        self.assertFalse(self.target.exists())
+
+    def test_leftover_int_reri_blocks_copy(self):
+        make_source(self.source, {'Fontes - ETP.md': 'Prova: ver o `INT-RERI` publicado.\n'})
+        code, _, err = self.sync()
+        self.assertEqual(code, 1)
+        self.assertIn('etp/fontes.md: INT-RERI sobrou na cópia', err)
 
     def test_wildcard_is_not_treated_as_id(self):
         make_source(self.source, {'Fontes - Edital.md': 'Não cite `EXT-PEND-*` nem `INT-*`.\n'})

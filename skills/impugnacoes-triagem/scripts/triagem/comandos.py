@@ -35,7 +35,8 @@ def parse_codes(text):
     codes = []
     for code in (part.upper() for part in split_list(text)):
         if code == 'RERI':
-            raise Refusal('RERI não entra nas listas: use --reri presente|ausente|desconhecido.')
+            raise Refusal('a RERI (retificações, esclarecimentos e respostas) está fora do escopo desta skill: é um '
+                          'processo à parte; tire RERI de --presentes e --faltas.')
         if code not in DOC_CODES:
             raise Refusal(f'código de documento desconhecido: {code} (aceitos: {", ".join(DOC_CODES)}).')
         if code not in codes:
@@ -52,17 +53,13 @@ def cmd_documents(state, folder, args):
     if unclassified:
         raise Refusal(f'faltou classificar {", ".join(unclassified)}: cada um dos 6 códigos vai em --presentes ou '
                       '--faltas.')
-    previous = state['documentos'] or {}
-    authorized = previous.get('prosseguir')
+    authorized = (state['documentos'] or {}).get('prosseguir')
     if authorized and not (missing and set(missing) <= set(authorized['faltas'])):
         authorized = None
-    state['documentos'] = {'presentes': present, 'faltas': missing,
-                           'reri': args.reri or previous.get('reri', 'desconhecido'),
-                           'registrado_em': stamp(), 'prosseguir': authorized}
+    state['documentos'] = {'presentes': present, 'faltas': missing, 'registrado_em': stamp(), 'prosseguir': authorized}
     if args.esfera:
         state['certame']['esfera'] = args.esfera
-    log(state, 'documentos', f'presentes: {", ".join(present) or "nenhum"}; faltas: {", ".join(missing) or "nenhuma"}; '
-                             f'RERI: {state["documentos"]["reri"]}')
+    log(state, 'documentos', f'presentes: {", ".join(present) or "nenhum"}; faltas: {", ".join(missing) or "nenhuma"}')
     if not missing:
         return 'Portão resolvido: todos os documentos estão presentes.'
     if authorized:

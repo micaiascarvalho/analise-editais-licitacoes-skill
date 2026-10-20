@@ -34,7 +34,7 @@ def render_log(state):
         docs_line = 'portão não registrado'
     else:
         docs_line = (f'presentes {", ".join(docs["presentes"]) or "nenhum"}; '
-                     f'faltas {", ".join(docs["faltas"]) or "nenhuma"}; RERI {docs["reri"]}'
+                     f'faltas {", ".join(docs["faltas"]) or "nenhuma"}'
                      + ('; prosseguir autorizado' if docs.get('prosseguir') else ''))
     if prazo is None:
         prazo_line = 'não calculado'

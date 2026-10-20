@@ -56,7 +56,7 @@ def next_action(state, folder, current):
     docs, review = state['documentos'], in_review(state)
     if current == 'documentos':
         if docs is None:
-            return ('Verifique pelo conteúdo Edital, TR, ETP, Planilha, Pesquisa de preços, Minuta e RERI e registre '
+            return ('Verifique pelo conteúdo Edital, TR, ETP, Planilha, Pesquisa de preços e Minuta e registre '
                     'com "documentos". Não faça levantamento nem minuta antes disso.')
         return (f'Apresente o relatório do portão (faltam {", ".join(docs["faltas"])}, com o efeito de cada falta) e '
                 'pergunte se o analista envia os documentos ou prossegue. Espere a resposta e registre com '

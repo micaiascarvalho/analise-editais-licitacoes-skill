@@ -10,7 +10,7 @@ Uso:
   estado.py slug --orgao TXT --modalidade TXT --numero TXT --ano AAAA
   estado.py iniciar --raiz DIR --orgao TXT --modalidade TXT --numero TXT --ano AAAA [--esfera ESFERA] [--slug SLUG]
   estado.py status --pasta DIR
-  estado.py documentos --pasta DIR --presentes EDITAL,TR --faltas ETP,PLANILHA,PESQUISA,MINUTA [--reri presente]
+  estado.py documentos --pasta DIR --presentes EDITAL,TR --faltas ETP,PLANILHA,PESQUISA,MINUTA
   estado.py prosseguir --pasta DIR --evidencia "frase literal do analista"
   estado.py prazo --pasta DIR --dados prazo.json        (--dados - lê da entrada padrão)
   estado.py itens --pasta DIR --arquivo itens.json      (lista de {id, classe, titulo})
@@ -30,7 +30,7 @@ from pathlib import Path
 
 from triagem.comandos import (cmd_decide, cmd_deadline, cmd_documents, cmd_init, cmd_items, cmd_proceed, cmd_reopen,
                               cmd_slug, cmd_status)
-from triagem.comum import DECISIONS, DOC_CODES, KINDS, RERI_VALUES, SPHERES, Refusal
+from triagem.comum import DECISIONS, DOC_CODES, KINDS, SPHERES, Refusal
 from triagem.invariantes import cmd_validate
 from triagem.minutas import cmd_draft
 from triagem.peca import cmd_piece
@@ -70,7 +70,6 @@ def build_parser():
     p = sub.add_parser('documentos', parents=[folder], help='registra o portão documental')
     p.add_argument('--presentes', default='', help=f'códigos separados por vírgula: {",".join(DOC_CODES)}')
     p.add_argument('--faltas', default='', help='códigos que faltam, separados por vírgula')
-    p.add_argument('--reri', choices=RERI_VALUES)
     p.add_argument('--esfera', choices=SPHERES)
     p.set_defaults(handler=changing(cmd_documents))
     p = sub.add_parser('prosseguir', parents=[folder], help='registra a decisão de seguir sem os documentos que faltam')
@@ -92,7 +91,7 @@ def build_parser():
     p.add_argument('--id', help='ID da minuta em revisão')
     p.add_argument('--evidencia', help='frase literal do analista (aprovar, ajustar, descartar)')
     p.set_defaults(handler=changing(cmd_draft))
-    p = sub.add_parser('reabrir', parents=[folder], help='volta itens para a seleção')
+    p = sub.add_parser('reabrir', parents=[folder], help='volta itens para a seleção (o analista mudou de ideia)')
     p.add_argument('--ids', required=True, help='IDs separados por vírgula')
     p.add_argument('--motivo', required=True)
     p.set_defaults(handler=changing(cmd_reopen))

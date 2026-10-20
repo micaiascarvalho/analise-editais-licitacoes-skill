@@ -1,13 +1,13 @@
 {
   "gerado_por": "scripts/sync_estudo.py",
   "origem": "briefing/Mapeamento_Analise",
-  "estudo_sha256": "78949eacb8ec4218a6b4b170f4cf2616c3a127267c6d56f25b465492110611b7",
+  "estudo_sha256": "3fb49429943b6f9e9c04d819d2d1b813125ddb714e3d2d522ce3ab7ee2d359e6",
   "arquivos": [
     {
       "origem": "01 - Catalogo de Fontes.md",
       "destino": "catalogo-fontes.md",
       "sha256_origem": "1bc7bd4fe90749a8ab7463226d1e20c51480e9a4a00a56183381ff542a536d6f",
-      "sha256_destino": "9758dd3f6b4eaa0ddd5e91b5e7f736cf6ea274d84ed462b4f890ca6a391dbe2e"
+      "sha256_destino": "c9f3591a142ede60d1338e4c9341d78297f251634f93aff764debd68b36f0534"
     },
     {
       "origem": "Edital/Estrutura - Edital.md",
@@ -25,7 +25,7 @@
       "origem": "Edital/Fontes - Edital.md",
       "destino": "edital/fontes.md",
       "sha256_origem": "1544e15d29eba7e9896dede45b7a1dbaba7fb7d37a4273a59528032857753535",
-      "sha256_destino": "3c0edaced48eda0a443360e2d7d69a503d12fe84e2e9fa2a0f642a8afae54489"
+      "sha256_destino": "c8a5792a4299e4ec95d6b249aa60d157c7ab49e303513691f0da7f6b446a355a"
     },
     {
       "origem": "Termo de Referência/Estrutura - Termo de Refencia.md",
@@ -43,7 +43,7 @@
       "origem": "Termo de Referência/Fontes - Termo de Referencia.md",
       "destino": "tr/fontes.md",
       "sha256_origem": "8f8664d1f0a08e467ff0d493fba0c3cc0ad8afd8e77db30b94d5fc00fa6a2f36",
-      "sha256_destino": "0c729ea8f33cc6c4ec5b632cd76b44b677ebb19d0d75abe02bc722ca96d29738"
+      "sha256_destino": "2c69af3eb848aa8acdac80911817c22a8060ab5aeb775da578f85897dc5f9307"
     },
     {
       "origem": "Estudo Técnico Preliminar/Estrutura - ETP.md",
@@ -61,7 +61,7 @@
       "origem": "Estudo Técnico Preliminar/Fontes - ETP.md",
       "destino": "etp/fontes.md",
       "sha256_origem": "a69421dce972f71bf9538e3e73e3a9bdcc366d5f8aeabea3ba05c2fc6484dea9",
-      "sha256_destino": "c0076b768f4e93862f429a86a9a083b4e88d2620fe031ebefa1f5d35506986e0"
+      "sha256_destino": "67639309aa92820ce04e678eff2bf0c8c16602e2616c3ac3a2ff521d5900b9e6"
     },
     {
       "origem": "Planilha de Custos/Estrutura - Planilha de Custos.md",
@@ -79,7 +79,7 @@
       "origem": "Planilha de Custos/Fontes - Planilha de Custos.md",
       "destino": "planilha/fontes.md",
       "sha256_origem": "61f0a531cb6f425adfc5c6ac106f920700274f065a5ec49864f0852569d20310",
-      "sha256_destino": "0a1e301ca6c721111439369114755644511421078b8cd563b1b4bf5b812a2ca6"
+      "sha256_destino": "3fbb23fbf34a6d5895a5299594881b07dcb871189efea0cd8964e162e73db94d"
     },
     {
       "origem": "Pesquisa(Mapa) de Preços/Estrutura - Pesquisa de Precos.md",
@@ -97,7 +97,7 @@
       "origem": "Pesquisa(Mapa) de Preços/Fontes - Pesquisa de Precos.md",
       "destino": "pesquisa/fontes.md",
       "sha256_origem": "461c4acb1d57e04a7191ceb5ccbab26fe5662096e795f39b34dc87d0fcb69bdc",
-      "sha256_destino": "7f229bf1d2d5d9e7122a4b1539428af8df10da24634df56354b1e3000fba7836"
+      "sha256_destino": "a39655f2784b450155333613fad92e4bbb38d69bdb9374669b1700374aff8779"
     },
     {
       "origem": "Minuta Contratual/Estrutura - Minuta Contratual.md",
@@ -115,27 +115,57 @@
       "origem": "Minuta Contratual/Fontes - Minuta Contratual.md",
       "destino": "minuta/fontes.md",
       "sha256_origem": "a5f7d70356cc88cc4dfedf26bc308d2cd43ffe0d1a3fc983a965938f70c8d471",
-      "sha256_destino": "ee0c8ad7db9a7ae624630b3da369ef3a6a90212d883ada1ba07f8d2c0a2b6c5c"
-    },
-    {
-      "origem": "Retificações, Esclarecimentos e Respostas/Estrutura - RERI.md",
-      "destino": "reri/estrutura.md",
-      "sha256_origem": "7ecbf6166a7c7beee711f4bbe7400b7ceb0e1e5d40c3c270095c9f39de884938",
-      "sha256_destino": "455c9ae68f4f900667e0351afb25dd40b97ce56f60f02ea0dd25ad9d7c40e368"
-    },
-    {
-      "origem": "Retificações, Esclarecimentos e Respostas/Analise - RERI.md",
-      "destino": "reri/analise.md",
-      "sha256_origem": "837010b94151cb0e5466b3cf3976e4e339da3a4fc4d1ba39b0f1fb40a4a45e40",
-      "sha256_destino": "3793609aedd38ca79bf1cf7ec6b250a88b11397254190a790b165d98ac90377b"
-    },
-    {
-      "origem": "Retificações, Esclarecimentos e Respostas/Fontes - RERI.md",
-      "destino": "reri/fontes.md",
-      "sha256_origem": "5cb55b0176c711a0ea72e0162395d4d72e42acb3d87247e06bd54d1c4c703a96",
-      "sha256_destino": "01fe1f1b8abb15ab7036d02142b3f59e5553d6b4dfe63ca0b51e648802640f6e"
+      "sha256_destino": "5265230da7513addde13f918cb3f339ef72f581437aa51d20c71038867b19964"
     }
   ],
+  "escopo_triagem": {
+    "fora_da_copia": "Retificações, Esclarecimentos e Respostas/ (RERI: processo à parte)",
+    "ajustes_por_arquivo": {
+      "edital/fontes.md": {
+        "frases_retiradas": 2,
+        "colunas_retiradas": 1,
+        "celulas_limpas": 5,
+        "linhas_omitidas": [
+          "Prazo e divulgação da resposta",
+          "Resposta depois do prazo de impugnar"
+        ]
+      },
+      "tr/fontes.md": {
+        "frases_retiradas": 2,
+        "colunas_retiradas": 1,
+        "celulas_limpas": 0,
+        "linhas_omitidas": []
+      },
+      "etp/fontes.md": {
+        "frases_retiradas": 2,
+        "colunas_retiradas": 1,
+        "celulas_limpas": 1,
+        "linhas_omitidas": []
+      },
+      "planilha/fontes.md": {
+        "frases_retiradas": 2,
+        "colunas_retiradas": 1,
+        "celulas_limpas": 0,
+        "linhas_omitidas": [
+          "Resposta que muda a CCT de referência"
+        ]
+      },
+      "pesquisa/fontes.md": {
+        "frases_retiradas": 2,
+        "colunas_retiradas": 1,
+        "celulas_limpas": 0,
+        "linhas_omitidas": []
+      },
+      "minuta/fontes.md": {
+        "frases_retiradas": 2,
+        "colunas_retiradas": 1,
+        "celulas_limpas": 1,
+        "linhas_omitidas": [
+          "Repactuação logo após a assinatura"
+        ]
+      }
+    }
+  },
   "gerados": [
     {
       "destino": "indice-fontes.md",
@@ -143,7 +173,7 @@
     },
     {
       "destino": "LEIA-ME.md",
-      "sha256": "224f658d2ccf84d64c751377ac192c1f843b5b8b12746f381c3d83e34ec8e312"
+      "sha256": "711c292b8bf369c731a2f164ce52b7dbf8b4101aa85f72361dccee6847c5a3b3"
     }
   ]
 }

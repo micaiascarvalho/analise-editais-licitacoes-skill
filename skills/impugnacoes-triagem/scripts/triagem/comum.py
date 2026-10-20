@@ -10,7 +10,6 @@ FORMAT_VERSION = 1
 MAX_SLUG = 200
 
 DOC_CODES = ('EDITAL', 'TR', 'ETP', 'PLANILHA', 'PESQUISA', 'MINUTA')
-RERI_VALUES = ('presente', 'ausente', 'desconhecido')
 SPHERES = ('federal', 'estadual', 'distrital', 'municipal')
 KINDS = {'IMP': 'impugnacao', 'ESC': 'esclarecimento'}
 KIND_LABEL = {'impugnacao': 'impugnação', 'esclarecimento': 'esclarecimento'}

@@ -85,7 +85,7 @@ class EstadoTests(unittest.TestCase):
     def gate(self, faltas=''):
         missing = comum.split_list(faltas)
         present = ','.join(code for code in comum.DOC_CODES if code not in missing)
-        return self.ok('documentos', '--presentes', present, '--faltas', faltas, '--reri', 'ausente')
+        return self.ok('documentos', '--presentes', present, '--faltas', faltas)
 
     def items_file(self, items):
         path = self.base / 'itens.json'
@@ -232,9 +232,24 @@ class EstadoTests(unittest.TestCase):
         others = 'ETP,PLANILHA,PESQUISA,MINUTA'
         self.refused('documentos', '--presentes', 'EDITAL,TR', '--faltas', f'TR,{others}', contains='ao mesmo tempo')
         self.refused('documentos', '--presentes', 'EDITAL', '--faltas', 'TR', contains='faltou classificar ETP')
-        self.refused('documentos', '--presentes', 'EDITAL,TR', '--faltas', f'RERI,{others}', contains='--reri')
         self.refused('documentos', '--presentes', 'EDITAL,TR,XYZ', '--faltas', others, contains='desconhecido: XYZ')
         self.assertIsNone(self.status()['documentos'])
+
+    def test_reri_is_out_of_scope(self):
+        self.init()
+        others = 'ETP,PLANILHA,PESQUISA,MINUTA'
+        for present, missing in (('EDITAL,TR,RERI', others), ('EDITAL,TR', f'reri,{others}')):
+            with self.subTest(presentes=present, faltas=missing):
+                self.refused('documentos', '--presentes', present, '--faltas', missing,
+                             contains='fora do escopo desta skill')
+        with redirect_stderr(io.StringIO()), self.assertRaises(SystemExit):
+            self.call('documentos', '--presentes', 'EDITAL,TR', '--faltas', others, '--reri', 'ausente')
+        self.assertIsNone(self.status()['documentos'])
+        self.gate()
+        state = json.loads((self.folder / 'estado.json').read_text(encoding='utf-8'))
+        self.assertNotIn('reri', state['documentos'])
+        self.assertNotIn('RERI', (self.folder / 'registro.md').read_text(encoding='utf-8'))
+        self.assertNotIn('RERI', json.dumps(state['eventos'], ensure_ascii=False))
 
     def test_items_before_gate_refused(self):
         self.init()
@@ -405,7 +420,7 @@ class EstadoTests(unittest.TestCase):
         self.approve('IMP-20')
         self.refused('decidir', '--ids', 'IMP-20', '--decisao', 'descartar', '--evidencia', 'descarta a IMP-20',
                      contains='use "reabrir"')
-        result = self.ok('reabrir', '--ids', 'IMP-20', '--motivo', 'A retificação mudou o item do capital social')
+        result = self.ok('reabrir', '--ids', 'IMP-20', '--motivo', 'Mudei de ideia sobre o capital social')
         self.assertEqual(result['fase'], 'selecao')
         self.assertEqual(result['itens']['pendentes'], ['IMP-20'])
         self.assertEqual(result['aprovadas'], [])
@@ -424,7 +439,7 @@ class EstadoTests(unittest.TestCase):
         self.ok('peca', '--acao', 'confirmar', '--tipo', 'impugnacao', '--formato', 'unico',
                 '--evidencia', 'Confirmo a peça única')
         self.assertEqual(self.status()['fase'], 'concluido')
-        result = self.ok('reabrir', '--ids', 'IMP-100', '--motivo', 'Retificação nova publicada')
+        result = self.ok('reabrir', '--ids', 'IMP-100', '--motivo', 'Quero rever o fundamento do pedido')
         self.assertIsNone(result['peca']['impugnacao'])
         self.assertEqual(result['fase'], 'selecao')
         state = json.loads((self.folder / 'estado.json').read_text(encoding='utf-8'))

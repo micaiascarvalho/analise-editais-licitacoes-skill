@@ -4,7 +4,7 @@
 
 Este mapa diz, para cada uma das 10 seções de `tr/estrutura.md`, **onde buscar a prova e o fundamento** antes de decidir se um ponto do Termo de Referência (TR) é impugnável. Cada linha cruza o TR com outro documento do processo (fontes `INT-*`, com a seção a abrir), aponta as fontes externas pelo ID do `catalogo-fontes.md` (o texto, a esfera e o status ficam lá) e fecha com o critério de decisão. As seções I a VIII vêm das seções 1 a 7 de `tr/analise.md` e do checklist final (7 perguntas); as seções IX e X vêm só da Estrutura e estão marcadas **[derivada da Estrutura]**. O foco da Servfaz são os serviços com dedicação exclusiva de mão de obra: as perguntas 6 e 7 do checklist (CCT, declaração de custos trabalhistas, posto x produtividade, IMR com glosa proporcional e parcela incontroversa) estão nas seções IV, VI e IX. Antes de citar uma fonte `a conferir` em peça, confira-a no catálogo; as pendências resolvidas (`EXT-PEND-*`, seção 4.4 do catálogo) e as fontes só históricas não fundamentam peça: cite as fontes que as resolvem.
 
-**Como usar:** leia a pergunta-chave, abra as fontes internas na seção indicada e extraia o que a coluna "Prova" pede. Para toda seção, confira também `INT-RERI` (retificações, esclarecimentos e respostas): uma resposta ou errata pode ter alterado o TR. Normas federais marcadas `federal (União)` no catálogo cedem ao regulamento do ente (`EXT-REG-ENTE`) quando o edital for estadual ou municipal; em especial, o prazo de pagamento de `EXT-IN77-2022` (até 10 + 10 dias úteis) só vale na esfera da União. Vício do TR que nasce no ETP leva a pedido de **saneamento ou retificação**, não de nulidade (`EXT-LEI14133-ART147`). A impugnação ou o pedido de esclarecimento vai contra o edital (o TR é anexo dele), até 3 dias úteis antes da abertura (`EXT-LEI14133-ART164`, `EXT-LEI14133-ART183`; ver `edital/fontes.md`, seção 9). Se um documento depende de pedido de acesso (`EXT-LEI12527-GERAL`), protocole o esclarecimento dentro desse prazo, sem esperar a resposta da LAI.
+**Como usar:** leia a pergunta-chave, abra as fontes internas na seção indicada e extraia o que a coluna "Prova" pede. Normas federais marcadas `federal (União)` no catálogo cedem ao regulamento do ente (`EXT-REG-ENTE`) quando o edital for estadual ou municipal; em especial, o prazo de pagamento de `EXT-IN77-2022` (até 10 + 10 dias úteis) só vale na esfera da União. Vício do TR que nasce no ETP leva a pedido de **saneamento ou retificação**, não de nulidade (`EXT-LEI14133-ART147`). A impugnação ou o pedido de esclarecimento vai contra o edital (o TR é anexo dele), até 3 dias úteis antes da abertura (`EXT-LEI14133-ART164`, `EXT-LEI14133-ART183`; ver `edital/fontes.md`, seção 9). Se um documento depende de pedido de acesso (`EXT-LEI12527-GERAL`), protocole o esclarecimento dentro desse prazo, sem esperar a resposta da LAI.
 
 ---
 
@@ -205,18 +205,18 @@ Pergunta-chave: "As infrações e sanções do TR são as mesmas do Edital e da 
 
 ## Matriz resumo
 
-✓ = cruzamento usado na seção. Na coluna `INT-EDITAL`, o número indica a seção do edital a cruzar (numeração de `edital/estrutura.md`); na coluna `INT-TR`, o algarismo romano indica outra seção do próprio TR; na coluna `INT-ETP`, o algarismo romano indica o inciso do ETP a cruzar (`etp/fontes.md` tem a volta no mesmo inciso), e "justificativa" indica a justificativa das exigências de habilitação, cruzada em `etp/fontes.md`, inciso III; na coluna `INT-MINUTA`, a cláusula (`minuta/fontes.md` tem a volta na mesma cláusula). `INT-RERI` vale para todas as seções (ver "Como usar"); o ✓ marca onde ele é fonte direta. `INT-DOTACAO` (seções VI e X), `INT-PCA` (seções II, IV e X) e `INT-HIST-CONTRATO` (seção I) aparecem só nas tabelas.
+✓ = cruzamento usado na seção. Na coluna `INT-EDITAL`, o número indica a seção do edital a cruzar (numeração de `edital/estrutura.md`); na coluna `INT-TR`, o algarismo romano indica outra seção do próprio TR; na coluna `INT-ETP`, o algarismo romano indica o inciso do ETP a cruzar (`etp/fontes.md` tem a volta no mesmo inciso), e "justificativa" indica a justificativa das exigências de habilitação, cruzada em `etp/fontes.md`, inciso III; na coluna `INT-MINUTA`, a cláusula (`minuta/fontes.md` tem a volta na mesma cláusula). `INT-DOTACAO` (seções VI e X), `INT-PCA` (seções II, IV e X) e `INT-HIST-CONTRATO` (seção I) aparecem só nas tabelas.
 
-| Seção | INT-EDITAL | INT-TR | INT-ETP | INT-PLANILHA | INT-PESQUISA | INT-MINUTA | INT-RERI | Externas principais |
-| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
-| I. Objeto | 2, 4, 13 | III, IV | I, IV, VII, VIII | ✓ | ✓ | 1, identificação | — | EXT-TCU-SUM177, EXT-LEI14133-ART47, EXT-TCU-SUM247 |
-| II. Justificativa | — | — | I, II, V, VIII, IX, XIII | — | — | — | — | EXT-LEI14133-ART18, EXT-LEI14133-ART47, EXT-TCU-AC248-2017 |
-| III. Solução e requisitos | 1, 5, 8, 11 | — | III, V, VII, XII | ✓ | ✓ | 4 | — | EXT-LEI14133-ART9, EXT-LEI14133-ART41, EXT-NORMA-ABNT |
-| IV. Modelo de execução | 5, 7 | VI, VII | IV, VII, X, XI | ✓ | ✓ | 3, 5 | — | EXT-NORMA-CCT, EXT-LEI14133-ART63, EXT-TCU-SUM177 |
-| V. Gestão e fiscalização | — | VII | — | ✓ | — | 2, identificação | — | EXT-LEI14133-ART118, EXT-LEI14133-ART117, EXT-LEI14133-ART121 |
-| VI. Medição e pagamento | 11 | IV, X | IX | ✓ | — | 2, 3, 7 | — | EXT-LEI14133-ART143, EXT-LEI14133-ART141, EXT-IN77-2022, EXT-LEI14133-ART135, EXT-LEI14133-ART121 |
-| VII. Obrigações | — | III, IV, VI | X | ✓ | — | 2, 5, obrigações | — | EXT-LEI14133-ART18, EXT-LEI14133-ART6, EXT-LEI14133-ART103 |
-| VIII. Seleção e habilitação | 1, 6, 7, 8 | I | justificativa | — | — | — | — | EXT-LEI14133-ART41, EXT-LEI14133-ART67, EXT-TCU-SUM263 |
-| IX. Estimativa do valor [derivada] | 3, 7 | IV, VII | VI | ✓ | ✓ | — | — | EXT-LEI14133-ART6, EXT-LEI14133-ART23, EXT-LEI14133-ART24 |
-| X. Adequação orçamentária [derivada] | 3 | VI | — | — | — | 2 | — | EXT-LEI14133-ART6, EXT-LEI14133-ART150, EXT-LEI14133-ART18 |
-| Sanções [complementar] | 12 | — | — | — | — | 7 | — | EXT-LEI14133-ART156, EXT-LEI14133-ART157, EXT-LEI14133-ART158 |
+| Seção | INT-EDITAL | INT-TR | INT-ETP | INT-PLANILHA | INT-PESQUISA | INT-MINUTA | Externas principais |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| I. Objeto | 2, 4, 13 | III, IV | I, IV, VII, VIII | ✓ | ✓ | 1, identificação | EXT-TCU-SUM177, EXT-LEI14133-ART47, EXT-TCU-SUM247 |
+| II. Justificativa | — | — | I, II, V, VIII, IX, XIII | — | — | — | EXT-LEI14133-ART18, EXT-LEI14133-ART47, EXT-TCU-AC248-2017 |
+| III. Solução e requisitos | 1, 5, 8, 11 | — | III, V, VII, XII | ✓ | ✓ | 4 | EXT-LEI14133-ART9, EXT-LEI14133-ART41, EXT-NORMA-ABNT |
+| IV. Modelo de execução | 5, 7 | VI, VII | IV, VII, X, XI | ✓ | ✓ | 3, 5 | EXT-NORMA-CCT, EXT-LEI14133-ART63, EXT-TCU-SUM177 |
+| V. Gestão e fiscalização | — | VII | — | ✓ | — | 2, identificação | EXT-LEI14133-ART118, EXT-LEI14133-ART117, EXT-LEI14133-ART121 |
+| VI. Medição e pagamento | 11 | IV, X | IX | ✓ | — | 2, 3, 7 | EXT-LEI14133-ART143, EXT-LEI14133-ART141, EXT-IN77-2022, EXT-LEI14133-ART135, EXT-LEI14133-ART121 |
+| VII. Obrigações | — | III, IV, VI | X | ✓ | — | 2, 5, obrigações | EXT-LEI14133-ART18, EXT-LEI14133-ART6, EXT-LEI14133-ART103 |
+| VIII. Seleção e habilitação | 1, 6, 7, 8 | I | justificativa | — | — | — | EXT-LEI14133-ART41, EXT-LEI14133-ART67, EXT-TCU-SUM263 |
+| IX. Estimativa do valor [derivada] | 3, 7 | IV, VII | VI | ✓ | ✓ | — | EXT-LEI14133-ART6, EXT-LEI14133-ART23, EXT-LEI14133-ART24 |
+| X. Adequação orçamentária [derivada] | 3 | VI | — | — | — | 2 | EXT-LEI14133-ART6, EXT-LEI14133-ART150, EXT-LEI14133-ART18 |
+| Sanções [complementar] | 12 | — | — | — | — | 7 | EXT-LEI14133-ART156, EXT-LEI14133-ART157, EXT-LEI14133-ART158 |

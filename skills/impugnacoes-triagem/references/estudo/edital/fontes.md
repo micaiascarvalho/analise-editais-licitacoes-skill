@@ -4,7 +4,7 @@
 
 Este mapa diz, para cada uma das 13 seções de `edital/estrutura.md`, **onde buscar a prova e o fundamento** antes de decidir se um ponto do edital é impugnável. Cada linha cruza o edital com outro documento do processo (fontes `INT-*`, com a seção a abrir), aponta as fontes externas pelo ID do `catalogo-fontes.md` (o texto, a esfera e o status ficam lá) e fecha com o critério de decisão. As seções do edital que `edital/analise.md` trata nas seções 1 a 5 (participação, sessão e disputa, julgamento, habilitação, recursos e impugnações) são a base principal; as demais vêm da seção 6 da Análise e estão marcadas **[derivada da Estrutura]**. Antes de citar uma fonte `a conferir` em peça, confira-a no catálogo; as pendências resolvidas (`EXT-PEND-*`, seção 4.4 do catálogo) e as fontes só históricas não fundamentam peça: cite as fontes que as resolvem.
 
-**Como usar:** leia a pergunta-chave, abra as fontes internas na seção indicada e extraia o que a coluna "Prova" pede. Para toda seção, confira também `INT-RERI` (retificações, esclarecimentos e respostas): uma resposta ou errata pode ter alterado a cláusula analisada. Normas federais marcadas `federal (União)` no catálogo cedem ao regulamento do ente (`EXT-REG-ENTE`) quando o edital for estadual ou municipal.
+**Como usar:** leia a pergunta-chave, abra as fontes internas na seção indicada e extraia o que a coluna "Prova" pede. Normas federais marcadas `federal (União)` no catálogo cedem ao regulamento do ente (`EXT-REG-ENTE`) quando o edital for estadual ou municipal.
 
 ---
 
@@ -18,7 +18,7 @@ Pergunta-chave: "Modalidade, regime, critério de julgamento, modo de disputa e 
 | :-- | :-- | :-- | :-- | :-- | :-- |
 | Regime jurídico e regulamento aplicável | INT-EDITAL (seção 1) | EXT-LEI14133-GERAL, EXT-REG-ENTE, EXT-IN73-GERAL | Leis e decretos citados no preâmbulo; se o ente tem regulamento próprio | Edital cita regulamento revogado ou de outra esfera, gerando regra incompatível com o regulamento do ente | Regime e regulamento citados corretamente |
 | Critério de julgamento e modo de disputa | INT-EDITAL (seções 1, 6 e 7); INT-TR (seção VIII) | EXT-LEI14133-GERAL, EXT-REG-ENTE | Critério e modo declarados no preâmbulo, nas regras da sessão e no TR | Critério ou modo divergente entre preâmbulo, seção da sessão e TR | Critério e modo idênticos nos três pontos |
-| Data, horário e portal da sessão | INT-EDITAL (seção 1); INT-RERI (avisos); INT-PESQUISA (item 2, data das cotações) | EXT-BASE-PNCP, EXT-BASE-COMPRASGOV | Data de publicação e data da sessão no PNCP e no portal; usar no prazo mínimo da seção 5 e na validade de 6 meses das cotações (ver `pesquisa/fontes.md`, seção 4) | Data da sessão divergente entre edital, PNCP e portal | Datas coincidentes |
+| Data, horário e portal da sessão | INT-EDITAL (seção 1); INT-PESQUISA (item 2, data das cotações) | EXT-BASE-PNCP, EXT-BASE-COMPRASGOV | Data de publicação e data da sessão no PNCP e no portal; usar no prazo mínimo da seção 5 e na validade de 6 meses das cotações (ver `pesquisa/fontes.md`, seção 4) | Data da sessão divergente entre edital, PNCP e portal | Datas coincidentes |
 | Identificação do processo e do órgão | INT-EDITAL (seção 1) | EXT-BASE-PNCP | Número do edital e do processo no PNCP | — (esclarecimento, não impugnação) | Números coincidentes |
 | Identificação repetida na Minuta | INT-EDITAL (seção 1); INT-MINUTA (identificação e execução) | EXT-LEI14133-ART92 (II), EXT-LEI14133-ART89 | Número do pregão e do processo no edital, na Minuta e no modelo de proposta | Número diferente na Minuta ou na proposta (ver `minuta/fontes.md`, seção complementar "Identificação e execução") | Números iguais |
 
@@ -80,7 +80,7 @@ Pergunta-chave: "O prazo entre publicação e sessão respeita o mínimo legal, 
 
 | Ponto a verificar | Fontes internas (ID + seção) | Fontes externas (IDs) | Prova (o que extrair ou demonstrar) | Gera impugnação se… | Descarta se… |
 | :-- | :-- | :-- | :-- | :-- | :-- |
-| Prazo mínimo de divulgação | INT-EDITAL (seções 1 e 5); INT-RERI (erratas) | EXT-LEI14133-ART55, EXT-LEI14133-ART183, EXT-BASE-PNCP | Data de publicação no PNCP, data da sessão, contagem em dias úteis conforme natureza do objeto e critério | Prazo inferior ao mínimo, ou alteração que afeta as propostas sem reabertura do prazo | Prazo igual ou superior ao mínimo e reaberto após alteração relevante |
+| Prazo mínimo de divulgação | INT-EDITAL (seções 1 e 5) | EXT-LEI14133-ART55, EXT-LEI14133-ART183, EXT-BASE-PNCP | Data de publicação no PNCP, data da sessão, contagem em dias úteis conforme natureza do objeto e critério | Prazo inferior ao mínimo, ou alteração que afeta as propostas sem reabertura do prazo | Prazo igual ou superior ao mínimo e reaberto após alteração relevante |
 | Declaração de custos trabalhistas | INT-EDITAL (seção 5); INT-TR (seção IV); INT-PLANILHA (Módulo 1; submódulo 2.3) | EXT-LEI14133-ART63, EXT-NORMA-CCT | Cláusula que exige a declaração de cobertura dos custos trabalhistas, incluída a CCT | Ausência da cláusula | Cláusula prevista |
 | Prazo para obter laudo ou catálogo | INT-EDITAL (seções 1 e 5); INT-TR (seção III) | EXT-LEI14133-ART5, EXT-MERC-DECLARACOES | Intervalo entre publicação e sessão ao lado do prazo usual de emissão do documento (declaração do fabricante) | Laudo ou catálogo que não pode ser emitido antes da sessão | Prazo compatível com a emissão usual |
 | Sigilo e não identificação da proposta inicial | INT-EDITAL (seção 5) | EXT-REG-ENTE, EXT-IN73-GERAL, EXT-BASE-COMPRASGOV | Regras de sigilo e de identificação no edital e no regulamento do portal | Regra que permite identificar o licitante antes da abertura | Sigilo garantido pelo portal |
@@ -100,7 +100,7 @@ Pergunta-chave: "A mecânica de lances impede a busca do melhor preço ou cria a
 | Modo de disputa e prorrogações | INT-EDITAL (seções 1 e 6); INT-TR (seção VIII) | EXT-IN73-GERAL, EXT-REG-ENTE, EXT-BASE-COMPRASGOV | Tempo, prorrogações e modo no edital comparados com o regulamento do portal e do ente e com o modo indicado no TR, se houver | Regra de prorrogação ou de tempo divergente do regulamento, ou modo divergente do TR | Regras iguais às do regulamento e modo igual ao do TR |
 | Tempo de lances | INT-EDITAL (seção 6) | EXT-CF88-ART37 | Tempos exigidos para lances manuais | Tempo inviável para lance manual (ex.: 3 segundos) | Tempo razoável |
 | Critérios de desempate | INT-EDITAL (seção 6) | EXT-LEI14133-ART60, EXT-LC123-ART44, EXT-LC123-ART45, EXT-AGU-EDITAL-2025, EXT-REG-ENTE, EXT-LEI8666-GERAL (só histórico) | Ordem de desempate no edital, tratamento do empate ficto de ME/EPP e momento em que o sorteio entra | Ordem diferente da legal, sorteio antes de esgotados os critérios do art. 60, ou ausência do empate ficto | Ordem legal, empate ficto previsto e sorteio só como último critério (ou entre ME/EPP com valores equivalentes) |
-| Instabilidade da plataforma | INT-EDITAL (seção 6); INT-RERI (avisos) | EXT-BASE-COMPRASGOV | Registros de instabilidade e regra do edital para queda do sistema | Edital sem regra para desconexão, em contrariedade ao regulamento do portal | Regra prevista |
+| Instabilidade da plataforma | INT-EDITAL (seção 6) | EXT-BASE-COMPRASGOV | Registros de instabilidade e regra do edital para queda do sistema | Edital sem regra para desconexão, em contrariedade ao regulamento do portal | Regra prevista |
 
 ---
 
@@ -152,10 +152,8 @@ Pergunta-chave: "O edital garante o prazo, o canal e a resposta que a lei assegu
 | :-- | :-- | :-- | :-- | :-- | :-- |
 | Prazo para pedir esclarecimento ou impugnar | INT-EDITAL (seções 1 e 9) | EXT-LEI14133-ART164, EXT-LEI14133-ART183 | Prazo do edital contado em dias úteis até a abertura | Prazo menor que o legal, ou contado em dias corridos | Prazo igual ao legal, em dias úteis |
 | Canal e forma de envio | INT-EDITAL (seção 9) | EXT-BASE-COMPRASGOV, EXT-BASE-SITEORGAO, EXT-CF88-ART5 | Canal oficial indicado e se é acessível sem exigência indevida | Canal inexistente, inacessível ou exigência de forma não prevista em lei (ex.: protocolo presencial obrigatório) | Canal eletrônico indicado |
-| Prazo e divulgação da resposta | INT-EDITAL (seção 9); INT-RERI | EXT-LEI14133-ART164, EXT-BASE-SITEORGAO, EXT-TCU-AC915-2009, EXT-TCU-AC2032-2021 | Data da resposta e local de divulgação | Resposta fora do prazo ou não divulgada no sítio oficial | Resposta no prazo e publicada |
 | Contagem de prazos | INT-EDITAL (seções 9 e 13) | EXT-LEI14133-ART183, EXT-LEI9784-ART66 | Regra de contagem adotada no edital | Contagem em dias corridos para prazos regidos por EXT-LEI14133-GERAL | Contagem em dias úteis |
-| Calendário do órgão e data vigente | INT-EDITAL (seções 1 e 9); INT-RERI (avisos e decisões) | EXT-LEI14133-ART183 (III e § 2º), EXT-LEI14133-ART164 | Feriados locais e pontos facultativos do órgão, hora-limite do edital e data vigente da sessão | — (contar pelo expediente do órgão; ver `reri/fontes.md`, seção 1, "Contagem pelo calendário do órgão") | — |
-| Resposta depois do prazo de impugnar | INT-EDITAL (seção 9); INT-RERI (resposta) | EXT-LEI14133-ART164, EXT-LEI14133-ART170 (§ 4º) | Data da resposta ao lado do último dia para impugnar | — (sem nova impugnação possível: pedido de suspensão, representação e ressalva na proposta; ver `reri/fontes.md`, seção 1) | — |
+| Calendário do órgão e data vigente | INT-EDITAL (seções 1 e 9) | EXT-LEI14133-ART183 (III e § 2º), EXT-LEI14133-ART164 | Feriados locais e pontos facultativos do órgão, hora-limite do edital e data vigente da sessão | — (contar pelo expediente do órgão; ver o mapa da RERI (processo à parte), seção 1, "Contagem pelo calendário do órgão") | — |
 
 ---
 
@@ -216,26 +214,26 @@ Pergunta-chave: "Todos os anexos citados foram publicados com o edital, sem cada
 | Documentos da fase preparatória não publicados | INT-ETP; INT-PESQUISA | EXT-LEI14133-ART54, EXT-LEI12527-GERAL | Se o ETP e a pesquisa foram anexados; se não, pedido de esclarecimento ou de acesso | — (ausência do ETP como anexo não é, por si, vício; pedir acesso) | Documento obtido |
 | Previsão de prorrogação e critério de reajuste | INT-EDITAL (seção 13); INT-MINUTA (cl. 1 e 3) | EXT-LEI14133-ART25, EXT-LEI14133-ART107, EXT-TCU-AC7184-2018 | Se o edital prevê a prorrogação e o critério de reajuste (índice e data-base), ao lado das cláusulas 1 e 3 da Minuta | Edital e Minuta sem critério de reajuste, ou com regras divergentes | Previsão e critério iguais nos dois documentos |
 | Foro | INT-EDITAL (seção 13); INT-MINUTA (cl. 9) | EXT-LEI14133-ART151 | Foro e meios alternativos no edital e na Minuta | Foro divergente entre edital e Minuta | Foro coincidente |
-| Publicidade e contagem de prazos | INT-EDITAL (seção 13); INT-RERI | EXT-LEI14133-ART183, EXT-BASE-DIARIO | Regra de contagem e meio oficial de publicação | Contagem em dias corridos para prazos regidos por EXT-LEI14133-GERAL | Dias úteis e meio oficial indicado |
+| Publicidade e contagem de prazos | INT-EDITAL (seção 13) | EXT-LEI14133-ART183, EXT-BASE-DIARIO | Regra de contagem e meio oficial de publicação | Contagem em dias corridos para prazos regidos por EXT-LEI14133-GERAL | Dias úteis e meio oficial indicado |
 
 ---
 
 ## Matriz resumo
 
-✓ = cruzamento usado na seção, sem seção específica do outro documento (documento inteiro ou valor do item). Na coluna `INT-EDITAL`, o número indica outra seção do próprio edital a cruzar; na coluna `INT-TR`, o algarismo romano indica a seção do TR (`tr/fontes.md` tem a volta na mesma seção); na coluna `INT-ETP`, o inciso do ETP (`etp/fontes.md` tem a volta no mesmo inciso; o inciso III cobre a justificativa das exigências de habilitação); na coluna `INT-PLANILHA`, o módulo; na coluna `INT-PESQUISA`, o item de `pesquisa/estrutura.md`; na coluna `INT-MINUTA`, a cláusula. `INT-RERI` vale para todas as seções (ver "Como usar"); o ✓ marca onde ele é fonte direta, e `reri/fontes.md` faz a volta pelos checkpoints 1 e 3.
+✓ = cruzamento usado na seção, sem seção específica do outro documento (documento inteiro ou valor do item). Na coluna `INT-EDITAL`, o número indica outra seção do próprio edital a cruzar; na coluna `INT-TR`, o algarismo romano indica a seção do TR (`tr/fontes.md` tem a volta na mesma seção); na coluna `INT-ETP`, o inciso do ETP (`etp/fontes.md` tem a volta no mesmo inciso; o inciso III cobre a justificativa das exigências de habilitação); na coluna `INT-PLANILHA`, o módulo; na coluna `INT-PESQUISA`, o item de `pesquisa/estrutura.md`; na coluna `INT-MINUTA`, a cláusula.
 
-| Seção | INT-EDITAL | INT-TR | INT-ETP | INT-PLANILHA | INT-PESQUISA | INT-MINUTA | INT-RERI | Externas principais |
-| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
-| 1. Preâmbulo [derivada] | 6, 7 | VIII | — | — | 2 | identificação | ✓ | EXT-LEI14133-GERAL, EXT-REG-ENTE, EXT-BASE-PNCP |
-| 2. Objeto [derivada] | — | I | I, IV, VII, VIII | ✓ | — | 1, 5 | — | EXT-LEI14133-ART40, EXT-LEI14133-ART47, EXT-TCU-SUM247 |
-| 3. Recursos orçamentários [derivada] | 7 | IX, X | IV, VI | 1 a 6 | 3 | identificação | — | EXT-LEI14133-ART150, EXT-LEI14133-ART24 |
-| 4. Participação | 2, 8 | I | III, IV, V, VII, VIII | ✓ | 3 | — | — | EXT-LC123-ART48, EXT-LEI14133-ART15, EXT-LEI14133-ART69, EXT-DEC8538-2015 |
-| 5. Envio de propostas [derivada] | 1 | III, IV | — | 1, 2 | — | 1 | ✓ | EXT-LEI14133-ART55, EXT-LEI14133-ART63 |
-| 6. Sessão e disputa | 1 | VIII | — | ✓ | — | — | ✓ | EXT-LEI14133-ART57, EXT-LEI14133-ART60, EXT-IN73-GERAL |
-| 7. Julgamento | — | IV, VIII, IX | VI | 1, 2, 6 | 3 | — | — | EXT-LEI14133-ART23, EXT-LEI14133-ART59, EXT-NORMA-CCT |
-| 8. Habilitação | — | I, III, VIII | III | — | — | obrigações | — | EXT-LEI14133-ART67, EXT-LEI14133-ART69, EXT-REG-CONSELHOS |
-| 9. Esclarecimentos e impugnação | 1, 13 | — | — | — | — | — | ✓ | EXT-LEI14133-ART164, EXT-LEI14133-ART183 |
-| 10. Recursos | — | — | — | — | — | — | — | EXT-LEI14133-ART165, EXT-STF-SV21, EXT-CF88-ART5 |
-| 11. Adjudicação e contrato [derivada] | — | III | — | — | — | 1, 4 | — | EXT-LEI14133-ART90, EXT-LEI14133-ART96 |
-| 12. Sanções [derivada] | — | sanções | — | — | — | 7 | — | EXT-LEI14133-ART156, EXT-LEI14133-ART157 |
-| 13. Disposições finais [derivada] | — | ✓ | ✓ | ✓ | ✓ | 1, 3, 9 | ✓ | EXT-LEI14133-ART25, EXT-LEI14133-ART54, EXT-BASE-PNCP |
+| Seção | INT-EDITAL | INT-TR | INT-ETP | INT-PLANILHA | INT-PESQUISA | INT-MINUTA | Externas principais |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| 1. Preâmbulo [derivada] | 6, 7 | VIII | — | — | 2 | identificação | EXT-LEI14133-GERAL, EXT-REG-ENTE, EXT-BASE-PNCP |
+| 2. Objeto [derivada] | — | I | I, IV, VII, VIII | ✓ | — | 1, 5 | EXT-LEI14133-ART40, EXT-LEI14133-ART47, EXT-TCU-SUM247 |
+| 3. Recursos orçamentários [derivada] | 7 | IX, X | IV, VI | 1 a 6 | 3 | identificação | EXT-LEI14133-ART150, EXT-LEI14133-ART24 |
+| 4. Participação | 2, 8 | I | III, IV, V, VII, VIII | ✓ | 3 | — | EXT-LC123-ART48, EXT-LEI14133-ART15, EXT-LEI14133-ART69, EXT-DEC8538-2015 |
+| 5. Envio de propostas [derivada] | 1 | III, IV | — | 1, 2 | — | 1 | EXT-LEI14133-ART55, EXT-LEI14133-ART63 |
+| 6. Sessão e disputa | 1 | VIII | — | ✓ | — | — | EXT-LEI14133-ART57, EXT-LEI14133-ART60, EXT-IN73-GERAL |
+| 7. Julgamento | — | IV, VIII, IX | VI | 1, 2, 6 | 3 | — | EXT-LEI14133-ART23, EXT-LEI14133-ART59, EXT-NORMA-CCT |
+| 8. Habilitação | — | I, III, VIII | III | — | — | obrigações | EXT-LEI14133-ART67, EXT-LEI14133-ART69, EXT-REG-CONSELHOS |
+| 9. Esclarecimentos e impugnação | 1, 13 | — | — | — | — | — | EXT-LEI14133-ART164, EXT-LEI14133-ART183 |
+| 10. Recursos | — | — | — | — | — | — | EXT-LEI14133-ART165, EXT-STF-SV21, EXT-CF88-ART5 |
+| 11. Adjudicação e contrato [derivada] | — | III | — | — | — | 1, 4 | EXT-LEI14133-ART90, EXT-LEI14133-ART96 |
+| 12. Sanções [derivada] | — | sanções | — | — | — | 7 | EXT-LEI14133-ART156, EXT-LEI14133-ART157 |
+| 13. Disposições finais [derivada] | — | ✓ | ✓ | ✓ | ✓ | 1, 3, 9 | EXT-LEI14133-ART25, EXT-LEI14133-ART54, EXT-BASE-PNCP |

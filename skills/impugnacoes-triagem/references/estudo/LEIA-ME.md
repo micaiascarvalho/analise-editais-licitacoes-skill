@@ -12,7 +12,6 @@ Cópia do estudo de `briefing/Mapeamento_Analise`. Não edite estes arquivos: co
 | `planilha/` | Planilha de Custos |
 | `pesquisa/` | Pesquisa de Preços |
 | `minuta/` | Minuta Contratual |
-| `reri/` | Retificações, Esclarecimentos e Respostas (RERI) |
 
 Cada pasta tem três arquivos:
 
@@ -31,3 +30,4 @@ Regras de uso:
 - Fontes externas são citadas pelo ID. Antes de citar em minuta, confira a linha completa no catálogo.
 - `a conferir` nunca aparece como certo. `EXT-PEND-*` e as fontes marcadas "não usar" não são citados.
 - Esfera `federal (União)`: o ente do edital pode ter regulamento próprio (`EXT-REG-ENTE`).
+- A RERI (retificações, esclarecimentos e respostas) é um processo à parte, depois do lançamento do edital, e fica fora desta cópia. Para a triagem, os mapas foram ajustados: saíram a instrução "confira também `INT-RERI`", a coluna e a legenda `INT-RERI` das matrizes, o `INT-RERI` das fontes internas e as linhas cujo assunto é um ato da RERI. O que saiu de cada mapa está em `MANIFEST.json` (`escopo_triagem`). O catálogo continua inteiro.

@@ -27,14 +27,14 @@ Catálogo único das fontes citadas nos 14 arquivos `*/estrutura.md` e `*/analis
 | PL-E / PL-A | `planilha/estrutura.md` / `planilha/analise.md` |
 | PP-E / PP-A | `pesquisa/estrutura.md` / `pesquisa/analise.md` |
 | MC-E / MC-A | `minuta/estrutura.md` / `minuta/analise.md` |
-| RR-E / RR-A | `reri/estrutura.md` / `reri/analise.md` |
+| RR-E / RR-A | a Estrutura da RERI (processo à parte) / a Análise da RERI (processo à parte) |
 | ED-F | `edital/fontes.md` (fase 2; marcada em todas as fontes do mapa na fase 6) |
 | TR-F | `tr/fontes.md` (fase 3) |
 | ETP-F | `etp/fontes.md` (fase 3) |
 | PL-F | `planilha/fontes.md` (fase 4) |
 | PP-F | `pesquisa/fontes.md` (fase 4) |
 | MC-F | `minuta/fontes.md` (fase 5) |
-| RR-F | `reri/fontes.md` (fase 5) |
+| RR-F | o mapa da RERI (processo à parte) (fase 5) |
 
 ---
 

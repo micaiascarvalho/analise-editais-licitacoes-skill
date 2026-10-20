@@ -29,7 +29,7 @@ HINTS = {
                   '(por exemplo: "prossiga sem o ETP")',
     'decidir': 'peça ao analista a decisão explícita sobre os itens (por exemplo: "incluir IMP-01 e descartar ESC-02")',
     'aprovar': DRAFT_HINT, 'ajustar': DRAFT_HINT, 'descartar': DRAFT_HINT,
-    'reabrir': 'peça ao analista o motivo da reabertura (por exemplo: a retificação que mudou o item)',
+    'reabrir': 'peça ao analista o motivo da reabertura (por exemplo: o que o fez mudar de ideia sobre o item)',
     'confirmar': 'liste as versões aprovadas e peça ao analista a confirmação explícita da peça',
 }
 

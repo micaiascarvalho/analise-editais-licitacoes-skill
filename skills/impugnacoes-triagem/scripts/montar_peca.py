@@ -1,26 +1,23 @@
 #!/usr/bin/env python3
-"""Peça final da triagem: monta a peça em Markdown a partir do modelo e das minutas aprovadas e a converte em .docx
-com o timbre da Servfaz. Python 3.10+. O contrato (campos, blocos opcionais, convenções) está em assets/LEIA-ME.md.
+"""Peça final da triagem: monta a peça em Markdown a partir do modelo e das minutas aprovadas. Python 3.10+. O contrato
+(campos, blocos opcionais, convenções) está em assets/LEIA-ME.md. A conversão da peça em .docx é da skill
+gerar-minuta-impugnacao, depois que o analista conferir o texto montado.
 
-São dois passos, para o analista conferir o texto montado antes do .docx:
   montar     só roda com a peça do tipo confirmada no estado.py (peca --acao confirmar), sem pendências e com o
              modelo modelo-<tipo>.md em assets/. Lê <pasta>/dados-peca.json e o arquivo do representante
              (padrão: files/representante.json, duas pastas acima da pasta do edital, fora do git) e grava
              <pasta>/peca/peca-<tipo>.md (formato único) ou peca-<tipo>-<ID>.md (por ponto).
-  converter  gera o .docx ao lado do .md, sobre assets/timbre-servfaz.docx.
-Os dois param se a peça trouxer marcador de campo não preenchido ou referência interna da triagem (ID ou marcador
-do catálogo de fontes): o catálogo não aparece na peça. Nada aqui assina, protocola ou envia.
+Para se a peça trouxer marcador de campo não preenchido ou referência interna da triagem (ID ou marcador do
+catálogo de fontes): o catálogo não aparece na peça. Nada aqui assina, protocola ou envia.
 
 Uso:
   montar_peca.py montar --pasta DIR --tipo impugnacao|esclarecimento [--representante ARQ] [--data AAAA-MM-DD]
-  montar_peca.py converter --entrada PECA.md [--saida PECA.docx]
 """
 import argparse
 import json
 import sys
 from pathlib import Path
 
-from montagem.conversao import convert
 from montagem.montar import assemble
 from triagem.comum import Refusal, parse_date
 
@@ -33,11 +30,7 @@ def cmd_assemble(args):
             raise Refusal(f'data inválida: {args.data} (use AAAA-MM-DD).')
     paths = assemble(args.pasta, args.tipo, args.representante, when)
     return {'montadas': [str(path) for path in paths],
-            'proxima_acao': 'apresente cada peça montada ao analista; depois do "ok" dele, rode converter em cada uma'}
-
-
-def cmd_convert(args):
-    return {'docx': str(convert(args.entrada, args.saida))}
+            'proxima_acao': 'apresente cada peça montada ao analista; depois do "ok" dele, gere o .docx de cada uma com a skill gerar-minuta-impugnacao'}
 
 
 def build_parser():
@@ -49,10 +42,6 @@ def build_parser():
     p.add_argument('--representante', type=Path, help='JSON com nome, cargo e designacao de quem assina')
     p.add_argument('--data', help='data da peça (padrão: hoje)')
     p.set_defaults(handler=cmd_assemble)
-    p = sub.add_parser('converter', help='gera o .docx da peça montada, com o timbre')
-    p.add_argument('--entrada', type=Path, required=True, help='peça montada (.md)')
-    p.add_argument('--saida', type=Path, help='destino (padrão: mesmo nome, .docx)')
-    p.set_defaults(handler=cmd_convert)
     return parser
 
 

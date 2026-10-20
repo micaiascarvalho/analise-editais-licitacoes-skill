@@ -2,7 +2,7 @@
 tipo: esclarecimento
 versao: 1
 referencia: peça Servfaz ao Pregão Eletrônico 111/2026 da FMS Teresina (parte "Dos esclarecimentos")
-timbre: assets/timbre-servfaz.docx
+timbre: skills/gerar-minuta-impugnacao/assets/timbre-servfaz.docx
 ---
 
 **ILUSTRÍSSIMO SENHOR {{DESTINATARIO}}.**

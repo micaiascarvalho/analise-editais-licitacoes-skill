@@ -21,7 +21,6 @@ O `estado.py peca --acao confirmar` recusa a confirmação enquanto não houver 
 | :-- | :-- |
 | `modelo-impugnacao.md` | Texto da peça de impugnação, com marcadores |
 | `modelo-esclarecimento.md` | Texto da peça de pedido de esclarecimento, com marcadores |
-| `timbre-servfaz.docx` | Base visual da conversão para .docx: cabeçalho e rodapé com o timbre, margens, fonte, estilos e numeração. Não traz texto de peça |
 
 O `estado.py peca` só reconhece, nesta pasta, o nome exato `modelo-<tipo>.<extensão>`, com uma extensão só e arquivo não vazio. Cópia de editor (`modelo-impugnacao.md~`, `.bak`, `.swp`), arquivo oculto, arquivo com sufixo a mais ou arquivo em subpasta não conta como modelo: não é o arquivo revisado. Mantenha um arquivo por tipo: se houver mais de um, o script usa o primeiro em ordem alfabética. O timbre não tem o prefixo `modelo-` e não interfere nessa busca.
 
@@ -45,7 +44,7 @@ O catálogo de fontes é um referenciador interno da skill. A peça, o modelo e 
 
 - **No modelo:** o texto fixo não leva marcador. Cada norma que ele cita foi conferida no catálogo quando o modelo foi revisado, e o registro dessa conferência fica só aqui, abaixo.
 - **Nas minutas:** os marcadores `[ID · status]` existem para a auditoria de cada minuta e são retirados na montagem, junto com o resto do que não vai à Administração (seção "Como os pontos são montados").
-- **Trava:** depois de montar, e de novo antes de converter, o script procura na peça um ID (`EXT-`, `INT-`, `NOVA-`), um marcador no formato `[… · …]`, "catálogo de fontes" e nomes de arquivos do estudo (`catalogo-fontes`, `indice-fontes`, `references/estudo`, `<documento>/fontes.md`), além de `{{` não preenchido. Se achar algum, para e informa a linha, sem gravar a peça. "Catálogo" sozinho não conta, porque um edital pode citar o Catálogo de Serviços. A correção vai na origem (modelo, ou minuta reaberta pela fase certa), nunca na peça montada.
+- **Trava:** depois de montar, o script procura na peça um ID (`EXT-`, `INT-`, `NOVA-`), um marcador no formato `[… · …]`, "catálogo de fontes" e nomes de arquivos do estudo (`catalogo-fontes`, `indice-fontes`, `references/estudo`, `<documento>/fontes.md`), além de `{{` não preenchido. Se achar algum, para e informa a linha, sem gravar a peça. "Catálogo" sozinho não conta, porque um edital pode citar o Catálogo de Serviços. A correção vai na origem (modelo, ou minuta reaberta pela fase certa), nunca na peça montada.
 
 Normas do texto fixo, conferidas no catálogo na revisão do modelo (registro interno; não vai à peça):
 
@@ -166,18 +165,16 @@ Nos dois formatos, só entram as versões aprovadas, conferidas pelo sha256 regi
 
 ## Montagem e conversão
 
-`scripts/montar_peca.py`, com a lógica em `scripts/montagem/` (`modelo.py`: campos, blocos e trava; `pontos.py`: minuta → ponto; `montar.py`: conferências e gravação; `conversao.py`: .md → .docx). Duas etapas separadas:
+`scripts/montar_peca.py`, com a lógica em `scripts/montagem/` (`modelo.py`: campos, blocos e trava; `pontos.py`: minuta → ponto; `montar.py`: conferências e gravação). A conversão em .docx não é desta skill: é da skill `gerar-minuta-impugnacao`. Duas etapas separadas:
 
 1. **Montagem** (`montar_peca.py montar --pasta <pasta> --tipo impugnacao|esclarecimento`): só roda com a peça do tipo confirmada no `estado.py`, sem pendências, com a data da peça até a data-limite do art. 164 (o texto fixo afirma a tempestividade), com `modelo-<tipo>.md` em `assets/` e com cada minuta igual à versão aprovada (sha256). Grava `<pasta>/peca/peca-<tipo>.md` (formato único) ou `peca-<tipo>-<ID>.md` (por ponto). O texto das minutas entra como foi aprovado; só saem subtítulos, numeração de parágrafo e marcadores. É esse arquivo que o analista confere antes da conversão.
-2. **Conversão** (`montar_peca.py converter --entrada <peça>.md`): grava o `.docx` ao lado, sobre o `timbre-servfaz.docx`, seguindo as convenções acima.
+2. **Conversão** (skill `gerar-minuta-impugnacao`, `gerar_minuta.py <peça>.md`): grava o `.docx` ao lado, sobre o timbre da Servfaz, seguindo as convenções acima. Ela só converte e para se achar `{{` ou referência interna na peça.
 
 O arquivo do representante é procurado em `files/representante.json`, duas pastas acima da pasta do edital (`files/triagens/<slug>/`); `--representante` aponta outro. A data da peça é a do dia; `--data AAAA-MM-DD` a fixa. A modalidade sai por extenso para PE, PP, CC e CE; outra exige `"modalidade_extenso"` em `dados-peca.json`.
 
 A separação permite trocar o visual sem mexer na regra de quais minutas entram e conferir o texto montado antes de gerar o .docx. Nenhuma das etapas assina, protocola ou envia.
 
-### O timbre
-
-`timbre-servfaz.docx` é gerado por `scripts/criar_timbre.py --origem <peça .docx da Servfaz>`, a partir da peça da FMS. Da origem ficam o cabeçalho e o rodapé com as imagens, as margens (A4) e os estilos; o corpo e os metadados de autoria saem. O script acrescenta os estilos `Peca Corpo`, `Peca Titulo` (numeração romana), `Peca Subtitulo`, `Peca Citacao`, `Peca Alinea`, `Peca Centro` e `Peca Tabela` (Times New Roman 12,5 pt, justificado) e as numerações `PecaSecao` e `PecaAlinea`. Para mudar fonte, recuo ou espaçamento, altere `criar_timbre.py` e gere o timbre de novo; não edite o .docx à mão.
+O timbre, o gerador do .docx e o `criar_timbre.py` ficam na skill `gerar-minuta-impugnacao`. Se uma convenção da tabela acima mudar, o `gerar_minuta.py` muda junto.
 
 ## Para quem criar ou alterar um modelo
 

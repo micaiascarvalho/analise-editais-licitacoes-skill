@@ -11,13 +11,10 @@ from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from docx import Document
-from docx.oxml.ns import qn
 
 import estado
 import montar_peca
 from montagem import modelo, pontos
-from montagem.conversao import STYLES, TIMBRE
 from triagem import comum, fases
 from triagem.comum import Refusal
 
@@ -286,28 +283,14 @@ class MontagemTests(unittest.TestCase):
         with self.assertRaisesRegex(Refusal, 'alterada ou removida depois de aprovada'):
             self.assemble()
 
-    def test_cli_assemble_and_convert(self):
+    def test_cli_assemble(self):
         self.triage()
         piece = self.folder / 'peca' / 'peca-impugnacao.md'
         with redirect_stdout(io.StringIO()):
             self.assertEqual(montar_peca.main(['montar', '--pasta', str(self.folder), '--tipo', 'impugnacao',
                                                '--data', '2026-10-20']), 0)
-            self.assertEqual(montar_peca.main(['converter', '--entrada', str(piece)]), 0)
-        doc = Document(str(piece.with_suffix('.docx')))
-        styles = [p.style.name for p in doc.paragraphs]
-        texts = [p.text for p in doc.paragraphs]
-        self.assertEqual(sum(1 for s in styles if s == STYLES['titulo']), 4)
-        self.assertIn(STYLES['citacao'], styles)
-        self.assertEqual(len(doc.tables), 1)
-        self.assertEqual(doc.tables[0].cell(0, 1).text, 'Cláusula impugnada')
-        self.assertFalse(any('**' in t or '{{' in t for t in texts))
-        alineas = [p for p in doc.paragraphs if p.style.name == STYLES['alinea']]
-        lists = {p._p.pPr.find(qn('w:numPr')).find(qn('w:numId')).get(qn('w:val')) for p in alineas}
-        self.assertGreaterEqual(len(lists), 3)  # cada lista recomeça em a)
-        last_request = [p.text for p in alineas][-1]
-        self.assertTrue(last_request.endswith('.'), last_request)
-        self.assertTrue(doc.sections[0].header.paragraphs or doc.sections[0].header.tables)
-        self.assertIn(STYLES['centro'], styles)
+        self.assertTrue(piece.is_file())
+        self.assertFalse(piece.with_suffix('.docx').exists())
 
 
 class ModeloTests(unittest.TestCase):
@@ -334,14 +317,6 @@ class ModeloTests(unittest.TestCase):
                  'Edital, p. PDF 23 (impr. 21)': 'Edital, p. 21'}
         for source, expected in cases.items():
             self.assertEqual(pontos.clean(source), expected)
-
-    def test_converter_refuses_unfilled_or_internal(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            for text in ('Texto {{CAMPO}}.\n', 'Fonte [EXT-LEI14133-ART5 · conferido].\n'):
-                path = Path(tmp) / 'peca.md'
-                path.write_text(text, encoding='utf-8')
-                with self.assertRaises(Refusal):
-                    montar_peca.convert(path, timbre=TIMBRE)
 
 
 if __name__ == '__main__':

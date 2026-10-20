@@ -67,7 +67,7 @@ O script testa as condições nesta ordem; a primeira que vale é a fase.
 | `levantamento` | Portão aberto e itens nunca registrados | `itens` (uma lista vazia `[]` registra levantamento sem itens) |
 | `selecao` | Algum item pendente | `decidir` até não sobrar pendente |
 | `minutas` | Algum item incluído com minuta não aprovada nem descartada | `minuta` (abrir, registrar, decidir) até a fila esvaziar |
-| `peca_final` | Há minuta aprovada de um tipo cuja peça não foi confirmada | `peca --acao confirmar` e, confirmada a peça, `montar_peca.py montar` e `converter` (SKILL.md, Fase 5); sem modelo em `<skill>/assets/`, a confirmação é recusada e a triagem para aqui |
+| `peca_final` | Há minuta aprovada de um tipo cuja peça não foi confirmada | `peca --acao confirmar` e, confirmada a peça, `montar_peca.py montar` e, com o ok do analista, a skill `gerar-minuta-impugnacao` (SKILL.md, Fase 5); sem modelo em `<skill>/assets/`, a confirmação é recusada e a triagem para aqui |
 | `concluido` | Nada pendente, ou nenhuma minuta aprovada | — |
 
 Como a ordem é fixa, a fase pode voltar. Itens novos registrados durante as minutas levam a fase de volta a `selecao`, e a minuta em revisão continua esperando decisão. Um `documentos` registrado de novo com uma falta que o analista não autorizou volta a fase para `documentos`.

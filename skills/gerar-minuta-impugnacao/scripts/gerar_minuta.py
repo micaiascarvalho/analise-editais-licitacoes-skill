@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Gera o .docx da minuta de impugnação a partir de um arquivo Markdown, sobre assets/timbre-servfaz.docx. Python 3.10+.
 
-O Markdown segue as convenções de SKILL.md: "# " é seção com numeração romana, "> " é citação recuada, "1. " é alínea
-a), b), tabela "|" é o quadro, parágrafo todo em negrito é subtítulo e <!-- centralizado --> centraliza o fecho. Cada
-linha não vazia é um parágrafo; linha seguida de outra sem linha em branco entre elas sai sem espaço depois (bloco de
-assinatura). O script para se o texto trouxer marcador {{CAMPO}} não preenchido ou referência interna da triagem (ID de
-fonte, marcador [ID · status], catálogo de fontes). Nada aqui assina, protocola ou envia.
+O Markdown segue as convenções de SKILL.md: "# " e "### " são seções com numeração romana, "## " é o título da peça,
+"#### " e parágrafo todo em negrito são subtítulos, "> " é citação recuada, "1. " é alínea a), b) (com sub-itens "- "
+recuados), tabela "|" é o quadro e <!-- centralizado --> centraliza o fecho. Cada linha não vazia é um parágrafo; linha
+seguida de outra sem linha em branco entre elas sai sem espaço depois (bloco de assinatura). O script para, sem gravar,
+se o texto trouxer campo em branco ({{CAMPO}}, [Inserir ...]), remissão [1], referência interna da triagem (ID de fonte,
+marcador [ID · status], catálogo de fontes) ou marcação que ele não trata (código, imagem, link, HTML, título de nível
+5 ou 6). Nada aqui assina, protocola ou envia.
 
 Uso:
   gerar_minuta.py ENTRADA.md [--saida MINUTA.docx]
@@ -19,7 +21,7 @@ from pathlib import Path
 from docx import Document
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
-from docx.shared import Pt
+from docx.shared import Cm, Pt
 
 
 class Refusal(Exception):
@@ -38,7 +40,13 @@ ROMAN_NUMBERING, ALINEA_NUMBERING = 'PecaSecao', 'PecaAlinea'
 TIMBRE = Path(__file__).resolve().parents[1] / 'assets' / 'timbre-servfaz.docx'
 ITEM = re.compile(r'^\d+\.\s+(.*)$')
 BOLD_LINE = re.compile(r'^\*\*[^*]+\*\*$')
-INLINE = re.compile(r'(\*\*.+?\*\*|(?<![\w*])_(?!_).+?(?<!_)_(?!\w))')
+INLINE = re.compile(r'(\*\*.+?\*\*|(?<![\w*])\*(?!\*)[^*]+?\*(?![\w*])|(?<![\w*])_(?!_).+?(?<!_)_(?!\w))')
+HEADING = re.compile(r'^(#{1,6})\s+(.*)$')
+ROMAN = re.compile(r'^[IVXL]+\.\s+')
+BULLET = re.compile(r'^\s*[-*+]\s+(.*)$')
+RULE = re.compile(r'^(?:-{3,}|\*{3,})$')
+MARKER = re.compile(r'^\**[a-z0-9]+\)\**\s')
+SUB_INDENT = Cm(2.25)
 FRONT = re.compile(r'\A---\n.*?\n---\n', re.S)
 CENTER_ON, CENTER_OFF = '<!-- centralizado -->', '<!-- /centralizado -->'
 
@@ -49,7 +57,7 @@ def add_runs(paragraph, text):
             continue
         if part.startswith('**') and part.endswith('**') and len(part) > 4:
             paragraph.add_run(part[2:-2]).bold = True
-        elif part.startswith('_') and part.endswith('_') and len(part) > 2:
+        elif part[0] in '*_' and part[-1] == part[0] and len(part) > 2:
             paragraph.add_run(part[1:-1]).italic = True
         else:
             paragraph.add_run(part)
@@ -111,17 +119,46 @@ def add_table(doc, lines):
     doc.add_paragraph(style=STYLES['corpo'])
 
 
+def add_sub_items(doc, subs):
+    for sub in subs:
+        text = sub if MARKER.match(sub) else f'– {sub}'
+        paragraph = add_runs(doc.add_paragraph(style=STYLES['alinea']), text)
+        paragraph.paragraph_format.left_indent = SUB_INDENT
+
+
+def close_last(items):
+    """O último item do pedido termina em ponto final, mesmo que o texto traga ';'."""
+    last = items[-1]
+    if last[1]:
+        last[1][-1] = re.sub(r';\s*$', '.', last[1][-1])
+    else:
+        last[0] = re.sub(r';\s*$', '.', last[0])
+
+
 def build(doc, text):
     lines = text.split('\n')
     centered, i = False, 0
+    blank = ('', CENTER_ON, CENTER_OFF)
     while i < len(lines):
         line = lines[i].strip()
         following = lines[i + 1].strip() if i + 1 < len(lines) else ''
         i += 1
-        if not line:
+        if not line or RULE.match(line):
             continue
         if line in (CENTER_ON, CENTER_OFF):
             centered = line == CENTER_ON
+            continue
+        heading = HEADING.match(line)
+        if heading:
+            level, title = len(heading[1]), heading[2].strip()
+            if level == 2:
+                paragraph = add_runs(doc.add_paragraph(style=STYLES['centro']), title)
+                for run in paragraph.runs:
+                    run.bold = True
+            elif level == 4:
+                add_runs(doc.add_paragraph(style=STYLES['subtitulo']), title)
+            else:
+                add_runs(doc.add_paragraph(style=STYLES['titulo']), ROMAN.sub('', title))
             continue
         if line.startswith('|'):
             block = [line]
@@ -131,39 +168,64 @@ def build(doc, text):
             add_table(doc, block)
             continue
         if ITEM.match(line):
-            items = [ITEM.match(line)[1]]
-            while i < len(lines) and ITEM.match(lines[i].strip()):
-                items.append(ITEM.match(lines[i].strip())[1])
+            items = [[ITEM.match(line)[1], []]]
+            while i < len(lines):
+                if ITEM.match(lines[i].strip()):
+                    items.append([ITEM.match(lines[i].strip())[1], []])
+                elif BULLET.match(lines[i]):
+                    items[-1][1].append(BULLET.match(lines[i])[1].strip())
+                else:
+                    break
                 i += 1
-            items[-1] = re.sub(r';\s*$', '.', items[-1])
+            close_last(items)
             num_id = new_list(doc)
-            for item in items:
+            for item, subs in items:
                 number_paragraph(add_runs(doc.add_paragraph(style=STYLES['alinea']), item), num_id)
+                add_sub_items(doc, subs)
             continue
-        if line.startswith('# '):
-            add_runs(doc.add_paragraph(style=STYLES['titulo']), line[2:].strip())
+        if BULLET.match(lines[i - 1]):
+            bullets = [BULLET.match(lines[i - 1])[1].strip()]
+            while i < len(lines) and BULLET.match(lines[i]):
+                bullets.append(BULLET.match(lines[i])[1].strip())
+                i += 1
+            if all(MARKER.match(b) for b in bullets):  # já trazem a), b) digitado: só recuo
+                add_sub_items(doc, bullets)
+            else:
+                items = [[b, []] for b in bullets]
+                close_last(items)
+                num_id = new_list(doc)
+                for item, _ in items:
+                    number_paragraph(add_runs(doc.add_paragraph(style=STYLES['alinea']), item), num_id)
             continue
         if line.startswith('>'):
             add_runs(doc.add_paragraph(style=STYLES['citacao']), line[1:].strip())
             continue
         style = STYLES['centro'] if centered else STYLES['subtitulo'] if BOLD_LINE.match(line) else STYLES['corpo']
         paragraph = add_runs(doc.add_paragraph(style=style), line)
-        if following and following not in (CENTER_ON, CENTER_OFF):
+        if following and following not in blank and not RULE.match(following):
             paragraph.paragraph_format.space_after = Pt(0)
 
 
+# Campo em branco e remissão que o texto trouxe de quem o gerou; marcação que o conversor não trata.
+BLANK = re.compile(r'\{\{|\}\}|\[(?:inserir|preencher|informar|data|nome|cnpj|cpf|endere[cç]o)\b[^\]\n]*\]|'
+                   r'\[\d+(?:\s*[,–-]\s*\d+)*\]', re.I)
+UNSUPPORTED = re.compile(r'^\s*```|^#{5,}\s|!\[[^\]\n]*\]\(|\[[^\]\n]+\]\([^)\n]+\)|</?[a-z][^>\n]*>|~~', re.I)
+
+
 def check_clean(text, label):
-    """A trava: a minuta não sai com marcador de campo nem com referência interna da triagem."""
+    """A trava: a minuta não sai com campo em branco, remissão [n], referência interna da triagem nem marcação que o
+    conversor não trata. Cada achado leva a linha, para o analista corrigir o Markdown."""
     problems = []
     for number, line in enumerate(text.split('\n'), 1):
-        if '{{' in line or '}}' in line:
-            problems.append(f'linha {number}: marcador de campo não preenchido')
-        found = INTERNAL.search(line)
-        if found:
-            problems.append(f'linha {number}: referência interna "{found[0]}"')
+        for regex, what in ((BLANK, 'campo em branco ou remissão'), (INTERNAL, 'referência interna'),
+                            (UNSUPPORTED, 'marcação que o conversor não trata')):
+            found = regex.search(line)
+            if found:
+                problems.append(f'linha {number}: {what} "{found[0].strip()}"')
     if problems:
-        raise Refusal(f'{label} não pode sair assim: ' + '; '.join(problems[:10]) + '. Corrija o Markdown e gere de '
-                      'novo.')
+        raise Refusal(f'{label} não pode sair assim: ' + '; '.join(problems[:10]) +
+                      (f'; e mais {len(problems) - 10}' if len(problems) > 10 else '') +
+                      '. Corrija o Markdown e gere de novo.')
     return text
 
 
